@@ -3,10 +3,7 @@
   &__wrapper{
     display: flex;
   }
-  &__filter{
-    min-width: 300px;
-    height: 500px;
-  }
+ 
   &__container {
     display: flex;
     flex-wrap: wrap;
@@ -96,14 +93,6 @@
   color: gray;
 }
 
- 
-// item filter block
-.item__filter {
-  background: $white;
-}
-
-
-
 // product & item card styles
 #card {
   fill: $orange;
@@ -128,8 +117,16 @@
   background: transparent;
   border: 0px solid transparent;
 }
-
+//filter hidden
+@media (max-width: 1230px) {
+  .item {  
+    &__wrapper{
+    flex-direction: column;
+  }
+  }
  
+  
+}
  
 // style for media
 @media (max-width: 667px) {

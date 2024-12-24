@@ -80,13 +80,13 @@
    }
 }
 
-.item__filter{
-   @include item();
-   width: 200px;
-   padding: 30px;
-}
-.item__filter:hover{
-   @include itemHover();
-   @include animations();
+// .item__filter{
+//    @include item();
+//    width: 200px;
+//    padding: 30px;
+// }
+// .item__filter:hover{
+//    @include itemHover();
+//    @include animations();
  
-}
+// }

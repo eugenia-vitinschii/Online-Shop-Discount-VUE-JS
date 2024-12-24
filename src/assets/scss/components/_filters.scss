@@ -1,9 +1,28 @@
-.filters{
+.filters{ 
+   &__button{
+      display: none;
+   }
    &__wrapper{
       @include item();
- padding: $margin-sm;
+      padding: $margin-sm;
+      min-width: 300px;
+      height: 500px;
+       background: $white;
    }
    &__wrapper:hover{
       @include itemHover();
       @include animations();
 }}
+
+//filter hidden
+@media (max-width: 1230px) {
+   .filters{
+      &__button{
+         display: block;
+      }
+     &__wrapper{
+       display: none;
+     }
+   }
+   
+ }

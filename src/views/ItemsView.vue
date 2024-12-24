@@ -1,11 +1,13 @@
 <template>
- 
-  <div class="item">
+ <div class="item">
     <div class="container">
       <div class="item__content">
         <div class="item__wrapper">
            <div class="item__filter filters">
-           
+            <div class="filters__button">
+               <button class="green__button">Filtru</button>
+            </div>
+          
    
       <div class="filters__wrapper"  >
         <div class="filers__brand">
