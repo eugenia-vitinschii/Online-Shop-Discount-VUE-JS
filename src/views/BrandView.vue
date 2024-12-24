@@ -1,12 +1,15 @@
 <template>
-  <p class="heading">Brand page {{brand}}</p>
-
   <div class="brand">
     <div class="container">
       <div class="brand__wrapper">
-        <div class="brand__items item__wrapper">
-          <the-item 
-           v-for="product in getItemsByBrand(brand)"
+        <div class="brand__title">
+          <p class="heading">
+            Produse {{ brand }} ( {{ getItemsByBrand(brand).length }} )
+          </p>
+        </div>
+        <div class="brand__items  ">
+          <the-item
+            v-for="product in getItemsByBrand(brand)"
             :key="product.id"
             :id="product.id"
             :brand="product.brand"
@@ -16,7 +19,7 @@
             :price="product.price"
             :discount="product.discount"
             :label="product.label"
-             :newPrice="getNewPrice(product.price)(product.discount)"
+            :newPrice="getNewPrice(product.price)(product.discount)"
             :economie="getMoneySaved(product.price)(product.discount)"
             :monthlyPrice="monthlyPrice(product.price)"
             :hidden="showPrices(product.discount)"
@@ -25,7 +28,7 @@
             :hugeSaleLabel="hugeSaleLabel(product.discount)"
             @addToCard="addProductCard(product)"
           />
-                    <div class="spaces"></div>
+          <div class="spaces"></div>
           <div class="spaces"></div>
           <div class="spaces"></div>
           <div class="spaces"></div>
@@ -41,17 +44,15 @@ import { defineOptions, onMounted } from "vue";
 import { useRoute } from "vue-router";
 
 //components
-import TheItem from "@/sections/TheItem.vue"
+import TheItem from "@/sections/TheItem.vue";
 
 //pinia
-import { useProductStore } from "@/stores/product"
+import { useProductStore } from "@/stores/product";
 import { storeToRefs } from "pinia";
 
-
 defineOptions({
-  name: "BrandView"
+  name: "BrandView",
 });
-
 
 const store = useProductStore();
 
@@ -83,7 +84,6 @@ function addProductCard(product) {
   });
 }
 
-
 //hooks
 onMounted(() => {
   fetchProducts();
@@ -91,5 +91,4 @@ onMounted(() => {
 </script>
 
 <style>
-
 </style>

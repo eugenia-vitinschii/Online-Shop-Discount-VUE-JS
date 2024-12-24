@@ -18,8 +18,7 @@
     @include itemHover();
     @include animations();
   }
-  &__item,
-  .spaces {
+  &__item {
     @include itemStyles();
   }
   &__top {
@@ -123,6 +122,7 @@
  
 // spaces 
 .spaces {
+  @include itemStyles();
   height: 1px;
   padding: 1px;
   background: transparent;

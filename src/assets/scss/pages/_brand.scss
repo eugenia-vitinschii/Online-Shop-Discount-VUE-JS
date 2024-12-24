@@ -1,0 +1,8 @@
+.brand{
+   &__wrapper{}
+   &__title{}
+   &__items{
+      display: flex;
+      flex-wrap: wrap;
+   }
+}
