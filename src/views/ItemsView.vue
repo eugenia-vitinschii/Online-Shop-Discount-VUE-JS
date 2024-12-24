@@ -4,8 +4,8 @@
     <div class="container">
       <div class="item__content">
         <div class="item__wrapper">
-           <div class="item__filter">
-           <div class="filters">
+           <div class="item__filter filters">
+           
    
       <div class="filters__wrapper"  >
         <div class="filers__brand">
@@ -136,7 +136,7 @@
             </div>
           </div>
         </div>
-      </div>
+      
     
   </div>
         </div>

@@ -85,32 +85,32 @@ const brands = [
     {
     id: 2,
     img: require("@/assets/img/brands/beko.jpg"),
-    brand: 'aeg'
+    brand: 'Beko'
   },
     {
     id: 3,
     img: require("@/assets/img/brands/candy.jpg"),
-    brand: 'aeg'
+    brand: 'Candy'
   },
     {
     id: 4,
     img: require("@/assets/img/brands/electrolux.png"),
-    brand: 'aeg'
+    brand: 'Electrolux'
   },
       {
     id: 5,
     img: require("@/assets/img/brands/indesit.png"),
-    brand: 'aeg'
+    brand: 'Indesit'
   },
         {
     id: 6,
     img: require("@/assets/img/brands/samsung.jpg"),
-    brand: 'aeg'
+    brand: 'Samsung'
   },
           {
     id: 7,
     img: require("@/assets/img/brands/whirlpool.png"),
-    brand: 'aeg'
+    brand: 'Whirlpool'
   },
   
 ]
