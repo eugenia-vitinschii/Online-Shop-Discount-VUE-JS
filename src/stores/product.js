@@ -31,8 +31,7 @@ export const useProductStore = defineStore("productId", {
     },
     //filter items by brand
     getItemsByBrand: (state) => {
-      return (brandName) =>
-        state.products.filter((item) => item.brand === brandName);
+      return (brandName) => Object.values(state.products).filter((item) => item.brand === brandName);
     },
   },
   actions: {
