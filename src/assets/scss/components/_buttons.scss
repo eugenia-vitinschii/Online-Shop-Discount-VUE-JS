@@ -33,9 +33,10 @@
    svg{
    @include transition();
       fill: $orange;
+      height: 30px;
+      width: 30px;
    }
 }
-
 .button-svg:hover{
    svg{
       fill: $green;  

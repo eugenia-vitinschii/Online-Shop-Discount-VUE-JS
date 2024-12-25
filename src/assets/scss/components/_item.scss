@@ -93,19 +93,6 @@
   color: gray;
 }
 
-// product & item card styles
-#card {
-  fill: $orange;
-  height: 30px;
-  width: 30px;
-  @include transition();
-}
-#card:hover {
-  fill: $orange;
-  height: 30px;
-  width: 30px;
-}
- 
  
 
  
