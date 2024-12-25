@@ -2,7 +2,7 @@ input,
 textarea {
    border: 1px solid $dark-green;
 	@include input();
-	@include animations();
+	@include transition();
 }
 input::placeholder{
    color: $dark-green

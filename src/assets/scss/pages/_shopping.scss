@@ -14,7 +14,7 @@
    }
    &__empty:hover{
       @include itemHover();
-      @include animations();
+      @include transition();
    }
    &__items {
 

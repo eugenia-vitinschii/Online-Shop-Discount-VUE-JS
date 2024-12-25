@@ -125,8 +125,8 @@
           :placeholder="'36'"
           v-model:value.trim="postProducts.guarantee"
         />
-        <the-button class="green__button" @click.prevent="addPostData()"> Salvează </the-button>
-        <the-button class="red__button" @click="goBack()">Acasă</the-button>
+        <the-button class="green-button" @click.prevent="addPostData()"> Salvează </the-button>
+        <the-button class="red-button" @click="goBack()">Acasă</the-button>
       </form>
     </div>
   </div>

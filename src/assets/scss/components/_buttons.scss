@@ -1,33 +1,43 @@
-.custom__button,
-.red__button,
-.green__button {
-   @include button();
+// all buttons
+.button,
+.red-button,
+.green-button {
+   @include reset-button();
 }
-.custom__button {
-   border: 1px solid $orange;
-   color: $orange;
+// colors
+.button {
+   @include button-colors($orange, $orange);
 }
-.red__button {
-   border: 1px solid $red;
-   color: $red;
+.red-button {
+   @include button-colors($red, $red);
 }
-.green__button {
-   border: 1px solid $green;
-   color: $green;
+.green-button {
+   @include button-colors($green, $green);
 }
-.red__button:hover {
-   background: $red;
-   color: white;
+//hover button
+.red-button:hover {
+   @include button-hover($red);
 }
-.green__button:hover {
-   background: $green;
-   color: white;
+.green-button:hover {
+   @include button-hover($green);
+ 
 }
-.custom__button:hover {
-   color: white;
-   background: $dark-green;
+.button:hover {
+   @include button-hover($orange);
 }
-.custom__button:active{
-   color: rgb(65, 65, 65);
-   background:rgb(65, 65, 65)
+ 
+// svg button style
+.button-svg{
+   padding:10px 0px;
+   background: $white;
+   svg{
+   @include transition();
+      fill: $orange;
+   }
+}
+
+.button-svg:hover{
+   svg{
+      fill: $green;  
+   }
 }

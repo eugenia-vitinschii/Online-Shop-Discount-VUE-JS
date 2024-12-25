@@ -5,11 +5,13 @@
         <div class="item__wrapper">
            <div class="item__filter filters">
             <div class="filters__button">
-               <button class="green__button">Filtru</button>
+               <button class="green-button"
+               @click="showFilters = !showFilters"
+               >Filtru</button>
             </div>
           
-   
-      <div class="filters__wrapper"  >
+ 
+     <div v-if="showFilters" class="filters__wrapper" >
         <div class="filers__brand">
           <p class="body-text bold">Sortează după producător</p>
           <p class="body-text" v-if="store.allProducts < 28">
@@ -137,10 +139,15 @@
               </label>
             </div>
           </div>
+        
         </div>
-      
-    
-  </div>
+          <button class="button-svg"
+               @click="showFilters = !showFilters"
+               >
+               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></button>
+      </div>
+ 
+ 
         </div>
         <div class="item__container">
           <the-item
@@ -178,7 +185,7 @@
 
 <script setup>
 //vue
-import { defineOptions, watch } from "vue";
+import { defineOptions, watch, ref } from "vue";
 import { onMounted  } from "vue";
 
 //store
@@ -190,6 +197,9 @@ import TheItem from "@/sections/TheItem.vue";
 defineOptions({
   name: "ItemsView",
 });
+
+//filters section
+const showFilters = ref(false)
 
 //Pinia store
 

@@ -62,7 +62,7 @@ a:visited {
 }
 button, a:hover {
 	text-decoration: none;
-	@include animations()
+	@include transition()
 }
 ul li {
 	margin: 0;

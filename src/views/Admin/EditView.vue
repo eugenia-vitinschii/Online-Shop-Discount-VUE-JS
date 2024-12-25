@@ -21,12 +21,12 @@
           <td>{{ product.price }}</td>
           <td>{{ product.discount }}</td>
           <td>
-            <button class="red__button" @click="deleteItem(product.id)">
+            <button class="red-button" @click="deleteItem(product.id)">
               Șterge
             </button>
           </td>
           <td>
-            <router-link class="green__button" :to="'/update/' + product.id">
+            <router-link class="green-button" :to="'/update/' + product.id">
               Redactează
             </router-link>
           </td>

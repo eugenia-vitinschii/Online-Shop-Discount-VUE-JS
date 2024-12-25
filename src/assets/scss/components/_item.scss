@@ -13,7 +13,7 @@
   }
   &__item:hover {
     @include itemHover();
-    @include animations();
+    @include transition();
   }
   &__item {
     @include itemStyles();
@@ -98,7 +98,7 @@
   fill: $orange;
   height: 30px;
   width: 30px;
-  @include animations();
+  @include transition();
 }
 #card:hover {
   fill: $orange;

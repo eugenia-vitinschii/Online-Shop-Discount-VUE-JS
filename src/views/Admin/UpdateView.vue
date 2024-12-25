@@ -124,10 +124,10 @@
             :placeholder="'36'"
             v-model:value.trim="products.guarantee"
           />
-          <the-button class="green__button" @click="updateItem()">
+          <the-button class="green-button" @click="updateItem()">
             Salvează
           </the-button>
-          <router-link class="red__button" to="/edit-product"
+          <router-link class="red-button" to="/edit-product"
             >Innapoi</router-link
           >
         </form>

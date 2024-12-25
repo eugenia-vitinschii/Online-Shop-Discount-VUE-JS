@@ -1,21 +1,33 @@
-@mixin animations() {
+// transition
+@mixin transition() {
 	transition-duration: 0.9s;
 	transition-timing-function: ease;
 }
-
+// shadow
 @mixin shadow() {
 	border: 2px solid $white;
 	box-shadow: 2px 2px 10px $white;
 	border-radius: $border-radius-b;
 }
-
-@mixin button() {
+// default styles for button
+@mixin reset-button() {
+	@include  transition();
 	text-align: center;
 	padding: 5px 10px;
 	margin: 5px 5px 5px 10px;
 	cursor: pointer;
 	font-size: $body-text-sm;
-	background: transparent;
+	background: $white;
+}
+// personalised buttons
+@mixin button-colors($border, $color){
+	border:1px solid $border;
+   color: $color;
+}
+
+@mixin button-hover($background){
+	color: white;
+   background: $background;
 }
 @mixin input(){
 	display: block;

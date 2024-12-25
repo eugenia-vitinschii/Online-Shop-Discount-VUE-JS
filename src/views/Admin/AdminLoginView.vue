@@ -17,8 +17,8 @@
             :placeholder="'password'" 
             v-model:value="password"
             />
-            <the-button class="green__button" @click="loginUp(name, password)"> LoginUp </the-button>
-            <the-button class="red__button">Acasă</the-button>
+            <the-button class="green-button" @click="loginUp(name, password)"> LoginUp </the-button>
+            <the-button class="red-button">Acasă</the-button>
           </form>
         </div>
       </div>

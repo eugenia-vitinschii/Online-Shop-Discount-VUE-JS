@@ -7,7 +7,7 @@
           <p class="heading">Coșul este gol!</p>
           <router-link 
           to="/items" 
-          class="custom__button">
+          class="button">
           Vezi toate produsele
           </router-link>
         </div>

@@ -81,7 +81,7 @@
           <the-button
             v-for="item in testCredit"
             :key="item"
-            :class="['custom__button', { active: currentTab === item.tab }]"
+            :class="['button', { active: currentTab === item.tab }]"
             @click="currentTab = item.tab"
           >
             {{ item.name }}

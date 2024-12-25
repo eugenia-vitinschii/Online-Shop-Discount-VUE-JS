@@ -4,8 +4,8 @@
        <div class="panel__wrapper">
          <div class="panel__nav">
            <div class="panel__buttons">
-             <router-link class="green__button" to="/add-product"> Add Product </router-link>
-             <router-link class="green__button" to="/edit-product"> Edit Product </router-link>
+             <router-link class="green-button" to="/add-product"> Add Product </router-link>
+             <router-link class="green-button" to="/edit-product"> Edit Product </router-link>
            </div>
             <div class="panel__user">
              <div class="panel__user-img">

@@ -11,7 +11,7 @@
             Items in this category are not able to be returned or exchanged,
             please understand.
           </p>
-          <button @click="$emit('close')" class="green__button">ok</button>
+          <button @click="$emit('close')" class="green-button">ok</button>
         </div>
       </div>
     </div>

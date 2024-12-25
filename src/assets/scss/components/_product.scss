@@ -4,7 +4,7 @@
    }
    &__wrapper:hover {
       @include itemHover();
-      @include animations();
+      @include transition();
    }
    &__top {
       //product logo & label

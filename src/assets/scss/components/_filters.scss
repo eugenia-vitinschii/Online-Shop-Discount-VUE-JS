@@ -11,17 +11,23 @@
    }
    &__wrapper:hover{
       @include itemHover();
-      @include animations();
+      @include transition();
 }}
 
 //filter hidden
 @media (max-width: 1230px) {
    .filters{
+
       &__button{
          display: block;
       }
      &__wrapper{
-       display: none;
+        position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 100vh;
      }
    }
    
