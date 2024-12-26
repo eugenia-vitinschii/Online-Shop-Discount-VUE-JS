@@ -1,183 +1,201 @@
 <template>
- <div class="item">
+  <div class="item">
     <div class="container">
       <div class="item__content">
         <div class="item__wrapper">
-           <div class="item__filter filters">
+          <div class="item__filter filters">
             <div class="filters__button">
-               <button class="green-button"
-               @click="showFilters = !showFilters"
-               >Filtru</button>
-            </div>
-          
- 
-     <div v-if="showFilters" class="filters__wrapper" >
-        <div class="filers__brand">
-          <p class="body-text bold">Sortează după producător</p>
-          <p class="body-text" v-if="store.allProducts < 28">
-          Au fost găsite: {{ store.allProducts }} produse
-        </p>
-          <div class="item__filter-content" >
-            <div class="checkbox-wrapper">
-              <input
-                class="inp-cbx"
-                id="indesit"
-                type="checkbox"
-                value="Indesit"
-                v-model="checked"
-              />
-              <label class="cbx" for="indesit">
-                <span>
-                  <svg width="12px" height="10px" viewbox="0 0 12 10">
-                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                  </svg>
-                </span>
-                <span>INDESIT</span>
-              </label>
-            </div>
-            <div class="checkbox-wrapper">
-              <input
-                class="inp-cbx"
-                id="samsung"
-                type="checkbox"
-                value="Samsung"
-                v-model="checked"
-              />
-              <label class="cbx" for="samsung">
-                <span>
-                  <svg width="12px" height="10px" viewbox="0 0 12 10">
-                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                  </svg>
-                </span>
-                <span>SAMSUNG</span>
-              </label>
+              <button class="green-button" @click="showFilters = !showFilters">
+                Filtru
+              </button>
+              <button class="button-svg">
+                <svg 
+                v-if="false"
+                xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-360 280-560h400L480-360Z"/></svg>
+                <svg v-else
+                 xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m280-400 200-200 200 200H280Z"/></svg>
+              </button>
+              <button class="green-button">
+                mai ieftin
+              </button>
+              <button class="green-button">
+                mai scump
+              </button>
             </div>
 
-            <div class="checkbox-wrapper">
-              <input
-                class="inp-cbx"
-                id="whirlpool"
-                type="checkbox"
-                value="Whirlpool"
-                v-model="checked"
-              />
-              <label class="cbx" for="whirlpool">
-                <span>
-                  <svg width="12px" height="10px" viewbox="0 0 12 10">
-                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                  </svg>
-                </span>
-                <span>WHIRLPOOL</span>
-              </label>
-            </div>
-            <div class="checkbox-wrapper">
-              <input
-                class="inp-cbx"
-                id="electrolux"
-                type="checkbox"
-                value="Electrolux"
-                v-model="checked"
-              />
-              <label class="cbx" for="electrolux">
-                <span>
-                  <svg width="12px" height="10px" viewbox="0 0 12 10">
-                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                  </svg>
-                </span>
-                <span>ELECTROLUX</span>
-              </label>
-            </div>
-            <div class="checkbox-wrapper">
-              <input
-                class="inp-cbx"
-                id="beko"
-                type="checkbox"
-                value="Beko"
-                v-model="checked"
-              />
-              <label class="cbx" for="beko">
-                <span>
-                  <svg width="12px" height="10px" viewbox="0 0 12 10">
-                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                  </svg>
-                </span>
-                <span>BEKO</span>
-              </label>
-            </div>
-            <div class="checkbox-wrapper">
-              <input
-                class="inp-cbx"
-                id="aeg"
-                type="checkbox"
-                value="AEG"
-                v-model="checked"
-              />
-              <label class="cbx" for="aeg">
-                <span>
-                  <svg width="12px" height="10px" viewbox="0 0 12 10">
-                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                  </svg>
-                </span>
-                <span>AEG</span>
-              </label>
-            </div>
-            <div class="checkbox-wrapper">
-              <input
-                class="inp-cbx"
-                id="candy"
-                type="checkbox"
-                value="Candy"
-                v-model="checked"
-              />
-              <label class="cbx" for="candy">
-                <span>
-                  <svg width="12px" height="10px" viewbox="0 0 12 10">
-                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                  </svg>
-                </span>
-                <span>CANDY</span>
-              </label>
+            <div v-if="showFilters" class="filters__wrapper">
+               
+              <div class="filters__brand">
+                <p class="body-text bold">Sortează după producător</p>
+                <p class="body-text" v-if="store.allProducts < 28">
+                  Au fost găsite: {{ store.allProducts }} produse
+                </p>
+                <div class="item__filter-content">
+                  <div class="checkbox-wrapper">
+                    <input
+                      class="inp-cbx"
+                      id="indesit"
+                      type="checkbox"
+                      value="Indesit"
+                      v-model="checked"
+                    />
+                    <label class="cbx" for="indesit">
+                      <span>
+                        <svg width="12px" height="10px" viewbox="0 0 12 10">
+                          <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                        </svg>
+                      </span>
+                      <span>INDESIT</span>
+                    </label>
+                  </div>
+                  <div class="checkbox-wrapper">
+                    <input
+                      class="inp-cbx"
+                      id="samsung"
+                      type="checkbox"
+                      value="Samsung"
+                      v-model="checked"
+                    />
+                    <label class="cbx" for="samsung">
+                      <span>
+                        <svg width="12px" height="10px" viewbox="0 0 12 10">
+                          <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                        </svg>
+                      </span>
+                      <span>SAMSUNG</span>
+                    </label>
+                  </div>
+
+                  <div class="checkbox-wrapper">
+                    <input
+                      class="inp-cbx"
+                      id="whirlpool"
+                      type="checkbox"
+                      value="Whirlpool"
+                      v-model="checked"
+                    />
+                    <label class="cbx" for="whirlpool">
+                      <span>
+                        <svg width="12px" height="10px" viewbox="0 0 12 10">
+                          <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                        </svg>
+                      </span>
+                      <span>WHIRLPOOL</span>
+                    </label>
+                  </div>
+                  <div class="checkbox-wrapper">
+                    <input
+                      class="inp-cbx"
+                      id="electrolux"
+                      type="checkbox"
+                      value="Electrolux"
+                      v-model="checked"
+                    />
+                    <label class="cbx" for="electrolux">
+                      <span>
+                        <svg width="12px" height="10px" viewbox="0 0 12 10">
+                          <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                        </svg>
+                      </span>
+                      <span>ELECTROLUX</span>
+                    </label>
+                  </div>
+                  <div class="checkbox-wrapper">
+                    <input
+                      class="inp-cbx"
+                      id="beko"
+                      type="checkbox"
+                      value="Beko"
+                      v-model="checked"
+                    />
+                    <label class="cbx" for="beko">
+                      <span>
+                        <svg width="12px" height="10px" viewbox="0 0 12 10">
+                          <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                        </svg>
+                      </span>
+                      <span>BEKO</span>
+                    </label>
+                  </div>
+                  <div class="checkbox-wrapper">
+                    <input
+                      class="inp-cbx"
+                      id="aeg"
+                      type="checkbox"
+                      value="AEG"
+                      v-model="checked"
+                    />
+                    <label class="cbx" for="aeg">
+                      <span>
+                        <svg width="12px" height="10px" viewbox="0 0 12 10">
+                          <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                        </svg>
+                      </span>
+                      <span>AEG</span>
+                    </label>
+                  </div>
+                  <div class="checkbox-wrapper">
+                    <input
+                      class="inp-cbx"
+                      id="candy"
+                      type="checkbox"
+                      value="Candy"
+                      v-model="checked"
+                    />
+                    <label class="cbx" for="candy">
+                      <span>
+                        <svg width="12px" height="10px" viewbox="0 0 12 10">
+                          <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                        </svg>
+                      </span>
+                      <span>CANDY</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              
+              <button class="button-svg" @click="showFilters = !showFilters">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="24px"
+                  viewBox="0 -960 960 960"
+                  width="24px"
+                  fill="#e8eaed"
+                >
+                  <path
+                    d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+                  />
+                </svg>
+              </button>
             </div>
           </div>
-        
+          <div class="item__container" v-if="created">
+            <the-item
+              v-for="product in store.checkboxFilters"
+              :key="product.id"
+              :id="product.id"
+              :brand="product.brand"
+              :img="product.img"
+              :productName="product.productName"
+              :productType="product.productType"
+              :price="product.price"
+              :discount="product.discount"
+              :label="product.label"
+              :newPrice="getNewPrice(product.price)(product.discount)"
+              :economie="getMoneySaved(product.price)(product.discount)"
+              :monthlyPrice="monthlyPrice(product.price)"
+              :hidden="showPrices(product.discount)"
+              :oldPrice="showOnePrice(product.discount)"
+              :dicountLabel="dicountLabel(product.discount)"
+              :hugeSaleLabel="hugeSaleLabel(product.discount)"
+              @addToCard="addProductCard(product)"
+            />
+            <div class="spaces"></div>
+            <div class="spaces"></div>
+            <div class="spaces"></div>
+            <div class="spaces"></div>
+          </div>
         </div>
-          <button class="button-svg"
-               @click="showFilters = !showFilters"
-               >
-               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></button>
-      </div>
- 
- 
-        </div>
-        <div class="item__container">
-          <the-item
-            v-for="product in store.checkboxFilters"
-            :key="product.id"
-            :id="product.id"
-            :brand="product.brand"
-            :img="product.img"
-            :productName="product.productName"
-            :productType="product.productType"
-            :price="product.price"
-            :discount="product.discount"
-            :label="product.label"
-            :newPrice="getNewPrice(product.price)(product.discount)"
-            :economie="getMoneySaved(product.price)(product.discount)"
-
-            :monthlyPrice="monthlyPrice(product.price)"
-            :hidden="showPrices(product.discount)"
-            :oldPrice="showOnePrice(product.discount)"
-            :dicountLabel="dicountLabel(product.discount)"
-            :hugeSaleLabel="hugeSaleLabel(product.discount)"
-            @addToCard="addProductCard(product)"
-          />
-          <div class="spaces"></div>
-          <div class="spaces"></div>
-          <div class="spaces"></div>
-          <div class="spaces"></div>
-        </div>
-        </div>
-
       </div>
     </div>
   </div>
@@ -186,7 +204,7 @@
 <script setup>
 //vue
 import { defineOptions, watch, ref } from "vue";
-import { onMounted  } from "vue";
+import { onMounted } from "vue";
 
 //store
 import { storeToRefs } from "pinia";
@@ -199,7 +217,9 @@ defineOptions({
 });
 
 //filters section
-const showFilters = ref(false)
+const showFilters = ref(false);
+
+let created = ref(false);
 
 //Pinia store
 
@@ -218,8 +238,6 @@ const {
   showOnePrice,
 } = store;
 
- 
-
 // add product to cart
 function addProductCard(product) {
   addToCart({
@@ -233,16 +251,16 @@ function addProductCard(product) {
   });
 }
 
-watch( store.checkboxFilters, () =>{
-console.log('smtg changes')
-})
+watch(store.checkboxFilters, () => {
+  console.log("smtg changes");
+});
 
 //hooks
 onMounted(() => {
+  created.value = true;
   fetchProducts();
 });
 </script>
 
 <style lang="scss">
- 
 </style>
