@@ -33,9 +33,10 @@ export const useProductStore = defineStore("productId", {
     getItemsByBrand: (state) => {
       return (brandName) => Object.values(state.products).filter((item) => item.brand === brandName);
     },
-    filteredItems(){
+    // filteredItems(){
+     
         
-    },
+    // },
     //prices in descending order
     getByDescendingOrder: (state) =>{
       return state.products.sort ((a , b)=> a.price > b.price ? 1 : -1)

@@ -1,30 +1,55 @@
 <template>
+  <div class="brands">
+    <div class="container">
+      <div class="brands__wrapper">
+        <brands-section
+          v-for="item in brands"
+          :key="item.id"
+          :img="item.img"
+          :brand="item.brand"
+        />
+      </div>
+    </div>
+  </div>
   <div class="item">
     <div class="container">
       <div class="item__content">
         <div class="item__wrapper">
           <div class="item__filter filters">
             <div class="filters__button">
-              <button class="green-button" @click="showFilters = !showFilters">
-                Filtru
+              <button class="button-svg" @click="showFilters = !showFilters">
+               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M440-160q-17 0-28.5-11.5T400-200v-240L168-736q-15-20-4.5-42t36.5-22h560q26 0 36.5 22t-4.5 42L560-440v240q0 17-11.5 28.5T520-160h-80Zm40-308 198-252H282l198 252Zm0 0Z"/></svg>
               </button>
+              <div class="filters__button--prices">
+                <button class="button-svg">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24px"
+                    viewBox="0 -960 960 960"
+                    width="24px"
+                    fill="#e8eaed"
+                  >
+                    <path d="M480-360 280-560h400L480-360Z" />
+                  </svg>
+                </button>
+                <button class="button-svg">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24px"
+                    viewBox="0 -960 960 960"
+                    width="24px"
+                    fill="#e8eaed"
+                  >
+                    <path d="m280-400 200-200 200 200H280Z" />
+                  </svg>
+                </button>
+              </div>
               <button class="button-svg">
-                <svg 
-                v-if="false"
-                xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-360 280-560h400L480-360Z"/></svg>
-                <svg v-else
-                 xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m280-400 200-200 200 200H280Z"/></svg>
-              </button>
-              <button class="green-button">
-                mai ieftin
-              </button>
-              <button class="green-button">
-                mai scump
+                  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M441-120v-86q-53-12-91.5-46T293-348l74-30q15 48 44.5 73t77.5 25q41 0 69.5-18.5T587-356q0-35-22-55.5T463-458q-86-27-118-64.5T313-614q0-65 42-101t86-41v-84h80v84q50 8 82.5 36.5T651-650l-74 32q-12-32-34-48t-60-16q-44 0-67 19.5T393-614q0 33 30 52t104 40q69 20 104.5 63.5T667-358q0 71-42 108t-104 46v84h-80Z"/></svg>
               </button>
             </div>
 
             <div v-if="showFilters" class="filters__wrapper">
-               
               <div class="filters__brand">
                 <p class="body-text bold">Sortează după producător</p>
                 <p class="body-text" v-if="store.allProducts < 28">
@@ -153,7 +178,7 @@
                   </div>
                 </div>
               </div>
-              
+
               <button class="button-svg" @click="showFilters = !showFilters">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -211,7 +236,7 @@ import { storeToRefs } from "pinia";
 import { useProductStore } from "@/stores/product";
 //components
 import TheItem from "@/sections/TheItem.vue";
-
+import BrandsSection from "@/sections/BrandsSection.vue";
 defineOptions({
   name: "ItemsView",
 });
@@ -238,6 +263,43 @@ const {
   showOnePrice,
 } = store;
 
+const brands = [
+  {
+    id: 1,
+    img: require("@/assets/img/brands/aeg.png"),
+    brand: "AEG",
+  },
+  {
+    id: 2,
+    img: require("@/assets/img/brands/beko.jpg"),
+    brand: "Beko",
+  },
+  {
+    id: 3,
+    img: require("@/assets/img/brands/candy.jpg"),
+    brand: "Candy",
+  },
+  {
+    id: 4,
+    img: require("@/assets/img/brands/electrolux.png"),
+    brand: "Electrolux",
+  },
+  {
+    id: 5,
+    img: require("@/assets/img/brands/indesit.png"),
+    brand: "Indesit",
+  },
+  {
+    id: 6,
+    img: require("@/assets/img/brands/samsung.jpg"),
+    brand: "Samsung",
+  },
+  {
+    id: 7,
+    img: require("@/assets/img/brands/whirlpool.png"),
+    brand: "Whirlpool",
+  },
+];
 // add product to cart
 function addProductCard(product) {
   addToCart({
