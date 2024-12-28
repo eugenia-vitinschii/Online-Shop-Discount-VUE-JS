@@ -28,6 +28,11 @@
             margin-right: 10px;
             padding: 0px;
          }
+         button:last-child{
+            svg{
+               fill: $red
+            }
+         }
       }
       //prices expensiver & lower
       &__button--prices {
