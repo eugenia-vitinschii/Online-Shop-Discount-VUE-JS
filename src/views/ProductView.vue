@@ -1,4 +1,13 @@
 <template>
+<!-- routing -->
+<div class="router">
+  <div class="container">
+    <div class="router__wrapper">
+      <the-router/>
+    </div>
+    
+  </div>
+</div>
 <!-- product view -->
   <div class="product">
     <div class="container">
@@ -45,6 +54,7 @@
 
 <script setup>
 //components
+import TheRouter from "@/sections/TheRouter.vue"
 import TheProduct from "@/sections/TheProduct.vue";
 //vue
 import { defineOptions } from "vue";
