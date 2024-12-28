@@ -4,6 +4,10 @@
   <div class="container">
     <div class="router__wrapper">
       <the-router/>
+       <router-link :to="'/brand/' + products.brand" class="header__link">
+           /  {{products.brand}}
+          </router-link>
+     <p class="header__link">/ {{products.productName}}</p>
     </div>
     
   </div>
