@@ -28,9 +28,10 @@ export const useProductStore = defineStore("productId", {
         );
     },
     filteredItems() {
+      let filtered = this.products;
       //search input
       if (this.searchValue != "" && this.searchValue) {
-        return this.products.filter((item) => {
+        filtered = filtered.filter((item) => {
          return item.productName
             .toUpperCase()
             .includes(this.searchValue.toUpperCase());
@@ -38,9 +39,9 @@ export const useProductStore = defineStore("productId", {
       }
       // checked input by brands
       if (this.checked == 0) {
-        return this.products;
+        return filtered;
       } else {
-        return this.products.filter(
+        return filtered = filtered.filter(
           (product) => this.checked.indexOf(product.brand) !== -1
         );
       }
