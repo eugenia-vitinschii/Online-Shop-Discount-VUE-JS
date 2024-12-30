@@ -13,14 +13,30 @@ export const useProductStore = defineStore("productId", {
     },
     admin: [],
     checked: [],
+    searchValue: [],
     count: 1,
   }),
   getters: {
     allProducts() {
-      return this.checkboxFilters.length;
+      return this.filteredItems.length;
     },
-    //filter items by brand using checkbox
-    checkboxFilters() {
+    //filter items by brand
+    getItemsByBrand: (state) => {
+      return (brandName) =>
+        Object.values(state.products).filter(
+          (item) => item.brand === brandName
+        );
+    },
+    filteredItems() {
+      //search input
+      if (this.searchValue != "" && this.searchValue) {
+        return this.products.filter((item) => {
+         return item.productName
+            .toUpperCase()
+            .includes(this.searchValue.toUpperCase());
+        });
+      }
+      // checked input by brands
       if (this.checked == 0) {
         return this.products;
       } else {
@@ -29,17 +45,9 @@ export const useProductStore = defineStore("productId", {
         );
       }
     },
-    //filter items by brand
-    getItemsByBrand: (state) => {
-      return (brandName) => Object.values(state.products).filter((item) => item.brand === brandName);
-    },
-    // filteredItems(){
-     
-        
-    // },
     //prices in descending order
-    getByDescendingOrder: (state) =>{
-      return state.products.sort ((a , b)=> a.price > b.price ? 1 : -1)
+    getByDescendingOrder: (state) => {
+      return state.products.sort((a, b) => (a.price > b.price ? 1 : -1));
     },
   },
   actions: {

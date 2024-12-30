@@ -1,4 +1,17 @@
 <template>
+<!-- routing -->
+<div class="router">
+  <div class="container">
+    <div class="router__wrapper">
+      <the-router/>
+      <div class="router__link">
+         <router-link :to="'/brand/' + brand" class="header__link">
+           /  {{brand}}
+          </router-link>
+      </div>
+    </div>
+  </div>
+</div>
   <div class="brand">
     <div class="container">
       <div class="brand__wrapper">
@@ -40,10 +53,12 @@
 </template>
 
 <script setup>
+//vue , router
 import { defineOptions, onMounted } from "vue";
 import { useRoute } from "vue-router";
 
 //components
+import TheRouter from "@/sections/TheRouter.vue"
 import TheItem from "@/sections/TheItem.vue";
 
 //pinia
