@@ -1,10 +1,17 @@
 //router component (section ) styles
 .router{
-   
    &__wrapper{
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;   
    }
-   button{
-      margin-right: 10px;
-
+   a, p {
+      display: inline-block;
+      margin-left: 10px;
+ 
+   }
+   a:hover{
+      text-decoration: underline;
+ 
    }
 }

@@ -1,4 +1,4 @@
-
+// p tag styles
 .body-text,
 .body-text-red, .body-text-green {
 	font-size: $body-text;
@@ -46,6 +46,10 @@
 }
 
 
+// a tag styles
 
+a{
+	@include transition();
+}
 
  

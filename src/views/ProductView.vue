@@ -4,12 +4,15 @@
   <div class="container">
     <div class="router__wrapper">
       <the-router/>
-       <router-link :to="'/brand/' + products.brand" class="header__link">
+      <div class="router__link">
+         <router-link :to="'/brand/' + products.brand" class="header__link">
            /  {{products.brand}}
           </router-link>
-     <p class="header__link">/ {{products.productName}}</p>
+      </div>
+      <div class="router__link">
+        <p class="header__link">/ {{products.productName}}</p>
+      </div>
     </div>
-    
   </div>
 </div>
 <!-- product view -->
@@ -45,8 +48,8 @@
           :monthlyPrice="monthlyPrice(products.price)"
           :newPrice="getNewPrice(products.price)(products.discount)"
           :economie="getMoneySaved(products.price)(products.discount)"
-         :dicountLabel="dicountLabel(products.discount)"
-            :hugeSaleLabel="hugeSaleLabel(products.discount)"
+          :dicountLabel="dicountLabel(products.discount)"
+          :hugeSaleLabel="hugeSaleLabel(products.discount)"
            @addToCard="addProductCard(products)"
         />
       </div>
