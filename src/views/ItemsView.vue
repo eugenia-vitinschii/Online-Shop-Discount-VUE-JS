@@ -23,13 +23,14 @@
     <div class="container">
       <div class="item__content">
         <div class="item__wrapper">
-          <div class="item__filter filters">
+          <div class="item__filter filters" v-if="store.allProducts < 28">
+             Au fost găsite: {{ store.allProducts }} produse
             <div class="filters__button">
               <button class="icon-svg" @click="showFilters = !showFilters">
                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M440-160q-17 0-28.5-11.5T400-200v-240L168-736q-15-20-4.5-42t36.5-22h560q26 0 36.5 22t-4.5 42L560-440v240q0 17-11.5 28.5T520-160h-80Zm40-308 198-252H282l198 252Zm0 0Z"/></svg>
               </button>
               <div class="filters__button--prices">
-                <button class="icon-svg">
+                <button class="icon-svg" @click="ascending = !ascending">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     height="24px"
@@ -38,17 +39,6 @@
                     fill="#e8eaed"
                   >
                     <path d="M480-360 280-560h400L480-360Z" />
-                  </svg>
-                </button>
-                <button class="icon-svg">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    height="24px"
-                    viewBox="0 -960 960 960"
-                    width="24px"
-                    fill="#e8eaed"
-                  >
-                    <path d="m280-400 200-200 200 200H280Z" />
                   </svg>
                 </button>
               </div>
@@ -262,7 +252,7 @@ let created = ref(false);
 //Pinia store
 
 const store = useProductStore();
-const { checked , searchValue} = storeToRefs(store);
+const { checked , searchValue, ascending} = storeToRefs(store);
  
 const {
   fetchProducts,

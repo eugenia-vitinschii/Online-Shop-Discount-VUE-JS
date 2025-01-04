@@ -13,6 +13,7 @@ export const useProductStore = defineStore("productId", {
     },
     admin: [],
     checked: [],
+    ascending:true,
     searchValue: [],
     count: 1,
   }),
@@ -20,7 +21,7 @@ export const useProductStore = defineStore("productId", {
     allProducts() {
       return this.filteredItems.length;
     },
-    //filter items by brand
+    //filter items by brand for brand view
     getItemsByBrand: (state) => {
       return (brandName) =>
         Object.values(state.products).filter(
@@ -37,6 +38,11 @@ export const useProductStore = defineStore("productId", {
             .includes(this.searchValue.toUpperCase());
         });
       }
+      //sort by prices
+       if (!this.ascending){
+     return filtered = filtered.sort((a, b) => (a.price > b.price ? 1 : -1));
+       }
+
       // checked input by brands
       if (this.checked == 0) {
         return filtered;
@@ -45,11 +51,14 @@ export const useProductStore = defineStore("productId", {
           (product) => this.checked.indexOf(product.brand) !== -1
         );
       }
+
+         
+     
     },
     //prices in descending order
-    getByDescendingOrder: (state) => {
-      return state.products.sort((a, b) => (a.price > b.price ? 1 : -1));
-    },
+    // getByDescendingOrder: (state) => {
+    //   return state.products.sort((a, b) => (a.price > b.price ? 1 : -1));
+    // },
   },
   actions: {
     // get all products in db.json
