@@ -14,10 +14,12 @@ export const useProductStore = defineStore("productId", {
     admin: [],
     checked: [],
     ascending:true,
+    discount: true,
     searchValue: [],
     count: 1,
   }),
   getters: {
+    // filteredItems.length
     allProducts() {
       return this.filteredItems.length;
     },
@@ -30,7 +32,7 @@ export const useProductStore = defineStore("productId", {
     },
     filteredItems() {
       let filtered = this.products;
-      //search input
+      //search input (by product name)
       if (this.searchValue != "" && this.searchValue) {
         filtered = filtered.filter((item) => {
          return item.productName
@@ -38,11 +40,14 @@ export const useProductStore = defineStore("productId", {
             .includes(this.searchValue.toUpperCase());
         });
       }
-      //sort by prices
+      //sort by price
        if (!this.ascending){
      return filtered = filtered.sort((a, b) => (a.price > b.price ? 1 : -1));
        }
-
+      // sort by dicount
+      if (!this.discount ){
+        return filtered = filtered.sort((a, b) => (a.discount > b.discount ? 1 : -1));
+          }
       // checked input by brands
       if (this.checked == 0) {
         return filtered;
@@ -51,14 +56,7 @@ export const useProductStore = defineStore("productId", {
           (product) => this.checked.indexOf(product.brand) !== -1
         );
       }
-
-         
-     
     },
-    //prices in descending order
-    // getByDescendingOrder: (state) => {
-    //   return state.products.sort((a, b) => (a.price > b.price ? 1 : -1));
-    // },
   },
   actions: {
     // get all products in db.json

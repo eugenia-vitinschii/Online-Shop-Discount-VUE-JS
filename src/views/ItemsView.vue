@@ -1,12 +1,11 @@
 <template>
-<div class="router">
-  <div class="container">
-    <div class="router__wrapper">
-      <the-router/>
+  <div class="router">
+    <div class="container">
+      <div class="router__wrapper">
+        <the-router />
+      </div>
     </div>
-    
   </div>
-</div>
   <div class="brands">
     <div class="container">
       <div class="brands__wrapper">
@@ -23,11 +22,21 @@
     <div class="container">
       <div class="item__content">
         <div class="item__wrapper">
-          <div class="item__filter filters" v-if="store.allProducts < 28">
-             Au fost găsite: {{ store.allProducts }} produse
+          <div class="item__filter filters">
+           <p class="body-text">Au fost găsite: {{ store.allProducts }} produse</p> 
             <div class="filters__button">
               <button class="icon-svg" @click="showFilters = !showFilters">
-               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M440-160q-17 0-28.5-11.5T400-200v-240L168-736q-15-20-4.5-42t36.5-22h560q26 0 36.5 22t-4.5 42L560-440v240q0 17-11.5 28.5T520-160h-80Zm40-308 198-252H282l198 252Zm0 0Z"/></svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="24px"
+                  viewBox="0 -960 960 960"
+                  width="24px"
+                  fill="#e8eaed"
+                >
+                  <path
+                    d="M440-160q-17 0-28.5-11.5T400-200v-240L168-736q-15-20-4.5-42t36.5-22h560q26 0 36.5 22t-4.5 42L560-440v240q0 17-11.5 28.5T520-160h-80Zm40-308 198-252H282l198 252Zm0 0Z"
+                  />
+                </svg>
               </button>
               <div class="filters__button--prices">
                 <button class="icon-svg" @click="ascending = !ascending">
@@ -42,12 +51,32 @@
                   </svg>
                 </button>
               </div>
-              <button class="icon-svg">
-                  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M441-120v-86q-53-12-91.5-46T293-348l74-30q15 48 44.5 73t77.5 25q41 0 69.5-18.5T587-356q0-35-22-55.5T463-458q-86-27-118-64.5T313-614q0-65 42-101t86-41v-84h80v84q50 8 82.5 36.5T651-650l-74 32q-12-32-34-48t-60-16q-44 0-67 19.5T393-614q0 33 30 52t104 40q69 20 104.5 63.5T667-358q0 71-42 108t-104 46v84h-80Z"/></svg>
+              <button class="icon-svg" @click="discount = !discount">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="24px"
+                  viewBox="0 -960 960 960"
+                  width="24px"
+                  fill="#e8eaed"
+                >
+                  <path
+                    d="M441-120v-86q-53-12-91.5-46T293-348l74-30q15 48 44.5 73t77.5 25q41 0 69.5-18.5T587-356q0-35-22-55.5T463-458q-86-27-118-64.5T313-614q0-65 42-101t86-41v-84h80v84q50 8 82.5 36.5T651-650l-74 32q-12-32-34-48t-60-16q-44 0-67 19.5T393-614q0 33 30 52t104 40q69 20 104.5 63.5T667-358q0 71-42 108t-104 46v84h-80Z"
+                  />
+                </svg>
               </button>
-              <input type="text" v-model="searchValue">
+              <input type="text" v-model="searchValue" />
               <button class="icon-svg">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="24px"
+                  viewBox="0 -960 960 960"
+                  width="24px"
+                  fill="#e8eaed"
+                >
+                  <path
+                    d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"
+                  />
+                </svg>
               </button>
             </div>
 
@@ -237,7 +266,7 @@ import { onMounted } from "vue";
 import { storeToRefs } from "pinia";
 import { useProductStore } from "@/stores/product";
 //components
-import TheRouter from "@/sections/TheRouter.vue"
+import TheRouter from "@/sections/TheRouter.vue";
 import TheItem from "@/sections/TheItem.vue";
 import BrandsSection from "@/sections/BrandsSection.vue";
 defineOptions({
@@ -252,8 +281,8 @@ let created = ref(false);
 //Pinia store
 
 const store = useProductStore();
-const { checked , searchValue, ascending} = storeToRefs(store);
- 
+const { checked, searchValue, ascending, discount } = storeToRefs(store);
+
 const {
   fetchProducts,
   addToCart,
@@ -320,7 +349,6 @@ function addProductCard(product) {
 watch(store.filteredItems, () => {
   console.log("smtg changes");
 });
-
 
 onMounted(() => {
   created.value = true;

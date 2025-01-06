@@ -1,5 +1,5 @@
 <template>
-  <!--Product item for items page (all items list) -->
+  <!--Product item wrappper-->
   <div class="item__item">
     <div class="item__top">
       <div class="item__top-logo">
