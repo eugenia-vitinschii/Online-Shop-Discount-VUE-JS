@@ -181,40 +181,27 @@ const postProducts = ref({
 const addPostData = () => {
   createProduct(postProducts.value);
   postProducts.value.id = "";
-  (postProducts.value.size = {
-    height: "",
-    width: "",
-    depth: "",
-    weight: "",
-  }),
-    (postProducts.value.general = {
-      productCode: "",
-      img: "",
-      productName: "",
-      price: "",
-      discount: "",
-      brand: "",
-    }),
-    (postProducts.value.guarantee = {
-      color: "",
-      countryOfAssembly: "",
-      guarantee: "",
-    }),
-    (postProducts.value.washer = {
-      waterConsumption: "",
-      energyEfficiencyClass: "",
-      type: "",
-      spinSpeed: "",
-      loadCapacity: "",
-      noiseLevelCentrifugation: "",
-      noiseLevelWashing: "",
-      typeControl: "",
-      numberOfPrograms: "",
-    });
-     (postProducts.value.refrigerator={
-    data: '',
-    test: ''
-  });
-};
+  postProducts.value.productCode= '';
+  postProducts.value.img= '';
+  postProducts.value.productName= '';
+  postProducts.value.price= '';
+  postProducts.value.discount= '';
+  postProducts.value.brand= '';
+  postProducts.value.waterConsumption= '';
+  postProducts.value.energyEfficiencyClass= '';
+  postProducts.value.type= '';
+  postProducts.value.spinSpeed= '';
+  postProducts.value.loadCapacity= '';
+  postProducts.value.noiseLevelCentrifugation= '';
+  postProducts.value.noiseLevelWashing= '';
+  postProducts.value.typeControl= '';
+  postProducts.value.numberOfPrograms= '';
+  postProducts.value.weightInPackage= '';
+  postProducts.value.depth= '';
+  postProducts.value.weight= '';
+  postProducts.value.color= '';
+  postProducts.value.countryOfAssembly= '';
+  postProducts.value.guarantee= '';
+}
 </script>
 
