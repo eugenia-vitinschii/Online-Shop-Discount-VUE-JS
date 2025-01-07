@@ -90,11 +90,23 @@
                 <option value="verticală">verticală</option>
               </select>
             </div>
-            <the-input
-              :label="'Viteza maximă de centrifugare, rpm'"
-              :placeholder="'1000'"
-              v-model:value.trim="products.spinSpeed"
-            />
+                           <div class="input__wrapper">
+              <label for="spinSpeed"
+                >Viteza maximă de centrifugare, rpm</label
+              >
+              <select
+                name="spinSpeed"
+                id="spinSpeed"
+                v-model="products.spinSpeed"
+              >
+                <option value="1000">1000</option>
+                <option value="1200">1200</option>
+                <option value="1350">1350</option>
+                <option value="1400">1400</option>
+                <option value="1600">1600</option>
+
+              </select>
+            </div>
             <the-input
               :label="'Capacitate de încărcare, kg'"
               :placeholder="'5'"
@@ -140,25 +152,30 @@
               :placeholder="'63'"
               v-model:value.trim="products.weightInPackage"
             />
+             <the-input
+              :label="'Greutate, kg'"
+              :placeholder="'61'"
+              v-model:value.trim="products.weight"
+            />
             <the-input
               :label="'Dimensiuni (ÎxLxA), cm'"
               :placeholder="'85x60x55'"
               v-model:value.trim="products.depth"
             />
-            <the-input
-              :label="'Greutate, kg'"
-              :placeholder="'61'"
-              v-model:value.trim="products.weight"
-            />
+           
             <!-- Informaţii generale -->
             <div class="update__form-item">
               <p lass="heading">Informaţii generale</p>
               <div class="input__wrapper">
                 <label for="color">Culoare</label>
                 <select name="color" id="color" v-model="products.color">
-                  <option value="alb">alb</option>
-                  <option value="sur">sur</option>
-                  <option value="negru">negru</option>
+                                  <option value="alb">alb</option>
+                <option value="alb/argintiu">alb / argintiu</option>
+                <option value="alb/negru">alb /n egru</option>
+                <option value="alb/sur">alb / sur</option>
+                <option value="argintiu">argintiu</option>
+                <option value="sur">sur</option>
+                <option value="negru">negru</option>
                 </select>
               </div>
               <div class="input__wrapper">
@@ -177,11 +194,20 @@
                   <option value="USA">USA</option>
                 </select>
               </div>
-              <the-input
-                :label="'Garanţie, luni'"
-                :placeholder="'36'"
-                v-model:value.trim="products.guarantee"
-              />
+                       <div class="input__wrapper">
+              <label for="guarantee">Garanţie, lunie</label>
+              <select
+                name="guarantee"
+                id="guarantee"
+                v-model="products.guarantee"
+              >
+                <option value="24">24</option>
+                <option value="36">36</option>
+                <option value="60">60</option>
+                <option value="120">120</option>
+                <option value="240">240</option>
+              </select>
+            </div>
             </div>
           </div>
           <the-button class="green-button" @click="updateItem()">

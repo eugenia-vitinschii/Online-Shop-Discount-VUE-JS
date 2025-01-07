@@ -782,7 +782,7 @@
       "waterConsumption": "",
       "energyEfficiencyClass": "A++",
       "type": "verticală",
-      "spinSpeed": "",
+      "spinSpeed": "1350",
       "loadCapacity": "",
       "noiseLevelCentrifugation": "",
       "noiseLevelWashing": "",
@@ -793,7 +793,7 @@
       "weight": "",
       "color": "alb",
       "countryOfAssembly": "Polonia",
-      "guarantee": ""
+      "guarantee": "120"
     }
   ],
   "admin": [

@@ -93,11 +93,23 @@
                 <option value="verticală">verticală</option>
               </select>
             </div>
-            <the-input
-              :label="'Viteza maximă de centrifugare, rpm'"
-              :placeholder="'1000'"
-              v-model:value.trim="postProducts.spinSpeed"
-            />
+                  <div class="input__wrapper">
+              <label for="spinSpeed"
+                >Viteza maximă de centrifugare, rpm</label
+              >
+              <select
+                name="spinSpeed"
+                id="spinSpeed"
+                v-model="postProducts.spinSpeed"
+              >
+                <option value="1000">1000</option>
+                <option value="1200">1200</option>
+                <option value="1350">1350</option>
+                <option value="1400">1400</option>
+                <option value="1600">1600</option>
+
+              </select>
+            </div>
             <the-input
               :label="'Capacitate de încărcare, kg'"
               :placeholder="'5'"
@@ -163,6 +175,10 @@
               <label for="color">Culoare</label>
               <select name="color" id="color" v-model="postProducts.color">
                 <option value="alb">alb</option>
+                <option value="alb/argintiu">alb / argintiu</option>
+                <option value="alb/negru">alb /n egru</option>
+                <option value="alb/sur">alb / sur</option>
+                <option value="argintiu">argintiu</option>
                 <option value="sur">sur</option>
                 <option value="negru">negru</option>
               </select>
@@ -183,11 +199,20 @@
                 <option value="USA">USA</option>
               </select>
             </div>
-            <the-input
-              :label="'Garanţie, luni'"
-              :placeholder="'36'"
-              v-model:value.trim="postProducts.guarantee"
-            />
+          <div class="input__wrapper">
+              <label for="guarantee">Garanţie, lunie</label>
+              <select
+                name="guarantee"
+                id="guarantee"
+                v-model="postProducts.guarantee"
+              >
+                <option value="24">24</option>
+                <option value="36">36</option>
+                <option value="60">60</option>
+                <option value="120">120</option>
+                <option value="240">240</option>
+              </select>
+            </div>
           </div>
 
           <the-button class="green-button" @click.prevent="addPostData()">
