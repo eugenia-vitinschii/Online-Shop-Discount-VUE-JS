@@ -149,14 +149,15 @@
           <td>Greutate în ambalaj, kg</td>
           <td>{{ weightInPackage }}</td>
         </tr>
-        <tr>
-          <td>Adâncime, cm</td>
-          <td>{{ depth }}</td>
-        </tr>
-        <tr>
+                <tr>
           <td>Greutate, kg</td>
           <td>{{ weight }}</td>
         </tr>
+        <tr>
+          <td>Dimensiuni (ÎxLxA), cm</td>
+          <td>{{ depth }}</td>
+        </tr>
+
         <tr>
           <th>Informaţii generale</th>
           <th></th>

@@ -2,7 +2,6 @@
   "products": [
     {
       "id": "5",
-      "productType": "Mășină de splălat rufe",
       "productCode": "31erter44069",
       "img": "https://cdn.27.ua/799/1e/2b/400939_1.jpeg",
       "productName": "și uscător Indesit EWDE 71280 W EU",
@@ -19,9 +18,9 @@
       "typeControl": "electronic",
       "numberOfPrograms": "er",
       "weightInPackage": "34",
-      "depth": "34",
+      "depth": "890x645x590",
       "weight": "34",
-      "color": "blue",
+      "color": "alb/argintiu",
       "countryOfAssembly": "USA",
       "guarantee": "34"
     },
@@ -794,6 +793,30 @@
       "color": "alb",
       "countryOfAssembly": "Polonia",
       "guarantee": "120"
+    },
+    {
+      "id": "BJrvGpr",
+      "productCode": "",
+      "img": "",
+      "productName": "",
+      "price": "",
+      "discount": "",
+      "brand": "Candy",
+      "waterConsumption": "",
+      "energyEfficiencyClass": "F",
+      "type": "verticală",
+      "spinSpeed": "1600",
+      "loadCapacity": "",
+      "noiseLevelCentrifugation": "45",
+      "noiseLevelWashing": "",
+      "typeControl": "mecanic",
+      "numberOfPrograms": "",
+      "weightInPackage": "",
+      "depth": "",
+      "weight": "",
+      "color": "negru",
+      "countryOfAssembly": "USA",
+      "guarantee": "240"
     }
   ],
   "admin": [

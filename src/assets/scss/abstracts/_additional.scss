@@ -5,3 +5,16 @@
 .visible {
    display: block;
 }
+//admin section (add & update product)
+.input__wrapper{
+   
+  select{
+   display: block;
+   width: 100%;
+   margin-top: 10px;
+   height: 25px;
+   border: 1px solid $dark-green;
+   color: $orange;
+	font-size: $body-text-sm;
+  }
+}
