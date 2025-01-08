@@ -10,6 +10,10 @@
         <form action="" class="add__form">
           <!-- Date generale -->
           <div class="add__form-item">
+             <div class="input__wrapper">
+              <label for="stock">Stock {{postProducts.stock}}</label>
+            <input type="checkbox" name="stock" id="stock" v-model="postProducts.stock"  checked>
+            </div>
             <p class="heading">Date generale</p>
             <the-input
               :label="'Introduceți id'"
@@ -264,6 +268,7 @@ const postProducts = ref({
   color: "",
   countryOfAssembly: "",
   guarantee: "",
+  stock: true
 });
 
 const addPostData = () => {
@@ -290,6 +295,7 @@ const addPostData = () => {
   postProducts.value.color = "";
   postProducts.value.countryOfAssembly = "";
   postProducts.value.guarantee = "";
+  postProducts.value.stock= Boolean
 };
 </script>
 

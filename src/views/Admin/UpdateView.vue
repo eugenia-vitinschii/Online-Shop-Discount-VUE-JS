@@ -9,6 +9,10 @@
         <form class="update__form">
           <!-- Date generale -->
           <div class="update__form-item">
+             <div class="input__wrapper">
+              <label for="stock">In Stock</label>
+            <input type="checkbox" name="stock" id="stock" v-model="products.stock"  checked>
+            </div>
             <p class="heading">Date generale</p>
             <the-input
               :label="'Introduceți id'"

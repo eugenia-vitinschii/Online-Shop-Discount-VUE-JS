@@ -136,6 +136,7 @@ export const useProductStore = defineStore("productId", {
           color: this.products.color,
           countryOfAssembly: this.products.countryOfAssembly,
           guarantee: this.products.guarantee,
+          stock: this.products.stock,
         });
 
         // this.router.push({name: "ProductPage"})
