@@ -22,7 +22,8 @@
       "weight": "34",
       "color": "alb/argintiu",
       "countryOfAssembly": "USA",
-      "guarantee": "34"
+      "guarantee": "34",
+      "stock": true
     },
     {
       "id": "H57684X",
@@ -46,7 +47,8 @@
       "weight": "52",
       "color": "Alb",
       "countryOfAssembly": "China",
-      "guarantee": "36"
+      "guarantee": "36",
+      "stock": true
     },
     {
       "id": "cxSQSyh",
@@ -71,7 +73,8 @@
       "weight": "71",
       "color": "alb",
       "countryOfAssembly": "China",
-      "guarantee": "36"
+      "guarantee": "36",
+      "stock": true
     },
     {
       "id": "vr9l8dC",
@@ -96,7 +99,8 @@
       "weight": "66",
       "color": "alb",
       "countryOfAssembly": "China",
-      "guarantee": "24"
+      "guarantee": "24",
+      "stock": true
     },
     {
       "id": "SbB407t",
@@ -121,7 +125,8 @@
       "weight": "65",
       "color": "alb",
       "countryOfAssembly": "Italia",
-      "guarantee": "36"
+      "guarantee": "36",
+      "stock": true
     },
     {
       "id": "wTbwsyb",
@@ -146,7 +151,8 @@
       "weight": "56",
       "color": "alb",
       "countryOfAssembly": "China",
-      "guarantee": "24"
+      "guarantee": "24",
+      "stock": true
     },
     {
       "id": "kA09nGO",
@@ -171,7 +177,8 @@
       "weight": "65",
       "color": "alb",
       "countryOfAssembly": "Polonia",
-      "guarantee": "36"
+      "guarantee": "36",
+      "stock": true
     },
     {
       "id": "lR2epQj",
@@ -196,7 +203,8 @@
       "weight": "58",
       "color": "negru",
       "countryOfAssembly": "Polonia",
-      "guarantee": "36"
+      "guarantee": "36",
+      "stock": true
     },
     {
       "id": "A9Paomr",
@@ -221,7 +229,8 @@
       "weight": "57",
       "color": "Alb /negru",
       "countryOfAssembly": "China",
-      "guarantee": "24"
+      "guarantee": "24",
+      "stock": true
     },
     {
       "id": "pf6IKwp",
@@ -246,7 +255,8 @@
       "weight": "67",
       "color": "alb",
       "countryOfAssembly": "China",
-      "guarantee": "36"
+      "guarantee": "36",
+      "stock": true
     },
     {
       "id": "Nw8c8Gp",
@@ -271,7 +281,8 @@
       "weight": "67",
       "color": "sur",
       "countryOfAssembly": "Polonia",
-      "guarantee": "35"
+      "guarantee": "35",
+      "stock": true
     },
     {
       "id": "7bBAo4P",
@@ -296,7 +307,8 @@
       "weight": "61",
       "color": "alb",
       "countryOfAssembly": "Polonia",
-      "guarantee": "36"
+      "guarantee": "36",
+      "stock": true
     },
     {
       "id": "8N02lkq",
@@ -321,7 +333,8 @@
       "weight": "58",
       "color": "alb",
       "countryOfAssembly": "China",
-      "guarantee": "24"
+      "guarantee": "24",
+      "stock": true
     },
     {
       "id": "Worh10X",
@@ -346,7 +359,8 @@
       "weight": "65",
       "color": "alb",
       "countryOfAssembly": "Polonia",
-      "guarantee": "36"
+      "guarantee": "36",
+      "stock": true
     },
     {
       "id": "hm9y14j",
@@ -371,7 +385,8 @@
       "weight": "65",
       "color": "negru",
       "countryOfAssembly": "Polonia",
-      "guarantee": "36"
+      "guarantee": "36",
+      "stock": true
     },
     {
       "id": "_iHnPJ9",
@@ -396,7 +411,8 @@
       "weight": "65",
       "color": "alb",
       "countryOfAssembly": "Chinina",
-      "guarantee": "36"
+      "guarantee": "36",
+      "stock": true
     },
     {
       "id": "LHzsSBt",
@@ -421,7 +437,8 @@
       "weight": "51",
       "color": "alb",
       "countryOfAssembly": "China",
-      "guarantee": "36"
+      "guarantee": "36",
+      "stock": true
     },
     {
       "id": "fkS2CgP",
@@ -446,7 +463,8 @@
       "weight": "76",
       "color": "alb",
       "countryOfAssembly": "Polonia",
-      "guarantee": "36"
+      "guarantee": "36",
+      "stock": true
     },
     {
       "id": "u3tt5eu",
@@ -471,7 +489,8 @@
       "weight": "61",
       "color": "alb",
       "countryOfAssembly": "Polonia",
-      "guarantee": "36"
+      "guarantee": "36",
+      "stock": true
     },
     {
       "id": "nV8Mh8q",
@@ -496,7 +515,8 @@
       "weight": "60",
       "color": "alb",
       "countryOfAssembly": "Polonia",
-      "guarantee": "26"
+      "guarantee": "26",
+      "stock": true
     },
     {
       "id": "zSv5S2q",
@@ -521,7 +541,8 @@
       "weight": "61",
       "color": "alv",
       "countryOfAssembly": "Polonia",
-      "guarantee": "36"
+      "guarantee": "36",
+      "stock": true
     },
     {
       "id": "O1TPZhG",
@@ -546,7 +567,8 @@
       "weight": "54",
       "color": "alb",
       "countryOfAssembly": "Slovenia ",
-      "guarantee": "12"
+      "guarantee": "12",
+      "stock": true
     },
     {
       "id": "y7lsfXL",
@@ -571,7 +593,8 @@
       "weight": "56",
       "color": "alb",
       "countryOfAssembly": "Slovenia",
-      "guarantee": "36"
+      "guarantee": "36",
+      "stock": true
     },
     {
       "id": "XtzPcoV",
@@ -596,7 +619,8 @@
       "weight": "56",
       "color": "alb",
       "countryOfAssembly": "România",
-      "guarantee": "24"
+      "guarantee": "24",
+      "stock": true
     },
     {
       "id": "_0dZ6ty",
@@ -621,7 +645,8 @@
       "weight": "40",
       "color": "alb",
       "countryOfAssembly": "România",
-      "guarantee": "24"
+      "guarantee": "24",
+      "stock": true
     },
     {
       "id": "bMpByd6",
@@ -646,7 +671,8 @@
       "weight": "62",
       "color": "alb",
       "countryOfAssembly": "Turcia",
-      "guarantee": "36"
+      "guarantee": "36",
+      "stock": true
     },
     {
       "id": "J08CfDW",
@@ -671,7 +697,8 @@
       "weight": "55",
       "color": "alb",
       "countryOfAssembly": "România ",
-      "guarantee": "24"
+      "guarantee": "24",
+      "stock": true
     },
     {
       "id": "GWg3ACA",
@@ -696,7 +723,8 @@
       "weight": "50",
       "color": "alb",
       "countryOfAssembly": "România ",
-      "guarantee": "36"
+      "guarantee": "36",
+      "stock": true
     },
     {
       "id": "pBK1gK_",
@@ -720,7 +748,8 @@
       "weight": "60",
       "color": "alb",
       "countryOfAssembly": "Ucraina",
-      "guarantee": "12"
+      "guarantee": "12",
+      "stock": true
     },
     {
       "id": "SYheMaU",
@@ -744,7 +773,8 @@
       "weight": "70",
       "color": "alb",
       "countryOfAssembly": "Ucraina",
-      "guarantee": "12"
+      "guarantee": "12",
+      "stock": true
     },
     {
       "id": "Bo1tOf5",
@@ -768,55 +798,358 @@
       "weight": "",
       "color": "",
       "countryOfAssembly": "",
-      "guarantee": ""
+      "guarantee": "",
+      "stock": true
     },
     {
-      "id": "DW3MoU-",
-      "productCode": "test",
-      "img": "",
-      "productName": "",
-      "price": "",
-      "discount": "",
-      "brand": "AEG",
-      "waterConsumption": "",
-      "energyEfficiencyClass": "A++",
-      "type": "verticală",
-      "spinSpeed": "1350",
-      "loadCapacity": "",
-      "noiseLevelCentrifugation": "",
-      "noiseLevelWashing": "",
+      "id": "C-LgRTQ",
+      "productCode": "31044804",
+      "img": "https://cdn.27.ua/799/5b/c8/1596360_1.jpeg",
+      "productName": "WUE6511XWW",
+      "price": "11999",
+      "discount": "5",
+      "brand": "Beko",
+      "waterConsumption": "40",
+      "energyEfficiencyClass": "A+++",
+      "type": "cu încărcare frontală",
+      "spinSpeed": "1000",
+      "loadCapacity": "6",
+      "noiseLevelCentrifugation": "75",
+      "noiseLevelWashing": "63",
       "typeControl": "electronic",
-      "numberOfPrograms": "",
-      "weightInPackage": "",
-      "depth": "",
-      "weight": "",
+      "numberOfPrograms": "15",
+      "weightInPackage": "56",
+      "depth": "880x650x465",
+      "weight": "55",
       "color": "alb",
-      "countryOfAssembly": "Polonia",
-      "guarantee": "120"
+      "countryOfAssembly": "Turcia",
+      "guarantee": "36",
+      "stock": true
     },
     {
-      "id": "BJrvGpr",
-      "productCode": "",
-      "img": "",
-      "productName": "",
-      "price": "",
-      "discount": "",
+      "id": "E8PkPBW",
+      "productCode": "31062305",
+      "img": "https://cdn.27.ua/799/f4/12/2946066_1.jpeg",
+      "productName": "Beko WUE8616XBCW",
+      "price": "17599",
+      "discount": "10",
+      "brand": "Beko",
+      "waterConsumption": "48",
+      "energyEfficiencyClass": "A++",
+      "type": "cu încărcare frontală",
+      "spinSpeed": "1400",
+      "loadCapacity": "8",
+      "noiseLevelCentrifugation": "76",
+      "noiseLevelWashing": "55",
+      "typeControl": "electronic",
+      "numberOfPrograms": "15",
+      "weightInPackage": "71",
+      "depth": "880x650x560",
+      "weight": "70",
+      "color": "alb",
+      "countryOfAssembly": "România",
+      "guarantee": "36",
+      "stock": true
+    },
+    {
+      "id": "8OI0GFf",
+      "productCode": "31062572",
+      "img": "https://cdn.27.ua/799/b3/97/7582615_7.jpeg",
+      "productName": "Beko WUE6512IXBW",
+      "price": "13199",
+      "discount": "0",
+      "brand": "Beko",
+      "waterConsumption": "37",
+      "energyEfficiencyClass": "A+++",
+      "type": "cu încărcare frontală",
+      "spinSpeed": "1000",
+      "loadCapacity": "6",
+      "noiseLevelCentrifugation": "75",
+      "noiseLevelWashing": "56",
+      "typeControl": "electronic",
+      "numberOfPrograms": "15",
+      "weightInPackage": "56",
+      "depth": "84.5х60х44",
+      "weight": "55",
+      "color": "alb",
+      "countryOfAssembly": "Turcia",
+      "guarantee": "36",
+      "stock": true
+    },
+    {
+      "id": "EvbJy5h",
+      "productCode": "31062444",
+      "img": "https://cdn.27.ua/799/6f/35/7171893_12.jpeg",
+      "productName": "Beko B5DFT58447W",
+      "price": "23999",
+      "discount": "5",
+      "brand": "Beko",
+      "waterConsumption": "78",
+      "energyEfficiencyClass": "D",
+      "type": "cu încărcare frontală",
+      "spinSpeed": "1400",
+      "loadCapacity": "8",
+      "noiseLevelCentrifugation": "77",
+      "noiseLevelWashing": "64",
+      "typeControl": "senzor",
+      "numberOfPrograms": "15",
+      "weightInPackage": "65",
+      "depth": "84x60x57",
+      "weight": "64",
+      "color": "alb",
+      "countryOfAssembly": "Turcia",
+      "guarantee": "36",
+      "stock": true
+    },
+    {
+      "id": "ZiUpxmQ",
+      "productCode": "31062576",
+      "img": "https://cdn.27.ua/799/29/6f/7612783_1.jpeg",
+      "productName": "Beko B3WFU5822MG",
+      "price": "20999",
+      "discount": "5",
+      "brand": "Beko",
+      "waterConsumption": "55",
+      "energyEfficiencyClass": "A+++",
+      "type": "cu încărcare frontală",
+      "spinSpeed": "1200",
+      "loadCapacity": "8",
+      "noiseLevelCentrifugation": "75",
+      "noiseLevelWashing": "54",
+      "typeControl": "senzor",
+      "numberOfPrograms": "15",
+      "weightInPackage": "63",
+      "depth": "84х60х55",
+      "weight": "62",
+      "color": "sur",
+      "countryOfAssembly": "România",
+      "guarantee": "36",
+      "stock": true
+    },
+    {
+      "id": "28gOHNC",
+      "productCode": "31062359",
+      "img": "https://cdn.27.ua/799/74/43/6779971_1.jpeg",
+      "productName": "Candy CO41265TXE/1-S",
+      "price": "12599",
+      "discount": "5",
+      "brand": "Candy",
+      "waterConsumption": "48",
+      "energyEfficiencyClass": "A+++",
+      "type": "cu încărcare frontală",
+      "spinSpeed": "1200",
+      "loadCapacity": "6",
+      "noiseLevelCentrifugation": "79",
+      "noiseLevelWashing": "58",
+      "typeControl": "mecanic",
+      "numberOfPrograms": "16",
+      "weightInPackage": "61",
+      "depth": "85 х 60 х 40",
+      "weight": "60",
+      "color": "alb",
+      "countryOfAssembly": "China",
+      "guarantee": "12",
+      "stock": true
+    },
+    {
+      "id": "WGQ96yL",
+      "productCode": "31062485",
+      "img": "https://cdn.27.ua/799/a5/4f/7251279_10.jpeg",
+      "productName": "Candy RP4 476BWMR/1-S",
+      "price": "15699",
+      "discount": "10",
+      "brand": "Candy",
+      "waterConsumption": "43.6",
+      "energyEfficiencyClass": "A+++",
+      "type": "cu încărcare frontală",
+      "spinSpeed": "1400",
+      "loadCapacity": "7",
+      "noiseLevelCentrifugation": "77",
+      "noiseLevelWashing": "51",
+      "typeControl": "senzor",
+      "numberOfPrograms": "16",
+      "weightInPackage": "60",
+      "depth": "85 х 60 х 40",
+      "weight": "59",
+      "color": "alb",
+      "countryOfAssembly": "Turcia",
+      "guarantee": "12",
+      "stock": true
+    },
+    {
+      "id": "GxzzIND",
+      "productCode": "31062402",
+      "img": "https://cdn.27.ua/799/7a/f1/7043825_1.jpeg",
+      "productName": "cu uscător Candy CSOW 4855TW4/1-S",
+      "price": "19999",
+      "discount": "10",
+      "brand": "Candy",
+      "waterConsumption": "44",
+      "energyEfficiencyClass": "A",
+      "type": "cu încărcare frontală",
+      "spinSpeed": "1600",
+      "loadCapacity": "8",
+      "noiseLevelCentrifugation": "79",
+      "noiseLevelWashing": "62",
+      "typeControl": "senzor",
+      "numberOfPrograms": "16",
+      "weightInPackage": "65",
+      "depth": "85 х 60 х 53",
+      "weight": "64",
+      "color": "alb",
+      "countryOfAssembly": "China",
+      "guarantee": "12",
+      "stock": true
+    },
+    {
+      "id": "mFcxq6g",
+      "productCode": "31062483",
+      "img": "https://cdn.27.ua/799/bd/33/7191859_4.jpeg",
+      "productName": "Candy CS4 1061DE/1-9",
+      "price": "11699",
+      "discount": "5",
+      "brand": "Candy",
+      "waterConsumption": "40",
+      "energyEfficiencyClass": "A",
+      "type": "cu încărcare frontală",
+      "spinSpeed": "1000",
+      "loadCapacity": "6",
+      "noiseLevelCentrifugation": "77",
+      "noiseLevelWashing": "58",
+      "typeControl": "electronic",
+      "numberOfPrograms": "16",
+      "weightInPackage": "62",
+      "depth": "85 х 60 х 40",
+      "weight": "61",
+      "color": "alb",
+      "countryOfAssembly": "China",
+      "guarantee": "12",
+      "stock": true
+    },
+    {
+      "id": "9nSOiu0",
+      "productCode": "31062681",
+      "img": "https://cdn.27.ua/799/5b/37/8936247_21.jpeg",
+      "productName": "Candy RP4 476BWMRR/1-S",
+      "price": "14999",
+      "discount": "0",
       "brand": "Candy",
       "waterConsumption": "",
-      "energyEfficiencyClass": "F",
-      "type": "verticală",
-      "spinSpeed": "1600",
-      "loadCapacity": "",
-      "noiseLevelCentrifugation": "45",
-      "noiseLevelWashing": "",
+      "energyEfficiencyClass": "A+++",
+      "type": "cu încărcare frontală",
+      "spinSpeed": "1400",
+      "loadCapacity": "7",
+      "noiseLevelCentrifugation": "77",
+      "noiseLevelWashing": "51",
       "typeControl": "mecanic",
-      "numberOfPrograms": "",
-      "weightInPackage": "",
-      "depth": "",
-      "weight": "",
+      "numberOfPrograms": "16",
+      "weightInPackage": "64",
+      "depth": "85 х 60 х 40",
+      "weight": "63",
       "color": "negru",
-      "countryOfAssembly": "USA",
-      "guarantee": "240"
+      "countryOfAssembly": "China",
+      "guarantee": "12",
+      "stock": true
+    },
+    {
+      "id": "bR-LnfX",
+      "productCode": "31062794",
+      "img": "https://cdn.27.ua/799/5b/39/8936249_22.jpeg",
+      "productName": "Candy BR 410B8-S",
+      "price": "18999",
+      "discount": "0",
+      "brand": "Candy",
+      "waterConsumption": "48",
+      "energyEfficiencyClass": "A",
+      "type": "cu încărcare frontală",
+      "spinSpeed": "1600",
+      "loadCapacity": "10",
+      "noiseLevelCentrifugation": "72",
+      "noiseLevelWashing": "54",
+      "typeControl": "senzor",
+      "numberOfPrograms": "16",
+      "weightInPackage": "63",
+      "depth": "85 х 60 х 54,8",
+      "weight": "63",
+      "color": "alb/negru",
+      "countryOfAssembly": "China",
+      "guarantee": "12",
+      "stock": true
+    },
+    {
+      "id": "ivkA0EM",
+      "productCode": "31044882",
+      "img": "https://cdn.27.ua/799/a2/90/2204304_1.jpeg",
+      "productName": "Electrolux EW6S426BUI",
+      "price": "15999",
+      "discount": "5",
+      "brand": "Electrolux",
+      "waterConsumption": "47",
+      "energyEfficiencyClass": "A+++",
+      "type": "cu încărcare frontală",
+      "spinSpeed": "1200",
+      "loadCapacity": "6",
+      "noiseLevelCentrifugation": "77",
+      "noiseLevelWashing": "54",
+      "typeControl": "senzor",
+      "numberOfPrograms": "14",
+      "weightInPackage": "58",
+      "depth": "85x59.5x37.7",
+      "weight": "57",
+      "color": "alb/negru",
+      "countryOfAssembly": "China",
+      "guarantee": "12",
+      "stock": true
+    },
+    {
+      "id": "nTMIccq",
+      "productCode": "31062717",
+      "img": "https://cdn.27.ua/799/2e/ad/8597165_1.jpeg",
+      "productName": "Electrolux EW7F3414U",
+      "price": "31999",
+      "discount": "5",
+      "brand": "Electrolux",
+      "waterConsumption": "50",
+      "energyEfficiencyClass": "A+++",
+      "type": "cu încărcare frontală",
+      "spinSpeed": "1400",
+      "loadCapacity": "10",
+      "noiseLevelCentrifugation": "73",
+      "noiseLevelWashing": "51",
+      "typeControl": "senzor",
+      "numberOfPrograms": "14",
+      "weightInPackage": "82",
+      "depth": "84,7 x 59,7 x 63,6",
+      "weight": "83",
+      "color": "alb/sur",
+      "countryOfAssembly": "Italia",
+      "guarantee": "12",
+      "stock": true
+    },
+    {
+      "id": "rJh8-9d",
+      "productCode": "31062139",
+      "img": "https://cdn.27.ua/799/8b/ed/6458349_1.jpeg",
+      "productName": "Electrolux EW9W161BUC",
+      "price": "61499",
+      "discount": "0",
+      "brand": "Electrolux",
+      "waterConsumption": "77",
+      "energyEfficiencyClass": "A",
+      "type": "cu încărcare frontală",
+      "spinSpeed": "1600",
+      "loadCapacity": "10",
+      "noiseLevelCentrifugation": "",
+      "noiseLevelWashing": "",
+      "typeControl": "senzor",
+      "numberOfPrograms": "",
+      "weightInPackage": "98",
+      "depth": "87x59.7x63.6",
+      "weight": "97",
+      "color": "alb/negru",
+      "countryOfAssembly": "Italia",
+      "guarantee": "12",
+      "stock": true
     }
   ],
   "admin": [

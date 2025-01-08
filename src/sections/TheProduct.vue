@@ -91,88 +91,88 @@
     </div>
     <div class="product__decription">
       <table class="product__decription-table">
-        <tr> 
+        <tr v-if="brand || waterConsumption ||energyEfficiencyClass || type || spinSpeed || loadCapacity "> 
           <th>Informația despre produs</th>
           <th></th>
         </tr>
-        <tr>
+        <tr v-show="brand">
           <td>Brand</td>
           <td class="small-text">{{ brand }}</td>
         </tr>
-        <tr>
+        <tr v-show="waterConsumption">
           <td>Consum de apă în program, l/ciclu</td>
           <td>{{ waterConsumption }}</td>
         </tr>
-        <tr>
+        <tr v-show="energyEfficiencyClass">
           <td>Clasa de eficienţă energetică</td>
           <td>{{ energyEfficiencyClass }}</td>
         </tr>
-        <tr>
+        <tr v-show="type">
           <td>Tip mașină de spălat</td>
           <td>{{ type }}</td>
         </tr>
-        <tr>
+        <tr v-show="spinSpeed">
           <td>Viteza maximă de centrifugare, rpm</td>
           <td>{{ spinSpeed }}</td>
         </tr>
-        <tr>
+        <tr v-show="loadCapacity">
           <td>Capacitate de încărcare, kg</td>
           <td>{{ loadCapacity }}</td>
         </tr>
-        <tr>
+        <tr v-if="noiseLevelCentrifugation ||noiseLevelWashing||typeControl ||numberOfPrograms ">
           <th>Caracteristici</th>
           <th></th>
         </tr>
-        <tr>
+        <tr v-show="noiseLevelCentrifugation">
           <td>Nivel de zgomot pentru centrifugare, dB</td>
           <td>{{ noiseLevelCentrifugation }}</td>
         </tr>
-        <tr>
+        <tr v-show="noiseLevelWashing">
           <td>Diapazonul nivelului de zgomot la spălare, dB</td>
           <td>{{ noiseLevelWashing }}</td>
         </tr>
-        <tr>
+        <tr v-show="typeControl">
           <td>Tip control</td>
           <td>{{ typeControl }}</td>
         </tr>
-        <tr>
+        <tr v-show="numberOfPrograms">
           <td>Numărul de programe</td>
           <td>{{ numberOfPrograms }}</td>
         </tr>        
       </table>
       <table class="product__decription-table">
-        <tr>
+        <tr v-if="weightInPackage ||weight || depth">
           <th>Dimensiuni</th>
           <th></th>
         </tr>
-        <tr>
+        <tr v-show="weightInPackage">
           <td>Greutate în ambalaj, kg</td>
           <td>{{ weightInPackage }}</td>
         </tr>
-                <tr>
+          <tr v-show="weight"> 
           <td>Greutate, kg</td>
           <td>{{ weight }}</td>
         </tr>
-        <tr>
+        <tr v-show="depth">
           <td>Dimensiuni (ÎxLxA), cm</td>
           <td>{{ depth }}</td>
         </tr>
 
-        <tr>
+        <tr v-if="color || countryOfAssembly || guarantee">
           <th>Informaţii generale</th>
           <th></th>
         </tr>
-        <tr>
+        <tr v-show="color">
           <td>Culoare</td>
           <td>{{ color }}</td>
         </tr>
-        <tr>
+        <tr v-show="countryOfAssembly">
           <td>Ţara de asamblare</td>
           <td>{{ countryOfAssembly }}</td>
         </tr>
-        <tr>
+        <tr v-show="guarante">
           <td>Garanţie, luni</td>
-          <td>{{ guarantee }}</td>
+          <td>{{ guarantee}} </td>
         </tr>
       </table>
     </div>

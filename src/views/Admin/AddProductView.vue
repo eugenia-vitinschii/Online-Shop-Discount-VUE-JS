@@ -129,11 +129,6 @@
               :placeholder="'56-60'"
               v-model:value.trim="postProducts.noiseLevelWashing"
             />
-            <the-input
-              :label="'Tip control'"
-              :placeholder="'electronic'"
-              v-model:value.trim="postProducts.typeControl"
-            />
             <div class="input__wrapper">
               <label for="typeControl">Tip control</label>
               <select
@@ -206,6 +201,7 @@
                 id="guarantee"
                 v-model="postProducts.guarantee"
               >
+              <option value="12">12</option>
                 <option value="24">24</option>
                 <option value="36">36</option>
                 <option value="60">60</option>

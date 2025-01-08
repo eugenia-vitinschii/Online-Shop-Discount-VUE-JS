@@ -201,6 +201,7 @@
                 id="guarantee"
                 v-model="products.guarantee"
               >
+              <option value="12">12</option>
                 <option value="24">24</option>
                 <option value="36">36</option>
                 <option value="60">60</option>

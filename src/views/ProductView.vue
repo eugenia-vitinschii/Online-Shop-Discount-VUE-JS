@@ -42,6 +42,7 @@
           :depth="products.depth"
           :weight="products.weight"
           :color="products.color"
+          :guarantee='products.guarantee'
           :countryOfAssembly="products.countryOfAssembly"
           :hidden="showPrices(products)"
           :onePrice="showOnePrice(products)"
