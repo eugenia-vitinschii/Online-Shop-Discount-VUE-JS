@@ -32,6 +32,7 @@
             :price="product.price"
             :discount="product.discount"
             :label="product.label"
+            :stock="product.stock"
             :newPrice="getNewPrice(product.price)(product.discount)"
             :economie="getMoneySaved(product.price)(product.discount)"
             :monthlyPrice="monthlyPrice(product.price)"

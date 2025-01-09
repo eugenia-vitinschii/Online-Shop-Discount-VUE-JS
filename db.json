@@ -22,7 +22,7 @@
       "weight": "34",
       "color": "alb/argintiu",
       "countryOfAssembly": "USA",
-      "guarantee": "34",
+      "guarantee": "24",
       "stock": true
     },
     {
@@ -1150,8 +1150,32 @@
       "countryOfAssembly": "Italia",
       "guarantee": "12",
       "stock": true
+    },
+    {
+      "id": "b_dxPtv",
+      "productCode": "31062235",
+      "img": "https://cdn.27.ua/799/de/b2/777906_26.jpeg",
+      "productName": "Indesit BTW A61053 (EU)",
+      "price": "16599",
+      "discount": "5",
+      "brand": "Indesit",
+      "waterConsumption": "42",
+      "energyEfficiencyClass": "A+++",
+      "type": "verticală",
+      "spinSpeed": "1000",
+      "loadCapacity": "6",
+      "noiseLevelCentrifugation": "78",
+      "noiseLevelWashing": "60",
+      "typeControl": "electronic",
+      "numberOfPrograms": "",
+      "weightInPackage": "54",
+      "depth": "90x40x60",
+      "weight": "53",
+      "color": "alb",
+      "countryOfAssembly": "Slovenia",
+      "guarantee": "12",
+      "stock": false
     }
-
   ],
   "admin": [
     {

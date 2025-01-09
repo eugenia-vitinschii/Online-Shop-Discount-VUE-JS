@@ -44,6 +44,7 @@
           :color="products.color"
           :guarantee='products.guarantee'
           :countryOfAssembly="products.countryOfAssembly"
+          :stock="products.stock"
           :hidden="showPrices(products)"
           :onePrice="showOnePrice(products)"
           :monthlyPrice="monthlyPrice(products.price)"

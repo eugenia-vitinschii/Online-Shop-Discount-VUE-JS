@@ -1,5 +1,5 @@
 <template>
-  <div class="product__item">
+  <div class="product__item" :class="{gray: !stock }">
     <!-- Short info about product -->
         <div class="product__top">
       <div class="product__top-logo">
@@ -8,7 +8,7 @@
           </router-link>
       </div>
       <!-- labels for dicsount products -->
-      <div class="product__top-labels">
+      <div class="product__top-labels" :class="{grayscale: !stock }">
         <div class="product__top-label" :class="{ visible: hugeSaleLabel }">
           <img src="@/assets/img/sale.jpg" alt="oops!" />
         </div>
@@ -16,14 +16,19 @@
           <img src="@/assets/img/discount.jpg" alt="oops!" />
         </div>
       </div>
+      <div class="product__top-stock">
+        <p class="body-text-green" v-if="stock">in stock</p>
+        <p class="body-text-red " v-else>nu este in stock</p>
+        <p class="body-text">cod {{productCode}}</p>
+      </div>
     </div>
     <div class="product__short">
       
       <!-- Img -->
       <div class="product__img">
-        <img :src="img" alt="no img" />
+        <img :src="img" alt="no img" :class="{grayscale: !stock }" />
       </div>
-      <div class="product__prices">
+      <div class="product__prices" >
         <!-- Wrapper for Discount & Credit prices -->
         <div class="product__promo">
           <!-- Discount  Price -->
@@ -59,7 +64,7 @@
         </p>
       </div>
 <div class="product__buttons-action">
-      <button class="button-svg"  @click="$emit('addToCard')">
+      <button class="button-svg"  @click="$emit('addToCard')" :class="{hidden: !stock }">
         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"/></svg>
 
       </button>
@@ -89,8 +94,8 @@
         <the-info/>
       </div>
     </div>
-    <div class="product__decription">
-      <table class="product__decription-table">
+    <div class="product__decription" >
+      <table class="product__decription-table" >
         <tr v-if="brand || waterConsumption ||energyEfficiencyClass || type || spinSpeed || loadCapacity "> 
           <th>Informația despre produs</th>
           <th></th>
@@ -305,6 +310,10 @@ defineProps({
     default: false,
   },
   dicountLabel: {
+    type: Boolean,
+    default: false,
+  },
+  stock: {
     type: Boolean,
     default: false,
   },

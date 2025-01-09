@@ -31,6 +31,13 @@
         height: 100%;
       }
     }
+   &__top-stock{
+       p:last-child{
+         background: $light-gray;
+         padding: 3px 5px;
+         color: $ivory;
+       }
+   }
    &__short {
       display: flex;
       justify-content: space-between;
@@ -115,4 +122,22 @@
  }
  .visible {
    display: block;
+ }
+
+ .grayscale{
+   filter: grayscale(1);
+ }
+
+ .gray{
+	p, td, tr, th{
+		color: $light-gray;
+	}
+	button{
+		color: $light-gray;
+		border-color:  $light-gray;
+	}
+	button svg{
+		fill: $light-gray;
+	}
+	
  }
