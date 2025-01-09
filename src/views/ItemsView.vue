@@ -23,7 +23,7 @@
       <div class="item__content">
         <div class="item__wrapper">
           <div class="item__filter filters">
-           <p class="body-text">Au fost găsite: {{ store.allProducts }} produse</p> 
+           <p class="body-text" v-if="store.allProducts > store.filteredProducts">Au fost găsite: {{store.filteredProducts}} produse</p> 
             <div class="filters__button">
               <button class="icon-svg" @click="showFilters = !showFilters">
                 <svg
@@ -65,7 +65,7 @@
                 </svg>
               </button>
               <input type="text" v-model="searchValue" />
-              <button class="icon-svg">
+              <button class="icon-svg" @click="clean = !clean">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   height="24px"
@@ -346,11 +346,16 @@ function addProductCard(product) {
   });
 }
 
+ 
 //hooks
 watch(store.filteredItems, () => {
   console.log("smtg changes");
 });
-
+ // clean filters
+let clean = ref(true)
+watch(clean, () => {
+  console.log("cleaned")
+});
 onMounted(() => {
   created.value = true;
   fetchProducts();

@@ -1,6 +1,9 @@
 // filters for all items page
 .filters {
    //top section buttons
+   p{
+      color: white;
+   }
    &__button {
       display: none;
    }

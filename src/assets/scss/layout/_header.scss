@@ -1,6 +1,9 @@
 .header {
    background: $orange;
    margin-bottom: $margin-top;
+   &__promo{
+    margin-top: 10px;
+   }
    &__content {
      display: flex;
      flex-direction: row;

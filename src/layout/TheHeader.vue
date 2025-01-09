@@ -2,6 +2,9 @@
   <div class="header">
     <div class="container">
       <div class="header__wrapper">
+        <div class="header__promo">
+          <router-link class="header__link" to="/promo">Promotii pentru perioada de iarna, cumpara produse cu reduceri maxime!</router-link>
+        </div>
         <div class="header__content">
           <div class="header__logo">
             <router-link to="/">
@@ -25,6 +28,10 @@
               <li>
                 <router-link class="header__link" to="/items"
                   >Produse</router-link>
+              </li>
+              <li>
+                <router-link class="header__link" to="/promo"
+                  >Promo</router-link>
               </li>
               <li>
                 <router-link class="header__link" to="/shopping-card">

@@ -15,12 +15,16 @@ export const useProductStore = defineStore("productId", {
     checked: [],
     ascending:true,
     discount: true,
+    reset: true,
     searchValue: [],
     count: 1,
   }),
   getters: {
     // filteredItems.length
     allProducts() {
+      return this.products.length
+    },
+    filteredProducts(){
       return this.filteredItems.length;
     },
     //filter items by brand for brand view
@@ -42,20 +46,21 @@ export const useProductStore = defineStore("productId", {
       }
       //sort by price
        if (!this.ascending){
-     return filtered = filtered.sort((a, b) => (a.price > b.price ? 1 : -1));
+     return filtered.sort((a, b) => (a.price > b.price ? 1 : -1));
        }
       // sort by dicount
       if (!this.discount ){
-        return filtered = filtered.sort((a, b) => (a.discount > b.discount ? 1 : -1));
+        return filtered.sort((a, b) => (a.discount > b.discount ? 1 : -1));
           }
       // checked input by brands
       if (this.checked == 0) {
         return filtered;
       } else {
-        return filtered = filtered.filter(
+        return filtered.filter(
           (product) => this.checked.indexOf(product.brand) !== -1
         );
       }
+     
     },
   },
   actions: {
