@@ -34,6 +34,9 @@ export const useProductStore = defineStore("productId", {
           (item) => item.brand === brandName
         );
     },
+    getPromoItems(){
+      return this.products.length
+    },
     filteredItems() {
       let filtered = this.products;
       //search input (by product name)
