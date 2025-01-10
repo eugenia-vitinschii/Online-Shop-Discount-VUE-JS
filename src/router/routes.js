@@ -68,6 +68,12 @@ const routes = [
       props: true 
    },
    {
+      name: "AddBrandView",
+      path: '/add-brand',
+      component: () => import('../views/Admin/AddBrandView.vue'),
+      props: true 
+   },
+   {
       name: "EditProduct",
       path: '/edit-product',
       component: () => import('../views/Admin/EditView.vue'),

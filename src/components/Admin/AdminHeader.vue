@@ -6,6 +6,7 @@
            <div class="panel__buttons">
              <router-link class="green-button" to="/add-product"> Add Product </router-link>
              <router-link class="green-button" to="/edit-product"> Edit Product </router-link>
+             <router-link class="green-button" to="/add-brand"> Add  brand</router-link>
            </div>
             <div class="panel__user">
              <div class="panel__user-img">

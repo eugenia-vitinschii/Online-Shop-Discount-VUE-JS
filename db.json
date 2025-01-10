@@ -1182,5 +1182,42 @@
       "name": "admin",
       "password": "admin"
     }
+  ],
+  "brands": [
+    {
+      "id": 1,
+      "img": "https://i.simpalsmedia.com/marketplace/richmedia/c033f7023a5210d769e891e15700d282.png",
+      "brand": "AEG"
+    },
+    {
+      "id": 2,
+      "img": "https://i.simpalsmedia.com/marketplace/richmedia/ffd3f153a11c47e3d730a06f3ba15269.png",
+      "brand": "Beko"
+    },
+    {
+      "id": 3,
+      "img": "https://i.simpalsmedia.com/marketplace/richmedia/35f131f4ab9f821329bf97c9c19edd98.png",
+      "brand": "Candy"
+    },
+    {
+      "id": 4,
+      "img": "https://i.simpalsmedia.com/marketplace/richmedia/ff033a3b301125c8872a963f50f67f01.png",
+      "brand": "Electrolux"
+    },
+    {
+      "id": 5,
+      "img": "https://i.simpalsmedia.com/marketplace/richmedia/3eb957d81ad9a465484b33d1bcfe820c.png",
+      "brand": "Indesit"
+    },
+    {
+      "id": 6,
+      "img": "https://i.simpalsmedia.com/thumbor/0x38/i.simpalsmedia.com/marketplace/richmedia/12d11fd23d431655dbe6bb3970bd0e67.png",
+      "brand": "Samsung"
+    },
+    {
+      "id": 7,
+      "img": "https://i.simpalsmedia.com/marketplace/richmedia/b6f43b7563f477cea6352f2dabf7bf44.png",
+      "brand": "Whirlpool"
+    }
   ]
 }

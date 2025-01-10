@@ -43,7 +43,6 @@ defineOptions({
 });
 
 // const
-
 const brands = [
   {
     id: 1,
