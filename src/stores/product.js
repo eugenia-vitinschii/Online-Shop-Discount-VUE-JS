@@ -35,7 +35,12 @@ export const useProductStore = defineStore("productId", {
         );
     },
     getPromoItems(){
-      return this.products.length
+      //get promo items for promo page
+      let promo = this.products;
+        promo = promo.filter((item) => {
+          return item.discount > 0  && item.discount < 60 
+      })
+      return promo
     },
     filteredItems() {
       let filtered = this.products;
