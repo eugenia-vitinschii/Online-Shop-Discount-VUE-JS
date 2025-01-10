@@ -6,18 +6,7 @@
       </div>
     </div>
   </div>
-  <div class="brands">
-    <div class="container">
-      <div class="brands__wrapper">
-        <brands-section
-          v-for="item in brands"
-          :key="item.id"
-          :img="item.img"
-          :brand="item.brand"
-        />
-      </div>
-    </div>
-  </div>
+  <brands-section />
   <div class="item">
     <div class="container">
       <div class="item__content">
@@ -266,10 +255,13 @@ import { onMounted } from "vue";
 //store
 import { storeToRefs } from "pinia";
 import { useProductStore } from "@/stores/product";
+
 //components
 import TheRouter from "@/sections/TheRouter.vue";
 import TheItem from "@/sections/TheItem.vue";
 import BrandsSection from "@/sections/BrandsSection.vue";
+
+// vue component information
 defineOptions({
   name: "ItemsView",
 });
@@ -296,43 +288,7 @@ const {
   showOnePrice,
 } = store;
 
-const brands = [
-  {
-    id: 1,
-    img: require("@/assets/img/brands/aeg.png"),
-    brand: "AEG",
-  },
-  {
-    id: 2,
-    img: require("@/assets/img/brands/beko.jpg"),
-    brand: "Beko",
-  },
-  {
-    id: 3,
-    img: require("@/assets/img/brands/candy.jpg"),
-    brand: "Candy",
-  },
-  {
-    id: 4,
-    img: require("@/assets/img/brands/electrolux.png"),
-    brand: "Electrolux",
-  },
-  {
-    id: 5,
-    img: require("@/assets/img/brands/indesit.png"),
-    brand: "Indesit",
-  },
-  {
-    id: 6,
-    img: require("@/assets/img/brands/samsung.jpg"),
-    brand: "Samsung",
-  },
-  {
-    id: 7,
-    img: require("@/assets/img/brands/whirlpool.png"),
-    brand: "Whirlpool",
-  },
-];
+
 // add product to cart
 function addProductCard(product) {
   addToCart({

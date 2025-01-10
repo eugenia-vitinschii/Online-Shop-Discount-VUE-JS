@@ -1,25 +1,49 @@
 <template>
-  <router-link :to="'/brand/' + brand">
-    <img class="brands__img" :src="img" alt="brand">
-  </router-link>
+<div class="brands">
+  <div class="container">
+    <!-- brand wrapper -->
+    <div class="brands__wrapper" v-if="created">
+      <brand-section-item
+      v-for="brand in store.brands"
+      :key="brand.id"
+      :id="brand.id"
+      :img="brand.img"
+      :brand="brand.brand"
+      />
+    </div>
+  </div>
+</div>
+   
 </template>
 
 <script setup>
-import {defineOptions, defineProps }from "vue";
+//vue
+import {defineOptions, ref, onMounted }  from "vue";
 
+// component information
 defineOptions ({
    name: "BrandsSection"
 })
+//components
+import BrandSectionItem from "./BrandSectionItem.vue"
 
+//component data
+let created = ref(false)
 
-defineProps({
-  brand:{
-    type: String,
-  },
-  img: {
-    type: String,
-  },
-})
+//pinia store
+import {useBrandsStore} from "@/stores/brands"
+
+//pinia const
+const store = useBrandsStore();
+const { fetchBrands} = store;
+//
+
+//hooks
+onMounted(() => {
+  created.value = true;
+  fetchBrands();
+});
+
 </script>
 
  

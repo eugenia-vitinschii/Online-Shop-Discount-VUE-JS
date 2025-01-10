@@ -218,7 +218,7 @@
           <the-button class="green-button" @click.prevent="addPostData()">
             Salvează
           </the-button>
-          <the-button class="red-button" @click="goBack()">Acasă</the-button>
+          <the-button class="red-button" @click="$router.go(-1)">Acasă</the-button>
         </form>
       </div>
     </div>

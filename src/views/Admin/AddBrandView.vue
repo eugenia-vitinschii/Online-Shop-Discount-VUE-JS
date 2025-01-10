@@ -22,13 +22,14 @@
               <the-input
                 :label="'Introduceți denumirea brandului'"
                 :placeholder="'Samsung'"
-                v-model:value.trim="postBrand.name"
+                v-model:value.trim="postBrand.brand"
               />
             </div>
             <the-button class="green-button" @click.prevent="addBrandData()">
               Salvează
             </the-button>
-            <the-button class="red-button" @click="goBack()">Acasă</the-button>
+            
+            <the-button class="red-button" @click="$router.go(-1)">back</the-button>
           </form>
         </div>
       </div>
@@ -57,13 +58,13 @@ defineOptions({
 const postBrand = ref({
   id: "",
   img: "",
-  name: "",
+  brand: "",
 });
 
 const addBrandData = () => {
    createBrand(postBrand.value);
    postBrand.value.id = "",
    postBrand.value.img = "",
-   postBrand.value.name = ""
+   postBrand.value.brand = ""
 };
 </script>

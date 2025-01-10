@@ -1218,6 +1218,11 @@
       "id": 7,
       "img": "https://i.simpalsmedia.com/marketplace/richmedia/b6f43b7563f477cea6352f2dabf7bf44.png",
       "brand": "Whirlpool"
+    },
+    {
+      "id": "test",
+      "img": "",
+      "name": "testing brand"
     }
   ]
 }
