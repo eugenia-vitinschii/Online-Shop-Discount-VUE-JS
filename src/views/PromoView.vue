@@ -14,7 +14,7 @@
   <div class="promo">
     <div class="container">
       <div class="promo__wrapper">
-        <p class="heading">produse la reducere {{store.getPromoItems.length}}</p>
+        <p class="body-text">Produse la reducere: {{store.getPromoItems.length}}</p>
             <div class="item__container" v-if="created">
             <the-item
               v-for="product in store.getPromoItems"

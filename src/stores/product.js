@@ -14,7 +14,7 @@ export const useProductStore = defineStore("productId", {
     admin: [],
     checked: [],
     ascending:true,
-    discount: true,
+    promo: true,
     reset: true,
     searchValue: [],
     count: 1,
@@ -44,6 +44,9 @@ export const useProductStore = defineStore("productId", {
     },
     filteredItems() {
       let filtered = this.products;
+      if (!this.reset){
+        return filtered 
+      }
       //search input (by product name)
       if (this.searchValue != "" && this.searchValue) {
         filtered = filtered.filter((item) => {
@@ -55,10 +58,15 @@ export const useProductStore = defineStore("productId", {
       //sort by price
        if (!this.ascending){
      return filtered.sort((a, b) => (a.price > b.price ? 1 : -1));
+       }  
+       if(this.ascending){
+        return filtered.reverse();
        }
       // sort by dicount
-      if (!this.discount ){
-        return filtered.sort((a, b) => (a.discount > b.discount ? 1 : -1));
+      if (!this.promo ){
+        filtered = filtered.filter((item) => {
+          return item.discount > 0  && item.discount < 60 
+      })
           }
       // checked input by brands
       if (this.checked == 0) {
@@ -68,8 +76,9 @@ export const useProductStore = defineStore("productId", {
           (product) => this.checked.indexOf(product.brand) !== -1
         );
       }
-     
+
     },
+
   },
   actions: {
     // get all products in db.json

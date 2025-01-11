@@ -40,7 +40,7 @@
                   </svg>
                 </button>
               </div>
-              <button class="icon-svg" @click="discount = !discount">
+              <button class="icon-svg" @click="promo= !promo">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   height="24px"
@@ -54,7 +54,7 @@
                 </svg>
               </button>
               <input type="text" v-model="searchValue" />
-              <button class="icon-svg" @click="clean = !clean">
+              <button class="icon-svg" @click="resetFilter()">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   height="24px"
@@ -249,8 +249,9 @@
 
 <script setup>
 //vue
-import { defineOptions, watch, ref } from "vue";
-import { onMounted } from "vue";
+import { defineOptions, watch, ref} from "vue";
+//vue hooks
+import { onMounted, onUnmounted } from "vue";
 
 //store
 import { storeToRefs } from "pinia";
@@ -261,7 +262,7 @@ import TheRouter from "@/sections/TheRouter.vue";
 import TheItem from "@/sections/TheItem.vue";
 import BrandsSection from "@/sections/BrandsSection.vue";
 
-// vue component information
+//vue component information
 defineOptions({
   name: "ItemsView",
 });
@@ -274,8 +275,8 @@ let created = ref(false);
 //Pinia store
 
 const store = useProductStore();
-const { checked, searchValue, ascending, discount } = storeToRefs(store);
-
+const { checked, searchValue, ascending, promo, reset } = storeToRefs(store);
+//pinia getters
 const {
   fetchProducts,
   addToCart,
@@ -301,22 +302,28 @@ function addProductCard(product) {
     brand: product.brand,
   });
 }
-
+//filter
+function resetFilter(){
+  reset.value = !reset.value
+  console.log(reset.value)
+  return reset.value
+}
  
-//hooks
+
 watch(store.filteredItems, () => {
-  console.log("smtg changes");
+  console.log('filtered items');
 });
- // clean filters
-let clean = ref(true)
-watch(clean, () => {
-  console.log("cleaned")
-});
+
+//hooks  
 onMounted(() => {
   created.value = true;
+  console.log('onMounted')
   fetchProducts();
 });
-</script>
 
-<style lang="scss">
-</style>
+onUnmounted(() => {
+  console.log(created.value,reset.value ,"onUnmounted")
+  store.$reset;
+});
+
+</script>
