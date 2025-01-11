@@ -1,0 +1,18 @@
+@keyframes pulse {
+ 
+      0% {
+        box-shadow: 0 0 0 0px  #228b2235;
+      }
+      100% {
+        box-shadow: 0 0 0 2px  #228b2264;
+      }
+}
+//style for free delivery 
+.pulsing{
+   display:  block;
+   width: 3px;
+   height: 3px;
+   border-radius: 50%;
+   background: $dark-green;
+   animation: pulse 2s infinite;
+ }

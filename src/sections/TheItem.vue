@@ -51,9 +51,14 @@
     <!-- Add to card & Favorite -->
     <div class="item__buttons">
       <div class="item__buttons-credit">
+        <div class="item__buttons-delivery" v-if="price > 16000">
+          <span class="pulsing"></span>
+           <p class="body-text-green">Livrare gratuită</p>
+        </div>
         <p class="body-text">
           De la <span class="bold">{{ monthlyPrice }} lei </span> /lunar
         </p>
+        
       </div>
       <div class="item__buttons-action">
       <button 
