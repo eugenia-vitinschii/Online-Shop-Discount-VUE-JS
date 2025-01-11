@@ -1,17 +1,19 @@
 <template>
   <div class="cart__item">
     <div class="cart__img">
-      <img :src="img" alt="error" />
+       <router-link :to="'/product/' + id">
+          <img :src="img" alt="no img" />
+      </router-link>
     </div>
     <div class="cart__description">
       <div class="cart__info">
-        <p class="body-text bold">Mașină de spălat{{ productName }}</p>
+        <p class="body-text bold">{{ productName }}</p>
         <p class="body-text">Producător: {{ brand }}</p>
       </div>
     </div>
     <div class="cart__prices">
       <p class="body-text">Preț: {{ price }} lei</p>
-      <div class="cart__prices-discount" v-show="discount > 0">
+      <div class="cart__prices-discount" v-if="!saveMoney == 0">
         <p class="body-text">Reducere {{ discount }}%</p>
         <p class="body-text-red">- {{ saveMoney }} lei /</p>
         <p class="body-text bold">Pret Nou: {{ newPrice }}</p>
@@ -30,6 +32,9 @@ defineOptions({
 });
 
 defineProps({
+  id:{
+    type: String,
+  },
   img: {
     type: String,
   },

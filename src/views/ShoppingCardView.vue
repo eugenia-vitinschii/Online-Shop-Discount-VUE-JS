@@ -19,15 +19,16 @@
           <shopping-item
             v-for="item in user.cart"
             :key="item.id"
+            :id="item.id"
             :img="item.img"
             :productName="item.productName"
             :brand="item.brand"
             :discount="item.discount"
             :price="item.price"
-
-            :newPrice="getNewPrice(item)"
-            :economie="getMoneySaved(item)"
+          :newPrice="getNewPrice(item.price)(item.discount)"
+          :saveMoney="getMoneySaved(item.price)(item.discount)"
           />
+          <p class="body-text">Total: </p>
         </div>
       </div>
     </div>
@@ -38,29 +39,26 @@
 //compoents
 import ShoppingItem from "@/components/ShoppingItem.vue";
 
+//vue
 import { defineOptions } from "vue";
  
 // store
 import { useProductStore } from "@/stores/product";
 import { storeToRefs } from "pinia";
 
+//component information
 defineOptions({
   name: "ShoppingCardView",
 });
+
+//pinia
 const store = useProductStore();
 
 const { user } = storeToRefs(store);
 
-function getNewPrice(item) {
-  let eco = Math.floor(item.price - (item.price * item.discount) / 100);
-  let saved = item.price - eco;
-  return saved;
-}
+const {getMoneySaved, getNewPrice} = store;
 
-function getMoneySaved(item) {
-  let eco = Math.floor(item.price - (item.price * item.discount) / 100);
-  return eco;
-}
+
 
 </script>
  
