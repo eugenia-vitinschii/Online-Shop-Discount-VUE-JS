@@ -2,6 +2,7 @@ import { defineStore } from "pinia";
 import axios from "axios";
 import router from "@/router/routes";
 
+
 const baseUrl = "http://localhost:3000";
 
 export const useProductStore = defineStore("productId", {
@@ -13,18 +14,17 @@ export const useProductStore = defineStore("productId", {
     },
     admin: [],
     checked: [],
-    ascending:true,
+    ascending: true,
     promo: true,
-    reset: true,
     searchValue: [],
     count: 1,
   }),
   getters: {
     // filteredItems.length
     allProducts() {
-      return this.products.length
+      return this.products.length;
     },
-    filteredProducts(){
+    filteredProducts() {
       return this.filteredItems.length;
     },
     //filter items by brand for brand view
@@ -34,40 +34,34 @@ export const useProductStore = defineStore("productId", {
           (item) => item.brand === brandName
         );
     },
-    getPromoItems(){
+    getPromoItems() {
       //get promo items for promo page
       let promo = this.products;
-        promo = promo.filter((item) => {
-          return item.discount > 0  && item.discount < 60 
-      })
-      return promo
+      promo = promo.filter((item) => {
+        return item.discount > 0 && item.discount < 60;
+      });
+      return promo;
     },
     filteredItems() {
       let filtered = this.products;
-      if (!this.reset){
-        return filtered 
-      }
       //search input (by product name)
       if (this.searchValue != "" && this.searchValue) {
         filtered = filtered.filter((item) => {
-         return item.productName
+          return item.productName
             .toUpperCase()
             .includes(this.searchValue.toUpperCase());
         });
       }
       //sort by price
-       if (!this.ascending){
-     return filtered.sort((a, b) => (a.price > b.price ? 1 : -1));
-       }  
-       if(this.ascending){
-        return filtered.reverse();
-       }
-      // sort by dicount
-      if (!this.promo ){
+      if (!this.ascending) {
+        return filtered.sort((a, b) => (a.price > b.price ? 1 : -1));
+      } 
+      // sort by dicount 
+      if (!this.promo) {
         filtered = filtered.filter((item) => {
-          return item.discount > 0  && item.discount < 60 
-      })
-          }
+          return item.discount > 0 && item.discount < 60;
+        });
+      }
       // checked input by brands
       if (this.checked == 0) {
         return filtered;
@@ -78,7 +72,6 @@ export const useProductStore = defineStore("productId", {
       }
 
     },
-
   },
   actions: {
     // get all products in db.json
@@ -184,7 +177,7 @@ export const useProductStore = defineStore("productId", {
     },
     // get new price after apply discount
     getNewPrice(price) {
-      return (discount) => Math.floor(price - (price * discount) / 100);
+      return (discount) => Math.floor(+price - (price * discount) / 100);
     },
     monthlyPrice(price) {
       let totalPrice = Math.round(+price + (price * 40) / 100);

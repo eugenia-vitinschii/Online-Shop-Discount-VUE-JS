@@ -13,9 +13,9 @@
     </div>
     <div class="cart__prices">
       <p class="body-text">Preț: {{ price }} lei</p>
-      <div class="cart__prices-discount" v-if="!saveMoney == 0">
+        <div class="cart__prices-discount" v-if="!saveMoney == 0">
         <p class="body-text">Reducere {{ discount }}%</p>
-        <p class="body-text-red">- {{ saveMoney }} lei /</p>
+        <p class="body-text-red">- {{ saveMoney }} lei </p>
         <p class="body-text bold">Pret Nou: {{ newPrice }}</p>
       </div>
     </div>

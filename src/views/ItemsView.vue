@@ -54,7 +54,7 @@
                 </svg>
               </button>
               <input type="text" v-model="searchValue" />
-              <button class="icon-svg" @click="resetFilter()">
+              <!-- <button class="icon-svg" @click="resetFilter()">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   height="24px"
@@ -66,7 +66,7 @@
                     d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"
                   />
                 </svg>
-              </button>
+              </button> -->
             </div>
 
             <div v-if="showFilters" class="filters__wrapper">
@@ -249,9 +249,9 @@
 
 <script setup>
 //vue
-import { defineOptions, watch, ref} from "vue";
+import { defineOptions, ref} from "vue";
 //vue hooks
-import { onMounted, onUnmounted } from "vue";
+import { onMounted } from "vue";
 
 //store
 import { storeToRefs } from "pinia";
@@ -275,7 +275,7 @@ let created = ref(false);
 //Pinia store
 
 const store = useProductStore();
-const { checked, searchValue, ascending, promo, reset } = storeToRefs(store);
+const { checked, searchValue, ascending, promo } = storeToRefs(store);
 //pinia getters
 const {
   fetchProducts,
@@ -302,17 +302,14 @@ function addProductCard(product) {
     brand: product.brand,
   });
 }
-//filter
-function resetFilter(){
-  reset.value = !reset.value
-  console.log(reset.value)
-  return reset.value
-}
+// //filter
+// function resetFilter(){
+//   reset.value = !reset.value
+//   console.log(reset.value)
+//   return reset.value
+// }
  
 
-watch(store.filteredItems, () => {
-  console.log('filtered items');
-});
 
 //hooks  
 onMounted(() => {
@@ -321,9 +318,6 @@ onMounted(() => {
   fetchProducts();
 });
 
-onUnmounted(() => {
-  console.log(created.value,reset.value ,"onUnmounted")
-  store.$reset;
-});
+
 
 </script>
