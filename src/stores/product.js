@@ -117,7 +117,17 @@ export const useProductStore = defineStore("productId", {
       }
       localStorage.setItem("cart", JSON.stringify(item));
     },
-
+   //add  product to favorite
+   addToFavorite(item) {
+    this.count = this.user.favorite.findIndex((product) => product.id == item.id);
+    if (this.count !== -1) {
+      this.products[this.count].quantity += 1;
+    } else {
+      item.quantity = 1;
+      this.user.favorite.push(item);
+    }
+    localStorage.setItem("cart", JSON.stringify(item));
+  },
     incrementQuantity(id) {
       this.user.cart.forEach((item) => {
         if (item.id === id) {
