@@ -25,6 +25,7 @@
               :dicountLabel="dicountLabel(product.discount)"
               :hugeSaleLabel="hugeSaleLabel(product.discount)"
               @addToCard="addProductCard(product)"
+              @addToFavorite="addProductToFavorite(product)"
             />
             <div class="spaces"></div>
             <div class="spaces"></div>
@@ -59,4 +60,45 @@ import { storeToRefs } from "pinia";
 //pinia
 const store = useProductStore();
 const { user } = storeToRefs(store);
+
+const {
+  addToCart,
+  addToFavorite,
+  getMoneySaved,
+  getNewPrice,
+  monthlyPrice,
+  dicountLabel,
+  hugeSaleLabel,
+  showPrices,
+  showOnePrice,
+} = store;
+
+// add product to cart
+function addProductCard(product) {
+  addToCart({
+    id: product.id,
+    productCode: product.productCode,
+    productName: product.productName,
+    price: product.price,
+    discount: product.discount,
+    img: product.img,
+    brand: product.brand,
+  });
+}
+
+//add to favorite
+function addProductToFavorite(product) {
+  addToFavorite({
+    id: product.id,
+    productCode: product.productCode,
+    productName: product.productName,
+    price: product.price,
+    discount: product.discount,
+    img: product.img,
+    brand: product.brand,
+    label: product.label,   
+    stock: product.stock,       
+  });
+}
+
 </script>

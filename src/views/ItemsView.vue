@@ -235,6 +235,7 @@
               :dicountLabel="dicountLabel(product.discount)"
               :hugeSaleLabel="hugeSaleLabel(product.discount)"
               @addToCard="addProductCard(product)"
+              @addToFavorite="addProductToFavorite(product)"
             />
             <div class="spaces"></div>
             <div class="spaces"></div>
@@ -280,6 +281,7 @@ const { checked, searchValue, ascending, promo } = storeToRefs(store);
 const {
   fetchProducts,
   addToCart,
+  addToFavorite,
   getMoneySaved,
   getNewPrice,
   monthlyPrice,
@@ -302,6 +304,22 @@ function addProductCard(product) {
     brand: product.brand,
   });
 }
+
+//add to favorite
+function addProductToFavorite(product) {
+  addToFavorite({
+    id: product.id,
+    productCode: product.productCode,
+    productName: product.productName,
+    price: product.price,
+    discount: product.discount,
+    img: product.img,
+    brand: product.brand,
+    label: product.label,   
+    stock: product.stock,       
+  });
+}
+
 // //filter
 // function resetFilter(){
 //   reset.value = !reset.value
