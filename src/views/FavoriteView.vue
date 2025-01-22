@@ -26,6 +26,7 @@
               :hugeSaleLabel="hugeSaleLabel(product.discount)"
               @addToCard="addProductCard(product)"
               @addToFavorite="removeFromFavorite(product.id)"
+              class="favorite"
             />
             <div class="spaces"></div>
             <div class="spaces"></div>

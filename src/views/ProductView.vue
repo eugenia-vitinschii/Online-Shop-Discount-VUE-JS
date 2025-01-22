@@ -53,6 +53,7 @@
           :dicountLabel="dicountLabel(products.discount)"
           :hugeSaleLabel="hugeSaleLabel(products.discount)"
            @addToCard="addProductCard(products)"
+           @addToFavorite="addProductToFavorite(products)"
         />
       </div>
     </div>
@@ -82,7 +83,7 @@ const store = useProductStore();
 const route = useRoute();
 const id = route.params.id
 const { products } = storeToRefs(store);
-const { getProducts, getMoneySaved, getNewPrice, monthlyPrice , addToCart,dicountLabel ,hugeSaleLabel} = store;
+const { getProducts, getMoneySaved, getNewPrice, monthlyPrice , addToCart,dicountLabel ,hugeSaleLabel,   addToFavorite,} = store;
 
 
 //functions
@@ -106,6 +107,21 @@ function addProductCard(products) {
     discount: products.discount,
     img: products.img,
     brand: products.brand,
+  });
+}
+
+//add to favorite
+function addProductToFavorite(product) {
+  addToFavorite({
+    id: product.id,
+    productCode: product.productCode,
+    productName: product.productName,
+    price: product.price,
+    discount: product.discount,
+    img: product.img,
+    brand: product.brand,
+    label: product.label,   
+    stock: product.stock,       
   });
 }
 //hooks

@@ -60,10 +60,11 @@
         </p>
       </div>
       <div class="item__buttons-action">
+        <!-- add item to cart -->
         <button
           class="button-svg"
           @click="$emit('addToCard')"
-          :class="{ hidden: !stock }"
+          
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -77,8 +78,10 @@
             />
           </svg>
         </button>
+        <!-- add item to favorite -->
         <button
-          class="heart button-svg"
+          class="button-svg"
+          :class="$attrs.class"
           @click="$emit('addToFavorite', 'selected   = ! selected  ')"
         >
           <svg
