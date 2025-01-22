@@ -3,8 +3,8 @@
   <div class="favorite">
     <div class="container">
       <div class="favorite__wrapper">
-        <p class="heading">FAVORITE PAGE {{user.favorite.length}}  </p>
-                  <div class="item__container" >
+        <p class="heading">Favorite ({{user.favorite.length}})   </p>
+        <div class="item__container" >
             <the-item
               v-for="product in  user.favorite"
               :key="product.id"
@@ -25,7 +25,7 @@
               :dicountLabel="dicountLabel(product.discount)"
               :hugeSaleLabel="hugeSaleLabel(product.discount)"
               @addToCard="addProductCard(product)"
-              @addToFavorite="addProductToFavorite(product)"
+              @addToFavorite="removeFromFavorite(product.id)"
             />
             <div class="spaces"></div>
             <div class="spaces"></div>
@@ -63,7 +63,7 @@ const { user } = storeToRefs(store);
 
 const {
   addToCart,
-  addToFavorite,
+  removeItemFromFavorite,
   getMoneySaved,
   getNewPrice,
   monthlyPrice,
@@ -86,19 +86,9 @@ function addProductCard(product) {
   });
 }
 
-//add to favorite
-function addProductToFavorite(product) {
-  addToFavorite({
-    id: product.id,
-    productCode: product.productCode,
-    productName: product.productName,
-    price: product.price,
-    discount: product.discount,
-    img: product.img,
-    brand: product.brand,
-    label: product.label,   
-    stock: product.stock,       
-  });
+// remove product from cart
+function removeFromFavorite(product) {
+  removeItemFromFavorite(product)
 }
 
 </script>

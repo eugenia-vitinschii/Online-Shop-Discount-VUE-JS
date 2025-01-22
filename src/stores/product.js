@@ -126,7 +126,11 @@ export const useProductStore = defineStore("productId", {
       item.quantity = 1;
       this.user.favorite.push(item);
     }
-    localStorage.setItem("cart", JSON.stringify(item));
+    localStorage.setItem("favorite", JSON.stringify(item));
+  },
+  //remove item from cart
+  removeItemFromFavorite(id){
+    this.user.favorite = this.user.favorite.filter((item) => item.id !== id)
   },
     incrementQuantity(id) {
       this.user.cart.forEach((item) => {
