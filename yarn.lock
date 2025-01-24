@@ -6108,7 +6108,7 @@ vue-template-es2015-compiler@^1.9.0:
   resolved "https://registry.npmjs.org/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz"
   integrity sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
 
-vue@*, "vue@^2 || ^3.2.13", "vue@^2.6.14 || ^3.3.0", "vue@^3.0.0-0 || ^2.6.0", vue@^3.2.0, vue@^3.2.13, vue@3.4.22:
+vue@*, "vue@^2 || ^3.2.13", "vue@^2.6.14 || ^3.3.0", "vue@^3.0.0-0 || ^2.6.0", vue@^3.2, vue@^3.2.0, vue@^3.2.13, vue@3.4.22:
   version "3.4.22"
   resolved "https://registry.npmjs.org/vue/-/vue-3.4.22.tgz"
   integrity sha512-CIx7NiP+n5WHBCG/fDNaUPP4qbQ5CIa8XIHZE3HpfS/rb2vmSIsp74BxsZyrrGKF0vHW3GoToqP3l0hzrMTecw==
@@ -6118,6 +6118,11 @@ vue@*, "vue@^2 || ^3.2.13", "vue@^2.6.14 || ^3.3.0", "vue@^3.0.0-0 || ^2.6.0", v
     "@vue/runtime-dom" "3.4.22"
     "@vue/server-renderer" "3.4.22"
     "@vue/shared" "3.4.22"
+
+vue3-marquee@^4.2.2:
+  version "4.2.2"
+  resolved "https://registry.npmjs.org/vue3-marquee/-/vue3-marquee-4.2.2.tgz"
+  integrity sha512-FeFvGUVInKfFilXFcnl8sDRBJBZCZSNLlQDquJErB9db6W2xICRVqbRV/jtdzsEP0rftarLQhx9MeEAU0+TPuQ==
 
 watchpack@^2.4.0, watchpack@^2.4.1:
   version "2.4.1"

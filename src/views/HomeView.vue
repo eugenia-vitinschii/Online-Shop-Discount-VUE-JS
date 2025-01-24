@@ -6,9 +6,20 @@
     </div>
   </div>
 </div>
+<div class="i">
+  <div class="container">
+    <div class="1__wrapper">
+      <p class="heading">TOP Items</p>
+        <the-top-products-slider/>
+    </div>
+  
+  </div>
+</div>
+
+
 <!-- brand section -->
  <brands-section/>
- 
+ <!-- devilery section -->
 <div class="delivery">
     <div class="container">
       <div class="delivery__wrapper">
@@ -34,6 +45,7 @@ import { defineOptions } from "vue";
 import DeliveryItem from "@/components/DeliveryItem.vue"
 import TheSlider  from "@/sections/TheSlider.vue";
 import BrandsSection from "@/sections/BrandsSection.vue"
+import TheTopProductsSlider   from "@/sections/TheTopProductsSlider.vue";
 
 defineOptions({
   name: "HomeView",

@@ -14,7 +14,8 @@
     "pinia": "^2.1.7",
     "swiper": "^11.1.14",
     "vue": "^3.2.13",
-    "vue-router": "^4.3.0"
+    "vue-router": "^4.3.0",
+    "vue3-marquee": "^4.2.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
