@@ -1,4 +1,5 @@
 <template>
+
 <!-- favorite page -->
   <div class="favorite">
     <div class="container">
@@ -36,6 +37,8 @@
       </div>
     </div>
   </div>
+  <!-- top products -->
+  <the-top-products-slider/>
 </template>
  
 
@@ -53,7 +56,7 @@ defineOptions({
 
 //compoents
 import TheItem from "@/sections/TheItem.vue";
-
+import TheTopProductsSlider   from "@/sections/TheTopProductsSlider.vue";
 // store
 import { useProductStore } from "@/stores/product";
 import { storeToRefs } from "pinia";

@@ -1,7 +1,16 @@
 <template>
   <swiper
+  
     :pagination="{
       type: 'fraction',
+       clickable: true,
+    }"
+       :autoplay="{
+      delay: 3500,
+      disableOnInteraction: false,
+    }"
+      :keyboard="{
+      enabled: true,
     }"
     :navigation="true"
     :modules="modules"
@@ -27,6 +36,7 @@
         <img src="@/assets/img/swiper-home4.jpg" alt="#" />
       </router-link>
     </swiper-slide>
+
   </swiper>
 </template>
 
@@ -43,7 +53,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 // import required modules
-import { Pagination, Navigation } from "swiper/modules";
+import { Autoplay,Pagination, Navigation ,Keyboard,} from "swiper/modules";
 
 export default {
   components: {
@@ -52,7 +62,7 @@ export default {
   },
   setup() {
     return {
-      modules: [Pagination, Navigation],
+      modules: [Autoplay,Pagination, Navigation, Keyboard,],
     };
   },
 };

@@ -6,20 +6,6 @@
     </div>
   </div>
 </div>
-<div class="i">
-  <div class="container">
-    <div class="1__wrapper">
-      <p class="heading">TOP Items</p>
-        <the-top-products-slider/>
-    </div>
-  
-  </div>
-</div>
-
-
-<!-- brand section -->
- <brands-section/>
- <!-- devilery section -->
 <div class="delivery">
     <div class="container">
       <div class="delivery__wrapper">
@@ -34,6 +20,12 @@
       </div>
     </div>
   </div>
+<!-- top products -->
+  <the-top-products-slider/>
+<!-- brand section -->
+ <brands-section/>
+ <!-- devilery section -->
+
 </template>
 
 

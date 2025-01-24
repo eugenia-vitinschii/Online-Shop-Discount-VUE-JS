@@ -1,41 +1,58 @@
 <template>
-  <swiper
-    :loop="true"
-    :slidesPerView="4"
-    :pagination="{
-      clickable: true,
-    }"
-    :modules="modules"
-    :autoplay="{
-      delay: 2500,
-      disableOnInteraction: false,
-    }"
-    :navigation="true"
-    class="mySwiper"
-  >
-    <swiper-slide v-for="product in getItemsByBrand('Beko')" :key="product.id">
-      <the-item
-        :id="product.id"
-        :brand="product.brand"
-        :img="product.img"
-        :productName="product.productName"
-        :productType="product.productType"
-        :price="product.price"
-        :discount="product.discount"
-        :label="product.label"
-        :stock="product.stock"
-        :newPrice="getNewPrice(product.price)(product.discount)"
-        :economie="getMoneySaved(product.price)(product.discount)"
-        :monthlyPrice="monthlyPrice(product.price)"
-        :hidden="showPrices(product.discount)"
-        :oldPrice="showOnePrice(product.discount)"
-        :dicountLabel="dicountLabel(product.discount)"
-        :hugeSaleLabel="hugeSaleLabel(product.discount)"
-        @addToCard="addProductCard(product)"
-        @addToFavorite="addProductToFavorite(product)"
-      />
-    </swiper-slide>
-  </swiper>
+  <div class="i">
+    <div class="container">
+      <div class="i__wrapper">
+        <div class="i__title">
+          <p class="heading">Produse Top</p>
+        </div>
+        <swiper
+          :slidesPerView="4"
+          :spaceBetween="30"
+          :pagination="{
+            clickable: false,
+          }"
+          :navigation="true"
+          :autoplay="{
+            delay: 2500,
+            disableOnInteraction: false,
+          }"
+          :keyboard="{
+            enabled: true,
+            onlyInViewport: true,
+          }"
+          :modules="modules"
+          class="i__swiper"
+        >
+          <swiper-slide
+          data-swiper-autoplay="2000"
+            v-for="product in getItemsByBrand('Beko')"
+            :key="product.id"
+          >
+            <the-item
+              :id="product.id"
+              :brand="product.brand"
+              :img="product.img"
+              :productName="product.productName"
+              :productType="product.productType"
+              :price="product.price"
+              :discount="product.discount"
+              :label="product.label"
+              :stock="product.stock"
+              :newPrice="getNewPrice(product.price)(product.discount)"
+              :economie="getMoneySaved(product.price)(product.discount)"
+              :monthlyPrice="monthlyPrice(product.price)"
+              :hidden="showPrices(product.discount)"
+              :oldPrice="showOnePrice(product.discount)"
+              :dicountLabel="dicountLabel(product.discount)"
+              :hugeSaleLabel="hugeSaleLabel(product.discount)"
+              @addToCard="addProductCard(product)"
+              @addToFavorite="addProductToFavorite(product)"
+            />
+          </swiper-slide>
+        </swiper>
+      </div>
+    </div>
+  </div>
 </template>
 
  
@@ -105,12 +122,18 @@ onMounted(() => {
 import { Swiper, SwiperSlide } from "swiper/vue";
 
 // Import Swiper styles
-import "swiper/css";
-import 'swiper/css/pagination';
-import "swiper/css/pagination";
-
+import "swiper/scss";
+import "swiper/scss/pagination";
+import "swiper/scss/navigation";
+import "swiper/scss/keyboard";
 // import required modules
-import { Autoplay, Pagination, Navigation  } from "swiper/modules";
+import {
+  Autoplay,
+  Pagination,
+  Navigation,
+  Scrollbar,
+  Keyboard,
+} from "swiper/modules";
 
 export default {
   components: {
@@ -119,20 +142,12 @@ export default {
   },
   setup() {
     return {
-      modules: [Autoplay, Pagination, Navigation],
+      modules: [Autoplay, Pagination, Navigation, Scrollbar, Keyboard],
     };
   },
 };
 </script>
 
-
-<style lang="scss" scoped>
-.ii {
-  width: 200px;
-  height: 400px;
-  border: 1px solid black;
-}
-</style>
  
  
  

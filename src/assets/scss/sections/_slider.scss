@@ -1,11 +1,11 @@
-.swiper {
- 
+.swiper{
+
    background: $orange;
    
    &__wrapper {
  padding: $margin-top 0px;
    }
-}
+
 
 .swiper-slide {
    width: 100%;
@@ -28,4 +28,27 @@
 
 .swiper-pagination-fraction{
    --swiper-pagination-fraction-color: white;
+}
+
+}
+
+
+
+.i{
+   &__wrapper{
+   }
+   &__swiper{
+   border: 1px solid red;
+}
+
+.swiper-button-next,
+.swiper-button-prev, 
+.swiper-container-rtl .swiper-button-prev,
+.swiper-container-rtl .swiper-button-next{
+   --swiper-theme-color: #0b0404;
+}
+
+.swiper-pagination-fraction{
+   --swiper-pagination-fraction-color: red;
+}
 }
