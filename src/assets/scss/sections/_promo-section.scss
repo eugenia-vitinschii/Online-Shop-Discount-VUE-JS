@@ -1,0 +1,15 @@
+.bustle{
+   &__wrapper{
+      height: 500px;
+   }
+   &__content{
+      display: flex;
+      justify-content: space-around;
+   }
+   &__text{
+      p{
+         color: $white;
+      }
+   }
+   &__time{}
+}

@@ -9,8 +9,11 @@
             </div>
           </div>
         </div>
+ <!-- promo section -->
+ <promo-section/>        
 <!-- brand section -->
  <brands-section/>
+ <!-- promo items -->
   <div class="promo">
     <div class="container">
       <div class="promo__wrapper">
@@ -53,6 +56,7 @@ import { defineOptions, ref, onMounted } from "vue"
 
 //components
 import TheRouter from "@/sections/TheRouter.vue";
+import PromoSection from "@/sections/PromoSection.vue"
 import BrandsSection from "@/sections/BrandsSection.vue";
 import TheItem from "@/sections/TheItem.vue";
 //component 
