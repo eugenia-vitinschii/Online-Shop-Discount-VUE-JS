@@ -1,68 +1,77 @@
 .header {
-   background: $orange;
-   margin-bottom: $margin-top;
-   &__promo{
+  background: $orange;
+  margin-bottom: $margin-top;
+  &__promo {
     margin-top: 10px;
-   }
-   &__content {
-     display: flex;
-     flex-direction: row;
-     justify-content: space-between;
-     align-items: center;
-   }
-   &__logo {
-     width: 150px;
-     img {
-       width: 100%;
-     }
-   }
-   &__links {
-     width: 400px;
-     ul {
-       display: flex;
-       justify-content: space-between;
-     }
-
-   }
-   &__link{
-      color: $white;
-      
-   }
-   &__link-icon{
+  }
+  &__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__logo {
+    width: 150px;
+    img {
+      width: 100%;
+    }
+  }
+  &__links {
+    width: 400px;
+    ul {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  &__link {
+    color: $white;
+  }
+  &__link:hover{
+    color: $purple;
+  }
+  &__link-icon {
     fill: $white;
     width: 20px;
+  }
 }
 
- }
-
-
- .red__circle{
-display: block;
-  padding:10px 10px;
-   margin-top: -20px;
-   margin-left: 12px;
+.red__circle {
+  display: block;
+  padding: 10px 10px;
+  margin-top: -20px;
+  margin-left: 12px;
   font-size: 10px;
-  color:$white;
- }
+  color: $white;
+}
+//menu svg for cart & favorile list
+.red__circle, .menu-svg {
+  @include transition();
+}
 
+.header__link:hover .red__circle {
+  color: $purple;
+}
 
- @media (max-width: 500px){
-  .header{
+.header__link:hover .menu-svg {
+  fill: $purple;
+}
+@media (max-width: 500px) {
+  .header {
     &__content {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
     }
-      &__logo {
-    width: 75px;
-    height: 45px;
-    img {
-      width: 100%;
+    &__logo {
+      width: 75px;
+      height: 45px;
+      img {
+        width: 100%;
+      }
+      &__links {
+        width: 100px;
+      }
     }
-    &__links {
-      width:100px;
   }
-  }
-  }
- }
+}

@@ -6,20 +6,27 @@
           <p class="heading">Produse Top</p>
         </div>
         <swiper
-          :slidesPerView="4"
-          :spaceBetween="30"
-          :pagination="{
-            clickable: false,
-          }"
-          :navigation="true"
+            :breakpoints= "{
+            1054:{
+             slidesPerView: 5,
+            },
+                896:{
+                slidesPerView: 4,
+
+              },
+              663:{
+                slidesPerView: 3,
+              }
+              ,
+             465:{
+                slidesPerView: 2,
+              }
+            }"
           :autoplay="{
             delay: 2500,
             disableOnInteraction: false,
           }"
-          :keyboard="{
-            enabled: true,
-            onlyInViewport: true,
-          }"
+          :enabled="true"
           :modules="modules"
           class="i__swiper"
         >
@@ -27,6 +34,7 @@
           data-swiper-autoplay="2000"
             v-for="product in getItemsByBrand('Beko')"
             :key="product.id"
+            class="item__container"
           >
             <the-item
               :id="product.id"
@@ -123,16 +131,11 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 
 // Import Swiper styles
 import "swiper/scss";
-import "swiper/scss/pagination";
-import "swiper/scss/navigation";
+
 import "swiper/scss/keyboard";
 // import required modules
 import {
   Autoplay,
-  Pagination,
-  Navigation,
-  Scrollbar,
-  Keyboard,
 } from "swiper/modules";
 
 export default {
@@ -142,7 +145,7 @@ export default {
   },
   setup() {
     return {
-      modules: [Autoplay, Pagination, Navigation, Scrollbar, Keyboard],
+      modules: [Autoplay],
     };
   },
 };

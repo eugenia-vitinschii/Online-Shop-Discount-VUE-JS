@@ -7,6 +7,7 @@
   &__container {
     display: flex;
     flex-wrap: wrap;
+    
   }
   &__item {
     @include item();
@@ -17,6 +18,7 @@
   }
   &__item {
     @include itemStyles();
+    height: 480px;
   }
   &__top {
     //product logo & label

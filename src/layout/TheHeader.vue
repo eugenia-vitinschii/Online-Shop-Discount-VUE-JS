@@ -38,6 +38,7 @@
                 <router-link class="header__link tooltip" to="/shopping-card">
                   <span class="tooltip-text small-text "> coșul </span>
                   <svg
+                  class="menu-svg"
                     xmlns="http://www.w3.org/2000/svg"
                     height="24px"
                     viewBox="0 -960 960 960"
@@ -53,9 +54,10 @@
                 </router-link>
               </li>
               <li>
-                <router-link to="/favorite"  class="tooltip">
+                <router-link to="/favorite"  class="header__link tooltip">
                   <span class="tooltip-text small-text ">lista de preferințe</span>
                   <svg
+                    class="menu-svg"
                     xmlns="http://www.w3.org/2000/svg"
                     height="24px"
                     viewBox="0 -960 960 960"
