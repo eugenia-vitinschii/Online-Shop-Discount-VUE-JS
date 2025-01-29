@@ -52,3 +52,23 @@ a{
 	@include transition();
 }
 
+//tooltip-text
+.tooltip{
+	position: relative;
+	display: inline-block;
+
+}
+.tooltip-text{
+ 	display: none;
+	position: absolute;
+	top:30px;
+	padding: 3px;
+	background: $purple;
+	color: $white;
+	z-index: 4;
+	@include transition()
+}
+
+.tooltip:hover .tooltip-text{
+	display: block;
+}

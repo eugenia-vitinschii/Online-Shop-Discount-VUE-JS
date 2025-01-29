@@ -17,7 +17,7 @@
      }
    }
    &__links {
-     width: 300px;
+     width: 400px;
      ul {
        display: flex;
        justify-content: space-between;
@@ -30,7 +30,7 @@
    }
    &__link-icon{
     fill: $white;
-width: 20px;
+    width: 20px;
 }
 
  }
@@ -38,8 +38,6 @@ width: 20px;
 
  .red__circle{
 display: block;
-  // background: $red;
-  // border-radius: 50%;
   padding:10px 10px;
    margin-top: -20px;
    margin-left: 12px;
