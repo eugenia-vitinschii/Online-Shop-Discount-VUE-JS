@@ -3,9 +3,8 @@
     <div class="container">
       <div class="header__wrapper">
         <div class="header__promo">
-          <router-link class="header__link" to="/promo"
-            >Promotii pentru perioada de iarna, cumpara produse cu reduceri
-            maxime!</router-link
+          <router-link class="header__link running-line-wrapper" to="/promo"
+            ><span class="running-line-hide"></span> <span class="running-line subheading"> Promoții de iarnă, cumpărați produse cu reduceri maxime 🎁 doar la Discount</span><span class="running-line-hide"></span></router-link
           >
         </div>
         <div class="header__content">

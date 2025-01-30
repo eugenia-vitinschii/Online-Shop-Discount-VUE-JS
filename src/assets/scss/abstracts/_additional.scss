@@ -18,3 +18,48 @@
 	font-size: $body-text-sm;
   }
 }
+
+
+//running line span
+.running-line-wrapper{
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   overflow: hidden;
+}
+.running-line-hide{
+   width: 50px;
+   height: 50px;
+   background: $orange;
+   opacity: 0.6;
+   z-index: 3;
+}
+
+$duration: 15s;
+
+.running-line{
+   display: block;
+   z-index: 2;
+   flex-shrink: 0;
+   margin-right: -150%;
+   text-transform: uppercase;
+
+   animation: marqueeLine $duration linear infinite;
+ }
+ 
+ @keyframes marqueeLine {
+   0% {
+     transform: translateX(0);
+   }
+   
+  50% {
+     transform: translateX(-100%);
+   }
+   75% {
+      transform: translateX(-200%);
+    }
+    100% {
+      transform: translateX(-300%);
+    }
+}

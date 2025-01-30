@@ -27,6 +27,7 @@
 .heading{
    @include font-style( $black, 10px, left);
    @include font-size($heading, 40px);
+	font-weight:800
 }
 .subheading{ 
    @include font-style( $black, 10px, left);

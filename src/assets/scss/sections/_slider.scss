@@ -1,7 +1,5 @@
 .swiper{
-
    background: $orange;
-   
    &__wrapper {
  padding: $margin-top 0px;
    }
@@ -46,7 +44,7 @@
 .swiper-button-prev, 
 .swiper-container-rtl .swiper-button-prev,
 .swiper-container-rtl .swiper-button-next{
-   --swiper-theme-color: #0b0404;
+   --swiper-theme-color: $purple;
 }
 
 .swiper-pagination-fraction{
