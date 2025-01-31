@@ -132,7 +132,9 @@ export const useProductStore = defineStore("productId", {
   removeItemFromFavorite(id){
     this.user.favorite = this.user.favorite.filter((item) => item.id !== id)
   },
-
+  removeItem(id){
+    this.user.cart = this.user.cart.filter((item) => item.id !== id)
+  },
   //incrementQuantity
     incrementQuantity(id) {
       this.user.cart.forEach((item) => {

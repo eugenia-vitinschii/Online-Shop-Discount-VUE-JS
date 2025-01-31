@@ -27,6 +27,7 @@
             :price="item.price"
           :newPrice="getNewPrice(item.price)(item.discount)"
           :saveMoney="getMoneySaved(item.price)(item.discount)"
+           @deleteItem="removeItemFromCart(item.id)"
           />
           <!-- <p class="body-text" v-show="user.cart.length >= 1">Total: </p> -->
         </div>
@@ -56,8 +57,12 @@ const store = useProductStore();
 
 const { user } = storeToRefs(store);
 
-const {getMoneySaved, getNewPrice } = store;
+const {getMoneySaved, getNewPrice, removeItem,  } = store;
 
+// delete item from cart
+function removeItemFromCart(item){
+  removeItem(item)
+}
 
 //hooks  
 onMounted(() => {
