@@ -47,6 +47,9 @@
       width: 130px;
 
    }
+   &__delete{
+      align-self: start;
+   }
    // pay part
    &__pay{
       @include item();

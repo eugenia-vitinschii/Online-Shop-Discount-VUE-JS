@@ -11,10 +11,10 @@
           Vezi toate produsele
           </router-link>
         </div>
-        <div class="cart__message" v-show="user.cart.length >= 1">
+        <div class="cart__message" v-show="user.cart.length > 1">
           <p class="heading">Coș ({{ user.cart.length }})</p>
         </div>
-        <div class="cart__items">
+        <div class="cart__items" v-if="created">
           <!-- shopping card item  -->
           <shopping-item
             v-for="item in user.cart"
@@ -28,7 +28,7 @@
           :newPrice="getNewPrice(item.price)(item.discount)"
           :saveMoney="getMoneySaved(item.price)(item.discount)"
           />
-          <p class="body-text">Total: </p>
+          <!-- <p class="body-text" v-show="user.cart.length >= 1">Total: </p> -->
         </div>
       </div>
     </div>
@@ -40,7 +40,7 @@
 import ShoppingItem from "@/components/ShoppingItem.vue";
 
 //vue
-import { defineOptions } from "vue";
+import { defineOptions, ref, onMounted, onUnmounted } from "vue";
  
 // store
 import { useProductStore } from "@/stores/product";
@@ -50,16 +50,26 @@ import { storeToRefs } from "pinia";
 defineOptions({
   name: "ShoppingCardView",
 });
-
+let  created = ref(false)
 //pinia
 const store = useProductStore();
 
 const { user } = storeToRefs(store);
 
-const {getMoneySaved, getNewPrice} = store;
+const {getMoneySaved, getNewPrice } = store;
 
 
+//hooks  
+onMounted(() => {
+  created.value = true;
+  console.log('onMounted shopping cart')
+ 
+});
 
+onUnmounted(() =>{
+  created.value = false;
+  console.log('onUnmounted shopping cart')
+})
 </script>
  
  
