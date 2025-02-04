@@ -31,6 +31,7 @@
           />
           <div class="cart__summ" v-show="user.cart.length >= 1">
             <p class="body-text"> Total: {{ getSum()}} </p>
+ 
           </div>
          
         </div>
@@ -60,7 +61,7 @@ const store = useProductStore();
 
 const { user } = storeToRefs(store);
 
-const {getMoneySaved, getNewPrice, removeItem, getSum} = store;
+const {getMoneySaved, getNewPrice, removeItem, getSum } = store;
 
 // delete item from cart
 function removeItemFromCart(item){

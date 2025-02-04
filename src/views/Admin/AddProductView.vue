@@ -38,13 +38,23 @@
             <the-input
               :label="'Introduceți prețul produsului'"
               :placeholder="'4999'"
-              v-model:value.trim="postProducts.price"
+              v-model:value.number="postProducts.price"
             />
-            <the-input
+            <div class="input__wrapper">
+               <p class="body-text">Reducere</p>
+            <input type="checkbox" v-model="discountPrice" switch/>
+            </div>
+            <the-input 
+            v-show="discountPrice"
               :label="'Introduceți procentul de reducere ( fără %)'"
               :placeholder="'17'"
-              v-model:value.trim="postProducts.discount"
+              v-model:value.number="postProducts.discount"
             />
+            <div class="input__wrapper"  v-show="discountPrice">
+              <p class="body-text">Saved money {{getMoneySaved(postProducts.price)(postProducts.discount)}}</p>
+              {{postProducts.discount}}
+               <p class="body-text">Discount Price {{getNewPrice(postProducts.price)(postProducts.discount)}}</p>
+            </div>
           </div>
           <!-- Informația despre produs -->
           <div class="add__form-item">
@@ -62,13 +72,11 @@
                 <option value="Candy">Candy</option>
               </select>
             </div>
-
             <the-input
               :label="'Consum de apă în program, l/ciclu'"
               :placeholder="'20'"
               v-model:value.trim="postProducts.waterConsumption"
             />
-
             <div class="input__wrapper">
               <label for="energyEfficiencyClass"
                 >Clasa de eficienţă energetică</label
@@ -245,6 +253,21 @@ defineOptions({
 const store = useProductStore();
 const { createProduct } = store;
 
+// varuiable
+let discountPrice = ref(true)
+
+//functions
+
+// amount of saved money
+function getMoneySaved(price ) {
+  return (discount) =>  postProducts.value.savedMoney= Math.floor(price - (price - (price * discount) / 100))
+   }
+
+//discountPrice
+function getNewPrice(price) {
+      return (discount) => postProducts.value.discountPrice= Math.floor(+price - (price * discount) / 100);
+    } 
+
 const postProducts = ref({
   id: "",
   productCode: "",
@@ -252,6 +275,8 @@ const postProducts = ref({
   productName: "",
   price: "",
   discount: "",
+  savedMoney: "",
+  discountPrice: "",
   brand: "",
   waterConsumption: "",
   energyEfficiencyClass: "",
@@ -279,6 +304,8 @@ const addPostData = () => {
   postProducts.value.productName = "";
   postProducts.value.price = "";
   postProducts.value.discount = "";
+  postProducts.value.savedMoney = "";
+  postProducts.value.discountPrice = "";
   postProducts.value.brand = "";
   postProducts.value.waterConsumption = "";
   postProducts.value.energyEfficiencyClass = "";

@@ -18,7 +18,8 @@ export const useProductStore = defineStore("productId", {
     promo: true,
     searchValue: [],
     count: 1,
-    total: 0
+    total: 0,
+    newSum: 0,
   }),
   getters: {
     // filteredItems.length
