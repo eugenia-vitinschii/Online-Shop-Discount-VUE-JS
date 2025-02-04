@@ -29,7 +29,10 @@
           :saveMoney="getMoneySaved(item.price)(item.discount)"
            @deleteItem="removeItemFromCart(item.id)"
           />
-          <!-- <p class="body-text" v-show="user.cart.length >= 1">Total: </p> -->
+          <div class="cart__summ" v-show="user.cart.length >= 1">
+            <p class="body-text"> Total: {{ getSum()}} </p>
+          </div>
+         
         </div>
       </div>
     </div>
@@ -57,7 +60,7 @@ const store = useProductStore();
 
 const { user } = storeToRefs(store);
 
-const {getMoneySaved, getNewPrice, removeItem,  } = store;
+const {getMoneySaved, getNewPrice, removeItem, getSum} = store;
 
 // delete item from cart
 function removeItemFromCart(item){

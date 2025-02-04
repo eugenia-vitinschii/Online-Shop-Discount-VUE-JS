@@ -18,6 +18,7 @@ export const useProductStore = defineStore("productId", {
     promo: true,
     searchValue: [],
     count: 1,
+    total: 0
   }),
   getters: {
     // filteredItems.length
@@ -135,6 +136,10 @@ export const useProductStore = defineStore("productId", {
   removeItem(id){
     this.user.cart = this.user.cart.filter((item) => item.id !== id)
   },
+  getSum(){
+  return this.total = this.user.cart.reduce((sum,  currSum )=> sum + Number(currSum.price) ,0);
+  },
+ 
   //incrementQuantity
     incrementQuantity(id) {
       this.user.cart.forEach((item) => {
