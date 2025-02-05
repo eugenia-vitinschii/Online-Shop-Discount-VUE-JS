@@ -10,9 +10,15 @@
         <form action="" class="add__form">
           <!-- Date generale -->
           <div class="add__form-item">
-             <div class="input__wrapper">
-              <label for="stock">Stock {{postProducts.stock}}</label>
-            <input type="checkbox" name="stock" id="stock" v-model="postProducts.stock"  checked>
+            <div class="input__wrapper">
+              <label for="stock">Stock {{ postProducts.stock }}</label>
+              <input
+                type="checkbox"
+                name="stock"
+                id="stock"
+                v-model="postProducts.stock"
+                checked
+              />
             </div>
             <p class="heading">Date generale</p>
             <the-input
@@ -41,19 +47,24 @@
               v-model:value.number="postProducts.price"
             />
             <div class="input__wrapper">
-               <p class="body-text">Reducere</p>
-            <input type="checkbox" v-model="discountPrice" switch/>
+              <p class="body-text">Reducere</p>
+              <input type="checkbox" v-model="discountPrice" switch />
             </div>
-            <the-input 
-            v-show="discountPrice"
+            <the-input
+              v-show="discountPrice"
               :label="'Introduceți procentul de reducere ( fără %)'"
               :placeholder="'17'"
               v-model:value.number="postProducts.discount"
             />
-            <div class="input__wrapper"  v-show="discountPrice">
-              <p class="body-text">Saved money {{getMoneySaved(postProducts.price)(postProducts.discount)}}</p>
-              {{postProducts.discount}}
-               <p class="body-text">Discount Price {{getNewPrice(postProducts.price)(postProducts.discount)}}</p>
+            <div class="input__wrapper" v-show="discountPrice">
+              <p class="body-text">
+                Saved money {{postProducts.savedMoney}}
+                {{ getMoneySaved(postProducts.price)(postProducts.discount) }}
+              </p>
+              <p class="body-text">
+                Discount Price {{ postProducts.discountPrice}}
+                {{ getNewPrice(postProducts.price)(postProducts.discount) }}
+              </p>
             </div>
           </div>
           <!-- Informația despre produs -->
@@ -105,10 +116,8 @@
                 <option value="verticală">verticală</option>
               </select>
             </div>
-                  <div class="input__wrapper">
-              <label for="spinSpeed"
-                >Viteza maximă de centrifugare, rpm</label
-              >
+            <div class="input__wrapper">
+              <label for="spinSpeed">Viteza maximă de centrifugare, rpm</label>
               <select
                 name="spinSpeed"
                 id="spinSpeed"
@@ -119,7 +128,6 @@
                 <option value="1350">1350</option>
                 <option value="1400">1400</option>
                 <option value="1600">1600</option>
-
               </select>
             </div>
             <the-input
@@ -206,14 +214,14 @@
                 <option value="USA">USA</option>
               </select>
             </div>
-          <div class="input__wrapper">
+            <div class="input__wrapper">
               <label for="guarantee">Garanţie, lunie</label>
               <select
                 name="guarantee"
                 id="guarantee"
                 v-model="postProducts.guarantee"
               >
-              <option value="12">12</option>
+                <option value="12">12</option>
                 <option value="24">24</option>
                 <option value="36">36</option>
                 <option value="60">60</option>
@@ -226,7 +234,9 @@
           <the-button class="green-button" @click.prevent="addPostData()">
             Salvează
           </the-button>
-          <the-button class="red-button" @click="$router.go(-1)">Acasă</the-button>
+          <the-button class="red-button" @click="$router.go(-1)"
+            >Acasă</the-button
+          >
         </form>
       </div>
     </div>
@@ -254,19 +264,35 @@ const store = useProductStore();
 const { createProduct } = store;
 
 // varuiable
-let discountPrice = ref(true)
+let discountPrice = ref(false);
 
 //functions
 
 // amount of saved money
-function getMoneySaved(price ) {
-  return (discount) =>  postProducts.value.savedMoney= Math.floor(price - (price - (price * discount) / 100))
-   }
+function getMoneySaved(price) {
+  return (discount) => {
+    if (discount > 0) {
+      postProducts.value.savedMoney = Math.floor(
+        price - (price - (price * discount) / 100)
+      );
+    } else {
+      return postProducts.value.savedMoney = 0
+    }
+  };
+}
 
 //discountPrice
 function getNewPrice(price) {
-      return (discount) => postProducts.value.discountPrice= Math.floor(+price - (price * discount) / 100);
-    } 
+  return (discount) => {
+    if (discount > 0) {
+      postProducts.value.discountPrice = Math.floor(
+        +price - (price * discount) / 100
+      );
+    } else {
+      return  postProducts.value.discountPrice = 0
+    }
+  };
+}
 
 const postProducts = ref({
   id: "",
@@ -274,7 +300,7 @@ const postProducts = ref({
   img: "",
   productName: "",
   price: "",
-  discount: "",
+  discount:0,
   savedMoney: "",
   discountPrice: "",
   brand: "",
@@ -293,7 +319,7 @@ const postProducts = ref({
   color: "",
   countryOfAssembly: "",
   guarantee: "",
-  stock: true
+  stock: true,
 });
 
 const addPostData = () => {
@@ -322,7 +348,7 @@ const addPostData = () => {
   postProducts.value.color = "";
   postProducts.value.countryOfAssembly = "";
   postProducts.value.guarantee = "";
-  postProducts.value.stock= Boolean
+  postProducts.value.stock = Boolean;
 };
 </script>
 

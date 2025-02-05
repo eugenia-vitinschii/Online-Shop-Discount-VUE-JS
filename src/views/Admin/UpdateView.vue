@@ -37,14 +37,28 @@
             <the-input
               :label="'Introduceți prețul produsului'"
               :placeholder="'4999'"
-              v-model:value.trim="products.price"
+              v-model:value.number="products.price"
             />
-            <the-input
+              <div class="input__wrapper">
+              <p class="body-text">Reducere  {{discountPrice}} </p>
+              <input type="checkbox" v-model="discountPrice"  switch checked disabled />
+            </div>
+             <the-input
+              v-show="discountPrice"
               :label="'Introduceți procentul de reducere ( fără %)'"
               :placeholder="'17'"
-              v-model:value.trim="products.discount"
+              v-model:value.number="products.discount"
             />
           </div>
+            <div class="input__wrapper" v-show="discountPrice">
+              <p class="body-text">
+                Saved money  Saved money {{products.savedMoney}} {{ getMoneySaved(products.price)(products.discount) }}
+              </p>
+              <p class="body-text">
+                Discount Price {{ products.discountPrice}}
+                {{ getNewPrice(products.price)(products.discount) }}
+              </p>
+            </div>
           <!-- Informația despre produs -->
           <div class="update__form-item">
             <p class="heading">Informația despre produs</p>
@@ -257,8 +271,46 @@ const route = useRoute();
 
 const id = route.params.id;
 
+// varuiable
+let discountPrice = ref(true);
+
+// function enableDiscount(discount){
+//   if (discount > 0){
+//     return discountPrice.value = true
+//   } else{
+//     return discountPrice.value = false
+//   }
+// }
+
 let message = ref(false);
 console.log(message);
+//functions 
+
+// amount of saved money
+function getMoneySaved(price) {
+  return (discount) => {
+    if (discount > 0) {
+      products.value.savedMoney = Math.floor(
+        price - (price - (price * discount) / 100)
+      );
+    } else {
+      return products.value.savedMoney = 0
+    }
+  };
+}
+
+//discountPrice
+function getNewPrice(price) {
+  return (discount) => {
+    if (discount > 0) {
+      products.value.discountPrice = Math.floor(
+        +price - (price * discount) / 100
+      );
+    } else {
+      return  products.value.discountPrice = 0
+    }
+  };
+}
 
 function updateItem() {
   updateProducts(id);

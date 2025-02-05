@@ -159,6 +159,8 @@ export const useProductStore = defineStore("productId", {
           productName: this.products.productName,
           price: this.products.price,
           discount: this.products.discount,
+          savedMoney:  this.products.savedMoney,
+          discountPrice: this.products.discountPrice,
           brand: this.products.brand,
           waterConsumption: this.products.waterConsumption,
           energyEfficiencyClass: this.products.energyEfficiencyClass,
