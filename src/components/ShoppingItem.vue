@@ -14,10 +14,10 @@
     </div>
     <div class="cart__prices">
       <p class="body-text">Preț: {{ price }} lei</p>
-        <div class="cart__prices-discount" v-if="!saveMoney == 0">
+        <div class="cart__prices-discount" >
         <p class="body-text">Reducere {{ discount }}%</p>
-        <p class="body-text-green">- {{ saveMoney }} lei </p>
-        <p class="body-text bold">Pret Nou: {{ newPrice }}</p>
+        <p class="body-text-green">Economie {{ savedMoney }} lei </p>
+        <p class="body-text bold">Pret Nou: {{ discountPrice }}</p>
       </div>
     </div>
     <div class="cart__delete">
@@ -54,17 +54,22 @@ defineProps({
   brand: {
     type: String,
   },
-  discount: {
-    type: Number,
-  },
+
   price: {
     type: Number,
   },
-  saveMoney: {
+    discount: {
     type: Number,
   },
-  newPrice: {
+ savedMoney: {
+    type: Number,
+  },
+  discountPrice: {
     type: Number,
   },
 });
+
+
+    // savedMoney
+    //  discountPrice
 </script>

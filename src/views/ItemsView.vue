@@ -225,10 +225,10 @@
               :productType="product.productType"
               :price="product.price"
               :discount="product.discount"
+              :discountPrice="product.discountPrice"
+              :savedMoney="product.savedMoney"
               :label="product.label"
               :stock="product.stock"
-              :newPrice="getNewPrice(product.price)(product.discount)"
-              :economie="getMoneySaved(product.price)(product.discount)"
               :monthlyPrice="monthlyPrice(product.price)"
               :hidden="showPrices(product.discount)"
               :oldPrice="showOnePrice(product.discount)"
@@ -277,13 +277,12 @@ let created = ref(false);
 
 const store = useProductStore();
 const { checked, searchValue, ascending, promo } = storeToRefs(store);
+
 //pinia getters
 const {
   fetchProducts,
   addToCart,
   addToFavorite,
-  getMoneySaved,
-  getNewPrice,
   monthlyPrice,
   dicountLabel,
   hugeSaleLabel,
@@ -300,10 +299,15 @@ function addProductCard(product) {
     productName: product.productName,
     price: product.price,
     discount: product.discount,
+    discountPrice:product.discountPrice,
+    savedMoney: product.savedMoney,
     img: product.img,
     brand: product.brand,
+
   });
 }
+    // savedMoney
+    //  discountPrice
 
 //add to favorite
 function addProductToFavorite(product) {
@@ -313,6 +317,8 @@ function addProductToFavorite(product) {
     productName: product.productName,
     price: product.price,
     discount: product.discount,
+    discountPrice:product.discountPrice,
+    savedMoney: product.savedMoney,
     img: product.img,
     brand: product.brand,
     label: product.label,   

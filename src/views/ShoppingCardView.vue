@@ -25,8 +25,8 @@
             :brand="item.brand"
             :discount="item.discount"
             :price="item.price"
-          :newPrice="getNewPrice(item.price)(item.discount)"
-          :saveMoney="getMoneySaved(item.price)(item.discount)"
+          :discountPrice="item.discountPrice"
+          :savedMoney="item.savedMoney"
            @deleteItem="removeItemFromCart(item.id)"
           />
           <div class="cart__summ" v-show="user.cart.length >= 1">
@@ -44,12 +44,15 @@
 //compoents
 import ShoppingItem from "@/components/ShoppingItem.vue";
 
-//vue
+//vue 
 import { defineOptions, ref, onMounted, onUnmounted } from "vue";
  
 // store
 import { useProductStore } from "@/stores/product";
 import { storeToRefs } from "pinia";
+
+    // savedMoney
+    //  discountPrice
 
 //component information
 defineOptions({
@@ -61,7 +64,7 @@ const store = useProductStore();
 
 const { user } = storeToRefs(store);
 
-const {getMoneySaved, getNewPrice, removeItem, getSum } = store;
+const { removeItem, getSum } = store;
 
 // delete item from cart
 function removeItemFromCart(item){
