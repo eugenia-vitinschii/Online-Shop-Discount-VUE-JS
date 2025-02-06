@@ -32,16 +32,17 @@
             :productType="product.productType"
             :price="product.price"
             :discount="product.discount"
+            :discountPrice="product.discountPrice"
+            :savedMoney="product.savedMoney"
             :label="product.label"
             :stock="product.stock"
-            :newPrice="getNewPrice(product.price)(product.discount)"
-            :economie="getMoneySaved(product.price)(product.discount)"
             :monthlyPrice="monthlyPrice(product.price)"
             :hidden="showPrices(product.discount)"
             :oldPrice="showOnePrice(product.discount)"
             :dicountLabel="dicountLabel(product.discount)"
             :hugeSaleLabel="hugeSaleLabel(product.discount)"
             @addToCard="addProductCard(product)"
+            @addToFavorite="addProductToFavorite(product)"
           />
           <div class="spaces"></div>
           <div class="spaces"></div>
@@ -80,9 +81,8 @@ const store = useProductStore();
 //store actions
 const {
   fetchProducts,
-  addToCart,
-  getMoneySaved,
-  getNewPrice,
+    addToCart,
+  addToFavorite,
   monthlyPrice,
   dicountLabel,
   hugeSaleLabel,
@@ -90,7 +90,7 @@ const {
   showOnePrice,
 } = store;
 
-// add product product to cart
+// add product to cart
 function addProductCard(product) {
   addToCart({
     id: product.id,
@@ -98,8 +98,30 @@ function addProductCard(product) {
     productName: product.productName,
     price: product.price,
     discount: product.discount,
+    discountPrice:product.discountPrice,
+    savedMoney: product.savedMoney,
     img: product.img,
     brand: product.brand,
+
+  });
+}
+    // savedMoney
+    //  discountPrice
+
+//add to favorite
+function addProductToFavorite(product) {
+  addToFavorite({
+    id: product.id,
+    productCode: product.productCode,
+    productName: product.productName,
+    price: product.price,
+    discount: product.discount,
+    discountPrice:product.discountPrice,
+    savedMoney: product.savedMoney,
+    img: product.img,
+    brand: product.brand,
+    label: product.label,   
+    stock: product.stock,       
   });
 }
 
