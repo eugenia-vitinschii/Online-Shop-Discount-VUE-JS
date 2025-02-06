@@ -105,12 +105,14 @@
 <script setup>
 //vue
 import { defineOptions, defineProps } from "vue";
-
+ 
 defineOptions({
   name: "TheItem",
 });
 
+//props
 defineProps({
+
   id: {
     type: String,
   },

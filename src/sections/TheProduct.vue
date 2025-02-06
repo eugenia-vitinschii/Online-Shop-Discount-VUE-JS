@@ -42,7 +42,7 @@
                 {{ price }} lei
               </p>
               <p class="body-text bold " :class="{ hidden: hidden }">
-               {{ newPrice }} lei
+               {{discountPrice }} lei
               </p>
             </div>
             <div class="product__price-value" :class="{ hidden: hidden }">
@@ -50,7 +50,7 @@
                 Reducere <span class="bold">{{ discount }}%</span>
               </p>
               <p class="body-text-green">
-                Economie <span class="bold">{{ economie }}lei! </span>
+                Economie <span class="bold">{{  savedMoney }}lei! </span>
               </p>
             </div>
           </div>
@@ -233,10 +233,16 @@ defineProps({
     type: String,
   },
   price: {
-    type: String,
+    type: Number,
   },
   discount: {
-    type:String,
+    type: Number,
+  },
+   savedMoney: {
+    type: Number,
+  },
+  discountPrice: {
+    type: Number,
   },
   brand: {
     type: String,
@@ -285,13 +291,6 @@ defineProps({
   },
   guarantee: {
     type: String,
-  },
-  newPrice: {
-    type: Number,
-  },
-  economie: {
-    type: Number,
-    default: null,
   },
   totalCreditPrice: {
     type: Number,

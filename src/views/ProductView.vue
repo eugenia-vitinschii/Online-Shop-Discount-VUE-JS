@@ -28,6 +28,8 @@
           :img="products.img"
           :price="products.price"
           :discount="products.discount"
+          :savedMoney="products.savedMoney"
+          :discountPrice="products.discountPrice"
           :brand="products.brand"
           :waterConsumption="products.waterConsumption"
           :energyEfficiencyClass="products.energyEfficiencyClass"
@@ -48,8 +50,6 @@
           :hidden="showPrices(products)"
           :onePrice="showOnePrice(products)"
           :monthlyPrice="monthlyPrice(products.price)"
-          :newPrice="getNewPrice(products.price)(products.discount)"
-          :economie="getMoneySaved(products.price)(products.discount)"
           :dicountLabel="dicountLabel(products.discount)"
           :hugeSaleLabel="hugeSaleLabel(products.discount)"
            @addToCard="addProductCard(products)"
@@ -83,7 +83,7 @@ const store = useProductStore();
 const route = useRoute();
 const id = route.params.id
 const { products } = storeToRefs(store);
-const { getProducts, getMoneySaved, getNewPrice, monthlyPrice , addToCart,dicountLabel ,hugeSaleLabel,   addToFavorite,} = store;
+const { getProducts, monthlyPrice , addToCart,dicountLabel ,hugeSaleLabel,   addToFavorite,} = store;
 
 
 //functions
@@ -98,17 +98,27 @@ function showOnePrice(products){
   }
 }
  // add product to cart
-function addProductCard(products) {
+function addProductCard(product) {
   addToCart({
-    id: products.id,
-    productCode: products.productCode,
-    productName: products.productName,
-    price: products.price,
-    discount: products.discount,
-    img: products.img,
-    brand: products.brand,
+       id: product.id,
+    productCode: product.productCode,
+    productName: product.productName,
+    price: product.price,
+    discount: product.discount,
+    discountPrice:product.discountPrice,
+    savedMoney: product.savedMoney,
+    img: product.img,
+    brand: product.brand,
   });
 }
+
+
+class addFavorite {
+  constructor(id){
+  this.id= id;
+  }
+}
+
 
 //add to favorite
 function addProductToFavorite(product) {
@@ -118,12 +128,16 @@ function addProductToFavorite(product) {
     productName: product.productName,
     price: product.price,
     discount: product.discount,
+    discountPrice:product.discountPrice,
+    savedMoney: product.savedMoney,
     img: product.img,
     brand: product.brand,
     label: product.label,   
-    stock: product.stock,       
+    stock: product.stock,    
+    fav : new addFavorite(id)  
   });
 }
+
 //hooks
 onMounted(() => {
   getProducts(id);

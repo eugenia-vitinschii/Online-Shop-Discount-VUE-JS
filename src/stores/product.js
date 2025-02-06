@@ -196,15 +196,6 @@ export const useProductStore = defineStore("productId", {
         console.error("Updae ERROR:", err);
       }
     },
-    // amount of saved money
-    getMoneySaved(price) {
-      return (discount) =>
-        Math.floor(price - (price - (price * discount) / 100));
-    },
-    // get new price after apply discount
-    getNewPrice(price) {
-      return (discount) => Math.floor(+price - (price * discount) / 100);
-    },
     monthlyPrice(price) {
       let totalPrice = Math.round(+price + (price * 40) / 100);
       let monthlyPrice = Math.round(totalPrice / 36);
