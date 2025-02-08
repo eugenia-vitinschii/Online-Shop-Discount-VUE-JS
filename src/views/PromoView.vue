@@ -81,7 +81,7 @@ const store = useProductStore();
 //store actions
 const {
   fetchProducts,
-    addToCart,
+  addToCart,
   addToFavorite,
   monthlyPrice,
   dicountLabel,
@@ -105,8 +105,6 @@ function addProductCard(product) {
 
   });
 }
-    // savedMoney
-    //  discountPrice
 
 //add to favorite
 function addProductToFavorite(product) {

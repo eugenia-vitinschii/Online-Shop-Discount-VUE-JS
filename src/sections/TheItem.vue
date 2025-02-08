@@ -32,7 +32,7 @@
     <div class="item__price">
       <div class="item__price-value">
         <p class="body-text bold" :class="{ oldPrice: !hidden }">
-          {{ price }} lei
+          {{ price }} lei 
         </p>
         <p class="body-text bold" :class="{ hidden: hidden }">
           {{ discountPrice }} lei
@@ -47,7 +47,6 @@
         </p>
       </div>
     </div>
-
     <!-- Add to card & Favorite -->
     <div class="item__buttons">
       <div class="item__buttons-credit">
@@ -100,19 +99,20 @@
     </div>
   </div>
 </template>
+ 
 
 
 <script setup>
 //vue
 import { defineOptions, defineProps } from "vue";
- 
+
+
 defineOptions({
   name: "TheItem",
 });
 
 //props
-defineProps({
-
+ defineProps({
   id: {
     type: String,
   },
@@ -175,4 +175,5 @@ defineProps({
     default: true,
   },
 });
+
 </script>

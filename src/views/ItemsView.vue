@@ -303,7 +303,6 @@ function addProductCard(product) {
     savedMoney: product.savedMoney,
     img: product.img,
     brand: product.brand,
-
   });
 }
     // savedMoney

@@ -31,10 +31,10 @@
             :productType="product.productType"
             :price="product.price"
             :discount="product.discount"
+            :discountPrice="product.discountPrice"
+            :savedMoney="product.savedMoney"
             :label="product.label"
             :stock="product.stock"
-            :newPrice="getNewPrice(product.price)(product.discount)"
-            :economie="getMoneySaved(product.price)(product.discount)"
             :monthlyPrice="monthlyPrice(product.price)"
             :hidden="showPrices(product.discount)"
             :oldPrice="showOnePrice(product.discount)"
@@ -81,8 +81,7 @@ const {
   fetchProducts,
   addToCart,
   addToFavorite,
-  getMoneySaved,
-  getNewPrice,
+
   monthlyPrice,
   dicountLabel,
   hugeSaleLabel,
@@ -97,6 +96,8 @@ function addProductCard(product) {
     productName: product.productName,
     price: product.price,
     discount: product.discount,
+    discountPrice:product.discountPrice,
+    savedMoney: product.savedMoney,
     img: product.img,
     brand: product.brand,
   });
@@ -109,6 +110,8 @@ function addProductToFavorite(product) {
     productName: product.productName,
     price: product.price,
     discount: product.discount,
+    discountPrice:product.discountPrice,
+    savedMoney: product.savedMoney,
     img: product.img,
     brand: product.brand,
     label: product.label,   
