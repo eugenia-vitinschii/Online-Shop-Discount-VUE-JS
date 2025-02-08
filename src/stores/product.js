@@ -138,9 +138,14 @@ export const useProductStore = defineStore("productId", {
     this.user.cart = this.user.cart.filter((item) => item.id !== id)
   },
   getSum(){
-  return this.total = this.user.cart.reduce((sum,  currSum )=> sum + Number(currSum.price) ,0);
+  return this.user.cart.reduce((sum,  currSum )=> sum + Number(currSum.price) ,0);
   },
- 
+  getSavedMoney(){
+    return this.user.cart.reduce((sum,  currSum )=> sum + Number(currSum.savedMoney) ,0);
+  },
+  getDiscountPrice(a){
+    return (b) => { return a -b }
+  },
   //incrementQuantity
     incrementQuantity(id) {
       this.user.cart.forEach((item) => {
@@ -179,7 +184,6 @@ export const useProductStore = defineStore("productId", {
           guarantee: this.products.guarantee,
           stock: this.products.stock,
         });
-
         // this.router.push({name: "ProductPage"})
       } catch (err) {
         console.error(err);

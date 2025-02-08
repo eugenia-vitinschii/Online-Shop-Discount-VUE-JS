@@ -305,8 +305,6 @@ function addProductCard(product) {
     brand: product.brand,
   });
 }
-    // savedMoney
-    //  discountPrice
 
 //add to favorite
 function addProductToFavorite(product) {
@@ -324,15 +322,6 @@ function addProductToFavorite(product) {
     stock: product.stock,       
   });
 }
-
-// //filter
-// function resetFilter(){
-//   reset.value = !reset.value
-//   console.log(reset.value)
-//   return reset.value
-// }
- 
-
 
 //hooks  
 onMounted(() => {

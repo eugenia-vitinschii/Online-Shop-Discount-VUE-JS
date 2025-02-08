@@ -55,6 +55,9 @@
       @include item();
       @include cartItem()
    }
+   &__summ{
+      background: $white;
+   }
 }
 
 @media (max-width: 634px){
