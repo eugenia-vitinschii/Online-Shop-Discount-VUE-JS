@@ -38,9 +38,9 @@ const routes = [
       component: () => import("../views/BrandView.vue")
    },
    {
-      name: "ShoppingCardView",
-      path: '/shopping-card',
-      component: () => import('../views/ShoppingCardView.vue')
+      name: "ShoppingCartView",
+      path: '/shopping-cart',
+      component: () => import('../views/ShoppingCartView.vue')
    },
    {
       name: "AdminLoginView",

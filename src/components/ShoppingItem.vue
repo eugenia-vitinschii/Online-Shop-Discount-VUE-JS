@@ -14,9 +14,9 @@
     </div>
     <div class="cart__prices">
       <p class="body-text">Preț: {{ price }} lei</p>
-        <div class="cart__prices-discount" >
+        <div class="cart__prices-discount" v-show="discount > 0">
         <p class="body-text">Reducere {{ discount }}%</p>
-        <p class="body-text-green">Economie {{ savedMoney }} lei </p>
+        <p class="body-text-green"> -{{ savedMoney }} lei </p>
         <p class="body-text bold">Pret Nou: {{ discountPrice }}</p>
       </div>
     </div>
@@ -69,7 +69,4 @@ defineProps({
   },
 });
 
-
-    // savedMoney
-    //  discountPrice
 </script>

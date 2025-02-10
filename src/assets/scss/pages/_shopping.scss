@@ -16,6 +16,11 @@
       @include itemHover();
       @include transition();
    }
+   &__amount{
+      @include item();
+      @include cartItem();
+      text-align-last: right;
+   }
    &__items {
 
    }
@@ -26,17 +31,15 @@
       justify-content: space-between;
       align-items: center;
       flex-direction: row;
-      
    }
-   
    &__img {
-      width: 100px;
+      width: 190px;
       img {
          width: 100%;
       }
    }
    &__description {
-      width: 230px; 
+      width: 270px; 
    }
    &__info {
    }
@@ -44,7 +47,7 @@
       @include positionCenter()
    }
    &__prices {
-      width: 130px;
+      width: 160px;
 
    }
    &__delete{
@@ -55,16 +58,18 @@
       @include item();
       @include cartItem()
    }
-   &__summ{
-      background: $white;
-   }
 }
 
+
+//meadia
 @media (max-width: 634px){
    .cart {
+      &__amount, &__item {
+         width: 100%;
+         margin-left: 0;
+      }
       &__item {
          flex-direction: column; 
-         width: 100%;
       }
       &__prices{
          border-top: 1px solid $dark-green;
@@ -80,6 +85,9 @@
          img {
             width: 100%;
          }
+      }
+      &__delete{
+         align-self: flex-end;
       }
    }
 }

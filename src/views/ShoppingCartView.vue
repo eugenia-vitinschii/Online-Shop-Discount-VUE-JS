@@ -14,6 +14,7 @@
         <div class="cart__message" v-show="user.cart.length > 1">
           <p class="heading">Coș ({{ user.cart.length }})</p>
         </div>
+
         <div class="cart__items" v-if="created">
           <!-- shopping card item  -->
           <shopping-item
@@ -29,13 +30,15 @@
           :savedMoney="item.savedMoney"
            @deleteItem="removeItemFromCart(item.id)"
           />
-          <div class="cart__summ" v-show="user.cart.length >= 1">
+       <!-- cart sum -->
+        <div class="cart__amount" v-show="user.cart.length >= 1">
             <p class="body-text"> Total: {{ getSum()}} </p>
-            <p class="body-text-green"> Reducere: {{ getSavedMoney()}} </p>
+            <p class="body-text-green"> Reducere: - {{ getSavedMoney()}} </p>
             <p class="body-text-green">Pret total cu reduce: {{ getDiscountPrice(getSum())(getSavedMoney())}} </p>
           </div>
-         
         </div>
+       
+
       </div>
     </div>
   </div>
@@ -57,7 +60,7 @@ import { storeToRefs } from "pinia";
 
 //component information
 defineOptions({
-  name: "ShoppingCardView",
+  name: "ShoppingCartView",
 });
 let  created = ref(false)
 //pinia

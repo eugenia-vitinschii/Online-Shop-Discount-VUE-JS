@@ -23,7 +23,7 @@
               </router-link>
             </div>
             <div class="header__user">
-              <router-link class="header__link tooltip" to="/shopping-card">
+              <router-link class="header__link tooltip" to="/shopping-cart">
                 <span class="tooltip-text small-text"> coșul </span>
                 <svg
                   class="menu-svg"
