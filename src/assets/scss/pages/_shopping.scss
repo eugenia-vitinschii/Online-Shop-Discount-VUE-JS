@@ -48,10 +48,12 @@
    }
    &__prices {
       width: 160px;
-
    }
    &__delete{
       align-self: start;
+      span{
+        background: $green;
+      }
    }
    // pay part
    &__pay{

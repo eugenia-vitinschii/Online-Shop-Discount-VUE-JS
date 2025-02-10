@@ -74,3 +74,14 @@ a{
 .tooltip:hover .tooltip-text{
 	visibility: visible;
 }
+
+////flash price 
+.bolt{
+   color: $purple;
+   top: 10px;
+   svg{
+      width: 25px;
+      fill: $purple;
+      margin-bottom: -5px;
+   }
+}
