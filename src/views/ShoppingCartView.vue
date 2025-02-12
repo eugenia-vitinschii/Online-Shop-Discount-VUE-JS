@@ -35,11 +35,22 @@
              <!-- cart sum -->
         <div class="cart__amount" v-show="user.cart.length >= 1">
           <p class="heading">Comanda ta :</p>
-          <p class="small-text">* Preturile pot fi schimbate, precizati dupa efectuarii xomenzii</p>
-            <p class="body-text"> Total: {{ getSum()}} </p>
-            <p class="body-text-green" > Reducere: - {{ getSavedMoney()}} </p>
-            <p class="body-text-green bolt">Pret total cu reduce: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m422-232 207-248H469l29-227-185 267h139l-30 208ZM320-80l40-280H160l360-520h80l-40 320h240L400-80h-80Zm151-390Z"/></svg>{{ getDiscountPrice(getSum())(getSavedMoney())}} </p>
-            <button class="green-button"> Finalizaeza comanfa </button>
+          <p class="small-text">*Disponibilitatea produselor, prețul și condițiile de livrare, verificați vorbind cu consultantul.</p>
+          <table>
+            <tr>
+              <td class="body-text"> Total: </td>
+              <td class="body-text">{{ getSum()}}</td>
+            </tr>
+            <tr>
+              <td class="body-text"> Reducere:</td>
+              <td class="body-text-green"> - {{ getSavedMoney()}}</td>
+            </tr>
+            <tr>
+              <td class="body-text">Pret total cu reduce:</td>
+              <td class="body-text-green bolt "> <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m422-232 207-248H469l29-227-185 267h139l-30 208ZM320-80l40-280H160l360-520h80l-40 320h240L400-80h-80Zm151-390Z"/></svg>{{ getDiscountPrice(getSum())(getSavedMoney())}} </td>
+            </tr>
+          </table>
+            <button class="green-button">Comandă</button>
         </div>
         </div>
       </div>
