@@ -51,7 +51,7 @@
                 Reducere <span class="bold">{{ discount }}%</span>
               </p>
               <p class="body-text-green">
-                Economie <span class="bold">{{  savedMoney }}lei! </span>
+               - <span class="bold">{{  savedMoney }}lei! </span>
               </p>
             </div>
           </div>

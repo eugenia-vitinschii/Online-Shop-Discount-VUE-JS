@@ -16,10 +16,21 @@
       @include itemHover();
       @include transition();
    }
+
+   &__container{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+   }
    &__amount{
       @include item();
-      @include cartItem();
-      text-align-last: right;
+      width: 100%;
+      height: 250px;
+      margin: 10px;
+      padding: 10px;
+      p{
+      text-align-last: left;         
+      }
    }
    &__items {
 
@@ -33,7 +44,7 @@
       flex-direction: row;
    }
    &__img {
-      width: 190px;
+      width: 150px;
       img {
          width: 100%;
       }
@@ -47,7 +58,7 @@
       @include positionCenter()
    }
    &__prices {
-      width: 160px;
+      width: 140px;
    }
    &__delete{
       align-self: start;
@@ -63,13 +74,21 @@
 }
 
 
-//meadia
-@media (max-width: 634px){
+@media (max-width:930px){
    .cart {
+      &__container{
+         flex-direction: column;
+      }
       &__amount, &__item {
          width: 100%;
          margin-left: 0;
       }
+   }
+}
+
+//meadia
+@media (max-width: 634px){
+   .cart {
       &__item {
          flex-direction: column; 
       }
@@ -83,7 +102,6 @@
       }
       &__img {
          min-width: 200px;
-      
          img {
             width: 100%;
          }
