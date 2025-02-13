@@ -12,28 +12,34 @@
       background: $white;
       @include item();
    }
-   &__empty:hover{
+   &__empty:hover {
       @include itemHover();
       @include transition();
    }
-
-   &__container{
+   &__container {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
    }
-   &__amount{
-      @include item();
-      width: 300px;
+   &__amount {
+      top: 0;
+      left: 0;
+      position: relative;
+      min-width: 300px;
       height: auto;
+      margin-right: 10px;
+   }
+   &__amount--wrapper {
+      position: fixed;
+      @include item();
       margin: 10px;
       padding: 10px;
-      p{
-      text-align-last: left;         
+      p {
+         text-align-last: left;
       }
-      table{
+      table {
          width: 100%;
-         tr > td:last-child{
+         tr > td:last-child {
             text-align: right;
          }
       }
@@ -56,85 +62,67 @@
       }
    }
    &__description {
-      width: 270px; 
+      width: 270px;
    }
    &__info {
    }
    &__counter {
-      @include positionCenter()
+      @include positionCenter();
    }
    &__prices {
       width: 140px;
    }
-   &__delete{
+   &__delete {
       align-self: start;
-      span{
-        background: $green;
+      span {
+         background: $green;
       }
    }
    // pay part
-   &__pay{
+   &__pay {
       @include item();
-      @include cartItem()
+      @include cartItem();
    }
 }
 
-
-@media (max-width:828px){
+@media (max-width: 828px) {
    .cart {
-      &__container{
+      &__container {
          flex-direction: column;
       }
-  &__item {
-         flex-direction: column; 
+      &__item {
+         flex-direction: column;
       }
-      &__prices{
-                  border-top: 1px solid $dark-green;
-                  width: 100%;
-               } 
-               &__description  {
-                  margin-top: $margin-top;
-                  width: 100%;
-               }
-               &__img {
-                  min-width: 200px;
-                  img {
-                     width: 100%;
-                  }
-               }
-               &__delete{
-                  align-self: flex-end;
-               }
-      &__amount, &__item {
+      &__prices {
+         border-top: 1px solid $dark-green;
+         width: 100%;
+      }
+      &__description {
+         margin-top: $margin-top;
+         width: 100%;
+      }
+      &__img {
+         min-width: 200px;
+         img {
+            width: 100%;
+         }
+      }
+      &__delete {
+         align-self: flex-end;
+      }
+      &__amount--wrapper{
+         position: inherit;
+         width: 100%;
+         margin: 0;
+      }
+      &__amount,
+      &__item {
          width: 100%;
          margin-left: 0;
       }
-      table{
+      table {
          width: 100%;
       }
    }
 }
 
-//meadia
-// @media (max-width: 634px){
-//    .cart {
-//     
-//       &__prices{
-//          border-top: 1px solid $dark-green;
-//          width: 100%;
-//       } 
-//       &__description  {
-//          margin-top: $margin-top;
-//          width: 100%;
-//       }
-//       &__img {
-//          min-width: 200px;
-//          img {
-//             width: 100%;
-//          }
-//       }
-//       &__delete{
-//          align-self: flex-end;
-//       }
-//    }
-// }

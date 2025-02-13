@@ -9,24 +9,27 @@
          </div>
          <div class="bustle__time">
             <div class="bustle__time-wrapper">
+               <p class="heading"></p>
                <div class="bustle__time-item">
-                  <p class="heading">08</p>
+                  <p class="heading">{{ time() }}</p>
                   <p class="subheading">Zile</p>
                </div>
               <div class="bustle__time-item">
-                  <p class="heading">{{time()}}</p>
+            <p class="heading"></p>
                   <p class="subheading">Ore</p>
                </div>
                <div class="bustle__time-item">
-                  <p class="heading">34</p>
+                  <p class="heading"></p>
                   <p class="subheading">Minute</p>
                </div>
                <div class="bustle__time-item">
-                  <p class="heading">06</p>
+                  <p class="heading"></p>
                   <p class="subheading">Secunde</p>
+               </div> 
+               <div class="bustle__time-item">
+                 <p class="heading">{{time()}}</p>  
                </div>
             </div>
-           
          </div> 
          </div>
       </div>
@@ -43,18 +46,21 @@ defineOptions({
    name: "PromoSection"
 })
 
-let timeend= new Date();
-timeend.value = new Date(timeend.getYear()>1900?(timeend.getYear()+1):(timeend.getYear()+1901),0,1);
 
+
+// const currentDate = new Date('March 14, 2025 19:00:00')
+
+let timeEnd = new Date(2025, 3, 15, 30);
+
+// timeEnd.value = new Date(timeEnd.getYear()>1900?(timeEnd.getYear()+1):(timeEnd.getYear()+1901),0,1);
 
 function time() {
-    let today = new Date();
-     today = Math.floor((timeend-today)/1000);
-     let tsec =today%60; today=Math.floor(today/60); if(tsec<10)tsec='0'+tsec;
-     let tmin=today%60; today=Math.floor(today/60); if(tmin<10)tmin='0'+tmin;
-     let thour=today%24; today=Math.floor(today/24);
-    return  today + thour+tmin+tsec;
-    
+   let today = new Date();
+    today = Math.floor((timeEnd -today)/1000);
+   let tsec=today%60; today=Math.floor(today/60); if(tsec<10)tsec='0'+tsec;
+    let tmin=today%60; today=Math.floor(today/60); if(tmin<10)tmin='0'+tmin;
+    let thour=today%24; today=Math.floor(today/24);
+     return  today + thour+tmin+tsec;
 }
 
 </script>

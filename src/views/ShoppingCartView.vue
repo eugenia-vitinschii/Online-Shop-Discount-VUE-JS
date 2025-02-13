@@ -33,7 +33,8 @@
 
       </div>
              <!-- cart sum -->
-        <div class="cart__amount" v-show="user.cart.length >= 1">
+             <div class="cart__amount">
+                      <div class="cart__amount--wrapper" v-show="user.cart.length >= 1">
           <p class="heading">Comanda ta :</p>
           <p class="small-text">*Disponibilitatea produselor, prețul și condițiile de livrare, verificați vorbind cu consultantul.</p>
           <table>
@@ -52,6 +53,8 @@
           </table>
             <button class="green-button">Comandă</button>
         </div>
+             </div>
+
         </div>
       </div>
     </div>
