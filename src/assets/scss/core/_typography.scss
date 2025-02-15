@@ -45,8 +45,20 @@
 .body-text{
 	@include font-style( $black, 10px, left);
 }
+//fs for small devices
 
 
+@media (max-width: 768px) {
+	.heading{
+		@include font-size($heading-sm, 40px);
+	}
+	.subheading{ 
+		@include font-size($subheading-sm, 32px);
+	}
+	.body-text, .body-text-red, .body-text-green  {
+		@include font-size($body-text-sm,24px)
+	}
+}
 // a tag styles
 
 a{

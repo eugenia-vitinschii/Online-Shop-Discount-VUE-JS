@@ -60,14 +60,33 @@
       &__content{
          flex-direction: column;
       }
+      &__time-wrapper{
+         padding: 10px;
+      }
       &__time{
          width: 100%;
          height: 300px;
  
       }
+      &__time-item{
+         width: 25%;
+         margin-right: 5px;
+      }
+      &__time-item:last-child{
+         margin-right: 0;
+      }
    }
 }
 
+@media (max-width: 380px) {
+   .bustle{
+      &__time-item {
+         p:last-child{
+         text-transform: lowercase;
+      }
+      }
+   }
+}
 .blue-wrapper{
    background: $blue;
 }
