@@ -37,12 +37,12 @@ defineOptions({
 const links = [
   {
     id: "1",
-    link: "(373)67473233",
+    link: "(373)6700000",
     href: "tel:+(373)67-47-32-33",
   },
   {
     id: "3",
-    link: "email@gmail.com",
+    link: "contect-us@gmail.com",
     href: "mailto:eugenia.vitinschaia@gmail.com",
   },
   {
