@@ -131,8 +131,8 @@ onMounted(() => {
 </script>
 
  <style lang="scss" scoped>
-  .wrapper{
-  background: $blue;
-}
+
+
+
  </style>
  

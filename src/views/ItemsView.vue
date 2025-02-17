@@ -12,7 +12,13 @@
       <div class="item__content">
         <div class="item__wrapper">
           <div class="item__filter filters">
-           <p class="body-text" v-if="store.allProducts > store.filteredProducts">Au fost găsite: {{store.filteredProducts}} produse</p> 
+           <p class="body-text" v-if="store.allProducts > store.filteredProducts">
+            Au fost găsite: {{store.filteredProducts}} produse
+            <span class="body-text" v-show="checked"> {{checked}} </span>
+
+            <span class="body-text" v-show="searchValue">  {{searchValue}}</span>
+       
+            </p> 
             <div class="filters__button">
               <button class="icon-svg" @click="showFilters = !showFilters">
                 <svg
@@ -72,8 +78,8 @@
             <div v-if="showFilters" class="filters__wrapper">
               <div class="filters__brand">
                 <p class="body-text bold">Sortează după producător</p>
-                <p class="body-text" v-if="store.allProducts < 28">
-                  Au fost găsite: {{ store.allProducts }} produse
+                <p class="body-text-green" v-if="checked">
+                  Au fost găsite: {{ store.filteredItems.length }} produse {{checked}}
                 </p>
                 <div class="item__filter-content">
                   <div class="checkbox-wrapper">

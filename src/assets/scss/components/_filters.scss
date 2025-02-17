@@ -2,7 +2,7 @@
 .filters {
    //top section buttons
    p{
-      color: white;
+      color: $black;
    }
    &__button {
       display: none;
@@ -27,6 +27,9 @@
       &__button {
          margin-top: 40px;
          display: flex;
+         p{
+            color: black;
+         }
          button {
             margin-right: 10px;
             padding: 0px;

@@ -1,10 +1,13 @@
 <template>
-  <the-header />
+<div class="wrapper">
+    <the-header />
   <div class="content">
   <router-view></router-view>
   </div>
   <the-footer />
   <scroll-back />
+</div>
+
 </template>
 
 <script>
