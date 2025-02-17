@@ -7,20 +7,22 @@
     </div>
   </div>
   <brands-section />
-  <div class="item">
+  <div class="filter">
     <div class="container">
-      <div class="item__content">
-        <div class="item__wrapper">
-          <div class="item__filter filters">
-           <p class="body-text" v-if="store.allProducts > store.filteredProducts">
+      <div class="filter__wrapper">
+        <!-- filter results -->
+        <div class="filter__results">
+            <p class="body-text" v-if="store.allProducts > store.filteredProducts">
             Au fost găsite: {{store.filteredProducts}} produse
             <span class="body-text" v-show="checked"> {{checked}} </span>
-
             <span class="body-text" v-show="searchValue">  {{searchValue}}</span>
-       
             </p> 
-            <div class="filters__button">
-              <button class="icon-svg" @click="showFilters = !showFilters">
+        </div>
+        <!-- filter buttons -->
+         <div class="filter__buttons">
+          <!-- open checkbox filers by brand -->
+          <div class="filter__buttons-item"> 
+            <button class="icon-svg" @click="showFilters = !showFilters">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   height="24px"
@@ -33,8 +35,9 @@
                   />
                 </svg>
               </button>
-              <div class="filters__button--prices">
-                <button class="icon-svg" @click="ascending = !ascending">
+          </div>
+          <!-- sort by price -->
+          <div class="filter__buttons-item">   <button class="icon-svg" @click="ascending = !ascending">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     height="24px"
@@ -44,8 +47,9 @@
                   >
                     <path d="M480-360 280-560h400L480-360Z" />
                   </svg>
-                </button>
-              </div>
+                </button></div>
+            <!-- show promo items -->
+          <div class="filter__buttons-item">
               <button class="icon-svg" @click="promo= !promo">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -59,24 +63,15 @@
                   />
                 </svg>
               </button>
+          </div>
+          <!-- search input -->
+          <div class="filter__buttons-item">
               <input type="text" v-model="searchValue" />
-              <!-- <button class="icon-svg" @click="resetFilter()">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="24px"
-                  viewBox="0 -960 960 960"
-                  width="24px"
-                  fill="#e8eaed"
-                >
-                  <path
-                    d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"
-                  />
-                </svg>
-              </button> -->
-            </div>
-
-            <div v-if="showFilters" class="filters__wrapper">
-              <div class="filters__brand">
+          </div>
+         </div>
+          <!-- checkbox filers by brand -->
+            <div v-if="showFilters" class="filter__checkbox">
+              <div class="filter__brand">
                 <p class="body-text bold">Sortează după producător</p>
                 <p class="body-text-green" v-if="checked">
                   Au fost găsite: {{ store.filteredItems.length }} produse {{checked}}
@@ -220,6 +215,12 @@
               </button>
             </div>
           </div>
+      </div>
+  </div>
+  <div class="item">
+    <div class="container">
+      <div class="item__content">
+        <div class="item__wrapper">
           <div class="item__container" v-if="created">
             <the-item
               v-for="product in store.filteredItems"

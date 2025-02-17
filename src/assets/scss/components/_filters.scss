@@ -1,55 +1,29 @@
-// filters for all items page
-.filters {
-   //top section buttons
-   p{
-      color: $black;
-   }
-   &__button {
-      display: none;
-   }
-   //wrapper for filter items
-   &__wrapper {
-      @include item();
-      padding: $margin-sm;
-      min-width: 300px;
-      height: 500px;
-      background: $white;
-   }
-   &__wrapper:hover {
-      @include itemHover();
-      @include transition();
-   }
+.filter{
+
+		&__wrapper{}
+
+		&__results{}
+
+
+		&__buttons{}
+
+
+		&__buttons-item{}
+
+
+		&__checkbox{}
 }
 
-//filter hidden
-@media (max-width: 1230px) {
-   .filters {
-      &__button {
-         margin-top: 40px;
-         display: flex;
-         p{
-            color: black;
-         }
-         button {
-            margin-right: 10px;
-            padding: 0px;
-         }
-         button:last-child{
-            svg{
-               fill: $red
-            }
-         }
-      }
-      //prices expensiver & lower
-      &__button--prices {
-      }
-      &__wrapper {
-         position: fixed;
-         z-index: 999;
-         top: 0;
-         left: 0;
-         min-width: 100%;
-         height: 100vh;
-      }
-   }
-}
+
+
+
+
+// .filters
+// &__brand
+
+
+
+// .item
+// &__filter-content
+
+
