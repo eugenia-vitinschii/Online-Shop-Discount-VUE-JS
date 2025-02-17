@@ -111,7 +111,6 @@
                       <span>SAMSUNG</span>
                     </label>
                   </div>
-
                   <div class="checkbox-wrapper">
                     <input
                       class="inp-cbx"
