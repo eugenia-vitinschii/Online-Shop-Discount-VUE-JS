@@ -129,6 +129,10 @@
  }
 
  .gray{
+   svg{
+     fill: $light-gray;
+   }
+   
 	p, td, tr, th{
 		color: $light-gray;
 	}
@@ -139,5 +143,9 @@
 	button svg{
 		fill: $light-gray;
 	}
+   button svg:hover{
+      fill: $light-gray;
+      cursor: not-allowed;
+   }
 	
  }

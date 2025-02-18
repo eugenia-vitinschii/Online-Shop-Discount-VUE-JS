@@ -235,6 +235,7 @@
               :savedMoney="product.savedMoney"
               :label="product.label"
               :stock="product.stock"
+              :disabledValue="product.stock"
               :monthlyPrice="monthlyPrice(product.price)"
               :hidden="showPrices(product.discount)"
               :oldPrice="showOnePrice(product.discount)"

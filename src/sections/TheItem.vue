@@ -62,6 +62,7 @@
       <div class="item__buttons-action">
         <!-- add item to cart -->
         <button
+          :disabled="!disabledValue"
           class="button-svg"
           @click="$emit('addToCard')"
           
@@ -80,6 +81,7 @@
         </button>
         <!-- add item to favorite -->
         <button
+        :disabled="!disabledValue"
           class="button-svg"
           :class="$attrs.class"
           @click="$emit('addToFavorite', 'selected   = ! selected  ')"
@@ -175,6 +177,10 @@ defineOptions({
     type: Boolean,
     default: true,
   },
+  disabledValue:{
+     type: Boolean,
+    default: true,
+  }
 });
 
 </script>
