@@ -1,10 +1,10 @@
 <template>
   <!-- brand item -->
-  <div class="brand__item" v-if="img">
+ 
     <router-link :to="'/brand/' + brand">
       <img class="brands__img" :src="img" alt="brand" />
     </router-link>
-  </div>
+ 
 </template>
 
 <script setup>

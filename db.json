@@ -25,7 +25,7 @@
       "color": "alb/argintiu",
       "countryOfAssembly": "USA",
       "guarantee": "24",
-      "stock": true
+      "stock": false
     },
     {
       "id": "H57684X",
@@ -52,7 +52,7 @@
       "color": "Alb",
       "countryOfAssembly": "China",
       "guarantee": "36",
-      "stock": true
+      "stock": false
     },
     {
       "id": "cxSQSyh",
@@ -1284,6 +1284,16 @@
       "id": "fadgf5",
       "img": "https://i.simpalsmedia.com/marketplace/richmedia/b6f43b7563f477cea6352f2dabf7bf44.png",
       "brand": "Whirlpool"
+    },
+    {
+      "id": "C335DXO",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRq1yvxdn2MSj5p6JXQnMyonrJrpmT_86p48A&s",
+      "brand": "Midea"
+    },
+    {
+      "id": "KfD5pBZ",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzoG1NbSDnCo3qQV3WBCloaixKcLl5NDdsmQsaJi2iJIqYl88a9IHQu1sHvPz16UprUQ&usqp=CAU",
+      "brand": "Gorenje"
     }
   ]
 }

@@ -198,7 +198,6 @@
                   </div>
                 </div>
               </div>
-
               <button class="button-svg" @click="showFilters = !showFilters">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
