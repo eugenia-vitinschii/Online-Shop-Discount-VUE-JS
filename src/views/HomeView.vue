@@ -1,4 +1,6 @@
 <template>
+<!-- brand section -->
+ <brands-section/>
 <div class="swiper">
   <div class="container">
     <div class="swiper__wrapper">
@@ -22,8 +24,7 @@
   </div>
 <!-- top products -->
   <the-top-products-slider/>
-<!-- brand section -->
- <brands-section/>
+
  <!-- devilery section -->
 
 </template>

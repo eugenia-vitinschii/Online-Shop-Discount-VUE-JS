@@ -24,10 +24,7 @@
             }"
           :autoplay="{
             delay: 500,
-           nextButton: '.swiper-button-next',
-        prevButton: '.swiper-button-prev',
     stopOnLastSlide: false,
-    disableOnInteraction: true
           }"
           :enabled="true"
           :modules="modules"
@@ -61,8 +58,7 @@
               @addToFavorite="addProductToFavorite(product)"
             />
           </swiper-slide>
-               <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+
         </swiper>
       </div>
     </div>
@@ -145,7 +141,6 @@ import "swiper/scss/autoplay";
 // import required modules
 import {
   Autoplay,
-  Navigation
 } from "swiper/modules";
 
 export default {
@@ -155,7 +150,7 @@ export default {
   },
   setup() {
     return {
-      modules: [Autoplay, Navigation],
+      modules: [Autoplay],
     };
   },
 };
