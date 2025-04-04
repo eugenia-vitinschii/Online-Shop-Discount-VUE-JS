@@ -14,4 +14,4 @@ import { defineOptions } from "vue";
 defineOptions({
   name: "AdminView",
 });
-</script>
+</script> 

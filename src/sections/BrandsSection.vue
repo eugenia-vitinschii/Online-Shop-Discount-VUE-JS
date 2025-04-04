@@ -18,7 +18,7 @@
               }
               ,
              465:{
-                slidesPerView: 3,
+                slidesPerView: 3, 
               }
             }"
           :autoplay="{
