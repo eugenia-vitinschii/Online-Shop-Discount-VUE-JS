@@ -234,9 +234,8 @@
           <the-button class="green-button" @click.prevent="addPostData()">
             Salvează
           </the-button>
-          <the-button class="red-button" @click="$router.go(-1)"
-            >Acasă</the-button
-          >
+           <router-link class="red-button" to="/admin/panel"
+            >Acasă</router-link>
         </form>
       </div>
     </div>

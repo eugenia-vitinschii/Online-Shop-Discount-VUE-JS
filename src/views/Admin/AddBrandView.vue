@@ -29,7 +29,8 @@
               Salvează
             </the-button>
             
-            <the-button class="red-button" @click="$router.go(-1)">back</the-button>
+             <router-link class="red-button" to="/admin/edit"
+            >Acasă</router-link>
           </form>
         </div>
       </div>

@@ -26,7 +26,7 @@
             </button>
           </td>
           <td>
-            <router-link class="green-button" :to="'/update/' + product.id">
+            <router-link class="green-button" :to="'/admin/update/' + product.id">
               Redactează
             </router-link>
           </td>

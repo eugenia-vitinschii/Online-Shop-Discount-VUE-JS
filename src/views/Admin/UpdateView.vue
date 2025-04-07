@@ -232,7 +232,7 @@
           <the-button class="green-button" @click="updateItem()">
             Salvează
           </the-button>
-          <router-link class="red-button" to="/edit"
+          <router-link class="red-button" to="/admin/edit"
             >Innapoi</router-link
           >
         </form>

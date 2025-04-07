@@ -62,7 +62,7 @@
           <nav class="header__links header__content-bottom">
             <ul>
               <li>
-                <router-link class="header__link" to="/panel">Admin</router-link>
+                <router-link class="header__link" to="admin/panel">Admin</router-link>
               </li>
               <li>
                 <router-link class="header__link" to="/">Home</router-link>
