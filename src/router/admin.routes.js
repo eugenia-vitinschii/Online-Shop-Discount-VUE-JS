@@ -8,11 +8,11 @@ const routes = [
         component: () => import("../views/Admin/AdminLoginView.vue"),
       },
       {
-        path: "admin-panel",
+        path: "panel",
         component: () => import("../views/Admin/AdminView.vue"),
       },
       {
-        path: "add-product",
+        path: "create",
         component: () => import("../views/Admin/AddProductView.vue"),
       },
       {
@@ -20,11 +20,11 @@ const routes = [
         component: () => import("../views/Admin/UpdateView.vue"),
       },
       {
-        path: "edit-product",
+        path: "edit",
         component: () => import("../views/Admin/EditView.vue"),
       },
       {
-        path: "add-brand",
+        path: "create-brand",
         component: () => import("../views/Admin/AddBrandView.vue"),
       },
     ],

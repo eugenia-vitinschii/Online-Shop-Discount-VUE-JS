@@ -96,7 +96,7 @@ export const useProductStore = defineStore("productId", {
       } catch (error) {
         alert(error);
       } finally {
-        router.push({ path: "/admin-panel" });
+        router.push({ path: "/panel" });
       }
     },
     // delete product in db.json
@@ -188,7 +188,7 @@ export const useProductStore = defineStore("productId", {
       } catch (err) {
         console.error(err);
       } finally {
-        router.push({ path: "/admin-panel" });
+        router.push({ path: "/panel" });
       }
     },
     // get product info  by id

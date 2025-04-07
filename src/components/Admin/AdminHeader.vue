@@ -4,9 +4,9 @@
        <div class="panel__wrapper">
          <div class="panel__nav">
            <div class="panel__buttons">
-             <router-link class="green-button" to="/admin/add-product"> Add Product </router-link>
-             <router-link class="green-button" to="/admin/edit-product"> Edit Product </router-link>
-             <router-link class="green-button" to="/admin/add-brand"> Add  brand</router-link>
+             <router-link class="green-button" to="/admin/create"> Add Product </router-link>
+             <router-link class="green-button" to="/admin/edit"> Edit Product </router-link>
+             <router-link class="green-button" to="/admin/create-brand"> Add  brand</router-link>
            </div>
             <div class="panel__user">
              <div class="panel__user-img">

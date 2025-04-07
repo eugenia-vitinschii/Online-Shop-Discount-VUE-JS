@@ -62,13 +62,13 @@
           <nav class="header__links header__content-bottom">
             <ul>
               <li>
-                <router-link class="header__link" to="/admin-panel">Admin</router-link>
+                <router-link class="header__link" to="/panel">Admin</router-link>
               </li>
               <li>
                 <router-link class="header__link" to="/">Home</router-link>
               </li>
               <li>
-                <router-link class="header__link" to="/items">Produse</router-link>
+                <router-link class="header__link" to="/products">Produse</router-link>
               </li>
               <li>
                 <router-link class="header__link" to="/promo">Promo</router-link>

@@ -29,7 +29,7 @@ export const useBrandsStore = defineStore("brands", {
       } catch (error) {
         alert(error);
       } finally {
-        router.push({ path: "/admin-panel" });
+        router.push({ path: "/panel" });
       }
     },
   }

@@ -6,7 +6,7 @@
         <div class="cart__empty" v-show="user.cart.length < 1">
           <p class="heading">Coșul este gol!</p>
           <router-link 
-          to="/items" 
+          to="/products" 
           class="button">
           Vezi toate produsele
           </router-link>

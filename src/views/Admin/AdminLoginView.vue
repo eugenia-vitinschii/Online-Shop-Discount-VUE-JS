@@ -3,9 +3,9 @@
     <div class="container">
       <div class="login__wrapper">
         <p class="heading">Login page</p>
-                     <router-link class="green-button" to="/add-product"> Add Product </router-link>
-             <router-link class="green-button" to="/edit-product"> Edit Product </router-link>
-             <router-link class="green-button" to="/add-brand"> Add  brand</router-link>
+                     <router-link class="green-button" to="/create"> Add Product </router-link>
+             <router-link class="green-button" to="/edit"> Edit Product </router-link>
+             <router-link class="green-button" to="/create-brand"> Add  brand</router-link>
         <div  class="login__form">
           <p class="heading">name {{ name }}</p>
           <p class="heading">password {{ password }}</p>

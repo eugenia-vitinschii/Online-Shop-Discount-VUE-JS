@@ -17,22 +17,22 @@
     class="mySwiper"
   >
     <swiper-slide>
-      <router-link to="/product/A9Paomr">
+      <router-link to="products/product/A9Paomr">
         <img src="@/assets/img/swiper-home1.jpg" alt="#" />
       </router-link>
     </swiper-slide>
     <swiper-slide>
-      <router-link to="/product/Nw8c8Gp">
+      <router-link to="products/product/Nw8c8Gp">
         <img src="@/assets/img/swiper-home2.jpg" alt="#" />
       </router-link>
     </swiper-slide>
     <swiper-slide>
-      <router-link to="/product/GWg3ACA">
+      <router-link to="products/product/GWg3ACA">
         <img src="@/assets/img/swiper-home3.jpg" alt="#" />
       </router-link>
     </swiper-slide>
     <swiper-slide>
-      <router-link to="/items">
+      <router-link to="products/products">
         <img src="@/assets/img/swiper-home4.jpg" alt="#" />
       </router-link>
     </swiper-slide>

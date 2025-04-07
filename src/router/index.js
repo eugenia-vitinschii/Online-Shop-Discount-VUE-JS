@@ -3,6 +3,8 @@ import { createRouter, createWebHistory } from 'vue-router';
 
 //import routes
 import adminRoutes from "./admin.routes"
+import productRoutes from "./product.routes"
+
 
 //routes
    const router = createRouter({
@@ -24,17 +26,6 @@ import adminRoutes from "./admin.routes"
       component: () => import('../views/InfoView.vue')
    },
    {
-      name: "ItemsView",
-      path: '/items',
-      component: () => import('../views/ItemsView.vue')
-   },
-   {
-      name: "ProductView",
-      path: '/product/:id',
-      component: () => import('../views/ProductView.vue'),
-      props: true 
-   },
-   {
       name: "PromoView",
       path: '/promo',
       component: () => import('../views/PromoView.vue'),
@@ -49,44 +40,8 @@ import adminRoutes from "./admin.routes"
       path: '/shopping-cart',
       component: () => import('../views/ShoppingCartView.vue')
    },
-   ...adminRoutes
-   // {
-   //    name: "AdminLoginView",
-   //    path: '/admin-login',
-   //    component: () => import('../views/Admin/AdminLoginView.vue'),
-   //    props: true 
-   // },
-
-   // {
-   //    name: "AdminView",
-   //    path: '/admin-panel',
-   //    component: () => import('../views/Admin/AdminView.vue'),
-   //    props: true 
-   // },
-   // {
-   //    name: "UpdateView",
-   //    path: '/update/:id',
-   //    component: () => import('../views/Admin/UpdateView.vue'),
-   //    props: true 
-   // },
-   // {
-   //    name: "AddProductView",
-   //    path: '/add-product',
-   //    component: () => import('../views/Admin/AddProductView.vue'),
-   //    props: true 
-   // },
-   // {
-   //    name: "AddBrandView",
-   //    path: '/add-brand',
-   //    component: () => import('../views/Admin/AddBrandView.vue'),
-   //    props: true 
-   // },
-   // {
-   //    name: "EditProduct",
-   //    path: '/edit-product',
-   //    component: () => import('../views/Admin/EditView.vue'),
-   //    props: true 
-   // },
+   ...adminRoutes,
+   ...productRoutes,
 ],
 });
 

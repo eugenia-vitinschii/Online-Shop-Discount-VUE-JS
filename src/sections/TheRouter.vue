@@ -19,7 +19,7 @@
   </div>
   <!--links-->
   <div class="router__link">
-    <router-link class="header__link" to="/items">/ Produse</router-link>
+    <router-link class="header__link" to="/products">/ Produse</router-link>
   </div>
 </template>
 

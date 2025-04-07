@@ -19,12 +19,12 @@
     </div>
     <!--Img and title links -->
     <div class="item__links">
-      <router-link :to="'/product/' + id">
+      <router-link :to="'products/product/' + id">
         <div class="item__links-img">
           <img :src="img" alt="no img" />
         </div>
       </router-link>
-      <router-link :to="'/product/' + id">
+      <router-link :to="'products/product/' + id">
         <p class="body-text">{{ productName }}</p>
       </router-link>
     </div>
