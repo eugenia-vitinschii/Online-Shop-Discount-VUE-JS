@@ -17,7 +17,7 @@
         </div>
         <div class="footer__logo">
           <router-link to="/">
-            <img src="@/assets/img/logo-header.jpg" alt="The Logo" />
+            <img src="@/assets/img/logo.png" alt="The Logo" />
           </router-link>
         </div>
       </div>

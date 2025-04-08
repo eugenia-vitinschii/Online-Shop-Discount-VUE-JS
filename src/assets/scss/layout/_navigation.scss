@@ -1,5 +1,5 @@
 .wrapper {
-	background: $dark-orange;
+	background: $ivory;
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
@@ -17,3 +17,6 @@
 .footer {
 	flex: 0 0 auto;
 }
+.wrapper--promo {
+	background-color: $blue; // promo page color
+ }

@@ -27,7 +27,7 @@
     stopOnLastSlide: false,
           }"
           :enabled="true"
-          :modules="modules"
+          :modules="[Autoplay]"
           class="i__swiper"
         >
           <swiper-slide

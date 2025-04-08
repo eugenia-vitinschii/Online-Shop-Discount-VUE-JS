@@ -11,11 +11,14 @@
       <p class="small-text">{{ body }}</p>
     </div>
   </div>
+ 
 </template>
 
 <script setup>
 import { defineOptions } from "vue";
 import { defineProps } from "vue";
+
+ 
 
 defineOptions({
   name: "DeliveryItem",

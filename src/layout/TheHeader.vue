@@ -19,7 +19,7 @@
           <div class="header__content-top">
             <div class="header__logo">
               <router-link to="/">
-                <img src="@/assets/img/logo-header.jpg" alt="The Logo" />
+                <img src="@/assets/img/logo.png" alt="The Logo" />
               </router-link>
             </div>
             <div class="header__user">

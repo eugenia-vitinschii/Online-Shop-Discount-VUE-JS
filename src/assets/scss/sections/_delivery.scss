@@ -1,6 +1,5 @@
 .delivery {
    margin-top: $margin-top;
-   background: $orange;
    padding: $margin-top 0px;
    &__wrapper {
       display: grid;
@@ -27,6 +26,9 @@
       @include positionCenter();
       img {
          width: 100%;
+      }
+      svg{
+         fill: red
       }
       
    }
