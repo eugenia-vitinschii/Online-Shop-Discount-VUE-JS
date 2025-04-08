@@ -1,6 +1,6 @@
 <template>
   <admin-header />
-
+<!-- create brand -->
   <div class="add">
     <div class="container">
       <div class="add__wrapper">
@@ -25,10 +25,11 @@
                 v-model:value.trim="postBrand.brand"
               />
             </div>
+            <!-- save new brand -->
             <the-button class="green-button" @click.prevent="addBrandData()">
               Salvează
             </the-button>
-            
+            <!-- go home  -->
              <router-link class="red-button" to="/admin/edit"
             >Acasă</router-link>
           </form>
@@ -39,13 +40,17 @@
 </template>
 
 <script setup>
+//vue
 import { defineOptions, ref } from "vue";
+
 //components
 import AdminHeader from "@/components/Admin/AdminHeader.vue";
 import TheInput from "@/components/TheInput.vue";
 
 //store
 import {useBrandsStore} from "@/stores/brands";
+
+//pinia variables
 const store = useBrandsStore();
 const { createBrand } = store;
 
@@ -54,8 +59,7 @@ defineOptions({
   name: "AddBrandView",
 });
 
-//store
-
+//create bnrad
 const postBrand = ref({
   id: "",
   img: "",
@@ -68,4 +72,5 @@ const addBrandData = () => {
    postBrand.value.img = "",
    postBrand.value.brand = ""
 };
+
 </script>

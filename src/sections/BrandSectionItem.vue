@@ -1,12 +1,10 @@
 <template>
+
   <!-- brand item -->
-
-     <router-link :to="'/brand/' + brand">
+  <router-link :to="'/brands/' + brand">
       <img class="brands__img" :src="img" alt="brand" />
-    </router-link>
+  </router-link>
 
- 
- 
 </template>
 
 <script setup>
@@ -30,4 +28,5 @@ defineProps({
     type: String,
   },
 });
+
 </script>

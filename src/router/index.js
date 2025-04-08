@@ -4,46 +4,25 @@ import { createRouter, createWebHistory } from 'vue-router';
 //import routes
 import adminRoutes from "./admin.routes"
 import productRoutes from "./product.routes"
-
+import userRoutes from "./user.routes"
+import infoRoutes from "./info.routes"
 
 //routes
-   const router = createRouter({
+const router = createRouter({
    history: createWebHistory(),
    routes: [
-   {
-      path: '/',
-      name: 'home',
-      component: () => import('../views/HomeView.vue')
-    }, 
-   {
-      name: "FavoriteView",
-      path: '/favorite',
-      component: () => import('../views/FavoriteView.vue')
-   },
-   {
-      name: "InfoView",
-      path: '/info',
-      component: () => import('../views/InfoView.vue')
-   },
-   {
-      name: "PromoView",
-      path: '/promo',
-      component: () => import('../views/PromoView.vue'),
-   },
-   {
-      name: "BrandView",
-      path: "/brand/:brand",
-      component: () => import("../views/BrandView.vue")
-   },
-   {
-      name: "ShoppingCartView",
-      path: '/shopping-cart',
-      component: () => import('../views/ShoppingCartView.vue')
-   },
    ...adminRoutes,
    ...productRoutes,
+   ...userRoutes,
+   ...infoRoutes,
 ],
 });
 
+router.beforeEach((to, from, next) => {
+   const defaultTitle = "Discount";
+   const nearestWithTitle = to.matched.slice().reverse().find(r => r.meta && r.meta.title);
+   document.title = nearestWithTitle ? nearestWithTitle.meta.title : defaultTitle;
+   next();
+ });
 
 export default router
