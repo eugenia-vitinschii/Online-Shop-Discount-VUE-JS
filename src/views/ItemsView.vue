@@ -219,7 +219,7 @@
     <div class="container">
       <div class="item__content">
         <div class="item__wrapper">
-          <div class="item__container" v-if="created">
+          <div class="item__container" v-if="created && store.filteredItems.length">
             <the-item
               v-for="product in store.filteredItems"
               :key="product.id"
@@ -248,6 +248,7 @@
             <div class="spaces"></div>
             <div class="spaces"></div>
           </div>
+          <div v-else class="loading">Loading products...</div>
         </div>
       </div>
     </div>
@@ -331,9 +332,10 @@ function addProductToFavorite(product) {
 
 //hooks  
 onMounted(() => {
-  created.value = true;
+  
   console.log('onMounted')
   fetchProducts();
+created.value = true;  
 });
 
 

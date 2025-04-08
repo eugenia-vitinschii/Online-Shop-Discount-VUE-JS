@@ -11,7 +11,7 @@
           </router-link>
       </div>
       <div class="router__link">
-        <p class="header__link">/ {{products.productName}}</p>
+        <p class="header__link">/{{products.productName}}</p>
       </div>
     </div>
   </div>
@@ -70,7 +70,7 @@ import TheRouter from "@/sections/TheRouter.vue"
 import TheProduct from "@/sections/TheProduct.vue";
 //vue
 import { defineOptions } from "vue";
-import { onMounted  } from "vue";
+import { onMounted, watch  } from "vue";
 import { useRoute } from "vue-router";
 //store
 import { useProductStore } from "@/stores/product";
@@ -84,6 +84,7 @@ defineOptions({
 const store = useProductStore();
 const route = useRoute();
 const id = route.params.id
+
 const { products } = storeToRefs(store);
 const { getProducts, monthlyPrice , addToCart,dicountLabel ,hugeSaleLabel,   addToFavorite,} = store;
 
@@ -140,8 +141,14 @@ function addProductToFavorite(product) {
   });
 }
 
+//watch title 
+watch(() => route.params.productName, (newName) => {
+  document.title = `${newName}`
+})
+
 //hooks
 onMounted(() => {
+document.title = `${route.params.productName}`,
   getProducts(id);
 });
 
