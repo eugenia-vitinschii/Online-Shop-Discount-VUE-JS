@@ -44,10 +44,10 @@
 }
 
 .icon-svg{
-   background: $dark-orange;
+   background: $ivory;
    svg{
       @include transition();
-      fill: $white;
+      fill: $blue;
    }
 }
 

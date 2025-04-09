@@ -2,6 +2,8 @@ import { defineStore } from "pinia";
 import axios from "axios";
 import router from "@/router/index";
 
+//product
+import { Product} from "@/models/product"
 
 const baseUrl = "http://localhost:3000";
 
@@ -80,7 +82,7 @@ export const useProductStore = defineStore("productId", {
     async fetchProducts() {
       try {
         const response = await axios.get(`${baseUrl}/products`);
-        this.products = response.data;
+        this.products = response.data.map(item => new Product(item))
       } catch (error) {
         alert(error);
         console.log(error);
@@ -156,35 +158,10 @@ export const useProductStore = defineStore("productId", {
     },
     // edit product
     async updateProducts(id) {
+      const product = this.products.find( p => p.id === id)
+      if(!product) return  
       try {
-        await axios.put(`${baseUrl}/products/${id}`, {
-          id: this.products.id,
-          productCode: this.products.productCode,
-          img: this.products.img,
-          productName: this.products.productName,
-          price: this.products.price,
-          discount: this.products.discount,
-          savedMoney:  this.products.savedMoney,
-          discountPrice: this.products.discountPrice,
-          brand: this.products.brand,
-          waterConsumption: this.products.waterConsumption,
-          energyEfficiencyClass: this.products.energyEfficiencyClass,
-          type: this.products.type,
-          spinSpeed: this.products.spinSpeed,
-          loadCapacity: this.products.loadCapacity,
-          noiseLevelCentrifugation: this.products.noiseLevelCentrifugation,
-          noiseLevelWashing: this.products.noiseLevelWashing,
-          typeControl: this.products.typeControl,
-          numberOfPrograms: this.products.numberOfPrograms,
-          weightInPackage: this.products.weightInPackage,
-          depth: this.products.depth,
-          weight: this.products.weight,
-          color: this.products.color,
-          countryOfAssembly: this.products.countryOfAssembly,
-          guarantee: this.products.guarantee,
-          stock: this.products.stock,
-        });
-        // this.router.push({name: "ProductPage"})
+        await axios.put(`${baseUrl}/products/${id}`, product)
       } catch (err) {
         console.error(err);
       } finally {

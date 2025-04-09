@@ -255,6 +255,11 @@ import AdminHeader from "@/components/Admin/AdminHeader.vue";
 // store
 import { useProductStore } from "@/stores/product";
 
+//import product constructor
+import {Product} from "@/models/product"
+
+const postProducts = ref(new Product())
+
 defineOptions({
   name: "AddProductView",
 });
@@ -293,61 +298,12 @@ function getNewPrice(price) {
   };
 }
 
-const postProducts = ref({
-  id: "",
-  productCode: "",
-  img: "",
-  productName: "",
-  price: "",
-  discount:0,
-  savedMoney: "",
-  discountPrice: "",
-  brand: "",
-  waterConsumption: "",
-  energyEfficiencyClass: "",
-  type: "",
-  spinSpeed: "",
-  loadCapacity: "",
-  noiseLevelCentrifugation: "",
-  noiseLevelWashing: "",
-  typeControl: "",
-  numberOfPrograms: "",
-  weightInPackage: "",
-  depth: "",
-  weight: "",
-  color: "",
-  countryOfAssembly: "",
-  guarantee: "",
-  stock: true,
-});
+
 
 const addPostData = () => {
   createProduct(postProducts.value);
-  postProducts.value.id = "";
-  postProducts.value.productCode = "";
-  postProducts.value.img = "";
-  postProducts.value.productName = "";
-  postProducts.value.price = "";
-  postProducts.value.discount = "";
-  postProducts.value.savedMoney = "";
-  postProducts.value.discountPrice = "";
-  postProducts.value.brand = "";
-  postProducts.value.waterConsumption = "";
-  postProducts.value.energyEfficiencyClass = "";
-  postProducts.value.type = "";
-  postProducts.value.spinSpeed = "";
-  postProducts.value.loadCapacity = "";
-  postProducts.value.noiseLevelCentrifugation = "";
-  postProducts.value.noiseLevelWashing = "";
-  postProducts.value.typeControl = "";
-  postProducts.value.numberOfPrograms = "";
-  postProducts.value.weightInPackage = "";
-  postProducts.value.depth = "";
-  postProducts.value.weight = "";
-  postProducts.value.color = "";
-  postProducts.value.countryOfAssembly = "";
-  postProducts.value.guarantee = "";
-  postProducts.value.stock = Boolean;
+  postProducts.value = new Product();
 };
+
 </script>
 
