@@ -26,6 +26,7 @@
             :brand="item.brand"
             :discount="item.discount"
             :price="item.price"
+            :quantity="item.quantity"
           :discountPrice="item.discountPrice"
           :savedMoney="item.savedMoney"
            @deleteItem="removeItemFromCart(item.id)"

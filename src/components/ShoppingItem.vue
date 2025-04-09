@@ -13,7 +13,8 @@
       </div>
     </div>
     <div class="cart__prices">
-      <p class="body-text">Preț: {{ price }} lei</p>
+      <p class="body-text">Preț: {{ price }} lei</p> 
+      <p class="body-text">quantity:{{quantity}}</p>
         <div class="cart__prices-discount" v-show="discount > 0">
         <p class="body-text">Reducere {{ discount }}%</p>
         <p class="body-text-green"> - {{ savedMoney }} lei </p>
@@ -68,6 +69,9 @@ defineProps({
   discountPrice: {
     type: Number,
   },
+  quantity: {
+    type: Number,
+  }
 });
 
 </script>

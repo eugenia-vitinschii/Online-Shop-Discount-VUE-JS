@@ -40,6 +40,6 @@ export class Product {
          return Math.floor(this.price - (this.price * this.discount / 100));
        } else {
          return 0;
-       }
+       } 
    }
 }

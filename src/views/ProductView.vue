@@ -22,40 +22,40 @@
       <div class="product__wrapper">
         <!-- product component -->
         <the-product
-          :id="products.id"
-          :productCode="products.productCode"
-          :productName="products.productName"
-          :productType="products.productType"
-          :img="products.img"
-          :price="products.price"
-          :discount="products.discount"
-          :savedMoney="products.savedMoney"
-          :discountPrice="products.discountPrice"
-          :brand="products.brand"
-          :waterConsumption="products.waterConsumption"
-          :energyEfficiencyClass="products.energyEfficiencyClass"
-          :type="products.type"
-          :spinSpeed="products.spinSpeed"
-          :loadCapacity="products.loadCapacity"
-          :noiseLevelCentrifugation="products.noiseLevelCentrifugation"
-          :noiseLevelWashing="products.noiseLevelWashing"
-          :typeControl="products.typeControl"
-          :numberOfPrograms="products.numberOfPrograms"
-          :weightInPackage="products.weightInPackage"
-          :depth="products.depth"
-          :weight="products.weight"
-          :color="products.color"
-          :guarantee='products.guarantee'
-          :countryOfAssembly="products.countryOfAssembly"
-          :stock="products.stock"
-          :disabledValue="products.stock"
-          :hidden="showPrices(products)"
-          :onePrice="showOnePrice(products)"
-          :monthlyPrice="monthlyPrice(products.price)"
-          :dicountLabel="dicountLabel(products.discount)"
-          :hugeSaleLabel="hugeSaleLabel(products.discount)"
-           @addToCard="addProductCard(products)"
-           @addToFavorite="addProductToFavorite(products)"
+          :id="product.id"
+          :productCode="product.productCode"
+          :productName="product.productName"
+          :productType="product.productType"
+          :img="product.img"
+          :price="product.price"
+          :discount="product.discount"
+          :savedMoney="product.savedMoney"
+          :discountPrice="product.discountPrice"
+          :brand="product.brand"
+          :waterConsumption="product.waterConsumption"
+          :energyEfficiencyClass="product.energyEfficiencyClass"
+          :type="product.type"
+          :spinSpeed="product.spinSpeed"
+          :loadCapacity="product.loadCapacity"
+          :noiseLevelCentrifugation="product.noiseLevelCentrifugation"
+          :noiseLevelWashing="product.noiseLevelWashing"
+          :typeControl="product.typeControl"
+          :numberOfPrograms="product.numberOfPrograms"
+          :weightInPackage="product.weightInPackage"
+          :depth="product.depth"
+          :weight="product.weight"
+          :color="product.color"
+          :guarantee='product.guarantee'
+          :countryOfAssembly="product.countryOfAssembly"
+          :stock="product.stock"
+          :disabledValue="product.stock"
+          :hidden="showPrices(product)"
+          :onePrice="showOnePrice(product)"
+          :monthlyPrice="monthlyPrice(product.price)"
+          :dicountLabel="dicountLabel(product.discount)"
+          :hugeSaleLabel="hugeSaleLabel(product.discount)"
+           @addToCard="addProductCard(product)"
+           @addToFavorite="addProductToFavorite(product)"
         />
       </div>
     </div>
@@ -70,7 +70,7 @@ import TheRouter from "@/sections/TheRouter.vue"
 import TheProduct from "@/sections/TheProduct.vue";
 //vue
 import { defineOptions } from "vue";
-import { onMounted, watch  } from "vue";
+import { onMounted, watch, computed  } from "vue";
 import { useRoute } from "vue-router";
 //store
 import { useProductStore } from "@/stores/product";
@@ -86,40 +86,13 @@ const route = useRoute();
 const id = route.params.id
 
 const { products } = storeToRefs(store);
-const { getProducts, monthlyPrice , addToCart,dicountLabel ,hugeSaleLabel,   addToFavorite,} = store;
+const { getProducts, monthlyPrice , addToCart,dicountLabel ,hugeSaleLabel,   addToFavorite} = store;
 
 
-//functions
-function showPrices(products){
-    if(Number(products.discount)<  1 || Number(products.discount) > 99 ){
-    return  true
-  }
-}
-function showOnePrice(products){
-    if(Number(products.discount)<  1 || Number(products.discount) > 99 ){
-    return  true
-  }
-}
+
  // add product to cart
 function addProductCard(product) {
-  addToCart({
-       id: product.id,
-    productCode: product.productCode,
-    productName: product.productName,
-    price: product.price,
-    discount: product.discount,
-    discountPrice:product.discountPrice,
-    savedMoney: product.savedMoney,
-    img: product.img,
-    brand: product.brand,
-  });
-}
-
-
-class addFavorite {
-  constructor(id){
-  this.id= id;
-  }
+  addToCart(product);
 }
 
 
@@ -137,9 +110,10 @@ function addProductToFavorite(product) {
     brand: product.brand,
     label: product.label,   
     stock: product.stock,    
-    fav : new addFavorite(id)  
   });
 }
+//variables
+const product = computed(() => products.value.find(p => p.id === id));
 
 //watch title 
 watch(() => route.params.productName, (newName) => {

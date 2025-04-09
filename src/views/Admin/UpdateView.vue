@@ -250,7 +250,7 @@ import AdminHeader from "@/components/Admin/AdminHeader.vue";
 import MessageComponent from "@/components/Admin/MessageComponent.vue";
 
 //vue
-import { defineOptions , ref, onMounted, computed } from "vue";
+import { defineOptions , ref, onMounted, computed, watch } from "vue";
 
 //router
 import { useRoute } from "vue-router";
@@ -290,7 +290,13 @@ function updateItem() {
   updateProducts(id);
 }
 
+//watch title 
+watch(() => route.params.productName, (newName) => {
+  document.title = `${newName}`
+})
+
 onMounted(() => {
+  document.title = `${route.params.productName}`,
   getProducts(id);
 });
 </script>
