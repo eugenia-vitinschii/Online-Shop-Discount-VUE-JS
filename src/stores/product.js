@@ -1,10 +1,16 @@
+//pinia
 import { defineStore } from "pinia";
+
+//axios
 import axios from "axios";
+
+//router
 import router from "@/router/index";
 
 //product
 import { Product} from "@/models/product"
 
+//base url
 const baseUrl = "http://localhost:3000";
 
 export const useProductStore = defineStore("productId", {
@@ -78,7 +84,7 @@ export const useProductStore = defineStore("productId", {
     },
   },
   actions: {
-    // get all products in db.json
+     //fetch products
     async fetchProducts() {
       try {
         const response = await axios.get(`${baseUrl}/products`);
@@ -88,13 +94,13 @@ export const useProductStore = defineStore("productId", {
         console.log(error);
       }
     },
-    // add new product in db.json
+    //create product
     async createProduct(payload) {
       try {
-        const { data } = await axios.post(`${baseUrl}/products`, payload);
-        this.products.push(data);
+        const newProduct = new Product(payload);
+        const { data } = await axios.post(`${baseUrl}/products`, newProduct);
+        this.products.push(new Product(data));
         alert("Produsul a fost creat cu succes");
-        // router.go(-1)
       } catch (error) {
         alert(error);
       } finally {
@@ -168,11 +174,18 @@ export const useProductStore = defineStore("productId", {
         router.push({ path: "admin/panel" });
       }
     },
-    // get product info  by id
+    // get product by id
     async getProducts(id) {
       try {
-        const response = await axios.get(`${baseUrl}/products/${id}`);
-        this.products = response.data;
+        const {data} = await axios.get(`${baseUrl}/products/${id}`);
+        
+        const foundProduct = new Product(data);
+        const index = this.products.findIndex( p => p.id === id);
+        if (index !== -1){
+          this.products[index] = foundProduct;
+        } else{
+          this.products.push(foundProduct)
+        }
       } catch (err) {
         console.error("Updae ERROR:", err);
       }

@@ -3,7 +3,7 @@
   <div class="container">
     <div class="update">
       <div class="update__title">
-        <p class="heading">Editeaza produsul {{ products.productName }}</p>
+        <p class="heading">Editeaza produsul {{ product.productName }}</p>
       </div>
       <div class="update__content">
         <form class="update__form">
@@ -11,33 +11,33 @@
           <div class="update__form-item">
              <div class="input__wrapper">
               <label for="stock">In Stock</label>
-            <input type="checkbox" name="stock" id="stock" v-model="products.stock"  checked>
+            <input type="checkbox" name="stock" id="stock" v-model="product.stock"  checked>
             </div>
             <p class="heading">Date generale</p>
             <the-input
               :label="'Introduceți id'"
               :placeholder="'Introduceți id'"
-              v-model:value.trim="products.id"
+              v-model:value.trim="product.id"
             />
             <the-input
               :label="'Introduceți COD'"
               :placeholder="'DMB383292PP'"
-              v-model:value.trim="products.productCode"
+              v-model:value.trim="product.productCode"
             />
             <the-input
               :label="'Introduceți url pentru imagine'"
               :placeholder="'//http'"
-              v-model:value.trim="products.img"
+              v-model:value.trim="product.img"
             />
             <the-input
               :label="'Introduceți denumirea pentru produs'"
               :placeholder="'Mașină de spălat frontală Indesit'"
-              v-model:value.trim="products.productName"
+              v-model:value.trim="product.productName"
             />
             <the-input
               :label="'Introduceți prețul produsului'"
               :placeholder="'4999'"
-              v-model:value.number="products.price"
+              v-model:value.number="product.price"
             />
               <div class="input__wrapper">
               <p class="body-text">Reducere  {{discountPrice}} </p>
@@ -47,16 +47,15 @@
               v-show="discountPrice"
               :label="'Introduceți procentul de reducere ( fără %)'"
               :placeholder="'17'"
-              v-model:value.number="products.discount"
+              v-model:value.number="product.discount"
             />
           </div>
             <div class="input__wrapper" v-show="discountPrice">
               <p class="body-text">
-                Saved money  Saved money {{products.savedMoney}} {{ getMoneySaved(products.price)(products.discount) }}
+                Saved money {{product.savedMoney}}
               </p>
               <p class="body-text">
-                Discount Price {{ products.discountPrice}}
-                {{ getNewPrice(products.price)(products.discount) }}
+                Discount Price {{ product.discountPrice}}
               </p>
             </div>
           <!-- Informația despre produs -->
@@ -64,7 +63,7 @@
             <p class="heading">Informația despre produs</p>
             <div class="input__wrapper">
               <label for="brand">Brand</label>
-              <select name="brand" id="brand" v-model="products.brand">
+              <select name="brand" id="brand" v-model="product.brand">
                 <option value="AEG">AEG</option>
                 <option value="Indesit">Indesit</option>
                 <option value="Beko">Beko</option>
@@ -77,7 +76,7 @@
             <the-input
               :label="'Consum de apă în program, l/ciclu'"
               :placeholder="'20'"
-              v-model:value.trim="products.waterConsumption"
+              v-model:value.trim="product.waterConsumption"
             />
 
             <div class="input__wrapper">
@@ -87,7 +86,7 @@
               <select
                 name="energyEfficiencyClass"
                 id="energyEfficiencyClass"
-                v-model="products.energyEfficiencyClass"
+                v-model="product.energyEfficiencyClass"
               >
                 <option value="A">A</option>
                 <option value="A++">A++</option>
@@ -101,7 +100,7 @@
             </div>
             <div class="input__wrapper">
               <label for="type">Tip mașină de spălat</label>
-              <select name="type" id="type" v-model="products.type">
+              <select name="type" id="type" v-model="product.type">
                 <option value="cu încărcare frontală">
                   cu încărcare frontală
                 </option>
@@ -115,7 +114,7 @@
               <select
                 name="spinSpeed"
                 id="spinSpeed"
-                v-model="products.spinSpeed"
+                v-model="product.spinSpeed"
               >
                 <option value="1000">1000</option>
                 <option value="1200">1200</option>
@@ -128,7 +127,7 @@
             <the-input
               :label="'Capacitate de încărcare, kg'"
               :placeholder="'5'"
-              v-model:value.trim="products.loadCapacity"
+              v-model:value.trim="product.loadCapacity"
             />
           </div>
           <!-- Caracteristici -->
@@ -137,19 +136,19 @@
             <the-input
               :label="'Nivel de zgomot pentru centrifugare, dB'"
               :placeholder="'76'"
-              v-model:value.trim="products.noiseLevelCentrifugation"
+              v-model:value.trim="product.noiseLevelCentrifugation"
             />
             <the-input
               :label="'Diapazonul nivelului de zgomot la spălare, dB'"
               :placeholder="'56-60'"
-              v-model:value.trim="products.noiseLevelWashing"
+              v-model:value.trim="product.noiseLevelWashing"
             />
             <div class="input__wrapper">
               <label for="typeControl">Tip control</label>
               <select
                 name="typeControl"
                 id="typeControl"
-                v-model="products.typeControl"
+                v-model="product.typeControl"
               >
                 <option value="electronic">electronic</option>
                 <option value="senzor">senzor</option>
@@ -159,7 +158,7 @@
             <the-input
               :label="'Numărul de programe'"
               :placeholder="'16'"
-              v-model:value.trim="products.numberOfPrograms"
+              v-model:value.trim="product.numberOfPrograms"
             />
           </div>
           <!-- Dimensiuni -->
@@ -168,17 +167,17 @@
             <the-input
               :label="'Greutate în ambalaj, kg'"
               :placeholder="'63'"
-              v-model:value.trim="products.weightInPackage"
+              v-model:value.trim="product.weightInPackage"
             />
              <the-input
               :label="'Greutate, kg'"
               :placeholder="'61'"
-              v-model:value.trim="products.weight"
+              v-model:value.trim="product.weight"
             />
             <the-input
               :label="'Dimensiuni (ÎxLxA), cm'"
               :placeholder="'85x60x55'"
-              v-model:value.trim="products.depth"
+              v-model:value.trim="product.depth"
             />
            
             <!-- Informaţii generale -->
@@ -186,7 +185,7 @@
               <p lass="heading">Informaţii generale</p>
               <div class="input__wrapper">
                 <label for="color">Culoare</label>
-                <select name="color" id="color" v-model="products.color">
+                <select name="color" id="color" v-model="product.color">
                                   <option value="alb">alb</option>
                 <option value="alb/argintiu">alb / argintiu</option>
                 <option value="alb/negru">alb /n egru</option>
@@ -201,7 +200,7 @@
                 <select
                   name="country"
                   id="country"
-                  v-model="products.countryOfAssembly"
+                  v-model="product.countryOfAssembly"
                 >
                   <option value="Polonia">Polonia</option>
                   <option value="România">România</option>
@@ -217,7 +216,7 @@
               <select
                 name="guarantee"
                 id="guarantee"
-                v-model="products.guarantee"
+                v-model="product.guarantee"
               >
               <option value="12">12</option>
                 <option value="24">24</option>
@@ -244,74 +243,49 @@
  
 
 <script setup>
+//components
 import TheButton from "@/components/TheButton.vue";
 import TheInput from "@/components/TheInput.vue";
 import AdminHeader from "@/components/Admin/AdminHeader.vue";
 import MessageComponent from "@/components/Admin/MessageComponent.vue";
 
+//vue
+import { defineOptions , ref, onMounted, computed } from "vue";
+
+//router
+import { useRoute } from "vue-router";
+
+
+//pinia
 import { useProductStore } from "@/stores/product";
 import { storeToRefs } from "pinia";
-import { onMounted } from "vue";
-import { useRoute } from "vue-router";
-import { defineOptions } from "vue";
-import { ref } from "vue";
 
+//component settings
 defineOptions({
   name: "UpdateView",
   inheritAttrs: false,
 });
 
+//pinia variables
 const store = useProductStore();
-
 const { getProducts, updateProducts } = store;
-
 const { products } = storeToRefs(store);
 
+//router variables
 const route = useRoute();
 
-const id = route.params.id;
+const id = route.params.id;  
 
-// varuiable
+//variables
+const product = computed(() => products.value.find(p => p.id === id));
+
+
 let discountPrice = ref(true);
-
-// function enableDiscount(discount){
-//   if (discount > 0){
-//     return discountPrice.value = true
-//   } else{
-//     return discountPrice.value = false
-//   }
-// }
+console.log("Product ID:", id);
 
 let message = ref(false);
-console.log(message);
+
 //functions 
-
-// amount of saved money
-function getMoneySaved(price) {
-  return (discount) => {
-    if (discount > 0) {
-      products.value.savedMoney = Math.floor(
-        price - (price - (price * discount) / 100)
-      );
-    } else {
-      return products.value.savedMoney = 0
-    }
-  };
-}
-
-//discountPrice
-function getNewPrice(price) {
-  return (discount) => {
-    if (discount > 0) {
-      products.value.discountPrice = Math.floor(
-        +price - (price * discount) / 100
-      );
-    } else {
-      return  products.value.discountPrice = 0
-    }
-  };
-}
-
 function updateItem() {
   updateProducts(id);
 }

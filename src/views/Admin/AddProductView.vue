@@ -56,16 +56,6 @@
               :placeholder="'17'"
               v-model:value.number="postProducts.discount"
             />
-            <div class="input__wrapper" v-show="discountPrice">
-              <p class="body-text">
-                Saved money {{postProducts.savedMoney}}
-                {{ getMoneySaved(postProducts.price)(postProducts.discount) }}
-              </p>
-              <p class="body-text">
-                Discount Price {{ postProducts.discountPrice}}
-                {{ getNewPrice(postProducts.price)(postProducts.discount) }}
-              </p>
-            </div>
           </div>
           <!-- Informația despre produs -->
           <div class="add__form-item">
@@ -247,6 +237,7 @@
 <script setup>
 //vue
 import { defineOptions, ref } from "vue";
+
 // componets
 import TheInput from "@/components/TheInput.vue";
 import TheButton from "@/components/TheButton.vue";
@@ -258,48 +249,21 @@ import { useProductStore } from "@/stores/product";
 //import product constructor
 import {Product} from "@/models/product"
 
-const postProducts = ref(new Product())
 
+//variables
+const postProducts = ref(new Product())
+const discountPrice = ref(false)
+
+//component settings
 defineOptions({
   name: "AddProductView",
 });
 
+//store variables
 const store = useProductStore();
 const { createProduct } = store;
 
-// varuiable
-let discountPrice = ref(false);
-
-//functions
-
-// amount of saved money
-function getMoneySaved(price) {
-  return (discount) => {
-    if (discount > 0) {
-      postProducts.value.savedMoney = Math.floor(
-        price - (price - (price * discount) / 100)
-      );
-    } else {
-      return postProducts.value.savedMoney = 0
-    }
-  };
-}
-
-//discountPrice
-function getNewPrice(price) {
-  return (discount) => {
-    if (discount > 0) {
-      postProducts.value.discountPrice = Math.floor(
-        +price - (price * discount) / 100
-      );
-    } else {
-      return  postProducts.value.discountPrice = 0
-    }
-  };
-}
-
-
-
+//store functions
 const addPostData = () => {
   createProduct(postProducts.value);
   postProducts.value = new Product();
