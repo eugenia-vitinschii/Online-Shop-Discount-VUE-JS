@@ -46,6 +46,7 @@ export const   actions= {
    },
    //add  product to cart
    addToCart(item) {
+    
      const index = this.user.cart.findIndex((product) => product.id == item.id)
 
      if (index !== -1) {

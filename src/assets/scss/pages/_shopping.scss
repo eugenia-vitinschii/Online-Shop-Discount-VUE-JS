@@ -10,7 +10,7 @@
       align-items: center;
       justify-content: center;
       background: $white;
-      @include item();
+      @include block-style();
    }
    &__empty:hover {
       @include itemHover();
@@ -31,7 +31,7 @@
    }
    &__amount--wrapper {
       position: fixed;
-      @include item();
+      @include block-style();
       margin: 10px;
       padding: 10px;
       p {
@@ -48,7 +48,7 @@
       width: 100%;
    }
    &__item {
-      @include item();
+      @include block-style();
       @include cartItem();
       display: flex;
       justify-content: space-between;
@@ -80,7 +80,7 @@
    }
    // pay part
    &__pay {
-      @include item();
+      @include block-style();
       @include cartItem();
    }
 }

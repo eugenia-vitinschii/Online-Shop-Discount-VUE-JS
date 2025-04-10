@@ -27,7 +27,7 @@
       }
       //checkbox wrapper
 		&__checkbox{
-         @include item()
+         @include block-style()
       }
 }
 

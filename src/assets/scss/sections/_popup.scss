@@ -16,7 +16,7 @@
       background: rgba(0, 0, 0, 0.5);
    }
    &__content{
-      @include  item();
+      @include item();
       width: 500px;
       padding: 30px;
       margin: 15px;

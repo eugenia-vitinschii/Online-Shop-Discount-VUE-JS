@@ -1,5 +1,5 @@
 <template>
-  <p class="body-text">Cumpără {{ products.productName }} în rate: </p>
+  <p class="body-text">Cumpără {{ product.productName }} în rate: </p>
   <p class="body-text-green">Dobândă: 0% </p>
   <table class="credit__table">
     <tr>
@@ -12,7 +12,7 @@
       <td>{{ item.month }}</td>
       <td>{{installmentPay(item.avans)}}</td>
       <td class="small-text">{{ getMonthlyPrice(item.month) }} lei/lunar</td>
-      <td class="small-text"> {{ products.price }} lei</td>
+      <td class="small-text"> {{ product.price }} lei</td>
     </tr>
   </table>
 </template>
@@ -20,7 +20,7 @@
 
 <script setup>
 //vue
-import { defineOptions, onMounted } from "vue";
+import { defineOptions, onMounted, computed } from "vue";
 import { useRoute } from "vue-router";
 //store
 import { useProductStore } from "@/stores/product";
@@ -35,7 +35,8 @@ const store = useProductStore();
 const { getProducts } = store;
 
 const { products } = storeToRefs(store);
-
+//variables
+const product = computed(() => products.value.find((p) => p.id === id));
 const route = useRoute();
 
 const id = route.params.id;
@@ -49,7 +50,7 @@ const months = [
 
 ];
 
-let price = products.value.price;
+let price = product.value.price;
 
 let installmentPrice; 
 
@@ -66,7 +67,7 @@ function installmentPay(avans){
 
 let monhlyPrice;
 function getMonthlyPrice(month) {
-  monhlyPrice = Math.round((+products.value.price -installmentPrice) / month);
+  monhlyPrice = Math.round((+price -installmentPrice) / month);
   return monhlyPrice;
 }
 onMounted(() => {

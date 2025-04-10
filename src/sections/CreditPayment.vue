@@ -1,5 +1,5 @@
 <template>
-  <p class="body-text">Cumpără {{ products.productName }} în credit: </p>
+  <p class="body-text">Cumpără {{ product.productName }} în credit: </p>
   <p class="body-text-green">Avans : 0% </p>
   <table class="credit__table">
     <tr>
@@ -22,13 +22,16 @@
 <script setup>
 import { useProductStore } from "@/stores/product";
 import { storeToRefs } from "pinia";
-import { onMounted } from "vue";
+import { onMounted, computed } from "vue";
 import { useRoute } from "vue-router";
 import { defineOptions } from "vue";
 
 defineOptions({
   name: "CreditPayment",
 });
+//variables
+const product = computed(() => products.value.find((p) => p.id === id));
+
 const store = useProductStore();
 
 const { getProducts } = store;
@@ -48,7 +51,7 @@ const months = [
   { id: 36, month: 36, percent: 40 },
 ];
 
-let price = products.value.price;
+let price = product.value.price;
 
 let creditPrice;
 
@@ -58,6 +61,7 @@ function getPrice(percent) {
 }
 
 let monhlyPrice;
+
 function getMonthlyPrice(month) {
   monhlyPrice = Math.round(creditPrice / month);
   return monhlyPrice;

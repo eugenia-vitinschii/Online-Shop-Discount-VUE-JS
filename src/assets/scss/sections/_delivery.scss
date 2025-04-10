@@ -11,7 +11,7 @@
       flex-direction: column;
       align-items: center;
       height: 200px;
-      background: $white;
+      @include block-style();
    }
    &__item:last-child{
       margin-right: 0;

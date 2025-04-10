@@ -10,7 +10,8 @@
     
   }
   &__item {
-    @include item();
+    @include block-style();
+    padding: 0px 5px;
   }
   &__item:hover {
     @include itemHover();
