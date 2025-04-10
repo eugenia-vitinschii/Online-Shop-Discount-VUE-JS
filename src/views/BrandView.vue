@@ -5,7 +5,7 @@
     <div class="router__wrapper">
       <the-router/>
       <div class="router__link">
-         <router-link :to="'/brand/' + brand" class="header__link">
+         <router-link :to="'/brands/' + brand" class="header__link">
            /  {{brand}}
           </router-link>
       </div>

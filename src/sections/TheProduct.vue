@@ -3,7 +3,7 @@
     <!-- Short info about product -->
         <div class="product__top">
       <div class="product__top-logo">
-        <router-link :to="'/brand/' + brand" class="body-text">
+        <router-link :to="'/brands/' + brand" class="body-text">
             {{ brand }}
           </router-link>
       </div>

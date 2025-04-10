@@ -9,7 +9,7 @@ const routes = [
          meta: { title: "Products" }
        },
        {
-         path: "product/:id",
+         path: ":id",
          component: () => import('../views/ProductView.vue'),
        },
 
@@ -28,7 +28,11 @@ const routes = [
         path: ":brand",
         name: "BrandView",
         component: () => import("../views/BrandView.vue")
-      }
+      },
+      {
+        path: "products/:id",
+        component: () => import('../views/ProductView.vue'),
+      },
         ]
    },
  ];

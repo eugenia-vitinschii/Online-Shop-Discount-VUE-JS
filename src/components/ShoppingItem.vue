@@ -2,7 +2,7 @@
 <!-- cart item -->
   <div class="cart__item">
     <div class="cart__img">
-       <router-link :to="'products/product/' + id">
+       <router-link :to="'products/' + id">
           <img :src="img" alt="no img" />
       </router-link>
     </div>

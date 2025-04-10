@@ -7,8 +7,8 @@
         <div class="header__promo">
           <router-link class="header__link running-line-wrapper" to="/promo"
             ><span class="running-line-hide"></span>
-            <span class="running-line subheading">
-              Promoții de iarnă, cumpărați produse cu reduceri maxime 🎁 doar la
+            <span class="running-line">
+              Promoții de primavara, cumpărați produse cu reduceri maxime 🎁 doar la
               Discount</span
             ><span class="running-line-hide"></span
           ></router-link>
@@ -72,6 +72,9 @@
               </li>
               <li>
                 <router-link class="header__link" to="/promo">Promo</router-link>
+              </li>
+               <li>
+                <router-link class="header__link" to="/brands">Branduri</router-link>
               </li>
             </ul>
           </nav>

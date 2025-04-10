@@ -3,7 +3,7 @@
   <div class="item__item" :class="{ gray: !stock }">
     <div class="item__top">
       <div class="item__top-logo">
-        <router-link :to="'/brand/' + brand" class="body-text">
+        <router-link :to="'/brands/' + brand" class="body-text">
           {{ brand }}
         </router-link>
       </div>
@@ -19,12 +19,12 @@
     </div>
     <!--Img and title links -->
     <div class="item__links">
-      <router-link :to="'products/product/' + id">
+      <router-link :to="'products/' + id">
         <div class="item__links-img">
           <img :src="img" alt="no img" />
         </div>
       </router-link>
-      <router-link :to="'products/product/' + id">
+      <router-link :to="'products/' + id">
         <p class="body-text">{{ productName }}</p>
       </router-link>
     </div>

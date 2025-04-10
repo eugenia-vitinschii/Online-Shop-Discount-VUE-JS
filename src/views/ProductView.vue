@@ -6,7 +6,7 @@
         <the-router />
         <br />
         <div class="router__link" v-if="product">
-          <router-link :to="'/brand/' + product.brand" class="header__link">
+          <router-link :to="'/brands/' + product.brand" class="header__link">
             / {{ product.brand }}
           </router-link>
         </div>
