@@ -27,10 +27,10 @@
           disableOnInteraction: true,
         }"
         :enabled="true"
-        :modules="modules"
+        :modules="[Autoplay]"
       >
         <swiper-slide
-          class="brand__item"
+          class="brands__item"
           data-swiper-autoplay="2000"
           v-for="brand in store.brands"
           :key="brand.id"

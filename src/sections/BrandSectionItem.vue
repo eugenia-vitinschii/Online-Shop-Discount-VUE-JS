@@ -1,10 +1,8 @@
 <template>
-
-  <!-- brand item -->
+<!-- brand item -->
   <router-link :to="'/brands/' + brand">
       <img class="brands__img" :src="img" alt="brand" />
   </router-link>
-
 </template>
 
 <script setup>

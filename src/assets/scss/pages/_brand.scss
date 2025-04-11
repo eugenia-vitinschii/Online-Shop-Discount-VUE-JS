@@ -1,9 +1,23 @@
 .brand{
 
-   &__wrapper{}
-   &__title{}
-   &__items{
-      display: flex;
-      flex-wrap: wrap;
+   &__wrapper{
    }
+   &__content{
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: auto auto auto;
+      gap: 20px;
+      justify-items: center;
+      align-items: center;
+   }
+   a{
+      @include block-style();
+      width: 100%;
+   }
+   a:hover{
+      @include itemHover()
+   }
+   img{
+         width: 100%;
+      }
 }

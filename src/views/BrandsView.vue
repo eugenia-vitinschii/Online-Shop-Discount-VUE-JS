@@ -1,10 +1,9 @@
 <template>
-<div class="brands"> 
+<div class="brand"> 
    <div class="container">
-      <div class="brands__wrapper">
+      <div class="brand__wrapper">
          <p class="heading">ALL Brands</p>
-         <div class="brands__content">
-            <div class="brands__item">
+         <div class="brand__content">
                <brand-section-item
             v-for="item in store.brands"
             :key="item.id"
@@ -12,8 +11,6 @@
             :img="item.img"
             :brand="item.brand"
           />
-            </div>
-  
          </div>
       </div>
    </div>
