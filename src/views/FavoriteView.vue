@@ -39,6 +39,8 @@
   </div>
   <!-- top products -->
   <the-top-products-slider/>
+     <!-- watched section -->
+<recently-wached-slider/>
 </template>
  
 
@@ -56,7 +58,8 @@ defineOptions({
 
 //compoents
 import TheItem from "@/sections/TheItem.vue";
-import TheTopProductsSlider   from "@/sections/TheTopProductsSlider.vue";
+import TheTopProductsSlider   from "@/sections/Sliders/TheTopProductsSlider.vue";
+import RecentlyWachedSlider from "@/sections/Sliders/RecentlyWachedSlider.vue";
 // store
 import { useProductStore } from "@/stores/product";
 import { storeToRefs } from "pinia";

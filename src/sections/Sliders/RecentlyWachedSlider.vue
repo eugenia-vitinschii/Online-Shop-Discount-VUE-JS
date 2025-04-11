@@ -1,26 +1,18 @@
 <template>
-  <div class="i">
+  <div class="i" v-show="watchedStore.watched.length > 1">
     <div class="container">
       <div class="i__wrapper">
         <div class="i__title">
-          <p class="heading">Produse Top</p>
+          <p class="heading">Recente</p>
         </div>
         <swiper
             :breakpoints= "{
-            1054:{
-             slidesPerView: 5,
-            },
-                896:{
-                slidesPerView: 4,
-
-              },
-              663:{
-                slidesPerView: 3,
-              }
-              ,
-             465:{
-                slidesPerView: 2,
-              }
+            1366:{slidesPerView: 6},
+            1248:{slidesPerView: 5},
+            1115:{slidesPerView: 4},
+            877:{slidesPerView: 3},
+            658:{slidesPerView: 2},
+            458:{slidesPerView: 1}
             }"
           :autoplay="{
             delay: 500,
@@ -32,7 +24,7 @@
         >
           <swiper-slide
           data-swiper-autoplay="2000"
-            v-for="product in getItemsByBrand('Beko')"
+            v-for="product in watchedStore.watched"
             :key="product.id"
             class="item__container"
           >
@@ -67,21 +59,31 @@
 
  
  <script setup>
-//vue , router
-import { onMounted } from "vue";
+//vue 
+import { defineOptions, onMounted } from "vue";
+
+
+//component settings
+defineOptions({
+   name: "RecentlyWachedSlider"
+})
 
 //components
-
 import TheItem from "@/sections/TheItem.vue";
 
 //pinia
 import { useProductStore } from "@/stores/product";
-import { storeToRefs } from "pinia";
+import { useWatchedProductsStore } from '@/stores/watchedProducts';
+ 
+// import { storeToRefs } from "pinia";
 
+//pinia variables
 const store = useProductStore();
+const watchedStore = useWatchedProductsStore();
 
-const { getItemsByBrand } = storeToRefs(store);
+// const { getItemsByBrand } = storeToRefs(store);
 
+//pinia actions
 const {
   fetchProducts,
   addToCart,
@@ -92,6 +94,7 @@ const {
   showPrices,
   showOnePrice,
 } = store;
+
 // add product to cart
 function addProductCard(product) {
     addToCart(product);
@@ -100,10 +103,17 @@ function addProductCard(product) {
 function addProductToFavorite(product) {
   addToFavorite(product)
 }
+
 //hooks
 onMounted(() => {
   fetchProducts();
+  watchedStore.loadFromLocalStorage();
 });
+
+
+
+
+
 </script>
 
 

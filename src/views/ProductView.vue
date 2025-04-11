@@ -60,12 +60,16 @@
       </div>
     </div>
   </div>
+   <!-- watched section -->
+<recently-wached-slider/>
 </template>
 
 <script setup>
 //components
 import TheRouter from "@/sections/TheRouter.vue";
 import TheProduct from "@/sections/TheProduct.vue";
+import RecentlyWachedSlider from "@/sections/Sliders/RecentlyWachedSlider.vue";
+
 //vue
 import { defineOptions } from "vue";
 import { onMounted, watch, computed } from "vue";

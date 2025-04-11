@@ -1,0 +1,15 @@
+.offer{
+   padding: $margin-top 0px;
+   &__container{
+      @include block-style;
+      width: 100%;
+      img{
+         border-radius: $border-radius;
+         width: 100%;
+         @include transition()
+      }
+      img:hover{
+         @include itemHover() 
+      }
+   }
+}

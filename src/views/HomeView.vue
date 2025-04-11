@@ -24,18 +24,30 @@
   </div>
 <!-- top products -->
   <the-top-products-slider/>
-
- <!-- watched section -->
-  <div class="watched-products">
-    <h2>Recently Viewed</h2>
-    <div class="watched-grid">
-      <div v-for="product in watchedStore.watched" :key="product.id" class="watched-item">
-        <p>item :</p>
-        <p>{{ product.productName }}</p>
-        <p>{{ product.price }} lei</p>
-      </div>
+<!-- promo -->
+<div class="offer"> 
+  <div class="container">
+    <div class="offer__container">
+      <router-link to="/products/vr9l8dC">
+        <img src="@/assets/img/home-promo/promo-home.jpg" alt="prommo">
+      </router-link>
+      
     </div>
   </div>
+</div>
+ <!-- watched section -->
+<recently-wached-slider/>
+<!-- promo -->
+<div class="offer"> 
+  <div class="container">
+    <div class="offer__container">
+      <router-link to="/products/pf6IKwp">
+        <img src="@/assets/img/home-promo/promo-home-2.jpg" alt="prommo">
+      </router-link>
+      
+    </div>
+  </div>
+</div>
 </template>
 
 
@@ -47,7 +59,8 @@ import { defineOptions } from "vue";
 import DeliveryItem from "@/components/DeliveryItem.vue"
 import TheSlider  from "@/sections/TheSlider.vue";
 import BrandsSection from "@/sections/BrandsSection.vue"
-import TheTopProductsSlider   from "@/sections/TheTopProductsSlider.vue";
+import TheTopProductsSlider from "@/sections/Sliders/TheTopProductsSlider.vue"
+import RecentlyWachedSlider from "@/sections/Sliders/RecentlyWachedSlider.vue";
 
 defineOptions({
   name: "HomeView",
@@ -80,10 +93,5 @@ const items = [
   },
 ];
 
-
- import { useWatchedProductsStore } from '@/stores/watchedProducts';
-
-const watchedStore = useWatchedProductsStore();
-watchedStore.loadFromLocalStorage();
 </script>
  

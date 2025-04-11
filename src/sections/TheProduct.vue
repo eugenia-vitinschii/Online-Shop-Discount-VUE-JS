@@ -183,7 +183,7 @@
           <td>Ţara de asamblare</td>
           <td>{{ countryOfAssembly }}</td>
         </tr>
-        <tr v-show="guarante">
+        <tr v-show="guarantee">
           <td>Garanţie, luni</td>
           <td>{{ guarantee}} </td>
         </tr>
