@@ -94,33 +94,11 @@ const {
 } = store;
 // add product to cart
 function addProductCard(product) {
-  addToCart({
-    id: product.id,
-    productCode: product.productCode,
-    productName: product.productName,
-    price: product.price,
-    discount: product.discount,
-    discountPrice:product.discountPrice,
-    savedMoney: product.savedMoney,
-    img: product.img,
-    brand: product.brand,
-  });
+    addToCart(product);
 }
 //add to favorite
 function addProductToFavorite(product) {
-  addToFavorite({
-    id: product.id,
-    productCode: product.productCode,
-    productName: product.productName,
-    price: product.price,
-    discount: product.discount,
-    discountPrice:product.discountPrice,
-    savedMoney: product.savedMoney,
-    img: product.img,
-    brand: product.brand,
-    label: product.label,   
-    stock: product.stock,  
-  });
+  addToFavorite(product)
 }
 //hooks
 onMounted(() => {

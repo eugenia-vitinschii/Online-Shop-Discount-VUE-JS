@@ -25,8 +25,17 @@
 <!-- top products -->
   <the-top-products-slider/>
 
- <!-- devilery section -->
-
+ <!-- watched section -->
+  <div class="watched-products">
+    <h2>Recently Viewed</h2>
+    <div class="watched-grid">
+      <div v-for="product in watchedStore.watched" :key="product.id" class="watched-item">
+        <p>item :</p>
+        <p>{{ product.productName }}</p>
+        <p>{{ product.price }} lei</p>
+      </div>
+    </div>
+  </div>
 </template>
 
 
@@ -72,6 +81,9 @@ const items = [
 ];
 
 
- 
+ import { useWatchedProductsStore } from '@/stores/watchedProducts';
+
+const watchedStore = useWatchedProductsStore();
+watchedStore.loadFromLocalStorage();
 </script>
  

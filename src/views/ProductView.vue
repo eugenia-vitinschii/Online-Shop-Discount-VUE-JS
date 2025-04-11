@@ -62,8 +62,6 @@
   </div>
 </template>
 
- 
-
 <script setup>
 //components
 import TheRouter from "@/sections/TheRouter.vue";
@@ -76,6 +74,7 @@ import { useRoute } from "vue-router";
 import { useProductStore } from "@/stores/product";
 import { storeToRefs } from "pinia";
 
+//component settings
 defineOptions({
   name: "ProductView",
 });
@@ -85,6 +84,8 @@ const store = useProductStore();
 const route = useRoute();
 const id = route.params.id;
 
+
+//pinia vriables
 const { products } = storeToRefs(store);
 const {
   getProducts,
@@ -114,11 +115,30 @@ watch(
   () => route.params.productName,
   (newName) => {
     document.title = `${newName}`;
-  }
+  },
+);
+// wached store
+import { useWatchedProductsStore } from '@/stores/watchedProducts';
+
+//w variables
+const watchedStore = useWatchedProductsStore();
+
+
+watch(
+   product,  
+  (newProduct) => {
+    if (newProduct && newProduct.id) {
+      watchedStore.addWatchedProduct(newProduct);
+    }
+  },
+  { immediate: true }  
 );
 
 //hooks
 onMounted(() => {
   (document.title = `${route.params.productName}`), getProducts(id);
+  getProducts(id);
+
 });
+
 </script>
