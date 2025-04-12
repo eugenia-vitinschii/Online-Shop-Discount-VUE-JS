@@ -110,10 +110,6 @@ onMounted(() => {
   watchedStore.loadFromLocalStorage();
 });
 
-
-
-
-
 </script>
 
 

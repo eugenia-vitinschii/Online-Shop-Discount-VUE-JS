@@ -28,11 +28,13 @@ const routes = [
       {
         path: ":brand",
         name: "BrandView",
-        component: () => import("../views/BrandView.vue")
+        component: () => import("../views/BrandView.vue"),
+        props: true,
       },
       {
         path: "products/:id",
         component: () => import('../views/ProductView.vue'),
+        props: true,
       },
         ]
    },

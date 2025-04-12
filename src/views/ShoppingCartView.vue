@@ -73,9 +73,6 @@ import { defineOptions, ref, onMounted, onUnmounted } from "vue";
 import { useProductStore } from "@/stores/product";
 import { storeToRefs } from "pinia";
 
-    // savedMoney
-    //  discountPrice
-
 //component information
 defineOptions({
   name: "ShoppingCartView",
@@ -96,13 +93,10 @@ function removeItemFromCart(item){
 //hooks  
 onMounted(() => {
   created.value = true;
-  console.log('onMounted shopping cart')
- 
 });
 
 onUnmounted(() =>{
   created.value = false;
-  console.log('onUnmounted shopping cart')
 })
 </script>
  

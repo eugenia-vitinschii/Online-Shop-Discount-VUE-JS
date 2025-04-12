@@ -57,7 +57,7 @@
 
 <script setup>
 //vue , router
-import { defineOptions, onMounted } from "vue";
+import { defineOptions, onMounted , watch} from "vue";
 import { useRoute } from "vue-router";
 
 //components
@@ -78,53 +78,38 @@ const { getItemsByBrand } = storeToRefs(store);
 const route = useRoute();
 const brand = route.params.brand;
 
+
 const {
   fetchProducts,
   addToCart,
   addToFavorite,
-
   monthlyPrice,
   dicountLabel,
   hugeSaleLabel,
   showPrices,
   showOnePrice,
 } = store;
+
 // add product to cart
 function addProductCard(product) {
-  addToCart({
-    id: product.id,
-    productCode: product.productCode,
-    productName: product.productName,
-    price: product.price,
-    discount: product.discount,
-    discountPrice:product.discountPrice,
-    savedMoney: product.savedMoney,
-    img: product.img,
-    brand: product.brand,
-  });
+  addToCart(product);
 }
 //add to favorite
 function addProductToFavorite(product) {
-  addToFavorite({
-    id: product.id,
-    productCode: product.productCode,
-    productName: product.productName,
-    price: product.price,
-    discount: product.discount,
-    discountPrice:product.discountPrice,
-    savedMoney: product.savedMoney,
-    img: product.img,
-    brand: product.brand,
-    label: product.label,   
-    stock: product.stock,       
-  });
+  addToFavorite(product);
 }
+
+//watch title (brand name)
+watch(brand, (newBrand) => {
+  if (newBrand) {
+    document.title = newBrand;
+  }
+});
+
 //hooks
 onMounted(() => {
+  (document.title = `${route.params.brand}`),fetchProducts();
   fetchProducts();
 });
+
 </script>
-
-<style>
-
-</style>

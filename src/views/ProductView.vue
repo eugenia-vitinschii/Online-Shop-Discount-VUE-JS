@@ -115,12 +115,11 @@ function addProductToFavorite(product) {
 const product = computed(() => products.value.find((p) => p.id === id));
 
 //watch title
-watch(
-  () => route.params.productName,
-  (newName) => {
-    document.title = `${newName}`;
-  },
-);
+watch(product, (newProduct) => {
+  if (newProduct) {
+    document.title = newProduct.productName;
+  }
+});
 // wached store
 import { useWatchedProductsStore } from '@/stores/watchedProducts';
 
