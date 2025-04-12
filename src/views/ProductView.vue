@@ -11,7 +11,7 @@
           </router-link>
         </div>
         <div class="router__link">
-          <p class="header__link">/{{ products.productName }}</p>
+          <p class="header__link">/ {{ product.productName }}</p>
         </div>
       </div>
     </div>

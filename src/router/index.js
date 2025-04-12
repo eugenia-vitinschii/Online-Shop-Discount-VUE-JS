@@ -16,6 +16,10 @@ const router = createRouter({
    ...userRoutes,
    ...infoRoutes,
 ],
+scrollBehavior() {
+   // Always scroll to top
+   return { top: 0 }
+ }
 });
 
 router.beforeEach((to, from, next) => {

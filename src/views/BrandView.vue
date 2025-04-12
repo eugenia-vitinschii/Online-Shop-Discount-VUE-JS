@@ -12,15 +12,15 @@
     </div>
   </div>
 </div>
-  <div class="brand">
+  <div class="trademark">
     <div class="container">
-      <div class="brand__wrapper">
+      <div class="trademark__wrapper">
         <div class="brand__title">
           <p class="heading">
             Produse {{ brand }} ( {{ getItemsByBrand(brand).length }} )
           </p>
         </div>
-        <div class="brand__items  ">
+        <div class="trademark__items item__container ">
           <the-item
             v-for="product in getItemsByBrand(brand)"
             :key="product.id"
