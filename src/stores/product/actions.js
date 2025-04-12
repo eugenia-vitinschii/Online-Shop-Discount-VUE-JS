@@ -95,12 +95,17 @@ export const   actions= {
    },
    //incrementQuantity
    incrementQuantity(id) {
-     this.user.cart.forEach((item) => {
-       if (item.id === id) {
-         return this.count++;
-       }
-     });
+     const item = this.user.cart.find(item => item.id === id);
+     if (item) {
+       item.quantity ++;
+     }
    },
+   decrementQuantity(id) {
+    const item = this.user.cart.find(item => item.id === id);
+    if (item) {
+      item.quantity --;
+    }
+  },
    // edit product
    async updateProducts(id) {
      const product = this.products.find((p) => p.id === id);

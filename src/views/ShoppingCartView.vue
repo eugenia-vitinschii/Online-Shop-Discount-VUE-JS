@@ -29,6 +29,8 @@
             :quantity="item.quantity"
           :discountPrice="item.discountPrice"
           :savedMoney="item.savedMoney"
+          @increment="incrementQuantity(item.id)"
+          @decrement="decrementQuantity(item.id)"
            @deleteItem="removeItemFromCart(item.id)"
           />
 
@@ -73,23 +75,26 @@ import { defineOptions, ref, onMounted, onUnmounted } from "vue";
 import { useProductStore } from "@/stores/product";
 import { storeToRefs } from "pinia";
 
+
 //component information
 defineOptions({
   name: "ShoppingCartView",
 });
+
 let  created = ref(false)
 //pinia
 const store = useProductStore();
 
 const { user } = storeToRefs(store);
 
-const { removeItem, getSum, getSavedMoney, getDiscountPrice } = store;
+const { incrementQuantity,decrementQuantity, removeItem, getSum, getSavedMoney, getDiscountPrice } = store;
 
 // delete item from cart
 function removeItemFromCart(item){
   removeItem(item)
 }
 
+ 
 //hooks  
 onMounted(() => {
   created.value = true;

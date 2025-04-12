@@ -11,10 +11,14 @@
         <p class="body-text bold">{{ productName }}</p>
         <p class="body-text">Producător: {{ brand }}</p>
       </div>
+      <div class="cart__counter">
+        <button class="button-svg" @click="$emit('decrement', id)"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M200-440v-80h560v80H200Z"/></svg></button>
+        <p class="body-text">{{quantity}}</p>
+         <button  class="button-svg" @click="$emit('increment', id)"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg></button>
+      </div>
     </div>
     <div class="cart__prices">
-      <p class="body-text">Preț: {{ price }} lei</p> 
-      <p class="body-text">quantity:{{quantity}}</p>
+      <p class="body-text">Preț: {{ price }} lei</p>       
         <div class="cart__prices-discount" v-show="discount > 0">
         <p class="body-text">Reducere {{ discount }}%</p>
         <p class="body-text-green"> - {{ savedMoney }} lei </p>

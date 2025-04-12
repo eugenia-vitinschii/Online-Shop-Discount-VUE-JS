@@ -107,10 +107,3 @@ onMounted(() => {
   fetchProducts();
 });
 </script>
-
- <style lang="scss" scoped>
-
-
-
- </style>
- 

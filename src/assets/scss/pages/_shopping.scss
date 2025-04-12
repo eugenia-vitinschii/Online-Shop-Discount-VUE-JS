@@ -66,8 +66,13 @@
    }
    &__info {
    }
-   &__counter {
-      @include positionCenter();
+   &__counter{
+      display: flex;
+      justify-content: start;
+      width: 100%;
+      button {
+         margin: 10px;
+      }
    }
    &__prices {
       width: 140px;

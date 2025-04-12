@@ -7,7 +7,6 @@
   &__container {
     display: flex;
     flex-wrap: wrap;
-    
   }
   &__item {
     @include block-style();
