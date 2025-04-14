@@ -77,16 +77,16 @@ export const   actions= {
      this.user.cart = this.user.cart.filter((item) => item.id !== id);
    },
    getSum() {
-     return this.user.cart.reduce(
-       (sum, currSum) => sum + Number(currSum.price),
-       0
-     );
-   },
+    return this.user.cart.reduce((sum, item) => {
+      const itemTotal = Number(item.price) * (item.quantity || 1);
+      return sum + itemTotal;
+    }, 0);
+  },
    getSavedMoney() {
-     return this.user.cart.reduce(
-       (sum, currSum) => sum + Number(currSum.savedMoney),
-       0
-     );
+    return this.user.cart.reduce((sum, item) =>{
+        const savedTotal = Number(item.savedMoney) * (item.quantity || 1);
+        return sum + savedTotal
+    }, 0);
    },
    getDiscountPrice(a) {
      return (b) => {
@@ -102,7 +102,7 @@ export const   actions= {
    },
    decrementQuantity(id) {
     const item = this.user.cart.find(item => item.id === id);
-    if (item) {
+    if (item &&  item.quantity > 1 ) {
       item.quantity --;
     }
   },
