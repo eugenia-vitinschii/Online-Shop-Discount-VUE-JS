@@ -3,9 +3,9 @@
   <div class="router">
     <div class="container">
       <div class="router__wrapper">
-        <the-router />
+        <the-router :promo="true"/>
         <div class="router__link">
-          <p class="header__link">/ Promo</p>
+          <p class="white-promo">/ Promo</p>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 <template>
   <!-- go back button -->
-  <div class="router__button">
-    <button class="icon-svg" @click="$router.go(-1)">
+  <div class="router__button" >
+    <button class="icon-svg" @click="$router.go(-1)"  :class="promo ? 'white-router' : 'blue-router'">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         height="24px"
@@ -15,20 +15,29 @@
   </div>
    <!--links-->
   <div class="router__link">
-    <router-link class="header__link" to="/"> Pagina principala </router-link>
+    <router-link  to="/" :class="promo ? 'white-router' : 'blue-router'" > Pagina principala </router-link>
   </div>
   <!--links-->
-  <div class="router__link">
-    <router-link class="header__link" to="/products">/ Produse</router-link>
+  <div class="router__link" >
+    <router-link  to="/products" :class="promo ? 'white-router' : 'blue-router'" >/ Produse</router-link>
   </div>
 </template>
 
 <script setup>
 //vue
-import { defineOptions } from "vue";
+import { defineOptions, defineProps } from "vue";
 
 //vue
 defineOptions({
   name: "TheRouter",
 });
+
+//props
+defineProps({
+  promo:{
+    type: Boolean,
+    default: false
+  }
+})
 </script>
+

@@ -12,7 +12,7 @@
             1115:{slidesPerView: 4},
             877:{slidesPerView: 3},
             658:{slidesPerView: 2},
-            458:{slidesPerView: 1}
+            467:{slidesPerView: 2}
             }"
           :autoplay="{
             delay: 500,

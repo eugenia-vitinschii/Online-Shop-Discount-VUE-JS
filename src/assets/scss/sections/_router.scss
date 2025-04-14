@@ -9,11 +9,28 @@
    a, p {
       display: inline-block;
       margin-left: 10px;
-      color: $blue
  
    }
    a:hover{
       text-decoration: underline;
-      color: $black;
    }
+}
+
+.white-router{
+   background: $blue;
+   svg{
+      fill: white;
+
+   }
+    a, p{
+      color: $white 
+   }
+   a:visited{
+      color: $white 
+   }
+  
+}
+
+.blue-router{
+   color: $blue
 }

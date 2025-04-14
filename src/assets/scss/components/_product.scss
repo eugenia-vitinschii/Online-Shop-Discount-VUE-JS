@@ -1,6 +1,7 @@
 .product {
    &__wrapper {
       @include block-style();
+      padding: 5px;
    }
    &__wrapper:hover {
       @include itemHover();
