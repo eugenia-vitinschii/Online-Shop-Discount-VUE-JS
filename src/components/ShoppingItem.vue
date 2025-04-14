@@ -38,13 +38,17 @@
 
 <script setup>
 //import vue
-import { defineOptions, defineProps } from "vue";
+ import { defineOptions, defineProps, defineEmits } from "vue";
 
 
 //component settings
 defineOptions({
   name: "ShoppingItem",
 });
+
+
+//emits
+defineEmits(["increment", "decrement", "deleteItem"])
 
 //props component
 defineProps({

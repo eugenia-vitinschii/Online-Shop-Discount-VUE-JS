@@ -62,7 +62,6 @@
       <div class="item__buttons-action">
         <!-- add item to cart -->
         <button
-          :disabled="!disabledValue"
           class="button-svg"
           @click="$emit('addToCard')"
           
@@ -81,10 +80,8 @@
         </button>
         <!-- add item to favorite -->
         <button
-        :disabled="!disabledValue"
           class="button-svg"
-          :class="$attrs.class"
-          @click="$emit('addToFavorite', 'selected   = ! selected  ')"
+          @click="$emit('addToFavorite')"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -107,13 +104,14 @@
 
 <script setup>
 //vue
-import { defineOptions, defineProps } from "vue";
+import { defineOptions, defineProps, defineEmits } from "vue";
 
 
 defineOptions({
   name: "TheItem",
 });
 
+defineEmits([ "addToFavorite", "addToCard"])
 //props
  defineProps({
   id: {
@@ -175,10 +173,6 @@ defineOptions({
   },
   stock: {
     type: Boolean,
-    default: true,
-  },
-  disabledValue:{
-     type: Boolean,
     default: true,
   }
 });

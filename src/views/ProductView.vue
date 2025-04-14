@@ -58,7 +58,7 @@
           @addToFavorite="addProductToFavorite(product)"
         />
       </div>
-    </div>
+    </div> 
   </div>
    <!-- watched section -->
 <recently-wached-slider/>

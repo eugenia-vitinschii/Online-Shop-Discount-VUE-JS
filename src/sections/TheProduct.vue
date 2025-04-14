@@ -220,6 +220,10 @@ const testCredit = [
   },
 ];
 
+//emits
+defineEmits(["addToCard", "addToFavorite"])
+
+//props
 defineProps({
   id: {
     type: String,
