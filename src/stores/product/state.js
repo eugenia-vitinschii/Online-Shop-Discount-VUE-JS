@@ -1,6 +1,4 @@
 //pinia
-
-
 export const  state = () => ({
    products: [],
    user: {

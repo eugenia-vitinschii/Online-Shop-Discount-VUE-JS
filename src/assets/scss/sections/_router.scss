@@ -18,17 +18,13 @@
 
 .white-router{
    background: $blue;
+   color: $white;
    svg{
       fill: white;
-
    }
-    a, p{
-      color: $white 
+   p{
+      color: $white;
    }
-   a:visited{
-      color: $white 
-   }
-  
 }
 
 .blue-router{

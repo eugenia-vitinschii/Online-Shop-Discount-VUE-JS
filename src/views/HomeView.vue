@@ -41,7 +41,7 @@
 <div class="offer"> 
   <div class="container">
     <div class="offer__container">
-      <router-link to="/products/pf6IKwp">
+      <router-link to="/promo">
         <img src="@/assets/img/home-promo/promo-home-2.jpg" alt="prommo">
       </router-link>
       

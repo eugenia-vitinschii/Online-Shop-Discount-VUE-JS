@@ -4,8 +4,8 @@
     <div class="container">
       <div class="router__wrapper">
         <the-router :promo="true"/>
-        <div class="router__link">
-          <p class="white-promo">/ Promo</p>
+        <div class="router__link ">
+          <p class="white-router">/ Promo</p>
         </div>
       </div>
     </div>
@@ -18,7 +18,7 @@
   <div class="promo">
     <div class="container">
       <div class="promo__wrapper">
-        <p class="body-text">
+        <p class="body-text white-router">
           Produse la reducere: {{ store.getPromoItems.length }}
         </p>
         <div class="item__container" v-if="created">
