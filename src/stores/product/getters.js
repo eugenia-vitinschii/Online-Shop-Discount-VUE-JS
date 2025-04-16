@@ -1,4 +1,8 @@
 export const getters =  {
+  //chart getters
+  promoCount: (state) => state.products.filter(p => p.discount).length,
+  inStockCount: (state) => state.products.filter(p => p.stock).length,
+  outOfStockCount: (state) => state.products.filter(p => !p.stock).length,
    // filteredItems.length
    allProducts() {
      return this.products.length;

@@ -1,4 +1,5 @@
 <template>
+<the-chart/>
   <admin-header />
   <!-- edit -->
   <div class="edit">
@@ -53,7 +54,7 @@ import {onMounted } from 'vue';
 //components
 import MessageComponent from "@/components/Admin/MessageComponent.vue";
 import AdminHeader from "@/components/Admin/AdminHeader.vue";
-
+import TheChart from "@/components/Admin/TheChart.vue"
 //pinia imports
 import { useProductStore } from "@/stores/product";
 import { storeToRefs } from "pinia";

@@ -5,7 +5,7 @@
     <div class="router__wrapper">
       <the-router/>
       <div class="router__link">
-         <router-link :to="'/brands/' + brand" class="header__link">
+         <router-link :to="'/brands/' + brand" class="blue-router">
            /  {{brand}}
           </router-link>
       </div>
@@ -77,7 +77,6 @@ const store = useProductStore();
 const { getItemsByBrand } = storeToRefs(store);
 const route = useRoute();
 const brand = route.params.brand;
-
 
 const {
   fetchProducts,
