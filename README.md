@@ -6,6 +6,7 @@ $\color{#f77f00}{\textsf{Responsive Online Shop discount}}$
 ![SASS](https://img.shields.io/badge/SCSS-f77f00?style=flat&logo=sass&logoColor=fff)
 ![HTML](https://img.shields.io/badge/HTML%205-f77f00?style=flat&logo=html5&logoColor=fff)
 
+### Swiper | Chart.js |
 
 
 ## Project setup

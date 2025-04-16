@@ -2,7 +2,7 @@
   <div class="chart">
    <div class="container">
       <div class="chart__wrapper">
-         <p class="heading"> promo: {{store.promoCount}} in stock:{{store.inStockCount}} out Stock :{{store.outOfStockCount}} /</p>
+         <p class="subheading"> promo: {{store.promoCount}} | in stock: {{store.inStockCount}} | out Stock : {{store.outOfStockCount}} </p>
          <canvas ref="chartCanvas"></canvas>
       </div>
    </div>
@@ -13,6 +13,7 @@
 //vue 
 import { defineOptions, ref, onMounted} from 'vue'
 
+//chart import
 import Chart from "chart.js/auto"
 
 //Component settings
@@ -22,11 +23,12 @@ defineOptions({
 
 //pinia 
 import { useProductStore } from "@/stores/product"
-
-
-const chartCanvas = ref(null);
 const store = useProductStore();
 
+//canvas variable
+const chartCanvas = ref(null);
+
+//hooks
 onMounted(() => {
   new Chart(chartCanvas.value, {
     type: 'bar',
@@ -36,14 +38,14 @@ onMounted(() => {
         label: 'Product Count',
         data: [store.promoCount, store.inStockCount, store.outOfStockCount],
         backgroundColor: [
-          'rgba(255, 159, 64, 0.6)',
-          'rgba(75, 192, 192, 0.6)',
-          'rgba(255, 99, 132, 0.6)',
+          '#002B6F',
+          '#4FA77D',
+          '#D92B2B',
         ],
         borderColor: [
-          'rgb(255, 159, 64)',
-          'rgb(75, 192, 192)',
-          'rgb(255, 99, 132)',
+          '#B0B0B0',
+          '#B0B0B0',
+          '#B0B0B0',
         ],
         borderWidth: 2,
       }]
@@ -53,7 +55,7 @@ onMounted(() => {
       plugins: {
         title: {
           display: true,
-          text: '📊 Product Overview (From Pinia)'
+          text: 'Product Overview'
         },
         legend: {
           display: false
