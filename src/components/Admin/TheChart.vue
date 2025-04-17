@@ -2,7 +2,7 @@
   <div class="chart">
    <div class="container">
       <div class="chart__wrapper">
-         <p class="subheading"> promo: {{store.promoCount}} | in stock: {{store.inStockCount}} | out Stock : {{store.outOfStockCount}} </p>
+         <p class="subheading"> promo: {{store.promoCount}} | in stock: {{store.inStockCount}} | out Stock : {{store.outOfStockCount}} | category: {{store.categoryCounts}}</p>
          <canvas ref="chartCanvas"></canvas>
       </div>
    </div>
@@ -46,6 +46,7 @@ onMounted(() => {
           '#B0B0B0',
           '#B0B0B0',
           '#B0B0B0',
+
         ],
         borderWidth: 2,
       }]

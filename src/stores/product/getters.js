@@ -3,6 +3,14 @@ export const getters =  {
   promoCount: (state) => state.products.filter(p => p.discount).length,
   inStockCount: (state) => state.products.filter(p => p.stock).length,
   outOfStockCount: (state) => state.products.filter(p => !p.stock).length,
+  categoryCounts: (state) => {
+    const map = {};
+    state.products.forEach(p => {
+      map[p.brand] = (map[p.brand] || 0) + 1;
+    });
+    return map;
+  },
+    
    // filteredItems.length
    allProducts() {
      return this.products.length;
