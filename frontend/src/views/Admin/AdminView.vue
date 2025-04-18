@@ -1,7 +1,7 @@
 <template>
-<the-chart/>
-<admin-header/>
-
+  <admin-header/>
+  <the-chart/>
+  <the-colors-chart/>
 </template>
  
  
@@ -11,7 +11,8 @@ import AdminHeader from "@/components/Admin/AdminHeader.vue";
 import { defineOptions } from "vue";
 
 //components
-import TheChart from "@/components/Admin/TheChart.vue"
+import TheChart from "@/components/Admin/Charts/TheChart.vue";
+import TheColorsChart from "@/components/Admin/Charts/TheColorsChart.vue"
 
 defineOptions({
   name: "AdminView",

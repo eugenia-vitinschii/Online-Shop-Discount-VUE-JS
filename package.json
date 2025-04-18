@@ -1,0 +1,14 @@
+{
+  "name": "discount-",
+  "version": "1.0.0",
+  "description": "$\\color{#f77f00}{\\textsf{Responsive Online Shop discount}}$",
+  "main": "index.js",
+  "scripts": {
+    "api": "cd backend && node server.js",
+    "serve": "cd frontend && npm run serve",
+      "mock": "cd frontend && json-server -w db.json --port 3000"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,13 +1,13 @@
 {
   "name": "discount",
   "author": "Eugenia Vitinschii",
-  "version": "0.1.1",
+  "version": "1.1.1",
   "private": true,
-  "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
-  },
+ "scripts": {
+  "serve": "vue-cli-service serve",
+  "dev": "vue-cli-service serve",
+  "build": "vue-cli-service build"
+},
   "dependencies": {
     "bcrypt": "^5.1.1",
     "body-parser": "^2.2.0",

@@ -14,17 +14,23 @@ $\color{#f77f00}{\textsf{Responsive Online Shop discount}}$
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Starts frontend
 ```
 npm run serve
 ```
 
 ###   \{^_^}/ hi!
 
-###  Loading db.json
+###  Starts json-server
 ```
-json-server -w db.json
+npm run mock
 ```
+
+###  Starts backend
+```
+npm run api
+```
+
 <img width="1086" alt="Снимок экрана 2025-04-04 в 14 20 40" src="https://github.com/user-attachments/assets/8ca8fa48-5398-4b19-9842-8437b7b15ed2" />
 
 <img width="1110" alt="Снимок экрана 2025-04-04 в 14 20 59" src="https://github.com/user-attachments/assets/a3b14f24-7d9b-49b0-9e49-5348ec4df0a4" />
