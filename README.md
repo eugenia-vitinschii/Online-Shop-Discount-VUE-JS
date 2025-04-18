@@ -8,37 +8,33 @@ $\color{#f77f00}{\textsf{Responsive Online Shop discount}}$
 
 ### Swiper | Chart.js |
 
+### 🧪 Running the Project
 
-## Project setup
+# Project setup
 ```
 npm install
 ```
 
-### Starts frontend
+# Starts frontend
 ```
 npm run serve
 ```
 
-###   \{^_^}/ hi!
+##Starts json-server  \{^_^}/ hi!
 
-###  Starts json-server
 ```
 npm run mock
 ```
 
-###  Starts backend
+#  Starts backend
 ```
 npm run api
 ```
 
-<img width="1086" alt="Снимок экрана 2025-04-04 в 14 20 40" src="https://github.com/user-attachments/assets/8ca8fa48-5398-4b19-9842-8437b7b15ed2" />
 
-<img width="1110" alt="Снимок экрана 2025-04-04 в 14 20 59" src="https://github.com/user-attachments/assets/a3b14f24-7d9b-49b0-9e49-5348ec4df0a4" />
+### 📁 Project Structure
 
-<img width="1104" alt="Снимок экрана 2025-04-04 в 14 21 56" src="https://github.com/user-attachments/assets/8af084bd-4559-45eb-adf2-ebe50fd73c9a" />
-
-
-
+```
 discount/
 ├── backend/         # Node.js Express API
 │   └── server.js
@@ -88,6 +84,7 @@ discount/
 │       └── App.vue/
 │   └── db.json
 
+### 🚀 Features
 
 ## 👤 User Views
 
@@ -114,10 +111,10 @@ discount/
    - Manage favorite products
 - Brands  
    - Full list of available brands
-   
+```
 
 ## 🛠️ Admin Views
-
+ 
 - Add New Product
 - Update Product Info
 - Delete Product
