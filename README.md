@@ -1,38 +1,43 @@
-$\color{#f77f00}{\textsf{Responsive Online Shop discount}}$ 
+### $\color{#f77f00}{\textsf{Responsive Online Shop discount}}$ 
 
 ![PINIA](https://img.shields.io/badge/PINIA-f77f00?style=flat&logo=vuedotjs&logoColor=fff)
 ![VUE](https://img.shields.io/badge/Vue%20JS%203-f77f00?style=flat&logo=vuedotjs&logoColor=fff)
 ![Axios](https://img.shields.io/badge/axios-f77f00?style=flat&logo=axios&logoColor=fff)
 ![SASS](https://img.shields.io/badge/SCSS-f77f00?style=flat&logo=sass&logoColor=fff)
 ![HTML](https://img.shields.io/badge/HTML%205-f77f00?style=flat&logo=html5&logoColor=fff)
+![Swiper](https://img.shields.io/badge/swiper-js?style=flat&logo=swiper&color=%23f77f00)
+![Chart](https://img.shields.io/badge/chart-js?style=flat&logo=chartdotjs&logoColor=%23fff&color=%23f77f00)
+![Node-js](https://img.shields.io/badge/node-js?style=flat&logo=nodedotjs&logoColor=%23fff&color=%23f77f00)
+![Express-js](https://img.shields.io/badge/express-js?style=flat&logo=express&logoColor=%23ffffff&color=%23f77f00)
 
-### Swiper | Chart.js |
 
-### 🧪 Running the Project
+## Swiper | Chart.js |
 
-# Project setup
+# 🧪 Running the Project
+
+### Project setup
 ```
 npm install
 ```
 
-# Starts frontend
+### Starts frontend
 ```
 npm run serve
 ```
 
-##Starts json-server  \{^_^}/ hi!
+### Starts json-server  \{^_^}/ hi!
 
 ```
 npm run mock
 ```
 
-#  Starts backend
+###  Starts backend
 ```
 npm run api
 ```
 
 
-### 📁 Project Structure
+## 📁 Project Structure
 
 ```
 discount/
@@ -84,6 +89,7 @@ discount/
 │       └── App.vue/
 │   └── db.json
 
+```
 ### 🚀 Features
 
 ## 👤 User Views
@@ -111,7 +117,7 @@ discount/
    - Manage favorite products
 - Brands  
    - Full list of available brands
-```
+
 
 ## 🛠️ Admin Views
  

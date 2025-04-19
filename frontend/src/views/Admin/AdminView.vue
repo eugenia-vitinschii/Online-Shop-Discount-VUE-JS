@@ -1,18 +1,30 @@
 <template>
-  <admin-header/>
-  <the-chart/>
-  <the-colors-chart/>
+
+    <admin-header />
+    <!-- chart -->
+  <div class="chart">
+    <div class="container">
+      <div class="chart__wrapper">
+        <the-chart />
+        <the-brands-chart />
+      </div>
+    </div>
+
+</div>
+
+
+
 </template>
  
  
  
 <script setup>
-import AdminHeader from "@/components/Admin/AdminHeader.vue";
 import { defineOptions } from "vue";
 
 //components
+import AdminHeader from "../../components/Admin/AdminHeader.vue"
 import TheChart from "@/components/Admin/Charts/TheChart.vue";
-import TheColorsChart from "@/components/Admin/Charts/TheColorsChart.vue"
+import TheBrandsChart from "@/components/Admin/Charts/TheBrandsChart.vue";
 
 defineOptions({
   name: "AdminView",

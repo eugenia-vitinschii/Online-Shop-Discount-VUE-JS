@@ -1,8 +1,8 @@
 <template>
-<!-- promo in Stock -->
+<!-- Brands -->
   <div class="chart__item">
-    <p class="subheading">Promo & Stock value</p>
-    <canvas ref="chartCanvas"></canvas>
+    <p class="subheading">Categories</p>
+    <canvas ref="chartCanvasColors"></canvas>
   </div>
 </template>
 
@@ -15,7 +15,7 @@ import Chart from "chart.js/auto";
 
 //Component settings
 defineOptions({
-  name: "TheChart",
+  name: "TheBrandsChart",
 });
 
 //pinia
@@ -23,21 +23,23 @@ import { useProductStore } from "@/stores/product";
 const store = useProductStore();
 
 //canvas variable
-const chartCanvas = ref(null);
+const chartCanvasColors = ref(null);
 
 //hooks
 onMounted(() => {
-  new Chart(chartCanvas.value, {
-    type: "bar",
+  const labels = Object.keys(store.categoryCounts);
+  const data = Object.values(store.categoryCounts);
+
+  new Chart(chartCanvasColors.value, {
+    type: "pie",
     data: {
-      labels: ["Promo Price", "In Stock", "Out of Stock"],
+      labels,
       datasets: [
         {
-          label: "Product Count",
-          data: [store.promoCount, store.inStockCount, store.outOfStockCount],
+          label: "Product Categories",
+          data,
           backgroundColor: ["#002B6F", "#4FA77D", "#D92B2B"],
-          borderColor: ["#B0B0B0", "#B0B0B0", "#B0B0B0"],
-          borderWidth: 2,
+          borderColor: ["#B0B0B0"],
         },
       ],
     },
@@ -47,9 +49,6 @@ onMounted(() => {
         title: {
           display: true,
           text: "Product Overview",
-        },
-        legend: {
-          display: false,
         },
       },
     },
