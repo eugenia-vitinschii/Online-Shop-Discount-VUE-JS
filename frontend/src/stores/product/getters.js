@@ -10,6 +10,13 @@ export const getters =  {
     });
     return map;
   },
+  colorCounts: (state) => {
+    const map = {};
+    state.products.forEach(p => {
+      map[p.color] = (map[p.color] || 0) + 1;
+    });
+    return map;
+  },
     
    // filteredItems.length
    allProducts() {
