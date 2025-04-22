@@ -3,6 +3,7 @@ const webpack = require('webpack');
 
 
 module.exports = defineConfig({
+  lintOnSave: false,
   transpileDependencies: true,
   configureWebpack: {
     plugins: [

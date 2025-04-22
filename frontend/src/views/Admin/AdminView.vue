@@ -1,5 +1,4 @@
 <template>
-
     <admin-header />
     <!-- chart -->
   <div class="chart">

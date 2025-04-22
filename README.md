@@ -11,9 +11,7 @@
 ![Express-js](https://img.shields.io/badge/express-js?style=flat&logo=express&logoColor=%23ffffff&color=%23f77f00)
 
 
-## Swiper | Chart.js |
-
-# 🧪 Running the Project
+## 🧪 Running the Project
 
 ### Project setup
 ```
@@ -22,7 +20,7 @@ npm install
 
 ### Starts frontend
 ```
-npm run serve
+npm run frontend
 ```
 
 ### Starts json-server  \{^_^}/ hi!
@@ -33,9 +31,14 @@ npm run mock
 
 ###  Starts backend
 ```
-npm run api
+npm run backend
 ```
+## OR:
 
+###  Starts all
+```
+npm run dev
+```
 
 ## 📁 Project Structure
 

@@ -1,11 +1,12 @@
 {
   "name": "backend",
+  "author": "Eugenia Vitinschii",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-  },
+    "api": "node server.js"
+  },  
   "keywords": [],
-  "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {

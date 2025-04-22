@@ -1,23 +1,18 @@
 {
-  "name": "discount",
+  "name": "frontend",
   "author": "Eugenia Vitinschii",
   "version": "1.1.1",
   "private": true,
- "scripts": {
+"scripts": {
   "serve": "vue-cli-service serve",
-  "dev": "vue-cli-service serve",
-  "build": "vue-cli-service build"
-},
+  "build": "vue-cli-service build",
+  "mock": "json-server --watch db.json --port 3000"
+}
+,
   "dependencies": {
-    "bcrypt": "^5.1.1",
-    "body-parser": "^2.2.0",
     "chart.js": "^4.4.9",
     "core-js": "^3.8.3",
-    "cors": "^2.8.5",
-    "dotenv": "^16.5.0",
     "es6-promise": "^4.2.8",
-    "express": "^5.1.0",
-    "jsonwebtoken": "^9.0.2",
     "pinia": "^2.1.7",
     "swiper": "^11.1.14",
     "vue": "^3.2.13",
@@ -49,7 +44,9 @@
     "parserOptions": {
       "parser": "@babel/eslint-parser"
     },
-    "rules": {}
+    "rules": {
+      "vue/no-multiple-template-root": "off"
+    }
   },
   "browserslist": [
     "> 1%",
