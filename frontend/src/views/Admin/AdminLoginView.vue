@@ -15,12 +15,12 @@
             <the-input 
             :label="'Introduceți numele'" 
             :placeholder="'name'"
-            v-model:value="name"
+            v-model="name"
             />
             <the-input 
             :label="'Introduceți parola'" 
             :placeholder="'password'" 
-            v-model:value="password"
+            v-model="password"
             />
             <the-button class="green-button" @click="loginUp(name, password)"> LoginUp </the-button>
             <the-button class="red-button">Acasă</the-button>

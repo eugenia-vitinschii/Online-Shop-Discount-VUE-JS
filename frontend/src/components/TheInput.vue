@@ -5,8 +5,8 @@
     <label>{{ label }}</label>
     <input
       type="text"
-      :value="value"
-      @input="$emit('update:value', $event.target.value)"
+      :value="modelValue"
+      @input="$emit('update:modelValue', $event.target.value)"
       :placeholder="placeholder"
     />
   </div>
@@ -17,14 +17,14 @@
 <script setup>
 
 import { defineOptions } from "vue";
-import { defineProps } from "vue";
+import { definePropsб , defineEmits } from "vue";
 
 defineOptions({
   name: "TheInput",
 });
 
 defineProps({
-  value: {
+  modelValue: {
     type: [Object, String],
     defaul: "",
   },
@@ -38,4 +38,7 @@ defineProps({
     default: "text",
   },
 });
+
+//уьшеы
+defineEmits(['update:modelValue']);
 </script>

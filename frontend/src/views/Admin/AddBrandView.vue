@@ -14,17 +14,17 @@
               <the-input
                 :label="'Introduceți id'"
                 :placeholder="'Introduceți id'"
-                v-model:value.trim="postBrand.id"
+                v-model.trim="postBrand.id"
               />
               <the-input
                 :label="'Introduceți url pentru imagine'"
                 :placeholder="'//http'"
-                v-model:value.trim="postBrand.img"
+                v-model.trim="postBrand.img"
               />
               <the-input
                 :label="'Introduceți denumirea brandului'"
                 :placeholder="'Samsung'"
-                v-model:value.trim="postBrand.brand"
+                v-model.trim="postBrand.brand"
               />
             </div>
             <!-- save new brand -->

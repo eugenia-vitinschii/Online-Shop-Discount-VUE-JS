@@ -19,27 +19,27 @@
             <the-input
               :label="'Introduceți id'"
               :placeholder="'Introduceți id'"
-              v-model:value.trim="product.id"
+              v-model.trim="product.id"
             />
             <the-input
               :label="'Introduceți COD'"
               :placeholder="'DMB383292PP'"
-              v-model:value.trim="product.productCode"
+              v-model.trim="product.productCode"
             />
             <the-input
               :label="'Introduceți url pentru imagine'"
               :placeholder="'//http'"
-              v-model:value.trim="product.img"
+              v-model.trim="product.img"
             />
             <the-input
               :label="'Introduceți denumirea pentru produs'"
               :placeholder="'Mașină de spălat frontală Indesit'"
-              v-model:value.trim="product.productName"
+              v-model.trim="product.productName"
             />
             <the-input
               :label="'Introduceți prețul produsului'"
               :placeholder="'4999'"
-              v-model:value.number="product.price"
+              v-model.number="product.price"
             />
               <div class="input__wrapper">
               <p class="body-text">Reducere  {{discountPrice}} </p>
@@ -49,7 +49,7 @@
               v-show="discountPrice"
               :label="'Introduceți procentul de reducere ( fără %)'"
               :placeholder="'17'"
-              v-model:value.number="product.discount"
+              v-model.number="product.discount"
             />
           </div>
             <div class="input__wrapper" v-show="discountPrice">
@@ -78,7 +78,7 @@
             <the-input
               :label="'Consum de apă în program, l/ciclu'"
               :placeholder="'20'"
-              v-model:value.trim="product.waterConsumption"
+              v-model.trim="product.waterConsumption"
             />
 
             <div class="input__wrapper">
@@ -129,7 +129,7 @@
             <the-input
               :label="'Capacitate de încărcare, kg'"
               :placeholder="'5'"
-              v-model:value.trim="product.loadCapacity"
+              v-model.trim="product.loadCapacity"
             />
           </div>
           <!-- Caracteristici -->
@@ -138,12 +138,12 @@
             <the-input
               :label="'Nivel de zgomot pentru centrifugare, dB'"
               :placeholder="'76'"
-              v-model:value.trim="product.noiseLevelCentrifugation"
+              v-model.trim="product.noiseLevelCentrifugation"
             />
             <the-input
               :label="'Diapazonul nivelului de zgomot la spălare, dB'"
               :placeholder="'56-60'"
-              v-model:value.trim="product.noiseLevelWashing"
+              v-model.trim="product.noiseLevelWashing"
             />
             <div class="input__wrapper">
               <label for="typeControl">Tip control</label>
@@ -160,7 +160,7 @@
             <the-input
               :label="'Numărul de programe'"
               :placeholder="'16'"
-              v-model:value.trim="product.numberOfPrograms"
+              v-model.trim="product.numberOfPrograms"
             />
           </div>
           <!-- Dimensiuni -->
@@ -169,17 +169,17 @@
             <the-input
               :label="'Greutate în ambalaj, kg'"
               :placeholder="'63'"
-              v-model:value.trim="product.weightInPackage"
+              v-model.trim="product.weightInPackage"
             />
              <the-input
               :label="'Greutate, kg'"
               :placeholder="'61'"
-              v-model:value.trim="product.weight"
+              v-model.trim="product.weight"
             />
             <the-input
               :label="'Dimensiuni (ÎxLxA), cm'"
               :placeholder="'85x60x55'"
-              v-model:value.trim="product.depth"
+              v-model.trim="product.depth"
             />
            
             <!-- Informaţii generale -->
