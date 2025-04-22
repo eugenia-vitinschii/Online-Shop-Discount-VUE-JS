@@ -1,4 +1,6 @@
 .<template>
+  <div>
+
   <div class="delivery__item">
     <div class="delivery__item-top">
       <div class="delivery__img">
@@ -12,8 +14,9 @@
     </div>
   </div>
  
-</template>
 
+  </div>
+</template>
 <script setup>
 import { defineOptions } from "vue";
 import { defineProps } from "vue";

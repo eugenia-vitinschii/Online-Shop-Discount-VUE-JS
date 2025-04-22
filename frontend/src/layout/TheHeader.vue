@@ -1,4 +1,6 @@
 <template>
+  <div>
+
 <!-- header component -->
   <div class="header">
     <div class="container">
@@ -82,8 +84,9 @@
       </div>
     </div>
   </div>
-</template>
 
+  </div>
+</template>
 <script setup>
 //vue imports
 import { defineOptions } from "vue";

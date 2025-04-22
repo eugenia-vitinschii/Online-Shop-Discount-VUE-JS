@@ -1,4 +1,6 @@
 <template>
+  <div>
+
   <div class="bustle">
     <div class="container">
       <div class="bustle__wrapper">
@@ -33,8 +35,9 @@
       </div>
     </div>
   </div>
-</template>
 
+  </div>
+</template>
 <script setup>
 
 //vue import

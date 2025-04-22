@@ -1,4 +1,8 @@
 <template>
+  <div>
+
+  <div>
+
 <!-- shopping card view -->
   <div class="cart">
     <div class="container">
@@ -64,9 +68,11 @@
       </div>
     </div>
   </div>
-</template>
 
- <script setup>
+  </div>
+
+  </div>
+</template> <script setup>
 //compoents
 import ShoppingItem from "@/components/ShoppingItem.vue";
 

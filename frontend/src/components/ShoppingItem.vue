@@ -1,4 +1,6 @@
 <template>
+  <div>
+
 <!-- cart item -->
   <div class="cart__item">
     <div class="cart__img">
@@ -33,8 +35,9 @@
         </button>
     </div>
   </div>
-</template>
 
+  </div>
+</template>
 
 <script setup>
 //import vue

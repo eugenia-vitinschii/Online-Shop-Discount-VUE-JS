@@ -1,4 +1,6 @@
 <template>
+  <div>
+
 <!-- routing -->
 <div class="router">
   <div class="container">
@@ -53,8 +55,9 @@
       </div>
     </div>
   </div>
-</template>
 
+  </div>
+</template>
 <script setup>
 //vue , router
 import { defineOptions, onMounted , watch} from "vue";

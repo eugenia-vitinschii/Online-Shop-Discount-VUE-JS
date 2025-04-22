@@ -1,4 +1,8 @@
 <template>
+  <div>
+
+  <div>
+
   <!-- routing -->
   <div class="router">
     <div class="container">
@@ -62,9 +66,11 @@
   </div>
    <!-- watched section -->
 <recently-wached-slider/>
-</template>
 
-<script setup>
+  </div>
+
+  </div>
+</template><script setup>
 //components
 import TheRouter from "@/sections/TheRouter.vue";
 import TheProduct from "@/sections/TheProduct.vue";

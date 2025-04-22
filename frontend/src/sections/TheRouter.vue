@@ -1,4 +1,6 @@
 <template>
+  <div>
+
   <!-- go back button -->
   <div class="router__button" >
     <button class="icon-svg" @click="$router.go(-1)"  :class="promo ? 'white-router' : 'blue-router'">
@@ -21,8 +23,9 @@
   <div class="router__link" >
     <router-link  to="/products" :class="promo ? 'white-router' : 'blue-router'" >/ Produse</router-link>
   </div>
-</template>
 
+  </div>
+</template>
 <script setup>
 //vue
 import { defineOptions, defineProps } from "vue";

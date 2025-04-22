@@ -1,4 +1,8 @@
 <template>
+  <div>
+
+  <div>
+
 
   <admin-header />
   <!-- edit -->
@@ -42,9 +46,11 @@
     </div>
   </div>
   <message-component :message="message">Deleted!</message-component>
-</template>
 
-<script setup>
+  </div>
+
+  </div>
+</template><script setup>
 //vue
 import { defineOptions, ref} from "vue";
 

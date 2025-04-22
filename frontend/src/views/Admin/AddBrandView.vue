@@ -1,4 +1,6 @@
 <template>
+  <div>
+
   <admin-header />
 <!-- create brand -->
   <div class="add">
@@ -37,8 +39,9 @@
       </div>
     </div>
   </div>
-</template>
 
+  </div>
+</template>
 <script setup>
 //vue
 import { defineOptions, ref } from "vue";

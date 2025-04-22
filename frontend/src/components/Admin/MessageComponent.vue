@@ -1,4 +1,6 @@
 <template>
+  <div>
+
   <div class="message" v-show="message">
     <div class="message__wrapper">
       <div class="message__svg">
@@ -16,8 +18,9 @@
       <p class="message__text"><slot></slot></p>
     </div>
   </div>
-</template>
 
+  </div>
+</template>
 
 <script setup>
 import { defineOptions } from "vue";

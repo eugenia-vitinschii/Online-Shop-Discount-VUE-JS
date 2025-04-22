@@ -1,4 +1,6 @@
 <template>
+  <div>
+
 <div :class="['wrapper', { 'wrapper--promo': isPromoPage }]">
     <the-header />
   <div class="content">
@@ -8,8 +10,9 @@
   <scroll-back />
 </div>
 
-</template>
 
+  </div>
+</template>
 <script setup>
 //vue
 import { computed } from 'vue';

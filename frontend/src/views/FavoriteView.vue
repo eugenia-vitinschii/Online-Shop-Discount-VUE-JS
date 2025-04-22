@@ -1,4 +1,5 @@
 <template>
+<div>
   <!-- favorite page -->
   <div class="favorite">
     <div class="container">
@@ -40,6 +41,7 @@
   <the-top-products-slider />
   <!-- watched section -->
   <recently-wached-slider />
+  </div>
 </template>
  
 

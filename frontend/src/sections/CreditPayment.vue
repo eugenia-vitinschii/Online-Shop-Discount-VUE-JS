@@ -1,4 +1,6 @@
 <template>
+  <div>
+
   <p class="body-text">Cumpără {{ product.productName }} în credit: </p>
   <p class="body-text-green">Avans : 0% </p>
   <table class="credit__table">
@@ -15,8 +17,9 @@
       <td class="small-text">{{ getPrice(item.percent) }} lei</td>
     </tr>
   </table>
-</template>
- 
+
+  </div>
+</template> 
  
 
 <script setup>

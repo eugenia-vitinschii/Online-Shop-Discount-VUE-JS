@@ -1,4 +1,6 @@
 <template>
+  <div>
+
   <!--Product item wrappper-->
   <div class="item__item" :class="{ gray: !stock }">
     <div class="item__top">
@@ -98,8 +100,9 @@
       </div>
     </div>
   </div>
-</template>
- 
+
+  </div>
+</template> 
 
 
 <script setup>

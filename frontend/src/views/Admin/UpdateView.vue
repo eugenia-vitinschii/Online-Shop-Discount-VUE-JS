@@ -1,4 +1,6 @@
 <template>
+  <div>
+
   <admin-header />
   <div class="container">
     <div class="update">
@@ -239,8 +241,9 @@
     </div>
   </div>
   <message-component :message="message">Edited!</message-component>
-</template>
- 
+
+  </div>
+</template> 
 
 <script setup>
 //components

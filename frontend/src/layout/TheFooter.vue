@@ -1,4 +1,6 @@
 <template>
+  <div>
+
   <footer class="footer">
     <div class="container">
       <div class="footer__wrapper">
@@ -23,8 +25,9 @@
       </div>
     </div>
   </footer>
-</template>
 
+  </div>
+</template>
 <script setup>
 import TheLink from "../components/TheLink.vue"
 

@@ -1,4 +1,8 @@
 <template>
+  <div>
+
+  <div>
+
   <div class="router">
     <div class="container">
       <div class="router__wrapper">
@@ -253,9 +257,11 @@
       </div>
     </div>
   </div>
-</template>
 
-<script setup>
+  </div>
+
+  </div>
+</template><script setup>
 //vue
 import { defineOptions, ref} from "vue";
 //vue hooks

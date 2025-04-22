@@ -1,4 +1,6 @@
 <template>
+  <div>
+
   <div class="input__wrapper">
     <label>{{ label }}</label>
     <input
@@ -8,8 +10,9 @@
       :placeholder="placeholder"
     />
   </div>
-</template>
-   
+
+  </div>
+</template>   
 
 <script setup>
 

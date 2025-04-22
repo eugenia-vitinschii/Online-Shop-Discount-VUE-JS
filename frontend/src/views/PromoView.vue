@@ -1,4 +1,8 @@
 <template>
+  <div>
+
+  <div>
+
   <!-- routing section -->
   <div class="router">
     <div class="container">
@@ -53,9 +57,11 @@
       </div>
     </div>
   </div>
-</template>
 
-<script setup>
+  </div>
+
+  </div>
+</template><script setup>
 //vue
 import { defineOptions, ref, onMounted } from "vue";
 

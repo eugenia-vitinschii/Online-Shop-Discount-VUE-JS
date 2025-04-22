@@ -1,4 +1,6 @@
 <template>
+  <div>
+
   <div class="login">
     <div class="container">
       <div class="login__wrapper">
@@ -27,8 +29,9 @@
       </div>
     </div>
   </div>
-</template>
-     
+
+  </div>
+</template>     
     
 <script setup>
 import { defineOptions, defineModel } from "vue";

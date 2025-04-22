@@ -1,4 +1,6 @@
 <template>
+  <div>
+
   <swiper
   
     :pagination="{
@@ -38,8 +40,9 @@
     </swiper-slide>
 
   </swiper>
-</template>
 
+  </div>
+</template>
  
 
   <script>

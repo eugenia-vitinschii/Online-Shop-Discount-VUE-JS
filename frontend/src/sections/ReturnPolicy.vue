@@ -1,4 +1,8 @@
 <template>
+  <div>
+
+  <div>
+
 <Transition name="popup">
   <div class="modal">
     <div v-if="show" class="modal__wrapper">
@@ -17,9 +21,11 @@
     </div>
   </div>
 </Transition>
-</template>
 
-<script setup>
+  </div>
+
+  </div>
+</template><script setup>
 import { defineProps } from "vue";
 
 defineProps({

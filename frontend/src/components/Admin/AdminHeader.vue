@@ -1,4 +1,6 @@
 <template>
+  <div>
+
 <!-- admin panel -->
   <div class="panel">
     <div class="container">
@@ -34,8 +36,9 @@
       </div>
     </div>
   </div>
-</template>
-  
+
+  </div>
+</template>  
 <script setup>
 import { defineOptions } from "vue";
 

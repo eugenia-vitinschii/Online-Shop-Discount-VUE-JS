@@ -1,10 +1,13 @@
 <template>
+  <div>
+
 <!-- brand item -->
   <router-link :to="'/brands/' + brand">
       <img class="brands__img" :src="img" alt="brand" />
   </router-link>
-</template>
 
+  </div>
+</template>
 <script setup>
 //vue
 import { defineOptions, defineProps } from "vue";

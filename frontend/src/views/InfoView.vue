@@ -1,4 +1,8 @@
 <template>
+  <div>
+
+  <div>
+
        <div class="home">
          <div class="container">
            <div class="home__wrapper">
@@ -7,9 +11,11 @@
          </div>
        </div>
 
- </template>
-
  
+  </div>
+
+  </div>
+</template> 
  <script setup>
  import { defineOptions } from "vue";
  

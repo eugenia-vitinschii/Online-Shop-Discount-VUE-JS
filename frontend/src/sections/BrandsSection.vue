@@ -1,4 +1,6 @@
 <template>
+  <div>
+
   <div class="brands">
     <div class="container">
       <!-- brand wrapper -->
@@ -44,8 +46,9 @@
       </swiper>
     </div>
   </div>
-</template>
 
+  </div>
+</template>
 <script setup>
 //vue
 import { defineOptions, ref, onMounted } from "vue";

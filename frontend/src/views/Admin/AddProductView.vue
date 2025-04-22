@@ -1,4 +1,6 @@
 <template>
+  <div>
+
   <admin-header />
 
   <div class="add">
@@ -230,8 +232,9 @@
       </div>
     </div>
   </div>
-</template>
- 
+
+  </div>
+</template> 
   
 
 <script setup>

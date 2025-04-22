@@ -1,4 +1,6 @@
 <template>
+  <div>
+
    <div class="scrollBack" v-show="crollY > 300" @click="toTop">
      <svg
        xmlns="http://www.w3.org/2000/svg"
@@ -14,8 +16,9 @@
        <path d="M18 15l-6-6-6 6" />
      </svg>
    </div>
- </template>
-  
+ 
+  </div>
+</template>  
   <script>
  export default {
    name: "ScrollBack",

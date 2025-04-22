@@ -1,11 +1,14 @@
 <template>
+  <div>
+
 <!-- Brands -->
   <div class="chart__item">
     <p class="subheading">Categories</p>
     <canvas ref="chartCanvasColors"></canvas>
   </div>
-</template>
 
+  </div>
+</template>
 <script setup>
 //vue
 import { defineOptions, ref, onMounted } from "vue";

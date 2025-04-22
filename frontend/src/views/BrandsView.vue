@@ -1,4 +1,6 @@
 <template>
+  <div>
+
 <div class="brand"> 
    <div class="container">
       <div class="brand__wrapper">
@@ -15,8 +17,9 @@
       </div>
    </div>
 </div>
-</template>
 
+  </div>
+</template>
 <script setup>
  //vue
  import {defineOptions} from "vue"

@@ -1,4 +1,6 @@
 <template>
+  <div>
+
   <div class="i">
     <div class="container">
       <div class="i__wrapper">
@@ -55,8 +57,9 @@
       </div>
     </div>
   </div>
-</template>
 
+  </div>
+</template>
  
  <script setup>
 //vue , router

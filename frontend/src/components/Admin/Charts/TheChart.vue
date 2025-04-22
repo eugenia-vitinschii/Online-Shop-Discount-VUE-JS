@@ -1,11 +1,14 @@
 <template>
+  <div>
+
 <!-- promo in Stock -->
   <div class="chart__item">
     <p class="subheading">Promo & Stock value</p>
     <canvas ref="chartCanvas"></canvas>
   </div>
-</template>
 
+  </div>
+</template>
 <script setup>
 //vue
 import { defineOptions, ref, onMounted } from "vue";

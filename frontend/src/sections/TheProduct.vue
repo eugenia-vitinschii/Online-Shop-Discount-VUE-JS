@@ -1,4 +1,6 @@
 <template>
+  <div>
+
   <div class="product__item" :class="{gray: !stock }">
     <!-- Short info about product -->
         <div class="product__top">
@@ -190,8 +192,9 @@
       </table>
     </div>
   </div>
-</template>
- 
+
+  </div>
+</template> 
 
 <script setup>
 //vue

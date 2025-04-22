@@ -1,4 +1,10 @@
 <template>
+  <div>
+
+  <div>
+
+  <div>
+
 <!-- brand section -->
  <brands-section/>
 <div class="swiper">
@@ -48,10 +54,13 @@
     </div>
   </div>
 </div>
-</template>
 
+  </div>
 
-<script setup>
+  </div>
+
+  </div>
+</template><script setup>
 //vue
 import { defineOptions } from "vue";
 
