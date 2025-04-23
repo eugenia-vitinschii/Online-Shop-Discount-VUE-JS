@@ -77,12 +77,12 @@
   "devDependencies": {
     "concurrently": "^9.1.2"
   },
-"scripts": {
-  "frontend": "npm --prefix frontend run serve",
-  "backend": "npm --prefix backend run api",
-  "mock": "npm --prefix frontend run mock",
-  "dev": "concurrently \"npm run frontend\" \"npm run backend\" \"npm run mock\""
-},
+  "scripts": {
+    "frontend": "npm --prefix frontend run serve",
+    "backend": "npm --prefix backend run api",
+    "mock": "npm --prefix frontend run mock",
+    "dev": "concurrently \"npm run frontend\" \"npm run backend\" \"npm run mock\""
+  },
   "keywords": [],
   "author": "",
   "license": "ISC"
