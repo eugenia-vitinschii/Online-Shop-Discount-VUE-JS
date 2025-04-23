@@ -1,5 +1,7 @@
 //product routes
-const routes = [
+import type  { RouteRecordRaw } from 'vue-router';
+
+const routes: RouteRecordRaw[] = [
    {
      path: "/products",
      children: [

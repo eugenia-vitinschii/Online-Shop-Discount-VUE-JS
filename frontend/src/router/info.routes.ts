@@ -1,6 +1,7 @@
 //info routes
+import type  { RouteRecordRaw } from 'vue-router';
 
-const routes = [
+const routes: RouteRecordRaw[] = [
    {
       path: '/',
       name: 'home',
@@ -18,7 +19,7 @@ const routes = [
       path: '/promo',
       component: () => import('../views/PromoView.vue'),
       meta: { title: "Promo" }
-   },
+   }
 ]
 
 export default routes;

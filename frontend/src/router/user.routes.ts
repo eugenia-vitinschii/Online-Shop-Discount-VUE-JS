@@ -1,5 +1,7 @@
 //user routes
-const routes = [
+import type  { RouteRecordRaw } from 'vue-router';
+
+const routes: RouteRecordRaw[] = [
    {
       name: "FavoriteView",
       path: '/favorite',

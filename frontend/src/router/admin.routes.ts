@@ -1,5 +1,7 @@
 //admin routes
-const routes = [
+import type  { RouteRecordRaw } from 'vue-router';
+
+const routes: RouteRecordRaw[] = [
   {
     path: "/admin",
     children: [
@@ -33,7 +35,6 @@ const routes = [
       },
     ],
   },
-  {},
 ];
 
 export default routes;
