@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 import axios from "axios";
-import router from "@/router/index";
+import router from "Discount/src/router/index";
 
 const baseUrl = "http://localhost:3000";
 

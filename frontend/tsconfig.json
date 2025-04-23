@@ -1,21 +1,7 @@
 {
-  "compilerOptions": {
-    "target": "es2020",                           // Современный синтаксис
-    "module": "esnext",                           // Подходит для сборщиков типа Webpack
-    "moduleResolution": "node",
-    "lib": ["esnext", "dom"],                     // Всё современное + браузер
-    "jsx": "preserve",                            // Для Vue JSX (если используешь)
-    "strict": true,                               // Все строгие проверки
-    "esModuleInterop": true,                      // Совместимость с CommonJS
-    "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,     // Предотвращает ошибки на Linux/Windows
-    "skipLibCheck": true,                         // Ускоряет сборку
-    "resolveJsonModule": true                     // Можно импортировать JSON-файлы
-  },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "src/**/*.vue"
-  ],
-  "exclude": ["node_modules"]
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
 }

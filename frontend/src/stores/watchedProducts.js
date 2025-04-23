@@ -2,7 +2,7 @@
 import {defineStore} from "pinia";
 
 //product contstructor
-import {Product} from "@/models/product";
+import {Product} from "Discount/src/models/product";
 
 export const useWatchedProductsStore = defineStore("watchedProducts", {
    state: () => ({

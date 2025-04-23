@@ -21,9 +21,9 @@ import { computed } from 'vue';
 import { useRoute } from 'vue-router';
 
 //components
-import TheFooter from "./layout/TheFooter.vue";
-import TheHeader from "./layout/TheHeader.vue";
-import ScrollBack from "./layout/ScrollBack.vue";
+import TheFooter from "../../src/layout/TheFooter.vue";
+import TheHeader from "../../src/layout/TheHeader.vue";
+import ScrollBack from "../../src/layout/ScrollBack.vue";
 
 //varuables
 const route = useRoute();
