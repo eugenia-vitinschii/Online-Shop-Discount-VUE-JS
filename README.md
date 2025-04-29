@@ -11,6 +11,9 @@
 ![Express-js](https://img.shields.io/badge/express-js?style=flat&logo=express&logoColor=%23ffffff&color=%23f77f00)
 
 
+#### Rewriting the project with Vite and TypeScript for improved performance and maintainability.
+
+
 ## 🧪 Running the Project
 
 ### Project setup

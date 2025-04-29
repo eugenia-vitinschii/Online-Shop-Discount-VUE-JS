@@ -1,6 +1,4 @@
 <template>
-  <div>
-
 <!-- header component -->
   <div class="header">
     <div class="container">
@@ -84,14 +82,14 @@
       </div>
     </div>
   </div>
-
-  </div>
 </template>
-<script setup>
+
+<script setup lang="ts">
 //vue imports
 import { defineOptions } from "vue";
 import { useProductStore } from "../stores/product";
 import { storeToRefs } from "pinia";
+
 
 //component settings
 defineOptions({

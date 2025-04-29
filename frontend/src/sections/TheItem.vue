@@ -1,6 +1,4 @@
 <template>
-  <div>
-
   <!--Product item wrappper-->
   <div class="item__item" :class="{ gray: !stock }">
     <div class="item__top">
@@ -100,84 +98,42 @@
       </div>
     </div>
   </div>
-
-  </div>
 </template> 
 
 
-<script setup>
-//vue
-import { defineOptions, defineProps, defineEmits } from "vue";
-
+<script setup lang="ts">
 
 defineOptions({
   name: "TheItem",
 });
 
-defineEmits([ "addToFavorite", "addToCard"])
-//props
- defineProps({
-  id: {
-    type: String,
-  },
-  img: {
-    type: String,
-  },
-  productType: {
-    type: String,
-  },
-  productName: {
-    type: String,
-  },
-  price: {
-    type: Number,
-  },
-    discount: {
-    type: Number,
-  },
-  savedMoney: {
-    type: Number,
-  },
-  discountPrice: {
-    type: Number,
-  },
-  brand: {
-    type: String,
-  },
-  labelImg: {
-    type: String,
-  },
-  label: {
-    type: String,
-  },
+//emits
+const emit = defineEmits<{
+  (e: "addToFavorite"): void
+  (e: "addToCard"): void
+}>()
 
-  hidden: {
-    type: Boolean,
-    default: false,
-  },
-  oldPrice: {
-    type: Boolean,
-    default: false,
-  },
-  hugeSaleLabel: {
-    type: Boolean,
-    default: false,
-  },
-  dicountLabel: {
-    type: Boolean,
-    default: false,
-  },
-  redHeart: {
-    type: Boolean,
-    default: false,
-  },
-  monthlyPrice: {
-    type: Number,
-  },
-  stock: {
-    type: Boolean,
-    default: true,
-  }
-});
+type Props = {
+  id: string
+  img: string
+  productType: string
+  productName: string
+  price: number
+  discount: number
+  savedMoney: number
+  discountPrice: number
+  monthlyPrice: number
+  brand: string
+  labelImg: string
+  label: string
+  hidden?: boolean
+  oldPrice?: boolean
+  hugeSaleLabel?: boolean
+  dicountLabel?: boolean
+  redHeart?: boolean
+  stock?: boolean
+}
+
+const props = defineProps<Props>()
 
 </script>
