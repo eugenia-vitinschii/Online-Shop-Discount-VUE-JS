@@ -315,10 +315,10 @@ function addProductToFavorite(product) {
 }
 
 //hooks  
-onMounted(() => {
-  console.log('onMounted')
-  fetchProducts();
-  created.value = true;  
+onMounted(async() => {
+  console.log('onMounted');
+   await store.fetchProducts();
+  created.value = true; 
 });
 
 </script>

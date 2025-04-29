@@ -3,13 +3,13 @@
 import axios from "axios";
 
 //router
-import router from "Discount/src/router/index";
+import router from "@/router/index";
 
 //product
-import { Product } from "Discount/src/models/product";
+import { Product } from "@/models/product";
 
 //base url
-const baseUrl = "http://localhost:3000";
+const baseUrl = "http://localhost:3001";
 
 export const   actions= {
    //fetch products

@@ -1,8 +1,8 @@
 import { defineStore } from "pinia";
 import axios from "axios";
-import router from "Discount/src/router/index";
+import router from "@/router/index";
 
-const baseUrl = "http://localhost:3000";
+const baseUrl = "http://localhost:3001";
 
 export const useBrandsStore = defineStore("brands", {
   state: () => ({

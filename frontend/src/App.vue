@@ -1,6 +1,5 @@
 <template>
   <div>
-
 <div :class="['wrapper', { 'wrapper--promo': isPromoPage }]">
     <the-header />
   <div class="content">
@@ -21,9 +20,9 @@ import { computed } from 'vue';
 import { useRoute } from 'vue-router';
 
 //components
-import TheFooter from "@/layout/TheFooter.vue";
-import TheHeader from "@/layout/TheHeader.vue";
-import ScrollBack from "@/layout/ScrollBack.vue";
+import TheFooter from "./layout/TheFooter.vue";
+import TheHeader from "./layout/TheHeader.vue";
+import ScrollBack from "./layout/ScrollBack.vue";
 
 //varuables
 const route = useRoute();

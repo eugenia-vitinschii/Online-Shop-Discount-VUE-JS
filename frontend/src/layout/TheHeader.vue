@@ -21,7 +21,7 @@
           <div class="header__content-top">
             <div class="header__logo">
               <router-link to="/">
-                <img src="@/assets/img/logo.png" alt="The Logo" />
+                <img src="../assets/img/logo.png" alt="The Logo" />
               </router-link>
             </div>
             <div class="header__user">
@@ -90,7 +90,7 @@
 <script setup>
 //vue imports
 import { defineOptions } from "vue";
-import { useProductStore } from "@/stores/product";
+import { useProductStore } from "../stores/product";
 import { storeToRefs } from "pinia";
 
 //component settings

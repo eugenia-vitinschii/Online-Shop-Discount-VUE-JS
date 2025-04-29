@@ -50,22 +50,3 @@
  };
  </script>
   
-  <style lang="scss">
- .scrollBack {
-   right: 0;
-   bottom: 0;
-   width: 40px;
-   height: 40px;
-   position: fixed;
-
-   margin: 20px;
-   cursor: pointer;
-background: $dark-green;
- border: 1px solid transparent;
- }
-  .scrollBack:hover {
-   background:#000;
-   border: 1px solid #fff;
-  }
-
- </style>

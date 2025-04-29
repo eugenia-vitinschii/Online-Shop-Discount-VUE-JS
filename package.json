@@ -78,7 +78,7 @@
     "concurrently": "^9.1.2"
   },
   "scripts": {
-    "frontend": "npm --prefix frontend run serve",
+    "frontend": "npm --prefix frontend run dev",
     "backend": "npm --prefix backend run api",
     "mock": "npm --prefix frontend run mock",
     "dev": "concurrently \"npm run frontend\" \"npm run backend\" \"npm run mock\""
