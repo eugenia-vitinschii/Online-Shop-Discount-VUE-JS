@@ -1,4 +1,6 @@
 // styles for items page (all products list)
+@use '../abstracts/variables' as *;  
+@use '../abstracts/mixins' as *;  
 .item {
   &__wrapper{
     display: flex;

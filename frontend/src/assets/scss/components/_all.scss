@@ -1,3 +1,8 @@
 // Abstract files
-@import "buttons", 'form', 'item', 'credit', 'filters', 'product', 'chart';
-
+@forward "buttons";
+@forward "form";
+@forward "item";
+@forward "credit";
+@forward "filters";
+@forward "product";
+@forward "chart";

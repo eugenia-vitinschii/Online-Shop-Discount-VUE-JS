@@ -1,11 +1,12 @@
 //  Transitions & Animations
+@use './variables' as *;  
 
 @mixin transition() {
 	transition-duration: 0.9s;
 	transition-timing-function: ease;
 }
 
-//animations
+//animations 0
 @mixin animatePromo() {
 	animation: animatePromoKey 2s ease 0s infinite normal none;
 }

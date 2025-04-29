@@ -1,3 +1,5 @@
-
-@import "reset", 'typography', 'custom-checkbox';
+//core
+@forward "reset"; 
+@forward 'typography';
+@forward 'custom-checkbox';
 

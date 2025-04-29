@@ -1,3 +1,5 @@
+@use '../abstracts/variables' as *;  
+@use '../abstracts/mixins' as *;  
 .cart {
    width: 100%;
    &__wrapper {

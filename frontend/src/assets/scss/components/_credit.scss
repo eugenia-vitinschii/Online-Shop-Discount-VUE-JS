@@ -1,4 +1,5 @@
 //table for Credit & Installment compoents
+@use '../abstracts/variables' as *;  
 .credit__table {
   width: 100%;
   border-collapse: collapse;

@@ -1,3 +1,4 @@
+@use 'variables' as *;  
 @keyframes pulse {
  
       0% {
@@ -16,3 +17,5 @@
    background: $dark-green;
    animation: pulse 2s infinite;
  }
+
+p{ color: blue}

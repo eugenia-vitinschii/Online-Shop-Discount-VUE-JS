@@ -1,3 +1,4 @@
+@use '../abstracts/variables' as *;  
 .footer {
    margin-top: $margin-top;
    background: $orange;

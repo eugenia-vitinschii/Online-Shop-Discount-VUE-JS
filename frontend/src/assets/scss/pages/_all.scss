@@ -1,1 +1,7 @@
-@import "home", 'admin', 'shopping', 'brand', 'promo';
+//pages folder imports
+@forward "home";
+@forward "admin";
+@forward "shopping";
+@forward "brand";
+@forward "promo";
+

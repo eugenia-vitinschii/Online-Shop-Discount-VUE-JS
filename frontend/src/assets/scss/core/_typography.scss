@@ -1,4 +1,6 @@
 // p tag styles
+@use '../abstracts/variables' as *;  
+@use '../abstracts/mixins' as *;  
 .body-text,
 .body-text-red, .body-text-green {
 	font-size: $body-text;

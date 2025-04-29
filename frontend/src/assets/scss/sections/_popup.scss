@@ -1,4 +1,6 @@
 // popup item  from TheInfo component
+@use '../abstracts/variables' as *;  
+@use '../abstracts/mixins' as *;  
 .modal {
    svg, button{
       background: $white;

@@ -1,3 +1,5 @@
+@use '../abstracts/variables' as *;  
+
 .wrapper {
 	background: $ivory;
 	display: flex;

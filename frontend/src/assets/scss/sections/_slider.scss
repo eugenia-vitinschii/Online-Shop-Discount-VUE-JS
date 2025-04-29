@@ -1,3 +1,5 @@
+@use '../abstracts/variables' as *;  
+
 .swiper{
    &__wrapper {
  padding: $margin-top 0px;

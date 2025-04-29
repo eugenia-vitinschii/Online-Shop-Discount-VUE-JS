@@ -1,4 +1,6 @@
 // for returnPolicy component
+@use '../abstracts/variables' as *;  
+
 .info {
    svg, button{
       background: $white;

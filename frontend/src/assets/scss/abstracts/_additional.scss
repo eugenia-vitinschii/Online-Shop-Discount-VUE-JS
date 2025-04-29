@@ -1,3 +1,5 @@
+@use '../abstracts/variables'as*; 
+
 // hidden & visible for conditiona
 .hidden {
    display: none;
@@ -13,12 +15,12 @@
    width: 100%;
    margin-top: 10px;
    height: 25px;
-   border: 1px solid $dark-green;
+   border: 1px solid $dark-orange;
    color: $orange;
 	font-size: $body-text-sm;
   }
 }
-
+//test
 
 //running line span
 .running-line-wrapper{

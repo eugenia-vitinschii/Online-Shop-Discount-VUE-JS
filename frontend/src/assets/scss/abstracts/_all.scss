@@ -1,3 +1,5 @@
 // Abstract files
-@import "mixins", '_variables', '_additional', '_animations';
-
+@forward "variables";
+@forward "mixins";
+@forward "additional";
+@forward "animations";

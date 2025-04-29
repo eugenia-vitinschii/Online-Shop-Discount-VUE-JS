@@ -1,19 +1,8 @@
-// Abstract files
-@import "abstracts/all";
+@use "@/assets/scss/abstracts/all" as *;
+@use "@/assets/scss/core/all" as *;
+@use "@/assets/scss/components/all" as *;
+@use "@/assets/scss/layout/all" as *;
+@use "@/assets/scss/sections/all" as *;
+@use "@/assets/scss/pages/all" as *;
 
-
-
-// Core files
-@import "core/all";
-
-// Components
-@import "components/all";
-
-// Layout
-@import "layout/all";
-
-// Sections
-@import "sections/all";
-
-// Pages
-@import "pages/all";
+//tesy

@@ -1,1 +1,9 @@
-@import 'delivery', "slider", "popup", "info",  "brands", 'router', 'promo-section', 'offer';
+//section folder imports
+@forward "delivery";
+@forward "slider";
+@forward "popup";
+@forward "info";
+@forward "brands";
+@forward "router";
+@forward "promo-section";
+@forward "offer";

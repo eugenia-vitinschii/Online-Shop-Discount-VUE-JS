@@ -1,4 +1,5 @@
 //router component (section ) styles
+@use '../abstracts/variables' as *;  
 .router{
    &__wrapper{
       display: flex;

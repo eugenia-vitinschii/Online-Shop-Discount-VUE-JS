@@ -1,4 +1,7 @@
 // all buttons
+@use '../abstracts/variables' as *;  
+@use '../abstracts/mixins' as *;  
+
 .button,
 .red-button,
 .green-button {
@@ -57,3 +60,6 @@
    }
 }
 
+.test{
+   color: #000;
+}
