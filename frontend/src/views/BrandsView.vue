@@ -20,7 +20,8 @@
 
   </div>
 </template>
-<script setup>
+
+<script setup lang="ts">
  //vue
  import {defineOptions} from "vue"
 
@@ -36,7 +37,7 @@ import BrandSectionItem from "@/sections/BrandSectionItem.vue";
  })
 
 //pinia store
-import { useBrandsStore} from "@/stores/brands";
+import { useBrandsStore} from "@/stores/brands.ts";
 
 //pinia variables
 const store = useBrandsStore();

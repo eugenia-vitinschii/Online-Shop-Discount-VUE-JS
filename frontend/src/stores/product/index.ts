@@ -1,7 +1,8 @@
+
 import {defineStore} from 'pinia';
-import {state} from './state';
-import {getters} from './getters';
-import {actions} from './actions';
+import {state} from './state.ts';
+import {getters} from './getters.ts';
+import {actions} from './actions.ts';
 
 export const useProductStore = defineStore( 'product', {
    state,

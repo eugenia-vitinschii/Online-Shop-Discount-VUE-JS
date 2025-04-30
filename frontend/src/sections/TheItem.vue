@@ -100,9 +100,8 @@
   </div>
 </template> 
 
-
 <script setup lang="ts">
-
+//component 
 defineOptions({
   name: "TheItem",
 });
@@ -113,6 +112,7 @@ const emit = defineEmits<{
   (e: "addToCard"): void
 }>()
 
+//props
 type Props = {
   id: string
   img: string

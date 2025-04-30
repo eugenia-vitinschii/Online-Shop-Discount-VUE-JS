@@ -6,24 +6,27 @@ import axios from "axios";
 import router from "@/router/index";
 
 //product
-import { Product } from "@/models/product";
+import { ProductState } from './state'
+import { Product } from "@/models/product"
+ 
+ 
 
 //base url
 const baseUrl = "http://localhost:3001";
 
-export const   actions= {
+export const actions= {
    //fetch products
-   async fetchProducts() {
+   async fetchProducts(this: ProductState & { products: Product[]}) {
      try {
        const response = await axios.get(`${baseUrl}/products`);
-       this.products = response.data.map((item) => new Product(item));
+       this.products = response.data.map((item:Record<string, any>) => new Product(item));
      } catch (error) {
-       alert(error);
+       alert('Failed to fetch products');
        console.log(error);
      }
    },
    //create product
-   async createProduct(payload) {
+   async createProduct(this: ProductState & { products: Product[]}, payload:Record<string, any>) {
      try {
        const newProduct = new Product(payload);
        const { data } = await axios.post(`${baseUrl}/products`, newProduct);
