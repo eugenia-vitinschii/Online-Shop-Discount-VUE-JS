@@ -13,7 +13,7 @@ const baseUrl = "http://localhost:3001";
 
 export const actions= {
 //fetch products
-   async fetchProducts(this: ProductState & { products: Product[]}) {
+   async fetchProducts(this: ProductState & { products: Product[]}): Promise<void> {
      try {
        const response = await axios.get(`${baseUrl}/products`);
        this.products = response.data.map((item:Record<string, any>) => new Product(item));
@@ -47,9 +47,9 @@ export const actions= {
      }
    },
    //add  product to cart
-   addToCart(item) {
+   addToCart( this: ProductState & { user: object} ,item: object): Record<string, number>  {
     
-     const index = this.user.cart.findIndex((product) => product.id == item.id)
+     const index:string = this.user.cart.findIndex((product) => product.id == item.id)
 
      if (index !== -1) {
        this.user.cart[index].quantity += 1;
