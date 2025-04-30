@@ -29,7 +29,7 @@ export interface ProductData{
 
 }
 
-export class Prodcut {
+export class Product {
    id: string;
    productCode: string;
    img : string;

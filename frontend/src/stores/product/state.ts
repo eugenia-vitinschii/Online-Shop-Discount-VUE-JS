@@ -14,7 +14,7 @@ export interface ProductState {
   searchValue: string,
 }
 
-export const  state = () => ({
+export const  state = ():ProductState => ({
    products: [],
    user: {
      cart: [],

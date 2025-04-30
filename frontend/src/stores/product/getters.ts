@@ -1,4 +1,4 @@
-import { ProductState } from './state'
+import type { ProductState } from './state';
 import { Product } from "@/models/product"
 
 export const getters =  {
@@ -21,24 +21,20 @@ export const getters =  {
     });
     return map;
   },
-    
    // filteredItems.length
    allProducts:(state: ProductState):number =>  state.products.length,
 
-   filteredProducts:(state: ProductState):number => state.filteredItems.length,
+   filteredProducts:(_state: ProductState, getters: Record<string, any>):number => getters.filteredItems.length,
 
    //filter items by brand for brand view
    getItemsByBrand: (state: ProductState) => {
-     return (brandName: string): Product[] =>
-       Object.values(state.products).filter(
-         (item) => item.brand === brandName
-       );
+     return (brandName: string): Product[] => Object.values(state.products).filter( (item) => item.brand === brandName);
    },
      //get promo items for promo page
    getPromoItems:(state: ProductState): Product[]=> {
     return state.products.filter((item) => item.discount > 0 && item.discount < 60);
    },
-
+//filters
    filteredItems(state: ProductState):Product[] {
      let filtered: Product[] = [...state.products];
      

@@ -1,21 +1,18 @@
 //actions product store
-//axios
 import axios from "axios";
 
 //router
 import router from "@/router/index";
 
 //product
-import { ProductState } from './state'
+import type { ProductState } from './state'
 import { Product } from "@/models/product"
  
- 
-
 //base url
 const baseUrl = "http://localhost:3001";
 
 export const actions= {
-   //fetch products
+//fetch products
    async fetchProducts(this: ProductState & { products: Product[]}) {
      try {
        const response = await axios.get(`${baseUrl}/products`);
@@ -25,8 +22,8 @@ export const actions= {
        console.log(error);
      }
    },
-   //create product
-   async createProduct(this: ProductState & { products: Product[]}, payload:Record<string, any>) {
+//create product
+   async createProduct(this: ProductState & { products: Product[]}, payload:Record<string, any>): Promise<void> {
      try {
        const newProduct = new Product(payload);
        const { data } = await axios.post(`${baseUrl}/products`, newProduct);
@@ -38,13 +35,15 @@ export const actions= {
        router.push({ path: "/admin/panel" });
      }
    },
-   // delete product in db.json
-   async deleteProducts(id) {
+// delete product in db.json
+   async deleteProducts(this: ProductState & { products: Product[]}, id: string): Promise<boolean> {
      try {
        await axios.delete(`${baseUrl}/products/${id}`);
        this.products = this.products.filter((prev) => prev.id !== id);
+       return true;
      } catch (err) {
        console.error("Post ERROR!", err);
+       return false
      }
    },
    //add  product to cart
