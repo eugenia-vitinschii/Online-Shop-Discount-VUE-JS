@@ -7,7 +7,7 @@ import router from "@/router/index";
 //product
 import type { ProductState } from './state'
 import { Product } from "@/models/product"
- 
+import type { CartItem } from "./state";
 //base url
 const baseUrl = "http://localhost:3001";
 
@@ -47,24 +47,24 @@ export const actions= {
      }
    },
    //add  product to cart
-   addToCart( this: ProductState & { user: object} ,item: object): Record<string, number>  {
+   addToCart( this: ProductState, item: CartItem): void {
     
-     const index:string = this.user.cart.findIndex((product) => product.id == item.id)
+     const index = this.user.cart.findIndex((product) => product.id == item.id)
 
      if (index !== -1) {
        this.user.cart[index].quantity += 1;
      } else {
-       const cartItem = { ...item, quantity: 1}
+       const cartItem = { ...item, quantity: 1} as CartItem ;
        this.user.cart.push(cartItem);
      }
      localStorage.setItem("cart", JSON.stringify(this.user.cart));
    },
    //add  product to favorite
-   addToFavorite(item) {
+   addToFavorite(this: ProductState, item: CartItem): void {
      const index  = this.user.favorite.findIndex((product) => product.id == item.id);
 
      if (index!== -1) {
-       this.user.favorite[index].quantity += 1;
+       this.user.favorite[index].quantity += 1;  
      } else {
        item.quantity = 1;
        this.user.favorite.push(item);

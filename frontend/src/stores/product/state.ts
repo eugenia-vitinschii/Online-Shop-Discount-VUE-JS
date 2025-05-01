@@ -2,11 +2,16 @@
 
 import { Product } from "@/models/product"
 
+
+//cart Item
+export type CartItem = Product & { quantity: number };
+
+
 export interface ProductState {
   products: Product[],
   user: {
-    cart: Product[],
-    favorite: Product[],
+    cart: CartItem [] ,
+    favorite: CartItem [],
   },
   checked: string[],
   ascending: boolean,
