@@ -6,7 +6,7 @@ import router from "@/router/index";
 
 //product
 import type { ProductState } from './state'
-import { Product } from "@/models/product"
+import { Product, type ProductData } from "@/models/product"
 import type { CartItem } from "./state";
 //base url
 const baseUrl = "http://localhost:3001";
@@ -72,11 +72,14 @@ export const actions= {
      localStorage.setItem("favorite", JSON.stringify(this.user.favorite));
    },
    //remove item from favorite
-   removeItemFromFavorite(id) {
+   removeItemFromFavorite(this: ProductState, id:string ): void{
      this.user.favorite = this.user.favorite.filter((item) => item.id !== id);
+     localStorage.setItem("favorite", JSON.stringify(this.user.favorite))
    },
-   removeItem(id) {
+   //remove item from cart
+   removeItem(this: ProductState, id: string): void {
      this.user.cart = this.user.cart.filter((item) => item.id !== id);
+     localStorage.setItem("cart", JSON.stringify(this.user.cart))
    },
    getSum() {
     return this.user.cart.reduce((sum, item) => {
