@@ -11,7 +11,7 @@ export interface ProductState {
   products: Product[],
   user: {
     cart: CartItem [] ,
-    favorite: CartItem [],
+    favorite: CartItem [] 
   },
   checked: string[],
   ascending: boolean,

@@ -30,12 +30,11 @@
             :brand="product.brand"
             :img="product.img"
             :productName="product.productName"
-            :productType="product.productType"
+            :productType="product.type"
             :price="product.price"
             :discount="product.discount"
             :discountPrice="product.discountPrice"
             :savedMoney="product.savedMoney"
-            :label="product.label"
             :stock="product.stock"
             :disabledValue="product.stock"
             :monthlyPrice="monthlyPrice(product.price)"
@@ -58,9 +57,11 @@
 
   </div>
 </template>
-<script setup>
+
+<script setup lang="ts">
 //vue , router
-import { defineOptions, onMounted , watch} from "vue";
+import { onMounted , watch, computed} from "vue";
+
 import { useRoute } from "vue-router";
 
 //components
@@ -71,15 +72,19 @@ import TheItem from "@/sections/TheItem.vue";
 import { useProductStore } from "@/stores/product";
 import { storeToRefs } from "pinia";
 
-defineOptions({
-  name: "BrandView",
-});
+// defineOptions({
+//   name: "BrandView",
+// });
+
+import { Product} from '@/models/product'
 
 const store = useProductStore();
 
 const { getItemsByBrand } = storeToRefs(store);
+
+//get route
 const route = useRoute();
-const brand = route.params.brand;
+const brand = computed( () => route.params.brand as string ) ;
 
 const {
   fetchProducts,
@@ -93,16 +98,16 @@ const {
 } = store;
 
 // add product to cart
-function addProductCard(product) {
+function addProductCard(product: Product) : void{
   addToCart(product);
 }
 //add to favorite
-function addProductToFavorite(product) {
+function addProductToFavorite(product:Product): void{
   addToFavorite(product);
 }
 
 //watch title (brand name)
-watch(brand, (newBrand) => {
+watch(brand, (newBrand:string) => {
   if (newBrand) {
     document.title = newBrand;
   }
@@ -110,7 +115,7 @@ watch(brand, (newBrand) => {
 
 //hooks
 onMounted(() => {
-  (document.title = `${route.params.brand}`),fetchProducts();
+  document.title = brand;
   fetchProducts();
 });
 

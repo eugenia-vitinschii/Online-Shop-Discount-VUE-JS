@@ -63,7 +63,7 @@
         <!-- add item to cart -->
         <button
           class="button-svg"
-          @click="$emit('addToCard')"
+          @click="$emit('addToCard', product)"
           
         >
           <svg
@@ -108,8 +108,8 @@ defineOptions({
 
 //emits
 const emit = defineEmits<{
-  (e: "addToFavorite"): void
-  (e: "addToCard"): void
+  (e: "addToFavorite", product: Product): void
+  (e: "addToCard", product: Product): void
 }>()
 
 //props
@@ -125,7 +125,6 @@ type Props = {
   monthlyPrice: number
   brand: string
   labelImg: string
-  label: string
   hidden?: boolean
   oldPrice?: boolean
   hugeSaleLabel?: boolean

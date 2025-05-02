@@ -1,6 +1,5 @@
 <template>
-  <div>
-
+<!-- all brands logo -->
 <div class="brand"> 
    <div class="container">
       <div class="brand__wrapper">
@@ -17,13 +16,11 @@
       </div>
    </div>
 </div>
-
-  </div>
 </template>
 
 <script setup lang="ts">
  //vue
- import {defineOptions} from "vue"
+import {defineOptions} from "vue"
 
 //hooks
 import { onMounted} from "vue"
