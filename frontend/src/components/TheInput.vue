@@ -17,7 +17,7 @@
 <script setup>
 
 import { defineOptions } from "vue";
-import { definePropsб , defineEmits } from "vue";
+import { defineProps , defineEmits } from "vue";
 
 defineOptions({
   name: "TheInput",

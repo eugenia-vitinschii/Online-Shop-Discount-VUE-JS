@@ -1,8 +1,5 @@
 <template>
   <div>
-
-  <div>
-
   <div class="router">
     <div class="container">
       <div class="router__wrapper">
@@ -257,9 +254,6 @@
       </div>
     </div>
   </div>
-
-  </div>
-
   </div>
 </template><script setup>
 //vue

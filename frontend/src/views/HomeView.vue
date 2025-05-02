@@ -1,11 +1,6 @@
 <template>
   <div>
-
-  <div>
-
-  <div>
-
-<!-- brand section -->
+    <!-- brand section -->
  <brands-section/>
 <div class="swiper">
   <div class="container">
@@ -56,11 +51,9 @@
 </div>
 
   </div>
+</template>
 
-  </div>
-
-  </div>
-</template><script setup>
+<script setup>
 //vue
 import { defineOptions } from "vue";
 
@@ -78,25 +71,25 @@ defineOptions({
 const items = [
   {
     id: "1",
-    img: require("@/assets/img/delivery-1.svg"),
+    img: new URL("@/assets/img/delivery-1.svg", import.meta.url).href,
     name: "Service și garanție",
     body: "Rețea proprie de centre de servicii",
   },
   {
     id: "2",
-    img: require("@/assets/img/delivery-2.svg"),
+    img:  new URL("@/assets/img/delivery-2.svg", import.meta.url).href,
     name: "Livrare în toată Moldova",
     body: "Livrarea de la 1 la 2 zile de la data comenzii",
   },
   {
     id: "3",
-    img: require("@/assets/img/delivery-3.svg"),
+    img:  new URL("@/assets/img/delivery-3.svg", import.meta.url).href,
     name: "Încredere și fiabilitate",
     body: "20 de ani pe piață",
   },
   {
     id: "4",
-    img: require("@/assets/img/delivery-4.svg"),
+    img: new URL("@/assets/img/delivery-4.svg", import.meta.url).href,
     name: "Returnare și schimbare",
     body: "În termen de 14 zile",
   },
