@@ -25,7 +25,8 @@
         <div class="trademark__items item__container ">
           <the-item
             v-for="product in getItemsByBrand(brand)"
-            :key="product.id"
+            :key="product.id" 
+            :product="product"
             :id="product.id"
             :brand="product.brand"
             :img="product.img"
@@ -76,7 +77,7 @@ import { storeToRefs } from "pinia";
 //   name: "BrandView",
 // });
 
-import { Product} from '@/models/product'
+import type  { Product} from '@/models/product'
 
 const store = useProductStore();
 
@@ -98,11 +99,11 @@ const {
 } = store;
 
 // add product to cart
-function addProductCard(product: Product) : void{
+function addProductCard(product: Product){
   addToCart(product);
 }
 //add to favorite
-function addProductToFavorite(product:Product): void{
+function addProductToFavorite(product:Product){
   addToFavorite(product);
 }
 

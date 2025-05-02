@@ -81,7 +81,7 @@
         <!-- add item to favorite -->
         <button
           class="button-svg"
-          @click="$emit('addToFavorite')"
+          @click="$emit('addToFavorite', product)"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -106,6 +106,8 @@ defineOptions({
   name: "TheItem",
 });
 
+import  type { Product} from '@/models/product'
+
 //emits
 const emit = defineEmits<{
   (e: "addToFavorite", product: Product): void
@@ -116,6 +118,7 @@ const emit = defineEmits<{
 type Props = {
   id: string
   img: string
+  product: Product
   productType: string
   productName: string
   price: number
