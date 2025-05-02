@@ -26,9 +26,9 @@
 
   </div>
 </template>
-<script setup>
+<script setup lang="ts">
 //vue
-import { defineOptions, defineProps } from "vue";
+import { defineOptions } from "vue";
 
 //vue
 defineOptions({
@@ -36,11 +36,9 @@ defineOptions({
 });
 
 //props
-defineProps({
-  promo:{
-    type: Boolean,
-    default: false
-  }
-})
+const props = defineProps<{
+  promo: boolean
+}>()
+
 </script>
 

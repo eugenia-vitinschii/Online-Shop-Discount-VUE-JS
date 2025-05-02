@@ -1,33 +1,24 @@
 <template>
-  <div>
-
-<!-- brand item -->
+<!-- brand item img-->
   <router-link :to="'/brands/' + brand">
       <img class="brands__img" :src="img" alt="brand" />
   </router-link>
-
-  </div>
 </template>
-<script setup>
+
+
+<script setup lang="ts">
 //vue
-import { defineOptions, defineProps } from "vue";
+import { defineOptions } from "vue";
 
 //component information
 defineOptions({
   name: "BrandsSectionItem",
 });
 
-//props
-defineProps({
-  id: {
-    type: String,
-  },
-  brand: {
-    type: String,
-  },
-  img: {
-    type: String,
-  },
-});
+const props = defineProps<{
+  id: string
+  brand: string
+  img: string
+}>()
 
 </script>
