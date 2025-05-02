@@ -1,11 +1,7 @@
 <template>
-  <div>
-
   <button class="button"><slot></slot></button>
-
-  </div>
 </template>
-<script setup>
+<script setup lang="ts">
 import { defineOptions } from "vue";
 
 defineOptions({

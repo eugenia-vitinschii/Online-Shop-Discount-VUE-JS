@@ -1,6 +1,5 @@
-.<template>
-  <div>
-
+<template>
+<!-- delivery item -->
   <div class="delivery__item">
     <div class="delivery__item-top">
       <div class="delivery__img">
@@ -9,36 +8,25 @@
      <p class="subheading">{{ name }}</p>
     </div>
     <div class="delivery__item-bottom">
-     
       <p class="small-text">{{ body }}</p>
     </div>
   </div>
- 
-
-  </div>
 </template>
-<script setup>
+
+<script setup lang="ts">
+//vue
 import { defineOptions } from "vue";
-import { defineProps } from "vue";
 
- 
-
+//components settings
 defineOptions({
   name: "DeliveryItem",
 });
 
-defineProps({
-  img: {
-    type: String,
-  },
-  id: {
-    type: String,
-  },
-  name: {
-    type: String,
-  },
-  body: {
-    type: String,
-  },
-});
+const props = defineProps<{
+  img: string
+  id: string
+  name: string
+  body: string
+}>()
+
 </script>

@@ -1,6 +1,4 @@
 <template>
-  <div>
-
 <!-- cart item -->
   <div class="cart__item">
     <div class="cart__img">
@@ -14,9 +12,9 @@
         <p class="body-text">Producător: {{ brand }}</p>
       </div>
       <div class="cart__counter">
-        <button class="button-svg" @click="$emit('decrement', id)"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M200-440v-80h560v80H200Z"/></svg></button>
+        <button class="button-svg" @click="emit('decrement', id)"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M200-440v-80h560v80H200Z"/></svg></button>
         <p class="body-text">{{quantity}}</p>
-         <button  class="button-svg" @click="$emit('increment', id)"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg></button>
+         <button  class="button-svg" @click="emit('increment', id)"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg></button>
       </div>
     </div>
     <div class="cart__prices">
@@ -30,59 +28,40 @@
     <div class="cart__delete tooltip">
       <span class="tooltip-text small-text">șterge</span>
       <button class="button-svg"   
-         @click="$emit('deleteItem')">
+         @click="emit('deleteItem', id)">
         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-440v-80h560v80H200Z"/></svg>
         </button>
     </div>
   </div>
-
-  </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 //import vue
- import { defineOptions, defineProps, defineEmits } from "vue";
-
+ import { defineOptions} from "vue";
 
 //component settings
 defineOptions({
   name: "ShoppingItem",
 });
 
-
 //emits
-defineEmits(["increment", "decrement", "deleteItem"])
+const emit = defineEmits<{
+  (e: 'increment', id: string): void;
+  (e: 'decrement', id: string): void;
+  (e: 'deleteItem', id: string): void;
+}>()
 
 //props component
-defineProps({
-  id:{
-    type: String,
-  },
-  img: {
-    type: String,
-  },
-  productName: {
-    type: String,
-  },
-  brand: {
-    type: String,
-  },
-
-  price: {
-    type: Number,
-  },
-    discount: {
-    type: Number,
-  },
- savedMoney: {
-    type: Number,
-  },
-  discountPrice: {
-    type: Number,
-  },
-  quantity: {
-    type: Number,
-  }
-});
+const props = defineProps<{
+  id: string
+  img:string
+  productName: string
+  brand: string
+  price: number
+  discount: number
+  savedMoney: number
+  discountPrice: number
+  quantity: number
+}>()
 
 </script>
