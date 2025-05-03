@@ -1,5 +1,4 @@
 <template>
-  <div>
   <div class="router">
     <div class="container">
       <div class="router__wrapper">
@@ -220,9 +219,9 @@
     <div class="container">
       <div class="item__content">
         <div class="item__wrapper">
-          <div class="item__container" v-if="created && store.filteredItems.length">
+          <div class="item__container" v-if="created && filteredItems.length">
             <the-item
-              v-for="product in store.filteredItems"
+              v-for="product in filteredItems"
               :key="product.id"
               :id="product.id"
               :brand="product.brand"
@@ -254,7 +253,6 @@
       </div>
     </div>
   </div>
-  </div>
 </template><script setup>
 //vue
 import { defineOptions, ref} from "vue";
@@ -283,7 +281,7 @@ let created = ref(false);
 //Pinia store
 
 const store = useProductStore();
-const { checked, searchValue, ascending, promo } = storeToRefs(store);
+const { checked, searchValue, ascending, promo, filteredItems } = storeToRefs(store);
 
 //pinia getters
 const {
