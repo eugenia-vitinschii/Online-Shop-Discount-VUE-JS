@@ -14,9 +14,6 @@
 </template>
 
 <script setup lang="ts">
-//vue
-import { defineOptions } from "vue";
-
 //components settings
 defineOptions({
   name: "DeliveryItem",

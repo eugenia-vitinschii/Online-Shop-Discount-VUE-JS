@@ -10,9 +10,6 @@
 </template>
 
 <script setup lang="ts">
-//imports
-import { defineOptions} from "vue";
-
 //components settings
 defineOptions({
   name: "TheInput",

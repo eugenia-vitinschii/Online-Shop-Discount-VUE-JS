@@ -36,9 +36,6 @@
 </template>
 
 <script setup lang="ts">
-//import vue
- import { defineOptions} from "vue";
-
 //component settings
 defineOptions({
   name: "ShoppingItem",
