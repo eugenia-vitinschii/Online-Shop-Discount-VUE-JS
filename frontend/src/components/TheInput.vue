@@ -1,44 +1,40 @@
 <template>
-  <div>
-
+<!-- input wrapper -->
   <div class="input__wrapper">
     <label>{{ label }}</label>
-    <input
-      type="text"
-      :value="modelValue"
-      @input="$emit('update:modelValue', $event.target.value)"
-      :placeholder="placeholder"
-    />
+    <input type="text" 
+      :value="modelValue" 
+      @input="onInput"
+      :placeholder="placeholder" />
   </div>
+</template>
 
-  </div>
-</template>   
+<script setup lang="ts">
+//imports
+import { defineOptions} from "vue";
 
-<script setup>
-
-import { defineOptions } from "vue";
-import { defineProps , defineEmits } from "vue";
-
+//components settings
 defineOptions({
   name: "TheInput",
 });
 
-defineProps({
-  modelValue: {
-    type: [Object, String],
-    defaul: "",
-  },
-  label: {
-    type: String,
-    default: "",
-  },
+//props
+const props = defineProps<{
+   modelValue: string | number;
+   label?: string,
+   placeholder?: string
+}>();
 
-  placeholder: {
-    type: String,
-    default: "text",
-  },
-});
+// emit 
+const emit = defineEmits<{
+  (e: 'update: modelValue', value: string | number): void
+}>();
 
-//уьшеы
-defineEmits(['update:modelValue']);
+const onInput = (e: Event) =>{
+  const target = e.target as HTMLInputElement
+  const value = typeof props.modelValue === "number" ? Number (target.value) : target.value 
+  emit('update: modelValue', value)
+}
+
+
 </script>
