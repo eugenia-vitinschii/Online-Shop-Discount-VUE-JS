@@ -28,17 +28,17 @@
         <div class="item__container" v-if="created">
           <the-item
             v-for="product in store.getPromoItems"
+            :product="product"
             :key="product.id"
             :id="product.id"
             :brand="product.brand"
             :img="product.img"
             :productName="product.productName"
-            :productType="product.productType"
+            :productType="product.type"
             :price="product.price"
             :discount="product.discount"
             :discountPrice="product.discountPrice"
             :savedMoney="product.savedMoney"
-            :label="product.label"
             :stock="product.stock"
             :disabledValue="product.stock"
             :monthlyPrice="monthlyPrice(product.price)"
@@ -61,9 +61,11 @@
   </div>
 
   </div>
-</template><script setup>
+</template>
+
+<script setup lang="ts">
 //vue
-import { defineOptions, ref, onMounted } from "vue";
+import { ref, onMounted } from "vue";
 
 //components
 import TheRouter from "@/sections/TheRouter.vue";
@@ -77,11 +79,11 @@ defineOptions({
 });
 
 //component data
-let created = ref(false);
+let created = ref<boolean>(false);
 
 //store
 import { useProductStore } from "@/stores/product";
-
+import type {Product} from "@/models/product"
 //Pinia store
 const store = useProductStore();
 
@@ -98,12 +100,12 @@ const {
 } = store;
 
 // add product to cart
-function addProductCard(product) {
+const addProductCard = (product: Product)  =>{
   addToCart(product);
 }
 
 //add to favorite
-function addProductToFavorite(product) {
+const addProductToFavorite = ( product: Product)=> {
   addToFavorite(product);
 }
 

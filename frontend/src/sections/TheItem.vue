@@ -127,7 +127,6 @@ type Props = {
   discountPrice: number
   monthlyPrice: number
   brand: string
-  labelImg: string
   hidden?: boolean
   oldPrice?: boolean
   hugeSaleLabel?: boolean
