@@ -1,8 +1,4 @@
 <template>
-  <div>
-
-  <div>
-
 <!-- shopping card view -->
   <div class="cart">
     <div class="container">
@@ -35,7 +31,7 @@
           :savedMoney="item.savedMoney"
           @increment="incrementQuantity(item.id)"
           @decrement="decrementQuantity(item.id)"
-           @deleteItem="removeItemFromCart(item.id)"
+           @deleteItem="removeItemFromCart"
           />
 
       </div>
@@ -68,41 +64,37 @@
       </div>
     </div>
   </div>
+</template> 
 
-  </div>
-
-  </div>
-</template> <script setup>
+<script setup lang="ts">
 //compoents
 import ShoppingItem from "@/components/ShoppingItem.vue";
 
 //vue 
-import { defineOptions, ref, onMounted, onUnmounted } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
  
 // store
 import { useProductStore } from "@/stores/product";
 import { storeToRefs } from "pinia";
-
 
 //component information
 defineOptions({
   name: "ShoppingCartView",
 });
 
-let  created = ref(false)
+let  created = ref<boolean>(false)
 //pinia
 const store = useProductStore();
 
 const { user } = storeToRefs(store);
 
-const { incrementQuantity,decrementQuantity, removeItem, getSum, getSavedMoney, getDiscountPrice } = store;
+const { incrementQuantity,decrementQuantity, removeItem, getSum, getSavedMoney, getDiscountPrice} = store;
 
 // delete item from cart
-function removeItemFromCart(item){
+function removeItemFromCart(item: string){
   removeItem(item)
 }
 
- 
 //hooks  
 onMounted(() => {
   created.value = true;

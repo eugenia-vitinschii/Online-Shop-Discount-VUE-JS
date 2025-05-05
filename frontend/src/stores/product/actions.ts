@@ -77,7 +77,7 @@ export const actions= {
      localStorage.setItem("favorite", JSON.stringify(this.user.favorite))
    },
    //remove item from cart
-   removeItem(this: ProductState, id: string): void {
+   removeItem(this: ProductState, id: string) {
      this.user.cart = this.user.cart.filter((item) => item.id !== id);
      localStorage.setItem("cart", JSON.stringify(this.user.cart))
    },
