@@ -92,7 +92,7 @@
         <div class="product__credit">
           <the-button
             v-for="item in testCredit"
-            :key="item"
+            :key="item.tab"
             :class="['button', { active: currentTab === item.tab }]"
             @click="currentTab = item.tab"
           >

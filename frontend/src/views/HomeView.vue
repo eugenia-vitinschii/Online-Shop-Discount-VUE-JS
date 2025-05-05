@@ -53,10 +53,7 @@
   </div>
 </template>
 
-<script setup>
-//vue
-import { defineOptions } from "vue";
-
+<script setup lang="ts">
 //import components
 import DeliveryItem from "@/components/DeliveryItem.vue"
 import TheSlider  from "@/sections/TheSlider.vue";
@@ -68,7 +65,14 @@ defineOptions({
   name: "HomeView",
 });
 
-const items = [
+interface Item {
+  id: string;
+  img: string;
+  name: string;
+  body: string
+}
+
+const items: Item[] = [
   {
     id: "1",
     img: new URL("@/assets/img/delivery-1.svg", import.meta.url).href,
