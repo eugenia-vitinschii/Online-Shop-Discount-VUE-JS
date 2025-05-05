@@ -1,8 +1,5 @@
 <template>
   <div>
-
-  <div>
-
   <!-- routing -->
   <div class="router">
     <div class="container">
@@ -29,7 +26,6 @@
           :id="product.id"
           :productCode="product.productCode"
           :productName="product.productName"
-          :productType="product.productType"
           :img="product.img"
           :price="product.price"
           :discount="product.discount"
@@ -66,23 +62,26 @@
   </div>
    <!-- watched section -->
 <recently-wached-slider/>
-
   </div>
+</template>
 
-  </div>
-</template><script setup>
+
+<script setup lang="ts">
 //components
 import TheRouter from "@/sections/TheRouter.vue";
 import TheProduct from "@/sections/TheProduct.vue";
 import RecentlyWachedSlider from "@/sections/Sliders/RecentlyWachedSlider.vue";
 
 //vue
-import { defineOptions } from "vue";
 import { onMounted, watch, computed } from "vue";
 import { useRoute } from "vue-router";
+
 //store
 import { useProductStore } from "@/stores/product";
 import { storeToRefs } from "pinia";
+
+//product
+import type {Product} from "../models/product";
 
 //component settings
 defineOptions({
@@ -92,7 +91,7 @@ defineOptions({
 //pinia
 const store = useProductStore();
 const route = useRoute();
-const id = route.params.id;
+const id = computed(() => String(route.params.id)) ;
 
 
 //pinia vriables
@@ -109,16 +108,16 @@ const {
 } = store;
 
 // add product to cart
-function addProductCard(product) {
+const addProductCard = (product: Product)=> {
   addToCart(product);
 }
 
 //add to favorite
-function addProductToFavorite(product) {
+const  addProductToFavorite = (product: Product)  =>{
   addToFavorite(product);
 }
 //variables
-const product = computed(() => products.value.find((p) => p.id === id));
+const product = computed(() => products.value.find((p) => p.id === id.value));
 
 //watch title
 watch(product, (newProduct) => {
@@ -126,6 +125,7 @@ watch(product, (newProduct) => {
     document.title = newProduct.productName;
   }
 });
+
 // wached store
 import { useWatchedProductsStore } from '@/stores/watchedProducts';
 
@@ -136,7 +136,7 @@ const watchedStore = useWatchedProductsStore();
 watch(
    product,  
   (newProduct) => {
-    if (newProduct && newProduct.id) {
+    if (newProduct) {
       watchedStore.addWatchedProduct(newProduct);
     }
   },
@@ -145,8 +145,8 @@ watch(
 
 //hooks
 onMounted(() => {
-  (document.title = `${route.params.productName}`), getProducts(id);
-  getProducts(id);
+  document.title = String(route.params.productName);
+  getProducts(id.value);
 
 });
 
