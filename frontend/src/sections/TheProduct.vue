@@ -196,7 +196,7 @@
   </div>
 </template> 
 
-<script setup>
+<script setup lang="ts">
 //vue
 import { defineOptions, defineProps, shallowRef} from "vue";
 //components
@@ -227,8 +227,8 @@ const testCredit = [
 defineEmits(["addToCard", "addToFavorite"])
 
 //props
-defineProps({
-  id: {
+const props = defineProps<{
+    id: {
     type: String,
   },
   productCode: {
@@ -335,7 +335,9 @@ defineProps({
      type: Boolean,
     default: true,
   }
-});
+}>()
+
+
 </script>
 
 
