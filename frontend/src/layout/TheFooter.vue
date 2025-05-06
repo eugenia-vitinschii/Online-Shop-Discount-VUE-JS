@@ -1,16 +1,16 @@
 <template>
-  <div>
-
+<!-- footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer__wrapper">
         <div class="footer__links">
           <p class="subheading bold">Contacte:</p>
           <ul>
-            <li>
+            <li 
+              v-for="item in links"
+              :key="item.id">
               <the-link
-                v-for="item in links"
-                :key="item.id"
+                
                 :link="item.link"
                 :href="item.href"
               />
@@ -25,19 +25,24 @@
       </div>
     </div>
   </footer>
-
-  </div>
 </template>
-<script setup>
+
+<script setup lang="ts">
+//components
 import TheLink from "../components/TheLink.vue"
 
-import { defineOptions } from "vue";
-
+//component settings
 defineOptions({
   name: "TheFooter",
 });
 
-const links = [
+interface Links {
+  id: string,
+  link: string,
+  href: string
+}
+
+const links: Links[] = [
   {
     id: "1",
     link: "(373)6700000",

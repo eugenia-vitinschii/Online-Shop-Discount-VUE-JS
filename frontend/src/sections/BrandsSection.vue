@@ -1,6 +1,4 @@
 <template>
-  <div>
-
   <div class="brands">
     <div class="container">
       <!-- brand wrapper -->
@@ -23,13 +21,11 @@
         }"
         :autoplay="{
           delay: 500,
-          nextButton: '.swiper-button-next',
-          prevButton: '.swiper-button-prev',
           stopOnLastSlide: false,
           disableOnInteraction: true,
         }"
         :enabled="true"
-        :modules="[Autoplay]"
+        :modules="modules"
       >
         <swiper-slide
           class="brands__item"
@@ -46,41 +42,10 @@
       </swiper>
     </div>
   </div>
-
-  </div>
 </template>
-<script setup>
-//vue
-import { defineOptions, ref, onMounted } from "vue";
 
-// component information
-defineOptions({
-  name: "BrandsSection",
-});
-//components
-import BrandSectionItem from "./BrandSectionItem.vue";
-
-//component data
-let created = ref(false);
-
-//pinia store
-import { useBrandsStore } from "@/stores/brands";
-
-//pinia variables
-const store = useBrandsStore();
-const { fetchBrands } = store;
-
-
-//hooks
-onMounted(() => {
-  created.value = true;
-  fetchBrands();
-});
-</script>
-
- <script>
-// Import Swiper Vue.js components
-import { Swiper, SwiperSlide } from "swiper/vue";
+ <!-- <script>
+ 
 
 // Import Swiper styles
 import "swiper/scss";
@@ -101,4 +66,49 @@ export default {
     };
   },
 };
-</script>
+</script> -->
+
+
+<script setup lang="ts">
+//vue
+import { defineOptions, ref, onMounted } from "vue";
+
+// component information
+defineOptions({
+  name: "BrandsSection",
+});
+//components
+import BrandSectionItem from "./BrandSectionItem.vue";
+
+// Import Swiper Vue.js components
+import { Swiper, SwiperSlide } from "swiper/vue";
+// import required modules
+import { Autoplay  } from "swiper/modules";
+
+// Import Swiper styles
+import "swiper/scss";
+
+import "swiper/scss/autoplay";
+
+//component data
+let created = ref(false);
+
+// Swiper modules
+const modules = [Autoplay];
+//pinia store
+import { useBrandsStore } from "@/stores/brands";
+
+//pinia variables
+const store = useBrandsStore();
+const { fetchBrands } = store;
+
+
+//hooks
+onMounted(() => {
+  created.value = true;
+  fetchBrands();
+});
+
+
+</script>  
+
