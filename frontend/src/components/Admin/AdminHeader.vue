@@ -39,9 +39,8 @@
 
   </div>
 </template>  
-<script setup>
-import { defineOptions } from "vue";
-
+<script setup lang="ts">
+//component settings
 defineOptions({
   name: "Adminheader",
 });
