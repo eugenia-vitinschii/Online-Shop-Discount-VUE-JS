@@ -92,7 +92,7 @@
         <div class="product__credit">
           <the-button
             v-for="item in testCredit"
-            :key="item.tab"
+            :key="item.tab.name"
             :class="['button', { active: currentTab === item.tab }]"
             @click="currentTab = item.tab"
           >
@@ -198,7 +198,7 @@
 
 <script setup lang="ts">
 //vue
-import { defineOptions, defineProps, shallowRef} from "vue";
+import { defineOptions, defineProps, shallowRef, type DefineComponent} from "vue";
 //components
 import TheButton from "../components/TheButton.vue";
 import InstallmentPayment from "./InstallmentPayment.vue";
@@ -210,7 +210,7 @@ defineOptions({
   name: "TheProduct",
 });
 
-const currentTab = shallowRef("InstallmentPayment");
+const currentTab = shallowRef<DefineComponent>(InstallmentPayment);
 
 const testCredit = [
   {
@@ -228,113 +228,39 @@ defineEmits(["addToCard", "addToFavorite"])
 
 //props
 const props = defineProps<{
-    id: {
-    type: String,
-  },
-  productCode: {
-    type: String,
-  },
-  img: {
-    type: String,
-  },
-  productType: {
-    type: String,
-  },
-  productName: {
-    type: String,
-  },
-  price: {
-    type: Number,
-  },
-  discount: {
-    type: Number,
-  },
-   savedMoney: {
-    type: Number,
-  },
-  discountPrice: {
-    type: Number,
-  },
-  brand: {
-    type: String,
-  },
-  waterConsumption: {
-    type: String,
-  },
-  energyEfficiencyClass: {
-    type: String,
-  },
-  type: {
-    type: String,
-  },
-  spinSpeed: {
-    type: String,
-  },
-  loadCapacity: {
-    type: String,
-  },
-  noiseLevelCentrifugation: {
-    type: String,
-  },
-  noiseLevelWashing: {
-    type: String,
-  },
-  typeControl: {
-    type: String,
-  },
-  numberOfPrograms: {
-    type: String,
-  },
-  weightInPackage: {
-    type: String,
-  },
-  depth: {
-    type: String,
-  },
-  weight: {
-    type: String,
-  },
-  color: {
-    type: String,
-  },
-  countryOfAssembly: {
-    type: String,
-  },
-  guarantee: {
-    type: String,
-  },
-  totalCreditPrice: {
-    type: Number,
-    default: null,
-  },
-  hidden: {
-    type: Boolean,
-    default: false,
-  },
-  oldPrice: {
-    type: Boolean,
-    default: false,
-  },
-  monthlyPrice: {
-    type: Number,
-    default: null,
-  },
-   hugeSaleLabel: {
-    type: Boolean,
-    default: false,
-  },
-  dicountLabel: {
-    type: Boolean,
-    default: false,
-  },
-  stock: {
-    type: Boolean,
-    default: false,
-  },
-    disabledValue:{
-     type: Boolean,
-    default: true,
-  }
+  id: string
+  productCode: string,
+  img:string,
+  productType: string,
+  productName: string, 
+  price: number,
+  discount:number,
+   savedMoney: number
+  discountPrice: number,
+  brand: string,
+  waterConsumption: string
+  energyEfficiencyClass: string
+  type: string,
+  spinSpeed: string,
+  loadCapacity: string,
+  noiseLevelCentrifugation: string
+  noiseLevelWashing: string
+  typeControl: string,
+  numberOfPrograms: string,
+  weightInPackage: string,
+  depth: string,
+  weight: string,
+  color: string,
+  countryOfAssembly: string,
+  guarantee: string,
+  totalCreditPrice: number
+  hidden: boolean,
+  oldPrice: boolean,
+  monthlyPrice: number,
+   hugeSaleLabel: boolean
+  dicountLabel: boolean,
+  stock: boolean,
+    disabledValue:boolean,
 }>()
 
 

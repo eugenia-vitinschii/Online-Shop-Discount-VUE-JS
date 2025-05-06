@@ -4,7 +4,7 @@
   <div class="router">
     <div class="container">
       <div class="router__wrapper">
-        <the-router />
+        <the-router :promo="false"/>
         <br />
         <div class="router__link" v-if="product">
           <router-link :to="'/brands/' + product.brand" class="header__link">

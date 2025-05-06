@@ -1,4 +1,5 @@
 <template>
+  <div>
   <div class="router">
     <div class="container">
       <div class="router__wrapper">
@@ -253,9 +254,13 @@
       </div>
     </div>
   </div>
-</template><script setup>
+</div>
+</template>
+
+
+<script setup lang="ts"> 
 //vue
-import { defineOptions, ref} from "vue";
+import {ref} from "vue";
 //vue hooks
 import { onMounted } from "vue";
 
@@ -274,12 +279,15 @@ defineOptions({
 });
 
 //filters section
-const showFilters = ref(false);
+const showFilters = ref<boolean>(false);
 
-let created = ref(false);
+let created = ref<boolean>(false);
+
+
+//product
+import type {Product} from "../models/product";
 
 //Pinia store
-
 const store = useProductStore();
 const { checked, searchValue, ascending, promo, filteredItems } = storeToRefs(store);
 
@@ -297,19 +305,19 @@ const {
 
 
 // add product to cart
-function addProductCard(product) {
+function addProductCard(product: Product) {
   addToCart(product);
 }
 
 //add to favorite
-function addProductToFavorite(product) {
+function addProductToFavorite(product:Product) {
   addToFavorite(product);
 }
 
 //hooks  
 onMounted(async() => {
   console.log('onMounted');
-   await store.fetchProducts();
+   await fetchProducts();
   created.value = true; 
 });
 
