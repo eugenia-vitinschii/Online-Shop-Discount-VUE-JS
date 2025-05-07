@@ -1,6 +1,4 @@
 <template>
-  <div>
-
   <div class="bustle">
     <div class="container">
       <div class="bustle__wrapper">
@@ -35,13 +33,11 @@
       </div>
     </div>
   </div>
-
-  </div>
 </template>
-<script setup>
 
+<script setup lang="ts">
 //vue import
-import { defineOptions, ref } from "vue";
+import { defineOptions, ref , onMounted, onBeforeUnmount} from "vue";
 
 //component settings
 defineOptions({
@@ -51,29 +47,38 @@ defineOptions({
 // last day for promo
 const deadline = new Date("2025-04-27T18:59:59");
 
-let days = ref(0);
-let hours = ref(0);
-let minutes = ref(0);
-let seconds = ref(0);
-let showPromo = ref(true)
+let days = ref<number>(0);
+let hours = ref<number>(0);
+let minutes = ref<number>(0);
+let seconds = ref<number>(0);
+let showPromo = ref(<boolean>true)
+
+let timer: number | undefined;
 
 const updateTime = () => {
-  let now = ref(new Date());
-  let diff = ref(Math.max(0, deadline - now.value));
-  days.value = Math.floor(diff.value / (1000 * 60 * 60 * 24));
-  hours.value = Math.floor((diff.value / (1000 * 60 * 60)) % 24);
-  minutes.value = Math.floor((diff.value / (1000 * 60)) % 60);
-  seconds.value = Math.floor((diff.value / 1000) % 60);
-  if (deadline.value == now.value) {
-    clearInterval(timer.value);
+  let now = new Date();
+  let diff = Math.max(0, deadline.getTime() - now.getTime())
+
+  days.value = Math.floor(diff/ (1000 * 60 * 60 * 24));
+  hours.value = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  minutes.value = Math.floor((diff / (1000 * 60)) % 60);
+  seconds.value = Math.floor((diff / 1000) % 60);
+
+  if (diff <= 0) {
+    clearInterval(timer);
     showPromo.value = false;
     console.log(showPromo)
   }
 };
-
-updateTime();
-let timer = setInterval(updateTime, 1000);
-
 // refresh data
+onMounted( () => {
+  updateTime();
+  timer = setInterval(updateTime, 1000);
+})
+
+onBeforeUnmount( ()=> {
+  clearInterval(timer)
+})
+
 </script>
  
