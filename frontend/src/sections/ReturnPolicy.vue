@@ -1,8 +1,4 @@
 <template>
-  <div>
-
-  <div>
-
 <Transition name="popup">
   <div class="modal">
     <div v-if="show" class="modal__wrapper">
@@ -22,18 +18,16 @@
   </div>
 </Transition>
 
-  </div>
+</template>
 
-  </div>
-</template><script setup>
-import { defineProps } from "vue";
+<script setup lang="ts"> 
+//component settings
 defineOptions({
   name: "ReturnPolicy"
 })
-
-defineProps({
-  show: {
-    type: Boolean,
-  },
-});
+//props
+const props = defineProps<{
+  show: boolean
+}>();
+ 
 </script>

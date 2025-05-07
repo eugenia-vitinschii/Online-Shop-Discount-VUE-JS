@@ -44,30 +44,6 @@
   </div>
 </template>
 
- <!-- <script>
- 
-
-// Import Swiper styles
-import "swiper/scss";
-
-import "swiper/scss/autoplay";
-
-// import required modules
-import { Autoplay, Navigation } from "swiper/modules";
-
-export default {
-  components: {
-    Swiper,
-    SwiperSlide,
-  },
-  setup() {
-    return {
-      modules: [Autoplay, Navigation],
-    };
-  },
-};
-</script> -->
-
 
 <script setup lang="ts">
 //vue

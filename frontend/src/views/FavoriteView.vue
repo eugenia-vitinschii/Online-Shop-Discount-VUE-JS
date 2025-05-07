@@ -8,6 +8,7 @@
         <div class="item__container">
           <the-item
             v-for="product in user.favorite"
+            :product="product"
             :key="product.id"
             :id="product.id"
             :brand="product.brand"
@@ -45,24 +46,24 @@
 </template>
  
 
-<script setup>
-//vue
-import { defineOptions } from "vue";
-
+<script setup lang="ts">
 //components settings
 defineOptions({
   name: "FavoriteView",
 });
 
-//variables
 
 //compoents
 import TheItem from "@/sections/TheItem.vue";
 import TheTopProductsSlider from "@/sections/Sliders/TheTopProductsSlider.vue";
 import RecentlyWachedSlider from "@/sections/Sliders/RecentlyWachedSlider.vue";
+
 // store
 import { useProductStore } from "@/stores/product";
 import { storeToRefs } from "pinia";
+
+//product
+import type {Product} from "../models/product";
 
 //pinia
 const store = useProductStore();
@@ -79,12 +80,12 @@ const {
 } = store;
 
 // add product to cart
-function addProductCard(product) {
+function addProductCard(product: Product) {
   addToCart(product);
 }
 
 // remove product from cart
-function removeFromFavorite(product) {
+function removeFromFavorite(product: Product) {
   removeItemFromFavorite(product);
 }
 </script>

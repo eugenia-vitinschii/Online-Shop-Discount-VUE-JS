@@ -21,7 +21,7 @@
             stopOnLastSlide: false,
           }"
           :enabled="true"
-          :modules="[Autoplay]"
+          :modules="modules"
           class="i__swiper"
         >
           <swiper-slide
@@ -32,15 +32,15 @@
           >
             <the-item
               :id="product.id"
+              :product="product"
               :brand="product.brand"
               :img="product.img"
               :productName="product.productName"
-              :productType="product.productType"
+              :type="product.type"
               :price="product.price"
               :discount="product.discount"
               :discountPrice="product.discountPrice"
               :savedMoney="product.savedMoney"
-              :label="product.label"
               :stock="product.stock"
               :disabledValue="product.stock"
               :monthlyPrice="monthlyPrice(product.price)"
@@ -61,17 +61,30 @@
   </div>
 </template>
  
- <script setup>
+ <script setup lang="ts">
 //vue , router
 import { onMounted } from "vue";
 
 //components
-
 import TheItem from "@/sections/TheItem.vue";
 
+// Import Swiper Vue.js components
+import { Swiper, SwiperSlide } from "swiper/vue";
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/autoplay';
+// import required modules
+import { Autoplay  } from "swiper/modules";
+
+
+const modules = [Autoplay];
 //pinia
 import { useProductStore } from "@/stores/product";
 import { storeToRefs } from "pinia";
+
+//product
+import type {Product} from "@/models/product";
 
 const store = useProductStore();
 
@@ -88,13 +101,15 @@ const {
   showOnePrice,
 } = store;
 // add product to cart
-function addProductCard(product) {
+function addProductCard(product: Product) {
     addToCart(product);
 }
 //add to favorite
-function addProductToFavorite(product) {
+function addProductToFavorite(product: Product) {
   addToFavorite(product)
 }
+
+
 //hooks
 onMounted(() => {
   fetchProducts();
@@ -102,32 +117,6 @@ onMounted(() => {
 </script>
 
 
-<script>
-// Import Swiper Vue.js components
-import { Swiper, SwiperSlide } from "swiper/vue";
-
-// Import Swiper styles
-import "swiper/scss";
-
-import "swiper/scss/autoplay";
-
-// import required modules
-import {
-  Autoplay,
-} from "swiper/modules";
-
-export default {
-  components: {
-    Swiper,
-    SwiperSlide,
-  },
-  setup() {
-    return {
-      modules: [Autoplay],
-    };
-  },
-};
-</script>
 
  
  
