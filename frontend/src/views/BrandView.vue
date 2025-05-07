@@ -5,7 +5,7 @@
 <div class="router">
   <div class="container">
     <div class="router__wrapper">
-      <the-router/>
+      <the-router :promo="false"/>
       <div class="router__link">
          <router-link :to="'/brands/' + brand" class="blue-router">
            /  {{brand}}
@@ -31,7 +31,7 @@
             :brand="product.brand"
             :img="product.img"
             :productName="product.productName"
-            :productType="product.type"
+            :type="product.type"
             :price="product.price"
             :discount="product.discount"
             :discountPrice="product.discountPrice"

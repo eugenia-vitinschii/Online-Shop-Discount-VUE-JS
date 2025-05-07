@@ -14,12 +14,11 @@
             :brand="product.brand"
             :img="product.img"
             :productName="product.productName"
-            :productType="product.productType"
+            :type="product.type"
             :price="product.price"
             :discount="product.discount"
             :discountPrice="product.discountPrice"
             :savedMoney="product.savedMoney"
-            :label="product.label"
             :stock="product.stock"
             :monthlyPrice="monthlyPrice(product.price)"
             :hidden="showPrices(product.discount)"
@@ -27,7 +26,7 @@
             :dicountLabel="dicountLabel(product.discount)"
             :hugeSaleLabel="hugeSaleLabel(product.discount)"
             @addToCard="addProductCard(product)"
-            @addToFavorite="removeFromFavorite(product.id)"
+            @addToFavorite="removeFromFavorite(product)"
             class="favorite"
           />
           <div class="spaces"></div>

@@ -25,7 +25,7 @@
         </div>
       </router-link>
       <router-link :to="'/products/' + id">
-        <p class="body-text">{{ productName }}</p>
+        <p class="body-text">{{ productName }} {{ type }}</p>
       </router-link>
     </div>
     <!-- Prices blocks -->
@@ -101,6 +101,7 @@
 </template> 
 
 <script setup lang="ts">
+import { defineOptions } from 'vue';
 //component 
 defineOptions({
   name: "TheItem",
@@ -119,8 +120,8 @@ type Props = {
   id: string
   img: string
   product: Product
-  productType: string
   productName: string
+  type:string,
   price: number
   discount: number
   savedMoney: number

@@ -35,7 +35,7 @@
               :brand="product.brand"
               :img="product.img"
               :productName="product.productName"
-              :productType="product.productType"
+              :type="product.type"
               :price="product.price"
               :discount="product.discount"
               :discountPrice="product.discountPrice"

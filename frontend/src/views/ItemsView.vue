@@ -3,7 +3,7 @@
   <div class="router">
     <div class="container">
       <div class="router__wrapper">
-        <the-router />
+        <the-router :promo="false"/>
       </div>
     </div>
   </div>
@@ -224,16 +224,16 @@
             <the-item
               v-for="product in filteredItems"
               :key="product.id"
+              :product="product"
               :id="product.id"
               :brand="product.brand"
               :img="product.img"
               :productName="product.productName"
-              :productType="product.productType"
+              :type="product.type"
               :price="product.price"
               :discount="product.discount"
               :discountPrice="product.discountPrice"
               :savedMoney="product.savedMoney"
-              :label="product.label"
               :stock="product.stock"
               :disabledValue="product.stock"
               :monthlyPrice="monthlyPrice(product.price)"
