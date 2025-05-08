@@ -1,9 +1,5 @@
 <template>
   <div>
-
-  <div>
-
-
   <admin-header />
   <!-- edit -->
   <div class="edit">
@@ -46,11 +42,10 @@
     </div>
   </div>
   <message-component :message="message">Deleted!</message-component>
-
   </div>
+</template>
 
-  </div>
-</template><script setup>
+<script setup lang="ts">
 //vue
 import { defineOptions, ref} from "vue";
 
@@ -77,10 +72,10 @@ const { products } = storeToRefs(store);
 const { fetchProducts, deleteProducts } = store;
 
 //variables
-let message = ref (false) ;
+let message = ref<boolean>(false);
  
 //delete item function 
-const deleteItem = (id) => {
+const deleteItem = (id: string) => {
   const confirm = window.confirm("Doriți să ștergeți?");
   if (confirm) {
     deleteProducts(id);

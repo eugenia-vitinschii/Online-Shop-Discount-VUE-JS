@@ -8,7 +8,6 @@ const baseUrl = "http://localhost:3001";
 
 export interface Brand {
   id: string;
-  name: string;
   img: string;
   brand: string;
 }

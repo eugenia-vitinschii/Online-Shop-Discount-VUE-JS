@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="product">
 
   <p class="body-text">Cumpără {{ product.productName }} în rate: </p>
   <p class="body-text-green">Dobândă: 0% </p>
@@ -13,7 +13,7 @@
     <tr v-for="item in months" :key="item.id">
       <td>{{ item.month }}</td>
       <td>{{installmentPay(item.avans)}}</td>
-      <td class="small-text">{{ getMonthlyPrice(item.month) }} lei/lunar</td>
+      <td class="small-text">{{ getMonthlyPrice(item.month, item.avans) }} lei/lunar</td>
       <td class="small-text"> {{ product.price }} lei</td>
     </tr>
   </table>
@@ -21,10 +21,11 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 //vue
 import { defineOptions, onMounted, computed } from "vue";
 import { useRoute } from "vue-router";
+
 //store
 import { useProductStore } from "@/stores/product";
 import { storeToRefs } from "pinia";
@@ -33,18 +34,29 @@ defineOptions({
   name: "InstallmentPayment",
 });
 
+//pinia
 const store = useProductStore();
-
 const { getProducts } = store;
-
 const { products } = storeToRefs(store);
+
 //variables
-const product = computed(() => products.value.find((p) => p.id === id));
+const product = computed(() => {
+  return products.value.find(p => p.id === id.value) ?? null;
+});
+
+//router
 const route = useRoute();
+const id =  computed(() => route.params.id as string);
 
-const id = route.params.id;
+//month interface
 
-const months = [
+interface Month{
+  id: number;
+  month: number;
+  avans:number;
+}
+
+const months: Month[] = [
 { id: 2, month: 2, avans: 0 },
   { id: 3, month: 3,avans: 0},
   { id: 6, month: 6, avans: 30, },
@@ -53,27 +65,19 @@ const months = [
 
 ];
 
-let price = product.value.price;
+let price = computed(() => product.value?.price ?? 0);
 
-let installmentPrice; 
-
-function installmentPay(avans){
-  if(avans == 0){
-    return 0
-  }
-  installmentPrice = Math.round(+price - (price * avans) / 100);
-  return installmentPrice;
+function installmentPay(avans:number):number{
+  if(avans == 0) return 0;
+    return Math.round(+price.value - (price.value * avans) / 100);
 }
 
-
-
-
-let monhlyPrice;
-function getMonthlyPrice(month) {
-  monhlyPrice = Math.round((+price -installmentPrice) / month);
-  return monhlyPrice;
+function getMonthlyPrice(month:number, avans: number):number {
+  const leftToPay = installmentPay(avans);
+  return Math.round( (price.value - leftToPay) / month);
 }
+
 onMounted(() => {
-  getProducts(id);
+  getProducts(id.value);
 });
 </script>

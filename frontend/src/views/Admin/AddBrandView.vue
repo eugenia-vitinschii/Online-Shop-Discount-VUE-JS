@@ -1,6 +1,5 @@
 <template>
   <div>
-
   <admin-header />
 <!-- create brand -->
   <div class="add">
@@ -39,10 +38,10 @@
       </div>
     </div>
   </div>
-
   </div>
 </template>
-<script setup>
+
+<script setup lang="ts">
 //vue
 import { defineOptions, ref } from "vue";
 
@@ -62,8 +61,15 @@ defineOptions({
   name: "AddBrandView",
 });
 
+//brand interface
+interface Brand {
+  id: string;
+  img: string;
+  brand: string;
+}
+
 //create bnrad
-const postBrand = ref({
+const postBrand = ref<Brand>({
   id: "",
   img: "",
   brand: "",

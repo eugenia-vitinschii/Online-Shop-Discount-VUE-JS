@@ -22,7 +22,7 @@
             :placeholder="'password'" 
             v-model="password"
             />
-            <the-button class="green-button" @click="loginUp(name, password)"> LoginUp </the-button>
+            <the-button class="green-button" > LoginUp </the-button>
             <the-button class="red-button">Acasă</the-button>
           </form>
         </div>
@@ -33,17 +33,14 @@
   </div>
 </template>     
     
-<script setup>
+<script setup lang="ts">
 import { defineOptions, defineModel } from "vue";
-// import {ref} from 'vue'
+
+
 import TheInput from "@/components/TheInput.vue";
 import TheButton from "@/components/TheButton.vue";
 
-import { useProductStore } from "@/stores/product";
 
-const store = useProductStore();
-const { login } = store;
-// const { admin } = storeToRefs(store);
 
  
 
@@ -51,15 +48,9 @@ defineOptions({
   name: "AdminLoginView",
 });
 
-// let name = ref()
-// let password = ref()
+
 const name = defineModel('name');
 const password = defineModel('password');
-
-
-function loginUp() {
-login() 
-}
 
 </script>
 
