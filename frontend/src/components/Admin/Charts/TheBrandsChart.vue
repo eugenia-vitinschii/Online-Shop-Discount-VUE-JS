@@ -1,15 +1,13 @@
 <template>
-  <div>
-
 <!-- Brands -->
   <div class="chart__item">
-    <p class="subheading">Categories</p>
+    <p class="subheading">Brands</p>
     <canvas ref="chartCanvasColors"></canvas>
   </div>
-
-  </div>
 </template>
-<script setup>
+
+
+<script setup lang="ts">
 //vue
 import { defineOptions, ref, onMounted } from "vue";
 
@@ -26,12 +24,24 @@ import { useProductStore } from "@/stores/product";
 const store = useProductStore();
 
 //canvas variable
-const chartCanvasColors = ref(null);
+const chartCanvasColors = ref<HTMLCanvasElement | null>(null);
+
+//color generator
+function generateColors( count: number): string[]{
+  const colors: string[] = [];
+  for (let i = 0; i < count; i++) {
+    const hue = Math.floor( (360/ count) * i);
+    colors.push(`hsl(${hue}, 70%, 60%)`)
+  }
+  return colors
+}
 
 //hooks
 onMounted(() => {
+  if(!chartCanvasColors.value) return;
   const labels = Object.keys(store.categoryCounts);
   const data = Object.values(store.categoryCounts);
+  const colors = generateColors(data.length);
 
   new Chart(chartCanvasColors.value, {
     type: "pie",
@@ -39,10 +49,10 @@ onMounted(() => {
       labels,
       datasets: [
         {
-          label: "Product Categories",
+          label: "Brands",
           data,
-          backgroundColor: ["#002B6F", "#4FA77D", "#D92B2B"],
-          borderColor: ["#B0B0B0"],
+          backgroundColor: colors,
+          borderColor: "#fff",
         },
       ],
     },

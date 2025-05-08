@@ -1,15 +1,12 @@
 <template>
-  <div>
-
 <!-- promo in Stock -->
   <div class="chart__item">
     <p class="subheading">Promo & Stock value</p>
     <canvas ref="chartCanvas"></canvas>
   </div>
-
-  </div>
 </template>
-<script setup>
+
+<script setup lang="ts">
 //vue
 import { defineOptions, ref, onMounted } from "vue";
 
@@ -26,10 +23,23 @@ import { useProductStore } from "@/stores/product";
 const store = useProductStore();
 
 //canvas variable
-const chartCanvas = ref(null);
+const chartCanvas = ref<HTMLCanvasElement | null>(null);
 
+// color generator
+function generateColors( count: number): string[]{
+  const colors: string[] = [];
+  for (let i = 0; i < count; i++) {
+    const hue = Math.floor( (360/ count) * i);
+    colors.push(`hsl(${hue}, 70%, 60%)`)
+  }
+  return colors
+}
 //hooks
 onMounted(() => {
+  if(!chartCanvas.value) return;
+  const values = [store.promoCount, store.inStockCount, store.outOfStockCount];
+  const colors = generateColors(values.length);
+
   new Chart(chartCanvas.value, {
     type: "bar",
     data: {
@@ -37,8 +47,8 @@ onMounted(() => {
       datasets: [
         {
           label: "Product Count",
-          data: [store.promoCount, store.inStockCount, store.outOfStockCount],
-          backgroundColor: ["#002B6F", "#4FA77D", "#D92B2B"],
+          data: values,
+          backgroundColor: colors,
           borderColor: ["#B0B0B0", "#B0B0B0", "#B0B0B0"],
           borderWidth: 2,
         },

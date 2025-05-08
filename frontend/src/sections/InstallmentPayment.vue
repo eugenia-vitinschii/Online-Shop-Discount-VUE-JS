@@ -1,6 +1,5 @@
 <template>
   <div v-if="product">
-
   <p class="body-text">Cumpără {{ product.productName }} în rate: </p>
   <p class="body-text-green">Dobândă: 0% </p>
   <table class="credit__table">
@@ -17,7 +16,6 @@
       <td class="small-text"> {{ product.price }} lei</td>
     </tr>
   </table>
-
   </div>
 </template>
 
