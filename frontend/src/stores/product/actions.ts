@@ -145,7 +145,7 @@ export const actions= {
      return monthlyPrice;
    },
 
-   dicountLabel(discount:number):boolean  {
+   discountLabel(discount:number):boolean  {
     return !(discount <= 9 && discount >= 1);
    },
    hugeSaleLabel(discount:number):boolean {

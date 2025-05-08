@@ -1241,6 +1241,33 @@
       "countryOfAssembly": "Slovenia",
       "guarantee": "12",
       "stock": false
+    },
+    {
+      "id": "Qq3WsLU",
+      "productCode": "test",
+      "img": "",
+      "productName": "test",
+      "price": 20000,
+      "discount": 20,
+      "savedMoney": 0,
+      "discountPrice": 20000,
+      "brand": "",
+      "waterConsumption": "",
+      "energyEfficiencyClass": "",
+      "type": "",
+      "spinSpeed": "",
+      "loadCapacity": "",
+      "noiseLevelCentrifugation": "",
+      "noiseLevelWashing": "",
+      "typeControl": "senzor",
+      "numberOfPrograms": "",
+      "weightInPackage": "",
+      "depth": "",
+      "weight": "",
+      "color": "",
+      "countryOfAssembly": "",
+      "guarantee": "",
+      "stock": true
     }
   ],
   "admin": [

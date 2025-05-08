@@ -1,6 +1,4 @@
 <template>
-  <div>
-
   <div class="product__item" :class="{gray: !stock }">
     <!-- Short info about product -->
         <div class="product__top">
@@ -14,7 +12,7 @@
         <div class="product__top-label" :class="{ visible: hugeSaleLabel }">
           <img src="@/assets/img/sale.jpg" alt="oops!" />
         </div>
-        <div class="product__top-label" :class="{ visible: dicountLabel }">
+        <div class="product__top-label" :class="{ visible: discountLabel }">
           <img src="@/assets/img/discount.jpg" alt="oops!" />
         </div>
       </div>
@@ -193,7 +191,6 @@
     </div>
   </div>
 
-  </div>
 </template> 
 
 <script setup lang="ts">
@@ -258,7 +255,7 @@ const props = defineProps<{
   oldPrice: boolean,
   monthlyPrice: number,
    hugeSaleLabel: boolean
-  dicountLabel: boolean,
+  discountLabel: boolean,
   stock: boolean,
     disabledValue:boolean,
 }>()

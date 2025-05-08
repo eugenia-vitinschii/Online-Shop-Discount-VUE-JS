@@ -41,7 +41,7 @@
             :monthlyPrice="monthlyPrice(product.price)"
             :hidden="showPrices(product.discount)"
             :oldPrice="showOnePrice(product.discount)"
-            :dicountLabel="dicountLabel(product.discount)"
+            :discountLabel="discountLabel(product.discount)"
             :hugeSaleLabel="hugeSaleLabel(product.discount)"
             @addToCard="addProductCard(product)"
              @addToFavorite="addProductToFavorite(product)"
@@ -92,17 +92,19 @@ const {
   addToCart,
   addToFavorite,
   monthlyPrice,
-  dicountLabel,
+  discountLabel,
   hugeSaleLabel,
   showPrices,
   showOnePrice,
 } = store;
 
+
 // add product to cart
 function addProductCard(product: Product){
-  addToCart(product);
+  addToCart( product);
 }
 //add to favorite
+
 function addProductToFavorite(product:Product){
   addToFavorite(product);
 }
@@ -116,7 +118,7 @@ watch(brand, (newBrand:string) => {
 
 //hooks
 onMounted(() => {
-  document.title = brand;
+  document.title = brand.value;
   fetchProducts();
 });
 

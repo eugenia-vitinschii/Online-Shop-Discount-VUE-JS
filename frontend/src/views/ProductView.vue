@@ -7,12 +7,12 @@
         <the-router :promo="false"/>
         <br />
         <div class="router__link" v-if="product">
-          <router-link :to="'/brands/' + product.brand" class="header__link">
+          <router-link :to="'/brands/' + product.brand" class="blue-router">
             / {{ product.brand }}
           </router-link>
         </div>
         <div class="router__link">
-          <p class="header__link">/ {{ product.productName }}</p>
+          <p  class="blue-router">/ {{ product.productName }}</p>
         </div>
       </div>
     </div>
@@ -52,7 +52,7 @@
           :hidden="showPrices(product.discount)"
           :onePrice="showOnePrice(product.price)"
           :monthlyPrice="monthlyPrice(product.price)"
-          :dicountLabel="dicountLabel(product.discount)"
+          :discountLabel="discountLabel(product.discount)"
           :hugeSaleLabel="hugeSaleLabel(product.discount)"
           @addToCard="addProductCard(product)"
           @addToFavorite="addProductToFavorite(product)"
@@ -100,7 +100,7 @@ const {
   getProducts,
   monthlyPrice,
   addToCart,
-  dicountLabel,
+  discountLabel,
   hugeSaleLabel,
   addToFavorite,
     showPrices,

@@ -12,7 +12,7 @@
         <div class="item__top-label" :class="{ visible: hugeSaleLabel }">
           <img src="@/assets/img/sale.jpg" alt="oops!" />
         </div>
-        <div class="item__top-label" :class="{ visible: dicountLabel }">
+        <div class="item__top-label" :class="{ visible: discountLabel }">
           <img src="@/assets/img/discount.jpg" alt="oops!" />
         </div>
       </div>
@@ -116,7 +116,7 @@ const emit = defineEmits<{
 }>()
 
 //props
-type Props = {
+const props = withDefaults(defineProps <{
   id: string
   img: string
   product: Product
@@ -131,11 +131,11 @@ type Props = {
   hidden?: boolean
   oldPrice?: boolean
   hugeSaleLabel?: boolean
-  dicountLabel?: boolean
+  discountLabel?: boolean
   redHeart?: boolean
   stock?: boolean
-}
-
-const props = defineProps<Props>()
-
+}>(), {
+  hugeSaleLabel: false,
+  discountLabel: false
+})
 </script>

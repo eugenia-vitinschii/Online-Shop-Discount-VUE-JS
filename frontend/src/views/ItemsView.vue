@@ -7,7 +7,7 @@
       </div>
     </div>
   </div>
-  <brands-section />
+ 
   <div class="filter">
     <div class="container">
       <div class="filter__wrapper">
@@ -239,7 +239,7 @@
               :monthlyPrice="monthlyPrice(product.price)"
               :hidden="showPrices(product.discount)"
               :oldPrice="showOnePrice(product.discount)"
-              :dicountLabel="dicountLabel(product.discount)"
+              :discountLabel="discountLabel(product.discount)"
               :hugeSaleLabel="hugeSaleLabel(product.discount)"
               @addToCard="addProductCard(product)"
               @addToFavorite="addProductToFavorite(product)"
@@ -271,7 +271,7 @@ import { useProductStore } from "@/stores/product";
 //components
 import TheRouter from "@/sections/TheRouter.vue";
 import TheItem from "@/sections/TheItem.vue";
-import BrandsSection from "@/sections/BrandsSection.vue";
+
 
 //vue component information
 defineOptions({
@@ -297,7 +297,7 @@ const {
   addToCart,
   addToFavorite,
   monthlyPrice,
-  dicountLabel,
+  discountLabel,
   hugeSaleLabel,
   showPrices,
   showOnePrice,

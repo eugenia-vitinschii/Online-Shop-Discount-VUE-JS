@@ -223,7 +223,7 @@
             </div>
           </div>
 
-          <the-button class="green-button" @click.prevent="addPostData()">
+          <the-button class="green-button" @click.prevent="addPostData">
             Salvează
           </the-button>
            <router-link class="red-button" to="/admin/panel"
@@ -237,9 +237,14 @@
 </template> 
   
 
-<script setup>
+<script setup lang="ts">
 //vue
 import { defineOptions, ref } from "vue";
+
+//component settings
+defineOptions({
+  name: "AddProductView",
+});
 
 // componets
 import TheInput from "@/components/TheInput.vue";
@@ -254,13 +259,9 @@ import {Product} from "@/models/product"
 
 
 //variables
-const postProducts = ref(new Product())
-const discountPrice = ref(false)
+const postProducts = ref<Product>(new Product())
+const discountPrice = ref<boolean>(false)
 
-//component settings
-defineOptions({
-  name: "AddProductView",
-});
 
 //store variables
 const store = useProductStore();

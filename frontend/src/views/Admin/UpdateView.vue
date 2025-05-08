@@ -4,10 +4,10 @@
   <admin-header />
   <div class="container">
     <div class="update">
-      <div class="update__title">
+      <div class="update__title" v-if="product">
         <p class="heading">Editeaza produsul {{ product.productName }}</p>
       </div>
-      <div class="update__content">
+      <div class="update__content" v-if="product">
         <form class="update__form">
           <!-- Date generale -->
           <div class="update__form-item">
@@ -39,7 +39,7 @@
             <the-input
               :label="'Introduceți prețul produsului'"
               :placeholder="'4999'"
-              v-model.number="product.price"
+              v-model="product.price"
             />
               <div class="input__wrapper">
               <p class="body-text">Reducere  {{discountPrice}} </p>
@@ -184,7 +184,7 @@
            
             <!-- Informaţii generale -->
             <div class="update__form-item">
-              <p lass="heading">Informaţii generale</p>
+              <p class="heading">Informaţii generale</p>
               <div class="input__wrapper">
                 <label for="color">Culoare</label>
                 <select name="color" id="color" v-model="product.color">
@@ -238,6 +238,9 @@
           >
         </form>
       </div>
+      <div v-else>
+        <p class="heading">Produse nu exista</p>
+      </div>
     </div>
   </div>
   <message-component :message="message">Edited!</message-component>
@@ -245,19 +248,18 @@
   </div>
 </template> 
 
-<script setup>
+<script setup lang="ts">
+//vue
+import { defineOptions , ref, onMounted, computed, watch } from "vue";
+
 //components
 import TheButton from "@/components/TheButton.vue";
 import TheInput from "@/components/TheInput.vue";
 import AdminHeader from "@/components/Admin/AdminHeader.vue";
 import MessageComponent from "@/components/Admin/MessageComponent.vue";
 
-//vue
-import { defineOptions , ref, onMounted, computed, watch } from "vue";
-
 //router
 import { useRoute } from "vue-router";
-
 
 //pinia
 import { useProductStore } from "@/stores/product";
@@ -277,29 +279,33 @@ const { products } = storeToRefs(store);
 //router variables
 const route = useRoute();
 
-const id = route.params.id;  
+const id = computed(() => route.params.id as string);  
 
 //variables
-const product = computed(() => products.value.find(p => p.id === id));
+const product = computed(() => {
+  return products.value.find(p => p.id === id.value) ?? null;
+});
 
 
-let discountPrice = ref(true);
-console.log("Product ID:", id);
+let discountPrice = ref<boolean>(true);
 
-let message = ref(false);
-
-//functions 
-function updateItem() {
-  updateProducts(id);
-}
+let message = ref<boolean>(false);
 
 //watch title 
 watch(() => route.params.productName, (newName) => {
   document.title = `${newName}`
 })
 
+//functions 
+function updateItem() {
+  if (typeof id.value === 'string'){
+    updateProducts(id.value);
+  }
+  
+}
+
 onMounted(() => {
   document.title = `${route.params.productName}`,
-  getProducts(id);
+  getProducts(id.value);
 });
 </script>

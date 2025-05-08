@@ -44,7 +44,7 @@
             :monthlyPrice="monthlyPrice(product.price)"
             :hidden="showPrices(product.discount)"
             :oldPrice="showOnePrice(product.discount)"
-            :dicountLabel="dicountLabel(product.discount)"
+            :discountLabel="discountLabel(product.discount)"
             :hugeSaleLabel="hugeSaleLabel(product.discount)"
             @addToCard="addProductCard(product)"
             @addToFavorite="addProductToFavorite(product)"
@@ -93,7 +93,7 @@ const {
   addToCart,
   addToFavorite,
   monthlyPrice,
-  dicountLabel,
+  discountLabel,
   hugeSaleLabel,
   showPrices,
   showOnePrice,

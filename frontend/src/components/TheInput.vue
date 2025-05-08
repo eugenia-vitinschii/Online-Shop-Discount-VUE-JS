@@ -24,13 +24,13 @@ const props = defineProps<{
 
 // emit 
 const emit = defineEmits<{
-  (e: 'update: modelValue', value: string | number): void
+  (e: 'update:modelValue', value: string | number): void
 }>();
 
 const onInput = (e: Event) =>{
   const target = e.target as HTMLInputElement
   const value = typeof props.modelValue === "number" ? Number (target.value) : target.value 
-  emit('update: modelValue', value)
+  emit('update:modelValue', value)
 }
 
 
