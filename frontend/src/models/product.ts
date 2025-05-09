@@ -1,4 +1,6 @@
 //product constructor ts
+//import brand store
+import type { Brand  } from "@/stores/brands";
 
 export interface ProductData{
    id?: string;
@@ -84,6 +86,10 @@ export class Product {
       this.stock = data.stock ?? true;
    
    }
+      getBrandLogo(brands: Brand[]): string | null {
+         const found = brands.find( (b) => b.brand.toLowerCase() === this.brand.toLowerCase());
+         return found ? found.brand : null;
+      }
       private  calcSavedMoney(): number {
          return this.discount > 0 ? Math.floor(this.price * this.discount /100):0 ;
       }

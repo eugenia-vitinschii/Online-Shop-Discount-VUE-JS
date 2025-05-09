@@ -146,13 +146,13 @@ export const actions= {
    },
 
    discountLabel(discount:number):boolean  {
-    return !(discount <= 9 && discount >= 1);
+    return discount > 0 && discount <= 9;
    },
    hugeSaleLabel(discount:number):boolean {
-    return !(discount <= 100 && discount >= 9);
+    return discount >= 10 && discount <= 99;
    },
    showPrices(discount:number):boolean {
-    return !(discount >= 1 && discount <= 99);
+    return !(discount > 0 && discount <= 99);
    },
    showOnePrice(discount:number):boolean {
      return !(discount >= 1 && discount <= 99);

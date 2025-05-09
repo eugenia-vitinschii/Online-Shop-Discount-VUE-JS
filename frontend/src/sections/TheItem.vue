@@ -4,11 +4,16 @@
     <div class="item__top">
       <div class="item__top-logo">
         <router-link :to="'/brands/' + brand" class="body-text">
-          {{ brand }}
+          <img
+      v-if="brandLogo"
+      :src="brandLogo"
+      :alt="product.brand"
+      class="brand-logo"
+    /> 
         </router-link>
       </div>
       <!-- labels for dicsount products -->
-      <div class="item__top-labels" :class="{ grayscale: !stock }">
+      <div class="item__top-labels" :class="{ grayscale: !stock }" >
         <div class="item__top-label" :class="{ visible: hugeSaleLabel }">
           <img src="@/assets/img/sale.jpg" alt="oops!" />
         </div>
@@ -101,11 +106,15 @@
 </template> 
 
 <script setup lang="ts">
-import { defineOptions } from 'vue';
+import { defineOptions, onMounted } from 'vue';
+
 //component 
 defineOptions({
   name: "TheItem",
 });
+
+import { useBrandsStore } from "@/stores/brands";
+import { computed } from "vue";
 
 import  type { Product} from '@/models/product'
 
@@ -138,4 +147,18 @@ const props = withDefaults(defineProps <{
   hugeSaleLabel: false,
   discountLabel: false
 })
+
+const brandsStore = useBrandsStore();
+// находим логотип бренда
+const brandLogo = computed(() => {
+  const brand = brandsStore.brands.find(
+    (b) => b.brand.toLowerCase() === props.product.brand.toLowerCase()
+  );
+  return brand ? brand.img: null;
+});
+
+
+onMounted(() => {
+  brandsStore.fetchBrands();
+});
 </script>

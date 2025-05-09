@@ -9,6 +9,7 @@
   &__container {
     display: flex;
     flex-wrap: wrap;
+
   }
   &__item {
     @include block-style();
@@ -27,7 +28,7 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    align-items: center;
+    align-items: start;
     height: 50px;
   }
   &__top-logo {
