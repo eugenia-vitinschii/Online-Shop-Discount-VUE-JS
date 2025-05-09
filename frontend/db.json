@@ -1252,47 +1252,47 @@
   "brands": [
     {
       "id": "fsefsdgf",
-      "img": "https://i.simpalsmedia.com/marketplace/richmedia/c033f7023a5210d769e891e15700d282.png",
+      "img": "/src/assets/img/brands/AEG.jpg",
       "brand": "AEG"
     },
     {
       "id": "dsgdfgfsd",
-      "img": "https://i.simpalsmedia.com/marketplace/richmedia/ffd3f153a11c47e3d730a06f3ba15269.png",
+      "img": "/src/assets/img/brands/Beko.jpg",
       "brand": "Beko"
     },
     {
       "id": "fdsgsdfgde",
-      "img": "https://i.simpalsmedia.com/marketplace/richmedia/35f131f4ab9f821329bf97c9c19edd98.png",
+      "img": "/src/assets/img/brands/Candy.jpg",
       "brand": "Candy"
     },
     {
       "id": "fdsf23",
-      "img": "https://i.simpalsmedia.com/marketplace/richmedia/ff033a3b301125c8872a963f50f67f01.png",
+      "img": "/src/assets/img/brands/Electrolux.jpg",
       "brand": "Electrolux"
     },
     {
       "id": "ffdfdfdf",
-      "img": "https://i.simpalsmedia.com/marketplace/richmedia/3eb957d81ad9a465484b33d1bcfe820c.png",
+      "img": "/src/assets/img/brands/Indesit.jpg",
       "brand": "Indesit"
     },
     {
       "id": "wqer6",
-      "img": "https://i.simpalsmedia.com/thumbor/0x38/i.simpalsmedia.com/marketplace/richmedia/12d11fd23d431655dbe6bb3970bd0e67.png",
+      "img": "/src/assets/img/brands/Samsung.jpg",
       "brand": "Samsung"
     },
     {
       "id": "fadgf5",
-      "img": "https://i.simpalsmedia.com/marketplace/richmedia/b6f43b7563f477cea6352f2dabf7bf44.png",
+      "img": "/src/assets/img/brands/Whirlpool.jpg",
       "brand": "Whirlpool"
     },
     {
       "id": "C335DXO",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRq1yvxdn2MSj5p6JXQnMyonrJrpmT_86p48A&s",
+      "img": "/src/assets/img/brands/Midea.jpg",
       "brand": "Midea"
     },
     {
       "id": "KfD5pBZ",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzoG1NbSDnCo3qQV3WBCloaixKcLl5NDdsmQsaJi2iJIqYl88a9IHQu1sHvPz16UprUQ&usqp=CAU",
+      "img": "/src/assets/img/brands/Gorenje.jpg",
       "brand": "Gorenje"
     }
   ]
