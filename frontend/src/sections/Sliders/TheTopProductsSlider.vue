@@ -31,8 +31,9 @@
             class="item__container"
           >
             <the-item
-              :id="product.id"
+            :key="product.id"
               :product="product"
+              :id="product.id"
               :brand="product.brand"
               :img="product.img"
               :productName="product.productName"

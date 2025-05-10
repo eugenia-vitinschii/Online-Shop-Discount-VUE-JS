@@ -1,7 +1,6 @@
 @use '../abstracts/variables' as *;  
 @use '../abstracts/mixins' as *;  
 .delivery {
-   margin-top: $margin-top;
    padding: $margin-top 0px;
    &__wrapper {
       display: grid;

@@ -1,8 +1,6 @@
 <template>
   <div>
 
-  <div>
-
   <!-- routing section -->
   <div class="router">
     <div class="container">
@@ -53,13 +51,11 @@
           <div class="spaces"></div>
           <div class="spaces"></div>
           <div class="spaces"></div>
+          <div class="spaces"></div>
         </div>
       </div>
     </div>
   </div>
-
-  </div>
-
   </div>
 </template>
 

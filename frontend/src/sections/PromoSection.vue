@@ -45,7 +45,7 @@ defineOptions({
 });
 
 // last day for promo
-const deadline = new Date("2025-04-27T18:59:59");
+const deadline = new Date("2025-07-27T18:59:59");
 
 let days = ref<number>(0);
 let hours = ref<number>(0);

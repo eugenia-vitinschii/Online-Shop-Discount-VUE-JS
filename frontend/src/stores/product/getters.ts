@@ -31,7 +31,7 @@ export const getters =  {
    },
   //get promo items for promo page
    getPromoItems(this: ProductState): Product[] {
-    return this.products.filter((item) => item.discount > 0 && item.discount < 60);
+    return this.products.filter((item) => item.discount > 0 && item.discount < 60 && item.stock !== false);
    },
   //filters Products view
    filteredItems(this: ProductState):Product[] {
