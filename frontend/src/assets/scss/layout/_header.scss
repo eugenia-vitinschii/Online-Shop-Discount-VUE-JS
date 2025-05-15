@@ -73,6 +73,13 @@
 .header__link:hover .menu-svg {
   fill: $purple;
 }
+
+
+@media (max-width: 870px) {
+  .header{
+    margin-bottom: 20px;
+  }
+}
 @media (max-width: 500px) {
   .header {
     &__content {
