@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "api": "node server.js"
-  },  
+  },
   "keywords": [],
   "license": "ISC",
   "description": "",
@@ -16,5 +16,8 @@
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.1"
   }
 }
