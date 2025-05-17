@@ -1,10 +1,12 @@
 //controllers/authController.ts
 
 import { Request, Response } from "express";
+import jwt from 'jsonwebtoken';
+import bcrypt from "bcrypt";
 
 import users from '../utils/users';
 
-import bcrypt from "bcrypt";
+const SECRET = 'supersecretkey';
 
 export const login = ( req: Request, res: Response) => {
    const { name, password } = req.body;
@@ -20,6 +22,15 @@ export const login = ( req: Request, res: Response) => {
       return res.status(401).json({ message: "Invalid password"});
    }
 
-   res.status(200).json({ message: 'Login successful', user: { id: user.id, role: user.role} })
+   const token = jwt.sign(
+      {
+         id: user.id,
+         role: user.role,
+      },
+      SECRET,
+      { expireIN: '1h'}
+   )
+
+   res.status(200).json({ message: 'Login successful', token})
 
 };
