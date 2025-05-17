@@ -28,9 +28,11 @@ export const login = ( req: Request, res: Response) => {
          role: user.role,
       },
       SECRET,
-      { expireIN: '1h'}
+      { expiresIN: '1h'}
    )
 
    res.status(200).json({ message: 'Login successful', token})
 
 };
+
+
