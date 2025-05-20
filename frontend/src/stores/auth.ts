@@ -3,6 +3,7 @@
 import { defineStore } from 'pinia';
 import {ref} from 'vue';
 
+import axios from 'axios';
 
 //user interface
 interface User  {
@@ -12,6 +13,31 @@ interface User  {
    role: 'admin' | 'user'
 }
 
+//PARSE JWT
+interface JwtPayload {
+  id: string;
+  role: 'admin' | 'user';
+  iat?: number;
+  exp?: number;
+}
+
+function parseJwt(token: string): JwtPayload | null {
+  try {
+    const base64Url = token.split('.')[1];
+    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    const jsonPayload = decodeURIComponent(
+      atob(base64)
+        .split('')
+        .map(c => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2))
+        .join('')
+    );
+    return JSON.parse(jsonPayload);
+  } catch (e) {
+    return null;
+  }
+}
+//PARSE JWT
+
 export const useAuthStore = defineStore( 'auth', () => {
    const user = ref<User| null>(null)
    const token = ref<string | null>(localStorage.getItem('token'))
@@ -19,7 +45,7 @@ export const useAuthStore = defineStore( 'auth', () => {
    const setAuth = (data: { user: User; token: string}) => {
       user.value = data.user
       token.value = data.token
-      localStorage.setitem('token', data.token)
+      localStorage.setItem('token', data.token)
    }
 
    const logOut = () => {
@@ -27,6 +53,18 @@ export const useAuthStore = defineStore( 'auth', () => {
       token.value = null
       localStorage.removeItem('token')
    }
+   const login =  async (credentials: {name: string; password: string}) => {
+      const response = await axios.post('/api/login', credentials);
+      const token = response.data.token;
 
-   return { user, token, setAuth, logOut}
+   
+      const payload = parseJwt(token);
+
+      setAuth({ user: {id: payload.id, name: credentials.name, role: payload.role, password: ''}, token});
+   }
+
+
+   return { user, token, setAuth, logOut, login}
 })
+
+
