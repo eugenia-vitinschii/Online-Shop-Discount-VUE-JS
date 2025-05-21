@@ -6,7 +6,7 @@
   "scripts": {
     "scss": "sass src/assets/scss/app.scss src/assets/css/app.css --no-source-map",
     "dev": "vite",
-    "mock": "json-server --watch db.json --port 3001",
+    "mock": "json-server --watch db.json --port 3000",
     "build": "vue-tsc -b && vite build",
     "preview": "vite preview"
   },
