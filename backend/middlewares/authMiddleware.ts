@@ -7,7 +7,7 @@ import jwt from "jsonwebtoken";
 const SECRET = 'supersecretkey';
 
 //authenticateToken
-export const authenticateToken = ( req: Request, res: Response, next: NextFunction):void => {
+export const authenticateToken = ( req: Request, res: Response, next: NextFunction) => {
    const authHeader = req.headers.authorization;
 
    const token = authHeader && authHeader.split(' ')[1];
