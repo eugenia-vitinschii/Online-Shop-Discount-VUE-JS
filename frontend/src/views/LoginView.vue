@@ -55,12 +55,13 @@ const handleLogin = async () => {
       })
       //push to route using role
       if (authStore.user?.role === 'admin') {
-         router.push('/admin')
+         router.push({ path: "/admin" });
       } else {
          router.push('/')
+         console.log(password.value)
       }
    } catch (error) {
-      alert('Error!')
+      console.log(error)
    }
 }
 

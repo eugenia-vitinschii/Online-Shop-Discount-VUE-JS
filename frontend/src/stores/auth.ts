@@ -54,7 +54,7 @@ export const useAuthStore = defineStore( 'auth', () => {
       localStorage.removeItem('token')
    }
    const login =  async (credentials: {name: string; password: string}) => {
-      const response = await axios.post('/api/login', credentials);
+      const response = await axios.post('http://localhost:4000/admin/login', credentials);
       const token = response.data.token;
 
    
