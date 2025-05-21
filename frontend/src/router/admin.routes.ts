@@ -1,5 +1,7 @@
 //admin routes
 import type  { RouteRecordRaw } from 'vue-router';
+import { useAuthStore } from '@/stores/auth'
+
 
 const routes: RouteRecordRaw[] = [
   {
@@ -7,13 +9,16 @@ const routes: RouteRecordRaw[] = [
     children: [
       {
         path: "",
-        component: () => import("../views/Admin/AdminLoginView.vue"),
-        meta: { title: "Admin login" }
-      },
-      {
-        path: "panel",
         component: () => import("../views/Admin/AdminView.vue"),
-        meta: { title: "Admin" }
+        meta: { title: "Admin" },
+        beforeEnter: (to, from, next) => {
+          const authStore = useAuthStore();
+          if(authStore.user?.role  === 'admin'){
+            next();
+          } else {
+            next ('/login');
+          }
+        }
       },
       {
         path: "create",

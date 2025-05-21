@@ -108,9 +108,9 @@ discount/
    - Filter by brand, price, promo price
    - Search products by name
    - Dynamic promo stickers based on discount logic
-
 - Promo 
    - Display only discounted products
+   - Custom bg color, time counter
 - Product 
    - Detailed view with price, specs, and promo details
    - Tables showing installment and credit payment plans (using dynamic components with :is)
@@ -120,9 +120,12 @@ discount/
    - Product quantity counter
    - Calculate sum,  view totals
 - Favorite  
-   - Manage favorite products
+   - Manage favorite products (delete, show)
 - Brands  
    - Full list of available brands
+   - All items for brand
+- Login
+   - role: user | admin
 
 
 ## 🛠️ Admin Views

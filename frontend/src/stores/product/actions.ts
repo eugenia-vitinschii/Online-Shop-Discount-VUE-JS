@@ -9,7 +9,7 @@ import type { ProductState } from './state'
 import { Product} from "@/models/product"
 import type { CartItem } from "./state";
 //base url
-const baseUrl = "http://localhost:3001";
+const baseUrl = "http://localhost:3000";
 
 export const actions= {
 //fetch products
@@ -32,7 +32,7 @@ export const actions= {
      } catch (error) {
        alert(error);
      } finally {
-       router.push({ path: "/admin/panel" });
+       router.push({ path: "/admin" });
      }
    },
 // delete product in db.json
@@ -120,7 +120,7 @@ export const actions= {
      } catch (err) {
        console.error(err);
      } finally {
-       router.push({ path: "admin/panel" });
+       router.push({ path: "admin" });
      }
    },
    // get product by id

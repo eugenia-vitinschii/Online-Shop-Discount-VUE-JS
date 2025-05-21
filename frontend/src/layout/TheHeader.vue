@@ -23,9 +23,11 @@
               </router-link>
             </div>
             <div class="header__user">
-             <router-link class="header__link tooltip" to="/login">
+             <router-link class="header__link tooltip" to="/login" 
+             
+             >
                 <span class="tooltip-text small-text"> user </span>
-              <svg 
+              <svg v-if="!authStore.token"
               class="menu-svg" 
               xmlns="http://www.w3.org/2000/svg"
                height="24px" 
@@ -33,7 +35,16 @@
                width="24px" fill="#ffffff">
                <path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z"/>
               </svg>
-
+              <button  v-else="logout()">
+              <svg     
+              class="menu-svg" 
+              xmlns="http://www.w3.org/2000/svg"
+               height="24px" 
+               viewBox="0 -960 960 960" 
+               width="24px" fill="#000">
+               <path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z"/>
+              </svg>
+              </button>
                 <span class="red__circle">l </span>
               </router-link>
               <router-link class="header__link tooltip" to="/shopping-cart">
@@ -75,7 +86,9 @@
           <nav class="header__links header__content-bottom">
             <ul>
               <li>
-                <router-link class="header__link" to="admin/panel" v>Admin</router-link>
+                <router-link class="header__link" to="/admin" 
+                v-if="authStore.user?.role === 'admin'"
+                >Admin</router-link>
               </li>
               <li>
                 <router-link class="header__link" to="/">Home</router-link>
@@ -100,17 +113,30 @@
 <script setup lang="ts">
 //vue imports
 import { defineOptions } from "vue";
+//pinia
+import { useAuthStore } from "../stores/auth";
 import { useProductStore } from "../stores/product";
 import { storeToRefs } from "pinia";
+//router
+import {useRouter}  from 'vue-router'
 
 
 //component settings
 defineOptions({
   name: "TheHeader",
 });
-
 // Store variables
 const store = useProductStore();
 
 const { user } = storeToRefs(store);
+
+// Store variables
+const authStore = useAuthStore();
+const router = useRouter();
+
+const logout = () => {
+  authStore.logOut()
+  router.push('/login')
+}
+
 </script>

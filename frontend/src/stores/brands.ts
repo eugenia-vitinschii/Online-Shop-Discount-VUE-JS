@@ -4,7 +4,7 @@ import { defineStore } from "pinia";
 import axios from "axios";
 import router from "@/router/index";
 
-const baseUrl = "http://localhost:3001";
+const baseUrl = "http://localhost:3000";
 
 export interface Brand {
   id: string;
@@ -37,7 +37,7 @@ actions:{
     } catch (error) {
         alert(error);
       } finally {
-        router.push({ path: "/admin/panel" });
+        router.push({ path: "/admin" });
       }
     },
   },
