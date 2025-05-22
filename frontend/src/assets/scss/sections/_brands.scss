@@ -2,6 +2,7 @@
 @use '../abstracts/variables' as *;  
 @use '../abstracts/mixins' as *;  
 
+
 .brands {
    margin-top: $margin-top;
    @include block-style();

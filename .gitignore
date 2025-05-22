@@ -22,4 +22,9 @@ pnpm-debug.log*
 *.sln
 *.sw?
 
-src/assets/scss/*.css
+src/assets/scss/abstracts/*.css
+src/assets/scss/components/*.css
+src/assets/scss/core/*.css
+src/assets/scss/layout/*.css
+src/assets/scss/pages/*.css
+src/assets/scss/sections/*.css
