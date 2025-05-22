@@ -1,5 +1,7 @@
 @use '../abstracts/variables' as *;  
 @use '../abstracts/mixins' as *;  
+
+//header
 .header {
   background: $orange;
   margin-bottom: $margin-top;

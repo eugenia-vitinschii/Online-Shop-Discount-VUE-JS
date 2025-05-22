@@ -17,14 +17,7 @@ export default defineConfig({
     devSourcemap: true,
     preprocessorOptions: {
       scss: {
-        additionalData: `
-                 @use "@/assets/scss/abstracts/all" as *;
-          @use "@/assets/scss/core/all" as *;
-          @use "@/assets/scss/components/all" as *;
-          @use "@/assets/scss/layout/all" as *;
-          @use "@/assets/scss/sections/all" as *;
-          @use "@/assets/scss/pages/all" as *;
-        `
+        additionalData: ''
       }
     }
   },
