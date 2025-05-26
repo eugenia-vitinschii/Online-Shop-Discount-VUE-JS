@@ -48,7 +48,20 @@ npm run dev
 ```
 discount/
 ├── backend/         # Node.js Express API
-│   └── server.js
+│   └── controllers/
+│       └── authController.ts #find user, create token
+│   └── middlewares/
+│       └── authMiddleware.ts #check token, check role
+│   └── models/
+│       └── userModel.ts #user interface
+│   └── routes/
+│       └── adminRoutes.ts #make the admin route available to a user with the admin role
+│   └── utils/
+│       └── users.ts #users list
+│   └── server.ts
+│   └── package.json
+│   └── ...
+| 
 ├── frontend/        # Vue 3 frontend
 │   └── public/
 │       └── index.html
@@ -73,27 +86,60 @@ discount/
 │              └── pages/
 │              └── sections/
 │              └── app.sass #import all sass folders
+│       └── axios/
+│           └── interceptor.ts #add token to header automatically
 │       └── components/
 │       └── layout/
+│           └── TheHeader.vue
+│           └── TheFooter.vue
+│           └── ScrollToTop.vue
 │       └── models/
-│           └── product.js #product constructor
+│           └── product.ts #product constructor
 │       └── router/
-│           └── index.js
-│           └── admin.routes.js
-│           └── info.routes.js
-│           └── products.routes.js
+│           └── index.ts
+│           └── admin.routes.ts
+│           └── info.routes.ts
+│           └── products.routes.ts
+│           └── user.routes.ts
 │       └── sections/
+│           └── Sliders/
+│           └── CreditPayment.vue
+│           └── PromoSection.vue
+│           └── TheProduct.vue
+│           └── TheItem.vue
+│           └── TheInfo.vue
+│           └── ... 
 │       └── stores/  #Pinia stores
 │           └── product 
-│              └── actions.js
-│              └── getters.js
-│              └── state.js
-│              └── index.js
-│           └── brand.js
-│           └── wachedProducts.js
+│              └── actions.ts
+│              └── getters.ts
+│              └── state.ts
+│              └── index.ts
+│           └── auth.ts
+│           └── brand.ts
+│           └── wachedProducts.ts
 │       └── views/
+│           └── Admin/
+│               └── AdminView.vue
+│               └── AddProduct.vue
+│               └── EditView.vue
+│               └── UpdateView.vue
+│               └── AddBrand.vue
+│           └── BrandsView.vue
+│           └── BrandView.vue
+│           └── FavoriteView.vue
+│           └── HomeView.vue
+│           └── InfoView.vue
+│           └── ProductView.vue
+│           └── ItemsView.vue
+│           └── LoginView.vue
+│           └── ProductView.vue
+│           └── ShoppringCartView.vue
+│           └── ....
 │       └── App.vue/
 │   └── db.json
+│   └── ...
+
 
 ```
 ### 🚀 Features

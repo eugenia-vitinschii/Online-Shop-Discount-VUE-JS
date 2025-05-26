@@ -57,7 +57,7 @@ const handleLogin = async () => {
       if (authStore.user?.role === 'admin') {
          router.push({ path: "/admin" });
       } else {
-         router.push('/')
+         router.push('/products')
          console.log(password.value)
       }
    } catch (error) {
