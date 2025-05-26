@@ -1,0 +1,22 @@
+//login page
+// @use './variables' as *;
+@use "../abstracts/mixins" as *;
+
+.login {
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  &__form:hover {
+    @include itemHover();
+  }
+  &__form {
+    @include item();
+    @include sectionItemStyle();
+    @include transition();
+    width: 500px;
+    max-width: 100%;
+  }
+}

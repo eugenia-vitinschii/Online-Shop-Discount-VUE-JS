@@ -2,6 +2,7 @@
    <div class="login">
       <div class="container">
          <div class="login__wrapper">
+            <div class="login__form">
             <p class="heading">Login</p>
             <form @submit.prevent="handleLogin">
                <!-- input wrapper -->
@@ -23,6 +24,7 @@
                </div>
                <button type="submit" class="button">Intra</button>
             </form>
+            </div>
          </div>
       </div>
    </div>
