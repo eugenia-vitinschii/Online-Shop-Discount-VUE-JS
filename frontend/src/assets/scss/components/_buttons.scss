@@ -63,3 +63,21 @@
 .test{
    color: #000;
 }
+
+//scroll to top button
+.scrollToTop{
+   bottom: 10px;
+   right:10px;
+   position: fixed;
+   width: 50px;
+   height: 50px;
+   background: $purple;
+   border-radius: 5px;
+   @include transition();
+}
+.scrollToTop:hover{
+   background: $green;
+}
+.scrollToTop:active{
+   background: $orange;
+}
