@@ -146,32 +146,33 @@ discount/
 
 ## 👤 User Views
 
-- Home 
+- 🗝 Home 
    - Display of featured and washed (recently viewed) products
    - Swiper.js top products carousel, wached products carousel
    - Promo banners 
-- Products
+- 👉 Products
    - Filter by brand, price, promo price
    - Search products by name
    - Dynamic promo stickers based on discount logic
-- Promo 
+- ⚡️ Promo 
    - Display only discounted products
    - Custom bg color, time counter
-- Product 
+- 👉 Product 
    - Detailed view with price, specs, and promo details
    - Tables showing installment and credit payment plans (using dynamic components with :is)
    - Product item info table
-- Cart 
+-  🛍 Cart 
    - Remove products
    - Product quantity counter
    - Calculate sum,  view totals
-- Favorite  
+- 🩶 Favorite  
    - Manage favorite products (delete, show)
-- Brands  
+- 👉 Brands  
    - Full list of available brands
    - All items for brand
-- Login
+- 🔓 Login
    - role: user | admin
+   - form validate VeeValidate +  Yup
 
 
 ## 🛠️ Admin Views
