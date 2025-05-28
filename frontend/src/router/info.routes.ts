@@ -8,6 +8,12 @@ const routes: RouteRecordRaw[] = [
       component: () => import('../views/LoginView.vue'),
       meta: { title: "Login" },
     },
+    {
+      path: '/register',
+      name: 'Register',
+      component: () => import('../views/RegisterView.vue'),
+      meta: { title: "Registrare" },
+    },
    {
       path: '/',
       name: 'home',
