@@ -42,7 +42,9 @@
                      {{ loginError}}
                   </p>
                <button type="submit" class="button">Intra</button>
+              
             </form>
+             <p class="body-text">Nu sunteti inregistrat? <router-link to="/register">registrate</router-link> </p>
             </div>
          </div>
       </div>
@@ -99,6 +101,7 @@ const onSubmit = handleSubmit( async (values) => {
          console.log(password.value)
       }
    } catch (error: any) {
+      console.log('Login error: ', error)
       if( error.response?.status === 401){
          loginError.value = 'Numele sau parola sunt incorecte'
       } else{
