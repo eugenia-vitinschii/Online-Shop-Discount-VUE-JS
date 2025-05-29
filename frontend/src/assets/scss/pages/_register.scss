@@ -1,8 +1,12 @@
 //register
-
+@use '../abstracts/variables' as *;
 @use "../abstracts/mixins" as *;
 
 .register{
+    p:first-child{
+    text-align: center;
+    color: $orange;
+  }
   &__wrapper {
     display: flex;
     align-items: center;
@@ -18,5 +22,8 @@
     @include transition();
     width: 500px;
     max-width: 100%;
+  }
+  &__button{
+    @include positionCenter();
   }
 }
