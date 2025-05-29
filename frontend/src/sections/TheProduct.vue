@@ -104,6 +104,7 @@
     </div>
     <div class="product__decription" >
       <table class="product__decription-table" >
+        <tbody>
         <tr v-if="brand || waterConsumption ||energyEfficiencyClass || type || spinSpeed || loadCapacity "> 
           <th>Informația despre produs</th>
           <th></th>
@@ -151,9 +152,11 @@
         <tr v-show="numberOfPrograms">
           <td>Numărul de programe</td>
           <td>{{ numberOfPrograms }}</td>
-        </tr>        
+        </tr>
+  </tbody>        
       </table>
       <table class="product__decription-table">
+        <tbody>
         <tr v-if="weightInPackage ||weight || depth">
           <th>Dimensiuni</th>
           <th></th>
@@ -187,6 +190,7 @@
           <td>Garanţie, luni</td>
           <td>{{ guarantee}} </td>
         </tr>
+        </tbody>
       </table>
     </div>
   </div>

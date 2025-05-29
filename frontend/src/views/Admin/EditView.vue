@@ -11,6 +11,7 @@
     <!-- edit table -->
     <div class="edit__content">
       <table class="edit__table">
+        <thead>
         <tr>
           <th>COD</th>
           <th>Name</th>
@@ -19,6 +20,8 @@
           <th>Șterge</th>
           <th>Redactează</th>
         </tr>
+        </thead>
+        <tbody>
         <tr v-for="product in products" :key="product.id">
           <td>{{ product.productCode }}</td>
           <td>{{ product.productName }}</td>
@@ -37,6 +40,7 @@
             </router-link>
           </td>
         </tr>
+        </tbody>
       </table>
     </div>
     </div>

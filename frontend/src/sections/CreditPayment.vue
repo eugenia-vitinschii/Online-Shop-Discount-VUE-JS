@@ -3,18 +3,22 @@
   <p class="body-text">Cumpără {{ product.productName }} în credit: </p>
   <p class="body-text-green">Avans : 0% </p>
   <table class="credit__table">
+    <thead>
     <tr>
       <th>Termen luni</th>
       <th>Avans</th>
       <th>Lunar</th>
       <th>Total</th>
     </tr>
+    </thead>
+    <tbody>
     <tr v-for="item in months" :key="item.id">
       <td>{{ item.month }}</td>
       <td>0 lei</td>
       <td class="small-text">{{ getMonthlyPrice(item.month, item.percent) }} lei/lunar</td>
       <td class="small-text">{{ getPrice(item.percent) }} lei</td>
     </tr>
+    </tbody>
   </table>
   </div>
 </template> 

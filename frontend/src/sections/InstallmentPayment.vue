@@ -3,18 +3,23 @@
   <p class="body-text">Cumpără {{ product.productName }} în rate: </p>
   <p class="body-text-green">Dobândă: 0% </p>
   <table class="credit__table">
-    <tr>
+    <thead>
+      <tr>
       <th>Termen luni</th>
       <th>Avans</th>
       <th>Lunar</th>
       <th>Total</th>
     </tr>
-    <tr v-for="item in months" :key="item.id">
+    </thead>
+    <tbody> 
+      <tr v-for="item in months" :key="item.id">
       <td>{{ item.month }}</td>
       <td>{{installmentPay(item.avans)}}</td>
       <td class="small-text">{{ getMonthlyPrice(item.month, item.avans) }} lei/lunar</td>
       <td class="small-text"> {{ product.price }} lei</td>
     </tr>
+  </tbody>
+   
   </table>
   </div>
 </template>
