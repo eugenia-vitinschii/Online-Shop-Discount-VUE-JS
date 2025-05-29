@@ -7,9 +7,9 @@
 .visible {
    display: block;
 }
+
 //admin section (add & update product)
 .input__wrapper{
-   
   select{
    display: block;
    width: 100%;
@@ -20,7 +20,34 @@
 	font-size: $body-text-sm;
   }
 }
-//test
+
+
+//input password
+.input-password{
+   display: flex;
+   input{
+      border-right: 0px solid white; 
+   }
+   button {
+      background: $white;
+      border: 1px solid $dark-green;
+      border-left: 0px solid $white;
+      height: 29px;
+      margin-top: 5px;
+      padding-right:3px;
+      svg{
+         fill: $light-gray;
+      }
+   }
+   input:focus{
+      border-right: 0px solid white; 
+   }
+   &:focus-within button{
+      border: 1px solid $orange;
+      border-left: 0px solid $white;
+   }      
+}
+
 
 //running line span
 .running-line-wrapper{
@@ -58,7 +85,6 @@ $duration: 15s;
    0% {
      transform: translateX(0);
    }
-   
   50% {
      transform: translateX(-100%);
    }
@@ -70,9 +96,7 @@ $duration: 15s;
     }
 }
 
-
 //fade
-
 .fade-enter-active, .fade-leave-active{
    transition: opacity 0.3s ease;
 }
