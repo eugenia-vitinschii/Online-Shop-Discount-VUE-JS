@@ -272,7 +272,6 @@ import { useProductStore } from "@/stores/product";
 import TheRouter from "@/sections/TheRouter.vue";
 import TheItem from "@/sections/TheItem.vue";
 
-
 //vue component information
 defineOptions({
   name: "ItemsView",

@@ -3,9 +3,9 @@
     <!-- Short info about product -->
         <div class="product__top">
       <div class="product__top-logo">
-        <router-link :to="'/brands/' + brand" class="body-text">
-            {{ brand }}
-          </router-link>
+          <router-link :to="'/brands/' + brand"  :class="{ grayscale: !stock }" v-if="product">
+          <img v-if="brandLogo" :src="brandLogo" :alt="product.brand" />
+        </router-link>
       </div>
       <!-- labels for dicsount products -->
       <div class="product__top-labels" :class="{grayscale: !stock }">
@@ -33,7 +33,7 @@
         <div class="product__promo">
           <!-- Discount  Price -->
           <div class="product__name">
-            <p class="subheading"> {{productType}} {{productName}}</p>
+            <p class="subheading"> {{type}} {{productName}}</p>
           </div>
           <div class="product__price">
             <div class="product__price-value">
@@ -199,7 +199,7 @@
 
 <script setup lang="ts">
 //vue
-import { defineOptions, defineProps, shallowRef, type DefineComponent} from "vue";
+import { defineOptions, shallowRef, type DefineComponent, onMounted, computed } from "vue";
 //components
 import TheButton from "../components/TheButton.vue";
 import InstallmentPayment from "./InstallmentPayment.vue";
@@ -210,6 +210,11 @@ import TheInfo from "./TheInfo.vue"
 defineOptions({
   name: "TheProduct",
 });
+
+//pinia 
+import { useBrandsStore } from "@/stores/brands";
+//model
+import type { Product } from '@/models/product'
 
 const currentTab = shallowRef<DefineComponent>(InstallmentPayment);
 
@@ -224,15 +229,19 @@ const testCredit = [
   },
 ];
 
+
 //emits
-defineEmits(["addToCard", "addToFavorite"])
+const emit = defineEmits<{
+  (e: "addToFavorite", product: Product): void
+  (e: "addToCard", product: Product): void
+}>()
 
 //props
 const props = defineProps<{
   id: string
+  product: Product
   productCode: string,
   img:string,
-  productType: string,
   productName: string, 
   price: number,
   discount:number,
@@ -264,6 +273,21 @@ const props = defineProps<{
     disabledValue:boolean,
 }>()
 
+const brandsStore = useBrandsStore();
+
+// находим логотип бренда
+const brandLogo = computed(() => {
+   if (!props.product || !props.product.brand) return null;
+  const brand = brandsStore.brands.find(
+    (b) => b.brand.toLowerCase() === props.product.brand.toLowerCase()
+  );
+  return brand ? brand.img : null;
+});
+
+
+onMounted(() => {
+  brandsStore.fetchBrands();
+});
 
 </script>
 

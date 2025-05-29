@@ -11,7 +11,7 @@
             / {{ product.brand }}
           </router-link>
         </div>
-        <div class="router__link">
+        <div class="router__link" v-if="product" >
           <p  class="blue-router">/ {{ product.productName }}</p>
         </div>
       </div>
@@ -24,6 +24,7 @@
         <!-- product component -->
         <the-product
           :id="product.id"
+          :product="product"
           :productCode="product.productCode"
           :productName="product.productName"
           :img="product.img"

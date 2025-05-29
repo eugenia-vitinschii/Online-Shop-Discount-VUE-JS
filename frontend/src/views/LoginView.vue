@@ -85,6 +85,7 @@ defineOptions({
 //variables
 const loginError = ref('')
 const showPassword = ref(false)
+const submitted =  ref(false)
 const authStore = useAuthStore()
 const router = useRouter()
 
@@ -105,6 +106,7 @@ const { value: password} = useField<string>('password');
 //login 
 const onSubmit = handleSubmit( async (values) => {
    loginError.value = ''
+   submitted.value = true
    try {
       await authStore.login(values)
       //push to route using role
