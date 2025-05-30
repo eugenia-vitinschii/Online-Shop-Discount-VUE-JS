@@ -11,9 +11,9 @@
             :breakpoints= "{
             1366:{slidesPerView: 6},
             1248:{slidesPerView: 5},
-            1115:{slidesPerView: 4},
-            877:{slidesPerView: 3},
-            658:{slidesPerView: 2},
+            1115:{slidesPerView: 5},
+            877:{slidesPerView: 4},
+            658:{slidesPerView: 3},
             467:{slidesPerView: 2}
             }"
           :autoplay="{

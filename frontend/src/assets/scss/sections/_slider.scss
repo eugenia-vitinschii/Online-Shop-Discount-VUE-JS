@@ -39,6 +39,7 @@
    }
    &__swiper{
 
+
 }
 
 .swiper-button-next,
@@ -50,5 +51,12 @@
 
 .swiper-pagination-fraction{
    --swiper-pagination-fraction-color: red;
+}
+.swiper-wrapper{
+   width: 100%;
+}
+.swiper-slide, .item__item{
+   width: 100%;
+   margin-left: 5px;
 }
 }

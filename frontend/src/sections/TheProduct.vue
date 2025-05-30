@@ -2,7 +2,8 @@
   <div class="product__item" :class="{gray: !stock }">
     <!-- Short info about product -->
         <div class="product__top">
-      <div class="product__top-logo">
+          <div class="product__top-info">
+        <div class="product__top-logo">
           <router-link :to="'/brands/' + brand"  :class="{ grayscale: !stock }" v-if="product">
           <img v-if="brandLogo" :src="brandLogo" :alt="product.brand" />
         </router-link>
@@ -16,6 +17,7 @@
           <img src="@/assets/img/discount.jpg" alt="oops!" />
         </div>
       </div>
+          </div>
       <div class="product__top-stock">
         <p class="body-text-green" v-if="stock">in stock</p>
         <p class="body-text-red " v-else>nu este in stock</p>

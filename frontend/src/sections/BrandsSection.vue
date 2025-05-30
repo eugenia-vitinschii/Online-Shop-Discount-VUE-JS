@@ -18,6 +18,9 @@
           465: {
             slidesPerView: 5,
           },
+          300: {
+            slidesPerView: 3,
+          },
         }"
         :autoplay="{
           delay: 500,
