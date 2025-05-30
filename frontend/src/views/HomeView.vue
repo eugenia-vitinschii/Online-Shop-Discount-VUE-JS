@@ -75,25 +75,25 @@ interface Item {
 const items: Item[] = [
   {
     id: "1",
-    img: new URL("@/assets/img/delivery-1.svg", import.meta.url).href,
+    img: new URL("@/assets/img/4.jpg", import.meta.url).href,
     name: "Service și garanție",
     body: "Rețea proprie de centre de servicii",
   },
   {
     id: "2",
-    img:  new URL("@/assets/img/delivery-2.svg", import.meta.url).href,
+    img:  new URL("@/assets/img/1.jpg", import.meta.url).href,
     name: "Livrare în toată Moldova",
     body: "Livrarea de la 1 la 2 zile de la data comenzii",
   },
   {
     id: "3",
-    img:  new URL("@/assets/img/delivery-3.svg", import.meta.url).href,
+    img:  new URL("@/assets/img/2.jpg", import.meta.url).href,
     name: "Încredere și fiabilitate",
     body: "20 de ani pe piață",
   },
   {
     id: "4",
-    img: new URL("@/assets/img/delivery-4.svg", import.meta.url).href,
+    img: new URL("@/assets/img/3.jpg", import.meta.url).href,
     name: "Returnare și schimbare",
     body: "În termen de 14 zile",
   },
