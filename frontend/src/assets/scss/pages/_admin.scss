@@ -12,14 +12,19 @@
   }
   // &__buttons {
   // }
-  // &__user {
-  // }
-  &__user-img {
-    width: 30px;
+  &__user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 30px;
-    margin-bottom: 5px;
-    img {
-      width: 100%;
+  }
+  &__user-text{
+    margin:0px 4px 8px 0px;
+  }
+  &__user-img {
+    svg {
+      width: 30px;
+      height: 30px;
       border-radius: 50%;
       border: 1px solid $dark-green;
     }

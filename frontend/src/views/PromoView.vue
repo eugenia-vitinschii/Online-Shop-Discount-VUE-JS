@@ -1,6 +1,5 @@
 <template>
   <div>
-
   <!-- routing section -->
   <div class="router">
     <div class="container">

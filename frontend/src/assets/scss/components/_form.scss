@@ -1,8 +1,9 @@
 @use '../abstracts/variables' as *;  
 @use '../abstracts/mixins' as *;  
+
+
 input,
 textarea {
-   border: 1px solid $dark-green;
 	@include input();
 	@include transition();
 }

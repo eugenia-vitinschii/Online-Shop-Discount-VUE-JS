@@ -62,8 +62,9 @@
     </div> 
   </div>
    <!-- watched section -->
-<recently-wached-slider/>
+    <recently-wached-slider/>
   </div>
+
 </template>
 
 

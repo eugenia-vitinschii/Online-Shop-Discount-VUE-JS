@@ -18,12 +18,15 @@
             >
           </div>
           <div class="panel__user">
+            <div class="panel__user-text">
+              <p class="body-text">HI, {{userName}}!</p>
+            </div>
             <div class="panel__user-img">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 height="24px"
                 viewBox="0 -960 960 960"
-                width="24px"
+                width="30px"
                 fill="#e8eaed"
               >
                 <path
@@ -40,10 +43,22 @@
   </div>
 </template>  
 <script setup lang="ts">
+//vue
+import { computed } from 'vue'
+
+//pinia
+import { useAuthStore } from '@/stores/auth';
+
 //component settings
 defineOptions({
   name: "Adminheader",
 });
+
+//variables
+const authStore = useAuthStore()
+
+const userName = computed(() => authStore.user?.name || 'admin')
+
 </script>
   
  

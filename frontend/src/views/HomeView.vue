@@ -6,8 +6,8 @@
   <div class="container">
     <div class="swiper__wrapper">
       <the-slider/>
-    </div>
-  </div>
+    </div> 
+  </div> 
 </div>
 <div class="delivery">
     <div class="container">
@@ -60,6 +60,8 @@ import TheSlider  from "@/sections/TheSlider.vue";
 import BrandsSection from "@/sections/BrandsSection.vue"
 import TheTopProductsSlider from "@/sections/Sliders/TheTopProductsSlider.vue"
 import RecentlyWachedSlider from "@/sections/Sliders/RecentlyWachedSlider.vue";
+
+ 
 
 defineOptions({
   name: "HomeView",

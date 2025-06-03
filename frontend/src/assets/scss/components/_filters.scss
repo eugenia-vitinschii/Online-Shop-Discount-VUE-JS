@@ -29,6 +29,12 @@
       }
       //checkbox wrapper
 		&__checkbox{
-         @include block-style()
+         @include block-style();
+         padding: 10px;
+         button{
+            padding: 0px;
+            margin: 0px -5px;
+         }
+        
       }
 }
