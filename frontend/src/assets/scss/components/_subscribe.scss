@@ -1,0 +1,61 @@
+//subscribe form
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.subscribe {
+  @include component-style();
+  background: $blue;
+  border-top: 1px solid $ivory;
+  p {
+    color: white;
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  &__form:hover {
+    @include itemHover();
+  }
+  &__form {
+    @include item();
+    @include sectionItemStyle();
+    @include transition();
+    width: 500px;
+    max-width: 100%;
+    input {
+      @include input($blue, $blue)
+    }
+    input::placeholder{
+      color: $blue;
+    }
+    input:focus{
+	border: 1px solid $purple;
+  color: $purple;
+}
+    label a{
+      color:$blue
+    }
+  }
+  &__agree{
+    padding: 20px 0px;
+    label{
+      display: block;
+      margin: -30px 0px 0px 50px;
+      a:hover{
+        color: $purple
+      }
+    }
+  }
+  &__button {
+   
+    @include reset-button();
+    @include button-colors($blue, $blue);
+     @include positionCenter();
+  }
+  &__button:hover{
+      @include button-hover($blue)
+  }
+}
