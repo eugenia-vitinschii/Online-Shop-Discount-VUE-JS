@@ -1,25 +1,51 @@
-@use '../abstracts/variables' as *;  
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
 .footer {
-   margin-top: $margin-top;
-   background: $orange;
-   &__wrapper {
-    display: flex;
-    justify-content: space-between;
+  @include component-style();
+  background: $ivory;
+  &__wrapper {
+    display: grid;
+    grid-template-columns:  repeat(4, 25%);
+    justify-items: stretch;
+    gap: 15px;
+  }
+  &__logo{
+    border-top: 1px solid $orange;
+    margin-top: 50px;
+    grid-column: 2 /span 2;
+    justify-self: center;
+  }
+  &__links {
+    a,
+    p {
+      color: $orange;
+    }
+    a {
+      display: block;
+    }
+   a:hover {
+      text-decoration: dotted;
+      color: rgb(118, 55, 16);
+    }
+  }
+  &__logo {
+    width: 150px;
+    height: 150px;
+    img {
+      width: 100%;
+    }
+  }
+}
 
-   }
-   &__links {
-      a, p{
-         color: white
-      }
-      a{
-         display: block;
-   }
-   }
-   &__logo {
-      width: 150px;
-      height: 150px;
-      img{
-         width: 100%;
-      }
-   }
- }
+@media (max-width: 700px){
+  .footer {
+    &__wrapper{
+      grid-template-columns: repeat(2, 50%);
+    }
+    &__logo{
+      grid-column: 1 /span 2;
+    }
+  }
+}
+
+
