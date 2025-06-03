@@ -1,5 +1,4 @@
 <template>
-  <div>
 
   <div class="i" v-show="watchedStore.watched.length > 1">
     <div class="container">
@@ -56,8 +55,6 @@
         </swiper>
       </div>
     </div>
-  </div>
-
   </div>
 </template>
  

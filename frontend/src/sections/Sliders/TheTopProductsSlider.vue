@@ -1,6 +1,4 @@
 <template>
-  <div>
-
   <div class="i">
     <div class="container">
       <div class="i__wrapper">
@@ -57,8 +55,6 @@
         </swiper>
       </div>
     </div>
-  </div>
-
   </div>
 </template>
  
