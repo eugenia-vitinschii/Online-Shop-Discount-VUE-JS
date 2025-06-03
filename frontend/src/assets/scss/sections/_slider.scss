@@ -1,8 +1,10 @@
 @use '../abstracts/variables' as *;  
+@use '../abstracts/mixins' as *;  
 
 .swiper{
+   
    &__wrapper {
- padding: $margin-top 0px;
+@include component-style();
    }
 
 
@@ -34,7 +36,9 @@
 
 
 .i{
+  @include component-style();
    &__wrapper{
+      
      
    }
    &__swiper{

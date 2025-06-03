@@ -2,7 +2,7 @@
 @use '../abstracts/mixins' as *;  
 
 .offer{
-   padding: $margin-top 0px;
+   @include component-style();
    &__container{
       @include block-style;
       width: 100%;

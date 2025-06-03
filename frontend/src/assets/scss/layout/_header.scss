@@ -4,7 +4,8 @@
 //header
 .header {
   background: $orange;
-  margin-bottom: $margin-top;
+  @include component-style();
+  margin-top: 0px;
   &__promo {
     width: 100%;
     margin-top: 10px;

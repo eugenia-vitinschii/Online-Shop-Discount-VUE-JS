@@ -1,7 +1,8 @@
 @use '../abstracts/variables' as *;  
 @use '../abstracts/mixins' as *;  
+
 .delivery {
-   padding: $margin-top 0px;
+   @include component-style();
    &__wrapper {
       display: grid;
       grid-template-columns: repeat(4, 1fr);

@@ -62,13 +62,14 @@
 }
 
 // Form Inputs
-@mixin input() {
+@mixin input($color: $orange, $border-color: $dark-green) {
 	display: block;
 	padding: 5px;
 	margin: 5px 0px;
 	width: 100%;
 	background: $white;
-	color: $orange;
+	color: $color;
+	border: 1px solid $border-color;
 	font-size: $body-text-sm;
 }
 
@@ -93,7 +94,7 @@
 	box-shadow: $shadow;
 }
 @mixin itemHover() {
-	box-shadow: 2px 2px 10px $black;
+	box-shadow: 2px 2px 15px  #F4F4F4;
 }
 @mixin itemStyles() {
 	display: flex;
@@ -130,4 +131,9 @@
 	border-radius: $border-radius;
 	box-shadow: $shadow;
 	background: $white;
+}
+
+@mixin component-style($padding: 25px, $margin: 25px){
+ padding: $padding 0px;
+  margin: $margin 0px;
 }
