@@ -30,7 +30,11 @@
   <div class="container">
     <div class="offer__container">
       <router-link to="/products/vr9l8dC">
-        <img src="@/assets/img/home-promo/promo-home.jpg" alt="prommo">
+        <picture>
+          <source media="(max-width: 800px)" srcset="@/assets/img/home-promo/mobile-2.jpg">
+        <img src="@/assets/img/home-promo/pc-2.jpg" alt="prommo"> 
+        </picture>
+       
       </router-link>
       
     </div>
@@ -43,7 +47,11 @@
   <div class="container">
     <div class="offer__container">
       <router-link to="/promo">
-        <img src="@/assets/img/home-promo/promo-home-2.jpg" alt="prommo">
+        <picture>
+               <source media="(max-width: 800px)" srcset="@/assets/img/home-promo/mobile-1.jpg">
+        <img src="@/assets/img/home-promo/pc-1.jpg" alt="prommo">
+        </picture>
+    
       </router-link>
       
     </div>

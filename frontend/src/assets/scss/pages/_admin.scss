@@ -80,6 +80,11 @@
   &__content {
     width: 100%;
     background: #ffffff;
+    @include transition();
+    @include item();
+  }
+  &__content:hover{
+    @include itemHover()
   }
   &__table {
     width: 100%;
@@ -101,13 +106,26 @@ td {
   &__title {
     margin: 20px 0px;
   }
-
-  &__content {
+  &__form{
+    @include transition();
+    @include item();
+  }
+  &__form:hover{
+    @include itemHover();
   }
   &__form {
     width: 100%;
     background: #ffffff;
     padding: 10px;
+  }
+  &__form-button{
+    margin-top: 20px;
+    margin-left: -9px;
+       padding: 10px 0px;
+  }
+  &__buttons{
+        margin-left: -10px;
+    padding: 10px 0px;
   }
 }
 .edit {
@@ -130,12 +148,20 @@ td {
     margin: 20px 0px;
   }
 
-  &__content {
+  &__content{   
+     @include transition();
+    @include item();
+  }
+  &__content:hover{
+    @include itemHover();
   }
   &__form {
     width: 100%;
-    background: #ffffff;
     padding: 10px;
+  }
+  &__buttons{
+    margin-left: -10px;
+    padding: 10px 0px;
   }
 }
 .message {

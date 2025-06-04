@@ -3,6 +3,10 @@
 
 .delivery {
    @include component-style();
+        p{
+         color: $purple;
+        text-align: center; 
+      }
    &__wrapper {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -34,12 +38,7 @@
       }
       
    }
-   &__text {
-      p{
-        text-align: center; 
-      }
-      
-   }
+
 }
 @media (max-width: 690px) {
    .delivery {
