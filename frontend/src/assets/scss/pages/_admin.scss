@@ -1,8 +1,10 @@
 @use '../abstracts/variables' as *;  
 @use '../abstracts/mixins' as *;  
+
 .panel {
   // &__wrapper {
   // }
+  position: relative;
   &__nav {
     @include block-style;
     display: flex;
@@ -10,8 +12,17 @@
     align-items: center;
     padding: 10px;
   }
-  // &__buttons {
-  // }
+  &__nav:hover{
+    @include itemHover();
+  }
+  &__button{
+    display: none;
+  }
+  &__buttons ul{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
   &__user {
     display: flex;
     align-items: center;
@@ -29,8 +40,39 @@
       border: 1px solid $dark-green;
     }
   }
+  &__user-exit{
+    margin-left: 10px;
+  }
   // &__content {
   // }
+}
+//admin panel media
+@media (max-width: 690px){
+  .panel{
+    &__button{
+      display: block;
+    }
+    &__buttons{
+      position: absolute;
+      z-index: 50000;
+      top: 0;
+      height: 100vh;
+      width: 100%;
+      background: $ivory;
+      display: none;
+      margin-top: 60px;
+      margin-left: -20px;
+    }
+    &__buttons.active{
+      display: block;
+    }
+    &__buttons ul{
+      flex-direction: column;
+      li{
+        margin-top: 30px;
+      }
+    }
+  }
 }
 
 //table for edit products

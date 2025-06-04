@@ -1243,12 +1243,6 @@
       "stock": false
     }
   ],
-  "admin": [
-    {
-      "name": "admin",
-      "password": "admin"
-    }
-  ],
   "brands": [
     {
       "id": "fsefsdgf",

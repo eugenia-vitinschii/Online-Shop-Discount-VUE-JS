@@ -1,21 +1,38 @@
 <template>
-  <div>
-
 <!-- admin panel -->
   <div class="panel">
     <div class="container">
       <div class="panel__wrapper">
         <div class="panel__nav">
-          <div class="panel__buttons">
-            <router-link class="green-button" to="/admin/create">
+          <div class="panel__button">
+            <button class="button-svg" @click="toggleNav" >
+              <svg v-if="!openNav" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="m480-340 180-180-57-56-123 123-123-123-57 56 180 180Zm0 260q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+              <svg  v-else xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="m357-384 123-123 123 123 57-56-180-180-180 180 57 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+            </button>
+          </div>
+          <div class="panel__buttons" :class="{'active':openNav}"> 
+            <ul >
+              <li>
+                <router-link class="green-button" to="/admin">
+              Admin Page
+            </router-link>
+              </li>
+              <li>
+                <router-link class="green-button" to="/admin/create">
               Add Product
             </router-link>
-            <router-link class="green-button" to="/admin/edit">
-              Edit Product
-            </router-link>
-            <router-link class="green-button" to="/admin/create-brand">
+              </li>
+              <li>
+                <router-link class="green-button" to="/admin/edit">
+             Product list
+            </router-link> 
+              </li>
+              <li>
+                <router-link class="green-button" to="/admin/create-brand">
               Add brand</router-link
-            >
+            > 
+              </li>
+            </ul>
           </div>
           <div class="panel__user">
             <div class="panel__user-text">
@@ -34,17 +51,21 @@
                 />
               </svg>
             </div>
+            <div class="panel__user-exit tooltip" >
+              <span class="tooltip-text small-text">exit</span>
+              <button class="button-svg" @click="logout">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M200-120q-33 0-56.5-23.5T120-200v-160h80v160h560v-560H200v160h-80v-160q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm220-160-56-58 102-102H120v-80h346L364-622l56-58 200 200-200 200Z"/></svg>
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-  </div>
 </template>  
 <script setup lang="ts">
 //vue
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 
 //pinia
 import { useAuthStore } from '@/stores/auth';
@@ -54,11 +75,30 @@ defineOptions({
   name: "Adminheader",
 });
 
+
 //variables
 const authStore = useAuthStore()
-
 const userName = computed(() => authStore.user?.name || 'admin')
 
+
+//burger
+const openNav= ref(false);
+
+const toggleNav = () => {
+  openNav.value =!openNav.value
+}
+
+
+//router
+import {useRouter}  from 'vue-router'
+
+// Store variables
+const router = useRouter();
+
+const logout = () => {
+  authStore.logOut()
+  router.push('/login')
+}
 </script>
   
  
