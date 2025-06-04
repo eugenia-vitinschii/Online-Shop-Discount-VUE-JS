@@ -230,12 +230,15 @@
             </div>
             </div>
           </div>
-          <the-button class="green-button" @click="updateItem()">
+          <div class="update__buttons">
+             <the-button class="green-button" @click="updateItem()">
             Salvează
           </the-button>
           <router-link class="red-button" to="/admin/edit"
             >Innapoi</router-link
           >
+          </div>
+         
         </form>
       </div>
       <div v-else>

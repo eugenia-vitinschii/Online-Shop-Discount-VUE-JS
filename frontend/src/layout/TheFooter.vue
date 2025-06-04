@@ -10,19 +10,19 @@
           <p class="subheading bold">Informații companie</p>
           <ul>
             <li>
-               <a href="/"  class="body-text">Despre noi</a>
+               <a href="/"  class="footer__link">Despre noi</a>
             </li>
             <li>
-               <a href="/"  class="body-text">Contacte</a>
+               <a href="/"  class="footer__link">Contacte</a>
             </li>
             <li>
-               <a href="/"  class="body-text">Termeni și condiții </a>
+               <a href="/"  class="footer__link">Termeni și condiții </a>
             </li>
             <li>
-               <a href="/"  class="body-text">Politica de confidențialitate</a>
+               <a href="/"  class="footer__link">Politica de confidențialitate</a>
             </li>
             <li>
-               <a href="/"  class="body-text">Livrare și retur </a>
+               <a href="/"  class="footer__link">Livrare și retur </a>
             </li>
           </ul>
         </div>
@@ -31,16 +31,16 @@
           <p class="subheading bold">Ghid cumpărători</p>
           <ul>
             <li>
-               <a href="/"  class="body-text">Cum comand?</a>
+               <a href="/"  class="footer__link footer__link-purple">Cum comand?</a>
             </li>
             <li>
-               <a href="/"  class="body-text">Întrebări frecvente (FAQ)</a>
+               <a href="/"  class="footer__link">Întrebări frecvente (FAQ)</a>
             </li>
             <li>
-               <a href="/"  class="body-text">Garanție produse</a>
+               <a href="/"  class="footer__link">Garanție produse</a>
             </li>
             <li>
-               <a href="/"  class="body-text">Metode de plată</a>
+               <a href="/"  class="footer__link footer__link-purple">Metode de plată</a>
             </li>
           </ul>
         </div>
@@ -49,13 +49,13 @@
           <p class="subheading bold">Servicii</p>
           <ul>
             <li>
-               <a href="/"  class="body-text">Service și reparații?</a>
+               <a href="/"  class="footer__link">Service și reparații?</a>
             </li>
             <li>
-               <a href="/"  class="body-text">Asistență clienți</a>
+               <a href="/"  class="footer__link footer__link-purple">Asistență clienți</a>
             </li>
             <li>
-               <a href="/"  class="body-text">Manuale și ghiduri </a>
+               <a href="/"  class="footer__link footer__link-purple">Manuale și ghiduri </a>
             </li>
           </ul>
         </div>
@@ -64,7 +64,7 @@
           <p class="subheading bold">Contacte:</p>
           <ul>
             <li v-for="item in links" :key="item.id">
-              <the-link :link="item.link" :href="item.href" />
+              <the-link :link="item.link" :href="item.href"/>
             </li>
           </ul>
         </div>

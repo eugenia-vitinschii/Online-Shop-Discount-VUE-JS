@@ -1,6 +1,6 @@
 <template>
 <!-- a component -->
-  <a :href="href" class="body-text">
+  <a :href="href" class="footer__link">
     {{ link }}
   </a>
 </template> 

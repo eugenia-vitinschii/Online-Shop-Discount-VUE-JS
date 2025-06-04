@@ -26,13 +26,16 @@
                 v-model.trim="postBrand.brand"
               />
             </div>
-            <!-- save new brand -->
+            <div class="add__form-button">
+                          <!-- save new brand -->
             <the-button class="green-button" @click.prevent="addBrandData()">
               Salvează
             </the-button>
             <!-- go home  -->
              <router-link class="red-button" to="/admin/edit"
             >Acasă</router-link>
+            </div>
+
           </form>
         </div>
       </div>

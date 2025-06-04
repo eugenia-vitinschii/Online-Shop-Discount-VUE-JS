@@ -222,12 +222,14 @@
               </select>
             </div>
           </div>
-
-          <the-button class="green-button" @click.prevent="addPostData">
+            <div class="add__buttons">
+              <the-button class="green-button" @click.prevent="addPostData">
             Salvează
           </the-button>
            <router-link class="red-button" to="/admin"
             >Acasă</router-link>
+            </div>
+          
         </form>
       </div>
     </div>
