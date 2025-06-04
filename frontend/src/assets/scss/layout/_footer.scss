@@ -15,19 +15,17 @@
     grid-column: 2 /span 2;
     justify-self: center;
   }
-  &__links {
-    a,
-    p {
-      color: $orange;
-    }
-    a {
-      display: block;
-    }
-   a:hover {
-      text-decoration: dotted;
-      color: rgb(118, 55, 16);
-    }
+  &__links p{
+    color: $orange;
   }
+  &__link{
+    @include font-style( $orange, 10px, left);
+    @include font-size($body-text-sm,24px)
+  }
+  &__link-purple{
+      color: $purple;
+      font-weight: 600
+    }
   &__logo {
     width: 150px;
     height: 150px;

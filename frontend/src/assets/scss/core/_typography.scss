@@ -1,6 +1,10 @@
 // p tag styles
 @use '../abstracts/variables' as *;  
 @use '../abstracts/mixins' as *;  
+//adition font
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
 .body-text,
 .body-text-red, .body-text-green {
 	font-size: $body-text;
@@ -14,6 +18,7 @@
 .small-text {
 	font-size: 14;
 	color: $black;
+	font-family: "Noto Sans", sans-serif;
 }
 
 .bold {
@@ -27,9 +32,10 @@
 }
 // font styles
 .heading{
-   @include font-style( $black, 10px, left);
+   @include font-style( $orange, 10px, left);
    @include font-size($heading, 40px);
-	font-weight:800
+	font-weight:800;
+	font-family: "Noto Sans", sans-serif;
 }
 .subheading{ 
    @include font-style( $black, 10px, left);

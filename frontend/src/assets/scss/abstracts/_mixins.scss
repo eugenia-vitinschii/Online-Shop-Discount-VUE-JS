@@ -49,6 +49,8 @@
 	cursor: pointer;
 	font-size: $body-text-sm;
 	background: $white;
+	border-radius: 3px;
+	font-family: "Noto Sans", sans-serif;
 }
 
 @mixin button-colors($border, $color) {
@@ -71,6 +73,7 @@
 	color: $color;
 	border: 1px solid $border-color;
 	font-size: $body-text-sm;
+	border-radius: 3px;
 }
 
 //Layout & Positioning
@@ -115,7 +118,7 @@
 }
 
 // Typography
-@mixin font-style($color, $padding-top, $text-align) {
+@mixin font-style($color:black, $padding-top, $text-align) {
 	color: $color;
 	padding-top: $padding-top;
 	text-align: $text-align;
