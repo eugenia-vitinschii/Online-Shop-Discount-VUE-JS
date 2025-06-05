@@ -66,7 +66,8 @@
 
 //scroll to top button
 .scrollToTop{
-   bottom: 10px;
+   z-index: 60000000px;
+   bottom: 70px;
    right:10px;
    position: fixed;
    width: 50px;

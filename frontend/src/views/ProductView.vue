@@ -123,6 +123,8 @@ const addProductCard = (product: Product)=> {
 const  addProductToFavorite = (product: Product)  =>{
   addToFavorite(product);
 }
+
+
 //variables
 const product = computed(() => products.value.find((p) => p.id === id.value));
 

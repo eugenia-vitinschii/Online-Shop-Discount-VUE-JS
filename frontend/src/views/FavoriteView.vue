@@ -8,7 +8,7 @@
         <br />
               <div class="router__link">
          <router-link to="/brands" class="blue-router">
-           / Coș
+           / Favorite
           </router-link>
       </div>
       </div>
