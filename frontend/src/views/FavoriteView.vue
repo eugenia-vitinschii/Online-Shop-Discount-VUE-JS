@@ -1,5 +1,19 @@
 <template>
 <div>
+<!-- routing -->
+  <div class="router">
+    <div class="container">
+      <div class="router__wrapper">
+        <the-router :promo="false"/>
+        <br />
+              <div class="router__link">
+         <router-link to="/brands" class="blue-router">
+           / Coș
+          </router-link>
+      </div>
+      </div>
+    </div>
+  </div>
   <!-- favorite page -->
   <div class="favorite">
     <div class="container">
@@ -56,7 +70,7 @@ defineOptions({
 import TheItem from "@/sections/TheItem.vue";
 import TheTopProductsSlider from "@/sections/Sliders/TheTopProductsSlider.vue";
 import RecentlyWachedSlider from "@/sections/Sliders/RecentlyWachedSlider.vue";
-
+import TheRouter from "@/sections/TheRouter.vue";
 // store
 import { useProductStore } from "@/stores/product";
 import { storeToRefs } from "pinia";

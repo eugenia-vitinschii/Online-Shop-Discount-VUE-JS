@@ -1,4 +1,20 @@
 <template>
+  <div>
+      <!-- routing -->
+  <div class="router">
+    <div class="container">
+      <div class="router__wrapper">
+        <the-router :promo="false"/>
+        <br />
+              <div class="router__link">
+         <router-link to="/brands" class="blue-router">
+           / Coș
+          </router-link>
+      </div>
+      </div>
+    </div>
+
+  </div>
 <!-- shopping card view -->
   <div class="cart">
     <div class="container">
@@ -64,12 +80,13 @@
       </div>
     </div>
   </div>
+   </div>
 </template> 
 
 <script setup lang="ts">
 //compoents
 import ShoppingItem from "@/components/ShoppingItem.vue";
-
+import TheRouter from "@/sections/TheRouter.vue";
 //vue 
 import { ref, onMounted, onUnmounted } from "vue";
  

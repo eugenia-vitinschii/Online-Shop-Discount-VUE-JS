@@ -1,14 +1,18 @@
 <template>
   <div>
-
 <!-- routing -->
 <div class="router">
   <div class="container">
     <div class="router__wrapper">
-      <the-router :promo="false"/>
+      <the-router :promo="false"/> 
+            <div class="router__link">
+         <router-link to="/brands" class="blue-router">
+           / Branduri
+          </router-link>
+      </div>
       <div class="router__link">
-         <router-link :to="'/brands/' + brand" class="blue-router">
-           /  {{brand}}
+         <router-link to="'/brands/' + brand" class="blue-router">
+           /  {{brand}} 
           </router-link>
       </div>
     </div>
@@ -68,7 +72,6 @@ import { useRoute } from "vue-router";
 //components
 import TheRouter from "@/sections/TheRouter.vue"
 import TheItem from "@/sections/TheItem.vue";
-
 //pinia
 import { useProductStore } from "@/stores/product";
 import { storeToRefs } from "pinia";

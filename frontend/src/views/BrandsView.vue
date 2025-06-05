@@ -1,9 +1,23 @@
 <template>
 <!-- all brands logo -->
+ <div>
+ <!-- routing -->
+<div class="router">
+  <div class="container">
+    <div class="router__wrapper">
+      <the-router :promo="false"/>
+      <div class="router__link">
+         <router-link to="/brands" class="blue-router">
+           / Branduri
+          </router-link>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="brand"> 
    <div class="container">
       <div class="brand__wrapper">
-         <p class="heading">ALL Brands</p>
+         <p class="heading">Branduri</p>
          <div class="brand__content">
                <brand-section-item
             v-for="item in store.brands"
@@ -16,6 +30,7 @@
       </div>
    </div>
 </div>
+</div>
 </template>
 
 <script setup lang="ts">
@@ -27,7 +42,7 @@ import { onMounted} from "vue"
 
 //components
 import BrandSectionItem from "@/sections/BrandSectionItem.vue";
-
+import TheRouter from "@/sections/TheRouter.vue";
 //component settings
  defineOptions({
    name: "BrandsView"

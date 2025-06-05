@@ -22,6 +22,9 @@
     @include font-style( $orange, 10px, left);
     @include font-size($body-text-sm,24px)
   }
+  &__link:hover{
+    color: $blue;
+  }
   &__link-purple{
       color: $purple;
       font-weight: 600

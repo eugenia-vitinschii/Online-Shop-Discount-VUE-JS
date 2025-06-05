@@ -8,15 +8,26 @@
          class="subscribe__form"
          @submit.prevent="submitEmail"
          >
+         <div class="input__wrapper">
+              <label class="body-text">Introduceți numele dvs</label>
+               <input 
+               v-model="name"
+               placeholder="Name"
+               type="text"
+               >
+         </div>
             <div class="input__wrapper">
+               <label class="body-text">Introduceți adresa dvs. de email</label>
                <input 
                v-model="email"
-               placeholder="Introduceți adresa dvs. de email"
+               placeholder="name@email.ms"
                type="email"
                >
-               <div class="subscribe__agree">
+            <div class="input__wrapper">
+                 <div class="subscribe__agree">
               <input type="checkbox"   switch checked disabled />
               <label class="body-text">Sunt deacord cu <a href="/">termeni și condiții</a></label>
+            </div>
             </div>
                <button type="submit" class="subscribe__button">Trimite</button>
           </div>
@@ -35,6 +46,7 @@ defineOptions({
   name: 'TheSubscribe'
 })
 
+const name = ref('');
 const email = ref('');
 
 function submitEmail() {

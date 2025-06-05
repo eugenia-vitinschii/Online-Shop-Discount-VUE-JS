@@ -6,6 +6,11 @@
       <div class="router__wrapper">
         <the-router :promo="false"/>
         <br />
+              <div class="router__link">
+         <router-link to="/brands" class="blue-router">
+           / Branduri
+          </router-link>
+      </div>
         <div class="router__link" v-if="product">
           <router-link :to="'/brands/' + product.brand" class="blue-router">
             / {{ product.brand }}
